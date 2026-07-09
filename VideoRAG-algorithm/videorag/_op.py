@@ -31,6 +31,9 @@ from .prompt import GRAPH_FIELD_SEP, PROMPTS
 from ._videoutil import (
     retrieved_segment_caption,
 )
+from ._event_causal import (
+    causal_chain_retrieval,
+)
 
 def chunking_by_token_size(
     tokens_list: list[list[int]],
@@ -590,6 +593,8 @@ async def videorag_query(
     caption_tokenizer,
     query_param: QueryParam,
     global_config: dict,
+    event_causal_vdb=None,
+    event_causal_graph=None,
 ) -> str:
     use_model_func = global_config["llm"]["best_model_func"]
     query = query
@@ -635,7 +640,7 @@ async def videorag_query(
         entity_retrieved_segments = entity_retrieved_segments.union(await _find_most_related_segments_from_entities(
             global_config["retrieval_topk_chunks"], node_datas, text_chunks_db, knowledge_graph_inst
         ))
-    
+
     # visual retrieval
     query_for_visual_retrieval = await _refine_visual_retrieval_query(
         query,
@@ -647,9 +652,24 @@ async def videorag_query(
     if len(segment_results):
         for n in segment_results:
             visual_retrieved_segments.add(n['__id__'])
-    
+
+    # causal retrieval (Event-Causal KG, Yan et al. 2026)
+    causal_retrieved_segments = set()
+    if event_causal_vdb is not None and event_causal_graph is not None:
+        causal_retrieved_segments = await causal_chain_retrieval(
+            query,
+            event_causal_vdb,
+            event_causal_graph,
+            text_chunks_db,
+            global_config,
+            top_k_events=query_param.top_k,
+        )
+        print(f"Retrieved Causal Segments {causal_retrieved_segments}")
+
     # caption
-    retrieved_segments = list(entity_retrieved_segments.union(visual_retrieved_segments))
+    retrieved_segments = list(
+        entity_retrieved_segments.union(visual_retrieved_segments).union(causal_retrieved_segments)
+    )
     retrieved_segments = sorted(
         retrieved_segments,
         key=lambda x: (
@@ -661,7 +681,7 @@ async def videorag_query(
     print(f"Retrieved Text Segments {entity_retrieved_segments}")
     print(query_for_visual_retrieval)
     print(f"Retrieved Visual Segments {visual_retrieved_segments}")
-    
+
     already_processed = 0
     async def _filter_single_segment(knowledge: str, segment_key_dp: tuple[str, str]):
         nonlocal use_model_func, already_processed
@@ -756,6 +776,8 @@ async def videorag_query_multiple_choice(
     caption_tokenizer,
     query_param: QueryParam,
     global_config: dict,
+    event_causal_vdb=None,
+    event_causal_graph=None,
 ) -> str:
     """_summary_
     A copy of the videorag_query function with several updates for handling multiple-choice queries.
@@ -806,7 +828,7 @@ async def videorag_query_multiple_choice(
         entity_retrieved_segments = entity_retrieved_segments.union(await _find_most_related_segments_from_entities(
             global_config["retrieval_topk_chunks"], node_datas, text_chunks_db, knowledge_graph_inst
         ))
-    
+
     # visual retrieval
     query_for_visual_retrieval = await _refine_visual_retrieval_query(
         query,
@@ -818,9 +840,24 @@ async def videorag_query_multiple_choice(
     if len(segment_results):
         for n in segment_results:
             visual_retrieved_segments.add(n['__id__'])
-    
+
+    # causal retrieval (Event-Causal KG, Yan et al. 2026)
+    causal_retrieved_segments = set()
+    if event_causal_vdb is not None and event_causal_graph is not None:
+        causal_retrieved_segments = await causal_chain_retrieval(
+            query,
+            event_causal_vdb,
+            event_causal_graph,
+            text_chunks_db,
+            global_config,
+            top_k_events=query_param.top_k,
+        )
+        print(f"Retrieved Causal Segments {causal_retrieved_segments}")
+
     # caption
-    retrieved_segments = list(entity_retrieved_segments.union(visual_retrieved_segments))
+    retrieved_segments = list(
+        entity_retrieved_segments.union(visual_retrieved_segments).union(causal_retrieved_segments)
+    )
     retrieved_segments = sorted(
         retrieved_segments,
         key=lambda x: (
@@ -832,7 +869,7 @@ async def videorag_query_multiple_choice(
     print(f"Retrieved Text Segments {entity_retrieved_segments}")
     print(query_for_visual_retrieval)
     print(f"Retrieved Visual Segments {visual_retrieved_segments}")
-    
+
     already_processed = 0
     async def _filter_single_segment(knowledge: str, segment_key_dp: tuple[str, str]):
         nonlocal use_model_func, already_processed

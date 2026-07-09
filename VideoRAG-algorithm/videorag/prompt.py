@@ -440,3 +440,161 @@ Key points:
 1. Ensure that the "Answer" reflects the correct label format.
 2. Structure the "Explanation" for clarity, using Markdown for any necessary formatting.
 """
+
+# =============================================================================
+# Event-Causal Knowledge Graph Prompts (Yan et al. 2026)
+# =============================================================================
+
+PROMPTS[
+    "event_extraction"
+] = """-Goal-
+Given a video segment's caption and transcript, identify all atomic events that occur in this segment.
+An "event" is a self-contained occurrence, action, or state change that happens at a specific time in the video.
+Focus on events that are meaningful for understanding the video's narrative or causal structure.
+
+-Steps-
+1. Read the caption and transcript carefully to understand what happens in this segment.
+2. Identify all distinct atomic events. Each event should be a single, self-contained occurrence.
+3. For each event, extract the following information:
+   - event_description: A concise description of what happened (one sentence, in English)
+   - event_actors: The main entities (people, objects, concepts) involved in the event, separated by commas
+   - event_type: One of [action, state_change, speech, decision, discovery, conflict, resolution, other]
+
+Format each event as:
+("event"<|><event_description><|><event_actors><|><event_type>)
+
+4. Return output in English. Use ## as the delimiter between events.
+5. When finished, output <|COMPLETE|>
+
+######################
+-Examples-
+######################
+Example 1:
+Caption: The instructor explains the backpropagation algorithm using a diagram on the whiteboard.
+Transcript: "So this is how gradients flow backward through the network. Each layer receives the gradient from the layer above..."
+
+################
+Output:
+("event"<|>"The instructor explains the backpropagation algorithm using a whiteboard diagram"<|>"instructor, backpropagation algorithm, whiteboard"<|>"speech")##
+("event"<|>"Gradients flow backward through the network layers during backpropagation"<|>"gradients, network layers"<|>"state_change")<|COMPLETE|>
+
+#############################
+Example 2:
+Caption: A character named Alex confronts another character named Jordan about a missing document. Jordan denies taking it.
+Transcript: "I know you took the file, Jordan. Just admit it." "I have no idea what you're talking about, Alex."
+
+################
+Output:
+("event"<|>"Alex confronts Jordan about a missing document"<|>"Alex, Jordan, missing document"<|>"conflict")##
+("event"<|>"Jordan denies taking the missing document"<|>"Jordan, Alex, missing document"<|>"action")<|COMPLETE|>
+
+#############################
+-Real Data-
+######################
+Segment Content: {segment_content}
+######################
+Output:
+"""
+
+PROMPTS[
+    "causal_relation_extraction"
+] = """-Goal-
+Given a list of events extracted from a video, identify all causal relationships between pairs of events.
+A causal relationship exists when one event directly causes, enables, prevents, or leads to another event.
+Only identify relationships that are clearly supported by the event descriptions.
+
+-Steps-
+1. Review all events carefully.
+2. For each pair of events (event_i, event_j), determine if there is a causal relationship.
+3. Consider the following causal relation types:
+   - causes: event_i directly causes event_j to happen
+   - enables: event_i makes it possible for event_j to happen
+   - prevents: event_i stops or prevents event_j from happening
+   - results_in: event_i leads to or results in event_j (weaker than causes)
+   - precedes: event_i temporally precedes event_j and is a necessary condition (but not direct cause)
+
+4. For each causal pair found, extract:
+   - source_event_index: the index of the cause/enabling event
+   - target_event_index: the index of the effect/result event
+   - relation_type: one of [causes, enables, prevents, results_in, precedes]
+   - relation_description: brief explanation of why these events are causally related
+
+Format each causal relation as:
+("causal_relation"<|><source_event_index><|><target_event_index><|><relation_type><|><relation_description>)
+
+5. Return output in English. Use ## as the delimiter between relations.
+6. When finished, output <|COMPLETE|>
+
+######################
+-Examples-
+######################
+Event List:
+[0] "The instructor explains the backpropagation algorithm"
+[1] "Students understand how gradients flow through the network"
+[2] "The instructor assigns homework on neural networks"
+[3] "Students complete the homework assignment"
+
+################
+Output:
+("causal_relation"<|>0<|>1<|>"enables"<|>"The instructor's explanation enables students to understand the concept")##
+("causal_relation"<|>2<|>3<|>"causes"<|>"The homework assignment directly causes students to complete it")<|COMPLETE|>
+
+#############################
+Example 2:
+Event List:
+[0] "Alex confronts Jordan about the missing document"
+[1] "Jordan denies taking the document"
+[2] "Alex finds the document in Jordan's desk"
+[3] "Jordan confesses to taking the document"
+
+################
+Output:
+("causal_relation"<|>0<|>1<|>"causes"<|>"Alex's confrontation causes Jordan to deny the accusation")##
+("causal_relation"<|>2<|>3<|>"causes"<|>"Finding the document in Jordan's desk causes Jordan to confess")##
+("causal_relation"<|>0<|>2<|>"enables"<|>"The confrontation motivates Alex to search for evidence")<|COMPLETE|>
+
+#############################
+-Real Data-
+######################
+Event List:
+{event_list}
+######################
+Output:
+"""
+
+PROMPTS[
+    "causal_chain_retrieval_query"
+] = """-Goal-
+Given a user query, rewrite it into a declarative sentence that emphasizes causal relationships and event sequences.
+This rewritten query will be used to retrieve relevant events from a causal knowledge graph.
+
+-Steps-
+1. Identify the key events, actions, or causal questions in the query.
+2. Focus on "what happened", "what caused what", and "what was the result".
+3. Generate a declarative sentence that captures the causal essence of the query.
+
+######################
+-Examples-
+######################
+Question: Why did the character decide to leave the city?
+################
+Output:
+The character's decision to leave the city and its underlying causes.
+
+Question: What caused the conflict between the two main characters?
+################
+Output:
+The causal events that led to the conflict between the two main characters.
+
+Question: How did the discovery of the artifact change the team's mission?
+################
+Output:
+The discovery of the artifact and its effects on the team's mission.
+
+#############################
+-Real Data-
+######################
+Question: {input_text}
+######################
+Output:
+"""

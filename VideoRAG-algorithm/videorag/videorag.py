@@ -25,6 +25,12 @@ from ._op import (
     videorag_query,
     videorag_query_multiple_choice,
 )
+from ._event_causal import (
+    extract_events_from_segments,
+    extract_causal_relations,
+    build_event_causal_graph,
+    embed_events_for_vdb,
+)
 from ._storage import (
     JsonKVStorage,
     NanoVectorDBStorage,
@@ -80,6 +86,7 @@ class VideoRAG:
     # graph mode
     enable_local: bool = True
     enable_naive_rag: bool = True
+    enable_event_causal: bool = True  # Event-Causal KG (Yan et al. 2026)
 
     # text chunking
     chunk_func: Callable[
@@ -158,6 +165,25 @@ class VideoRAG:
 
         self.chunk_entity_relation_graph = self.graph_storage_cls(
             namespace="chunk_entity_relation", global_config=asdict(self)
+        )
+
+        # Event-Causal Knowledge Graph (Yan et al. 2026)
+        self.event_causal_graph = (
+            self.graph_storage_cls(
+                namespace="event_causal", global_config=asdict(self)
+            )
+            if self.enable_event_causal
+            else None
+        )
+        self.event_causal_vdb = (
+            self.vector_db_storage_cls(
+                namespace="event_causal_vdb",
+                global_config=asdict(self),
+                embedding_func=self.embedding_func,
+                meta_fields={"event_id"},
+            )
+            if self.enable_event_causal
+            else None
         )
 
         self.embedding_func = limit_async_func_call(self.llm.embedding_func_max_async)(wrap_embedding_func_with_attrs(
@@ -315,10 +341,12 @@ class VideoRAG:
                 self.video_segments,
                 self.video_segment_feature_vdb,
                 self.chunk_entity_relation_graph,
-                self.caption_model, 
+                self.caption_model,
                 self.caption_tokenizer,
                 param,
                 asdict(self),
+                event_causal_vdb=self.event_causal_vdb,
+                event_causal_graph=self.event_causal_graph,
             )
         # NOTE: update here
         elif param.mode == "videorag_multiple_choice":
@@ -331,10 +359,12 @@ class VideoRAG:
                 self.video_segments,
                 self.video_segment_feature_vdb,
                 self.chunk_entity_relation_graph,
-                self.caption_model, 
+                self.caption_model,
                 self.caption_tokenizer,
                 param,
                 asdict(self),
+                event_causal_vdb=self.event_causal_vdb,
+                event_causal_graph=self.event_causal_graph,
             )
         else:
             raise ValueError(f"Unknown mode {param.mode}")
@@ -379,6 +409,31 @@ class VideoRAG:
                 logger.warning("No new entities found")
                 return
             self.chunk_entity_relation_graph = maybe_new_kg
+
+            # ---------- Event-Causal KG extraction (Yan et al. 2026)
+            if self.enable_event_causal:
+                logger.info("[Event-Causal Extraction] Step 1: Extracting events...")
+                loop = always_get_an_event_loop()
+                all_events = loop.run_until_complete(
+                    self._extract_event_causal(new_video_segment)
+                )
+                if all_events:
+                    logger.info(
+                        f"[Event-Causal Extraction] Step 2: Extracting causal relations "
+                        f"from {len(all_events)} events..."
+                    )
+                    causal_relations = loop.run_until_complete(
+                        extract_causal_relations(all_events, asdict(self))
+                    )
+                    build_event_causal_graph(
+                        all_events, causal_relations, self.event_causal_graph
+                    )
+                    loop.run_until_complete(
+                        embed_events_for_vdb(all_events, self.event_causal_vdb)
+                    )
+                else:
+                    logger.warning("[Event-Causal Extraction] No events extracted")
+
             # ---------- commit upsertings and indexing
             await self.text_chunks.upsert(inserting_chunks)
         finally:
@@ -388,6 +443,7 @@ class VideoRAG:
         tasks = []
         for storage_inst in [
             self.chunk_entity_relation_graph,
+            self.event_causal_graph,
         ]:
             if storage_inst is None:
                 continue
@@ -414,6 +470,8 @@ class VideoRAG:
             self.entities_vdb,
             self.chunks_vdb,
             self.chunk_entity_relation_graph,
+            self.event_causal_graph,
+            self.event_causal_vdb,
             self.video_segment_feature_vdb,
             self.video_segments,
             self.video_path_db,
@@ -430,3 +488,17 @@ class VideoRAG:
                 continue
             tasks.append(cast(StorageNameSpace, storage_inst).index_done_callback())
         await asyncio.gather(*tasks)
+
+    async def _extract_event_causal(self, new_video_segment: dict) -> list:
+        """Extract events and causal relations for newly inserted video segments.
+
+        Called from ``ainsert`` when ``enable_event_causal`` is True.
+        Returns the list of all extracted event dicts (may be empty).
+        """
+        all_events = []
+        for video_name, segments_info in new_video_segment.items():
+            events = await extract_events_from_segments(
+                video_name, segments_info, asdict(self)
+            )
+            all_events.extend(events)
+        return all_events
