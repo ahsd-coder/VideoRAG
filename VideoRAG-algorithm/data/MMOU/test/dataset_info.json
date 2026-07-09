@@ -1,0 +1,105 @@
+{
+  "builder_name": "json",
+  "citation": "",
+  "config_name": "test",
+  "dataset_name": "mmou",
+  "dataset_size": 18392883,
+  "description": "",
+  "download_size": 20030771,
+  "features": {
+    "question_id": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "question_type": {
+      "feature": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "_type": "List"
+    },
+    "question": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "options": {
+      "A": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "B": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "C": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "D": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "E": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "F": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "G": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "H": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "I": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "J": {
+        "dtype": "string",
+        "_type": "Value"
+      }
+    },
+    "video_url": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "video_duration": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "start_time": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "end_time": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "correct_option_letter": {
+      "dtype": "string",
+      "_type": "Value"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 38423654,
+  "splits": {
+    "test": {
+      "name": "test",
+      "num_bytes": 18392883,
+      "num_examples": 5000,
+      "dataset_name": "mmou"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}

@@ -1,0 +1,49 @@
+# ===== 模型文件 (大文件，不推送) =====
+VideoRAG-algorithm/MiniCPM-V-2_6-int4/
+VideoRAG-algorithm/faster-distil-whisper-large-v3/
+VideoRAG-algorithm/.checkpoints/
+
+# ===== 工作目录 (索引缓存) =====
+VideoRAG-algorithm/videorag-workdir/
+VideoRAG-algorithm/test_workdir_*/
+test_workdir_*/
+test_frames/
+
+# ===== 大型视频/数据文件 =====
+VideoRAG-algorithm/data/*.mp4
+VideoRAG-algorithm/data/*.avi
+VideoRAG-algorithm/data/*.mkv
+*.mp4
+*.avi
+*.mkv
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ===== Jupyter =====
+.ipynb_checkpoints/
+*.ipynb
+
+# ===== IDE =====
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ===== 系统文件 =====
+.DS_Store
+Thumbs.db
+
+# ===== 日志 =====
+*.log
+error_log_videorag.txt
+
+# ===== 环境变量/密钥 =====
+.env
+.env.local
