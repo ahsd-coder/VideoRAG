@@ -17,6 +17,12 @@ class QueryParam:
     naive_max_token_for_text_unit = 12000
     # videorag search
     only_need_context: bool = False
+    wo_reference: bool = False
+    # Retrieval source ablation (for comparing Entity-Relation KG vs EC-RAG Event-Causal KG).
+    #   "entity_only" : only entity-relation graph retrieval (+ visual + naive chunks)
+    #   "causal_only" : only Event-Causal (SES) graph retrieval (+ visual + naive chunks)
+    #   "all"         : union of both (default, original behavior)
+    retrieval_mode: Literal["entity_only", "causal_only", "all"] = "all"
 
 
 TextChunkSchema = TypedDict(

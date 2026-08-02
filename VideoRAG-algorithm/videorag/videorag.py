@@ -27,7 +27,7 @@ from ._op import (
 )
 from ._event_causal import (
     extract_events_from_segments,
-    extract_causal_relations,
+    link_events_by_state_continuity,
     build_event_causal_graph,
     embed_events_for_vdb,
 )
@@ -128,8 +128,11 @@ class VideoRAG:
     def load_caption_model(self, debug=False):
         # caption model
         if not debug:
-            self.caption_model = AutoModel.from_pretrained('./MiniCPM-V-2_6-int4', trust_remote_code=True)
-            self.caption_tokenizer = AutoTokenizer.from_pretrained('./MiniCPM-V-2_6-int4', trust_remote_code=True, device_map='cuda')
+            self.caption_model = AutoModel.from_pretrained(
+                './MiniCPM-V-2_6-int4', trust_remote_code=True,
+                device_map={'': 'cuda:0'},
+            )
+            self.caption_tokenizer = AutoTokenizer.from_pretrained('./MiniCPM-V-2_6-int4', trust_remote_code=True)
             self.caption_model.eval()
         else:
             self.caption_model = None
@@ -175,16 +178,6 @@ class VideoRAG:
             if self.enable_event_causal
             else None
         )
-        self.event_causal_vdb = (
-            self.vector_db_storage_cls(
-                namespace="event_causal_vdb",
-                global_config=asdict(self),
-                embedding_func=self.embedding_func,
-                meta_fields={"event_id"},
-            )
-            if self.enable_event_causal
-            else None
-        )
 
         self.embedding_func = limit_async_func_call(self.llm.embedding_func_max_async)(wrap_embedding_func_with_attrs(
                 embedding_dim = self.llm.embedding_dim,
@@ -216,6 +209,18 @@ class VideoRAG:
                 global_config=asdict(self),
                 embedding_func=None, # we code the embedding process inside the insert() function.
             )
+        )
+
+        # Event-Causal VDB (needs embedding_func, so placed after it)
+        self.event_causal_vdb = (
+            self.vector_db_storage_cls(
+                namespace="event_causal_vdb",
+                global_config=asdict(self),
+                embedding_func=self.embedding_func,
+                meta_fields={"event_id"},
+            )
+            if self.enable_event_causal
+            else None
         )
         
         self.llm.best_model_func = limit_async_func_call(self.llm.best_model_max_async)(
@@ -411,26 +416,24 @@ class VideoRAG:
             self.chunk_entity_relation_graph = maybe_new_kg
 
             # ---------- Event-Causal KG extraction (Yan et al. 2026)
+            # NOTE: ainsert() is already a coroutine running on the event loop, so we
+            # must await these steps directly. Using loop.run_until_complete() here
+            # would re-enter the running loop and raise "This event loop is already running".
             if self.enable_event_causal:
                 logger.info("[Event-Causal Extraction] Step 1: Extracting events...")
-                loop = always_get_an_event_loop()
-                all_events = loop.run_until_complete(
-                    self._extract_event_causal(new_video_segment)
-                )
+                all_events = await self._extract_event_causal(new_video_segment)
                 if all_events:
                     logger.info(
-                        f"[Event-Causal Extraction] Step 2: Extracting causal relations "
-                        f"from {len(all_events)} events..."
+                        f"[Event-Causal Extraction] Step 2: Linking events by state "
+                        f"continuity (TEMPORAL_NEXT) over {len(all_events)} events..."
                     )
-                    causal_relations = loop.run_until_complete(
-                        extract_causal_relations(all_events, asdict(self))
+                    causal_relations = await link_events_by_state_continuity(
+                        all_events, self.event_causal_vdb.embedding_func
                     )
                     build_event_causal_graph(
                         all_events, causal_relations, self.event_causal_graph
                     )
-                    loop.run_until_complete(
-                        embed_events_for_vdb(all_events, self.event_causal_vdb)
-                    )
+                    await embed_events_for_vdb(all_events, self.event_causal_vdb)
                 else:
                     logger.warning("[Event-Causal Extraction] No events extracted")
 

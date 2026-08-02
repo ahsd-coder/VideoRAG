@@ -614,32 +614,39 @@ async def videorag_query(
     logger.info(f"Truncate {len(chunks)} to {len(maybe_trun_chunks)} chunks")
     section = "-----New Chunk-----\n".join([c["content"] for c in maybe_trun_chunks])
     retreived_chunk_context = section
-    
-    # visual retrieval
-    query_for_entity_retrieval = await _refine_entity_retrieval_query(
-        query,
-        query_param,
-        global_config,
-    )
-    entity_results = await entities_vdb.query(query_for_entity_retrieval, top_k=query_param.top_k)
+
+    # Retrieval-source ablation switch (Entity-Relation KG vs EC-RAG Event-Causal KG).
+    retrieval_mode = getattr(query_param, "retrieval_mode", "all")
+    use_entity_retrieval = retrieval_mode in ("entity_only", "all")
+    use_causal_retrieval = retrieval_mode in ("causal_only", "all")
+
+    # entity-relation graph retrieval
+    query_for_entity_retrieval = ""
     entity_retrieved_segments = set()
-    if len(entity_results):
-        node_datas = await asyncio.gather(
-            *[knowledge_graph_inst.get_node(r["entity_name"]) for r in entity_results]
+    if use_entity_retrieval:
+        query_for_entity_retrieval = await _refine_entity_retrieval_query(
+            query,
+            query_param,
+            global_config,
         )
-        if not all([n is not None for n in node_datas]):
-            logger.warning("Some nodes are missing, maybe the storage is damaged")
-        node_degrees = await asyncio.gather(
-            *[knowledge_graph_inst.node_degree(r["entity_name"]) for r in entity_results]
-        )
-        node_datas = [
-            {**n, "entity_name": k["entity_name"], "rank": d}
-            for k, n, d in zip(entity_results, node_datas, node_degrees)
-            if n is not None
-        ]
-        entity_retrieved_segments = entity_retrieved_segments.union(await _find_most_related_segments_from_entities(
-            global_config["retrieval_topk_chunks"], node_datas, text_chunks_db, knowledge_graph_inst
-        ))
+        entity_results = await entities_vdb.query(query_for_entity_retrieval, top_k=query_param.top_k)
+        if len(entity_results):
+            node_datas = await asyncio.gather(
+                *[knowledge_graph_inst.get_node(r["entity_name"]) for r in entity_results]
+            )
+            if not all([n is not None for n in node_datas]):
+                logger.warning("Some nodes are missing, maybe the storage is damaged")
+            node_degrees = await asyncio.gather(
+                *[knowledge_graph_inst.node_degree(r["entity_name"]) for r in entity_results]
+            )
+            node_datas = [
+                {**n, "entity_name": k["entity_name"], "rank": d}
+                for k, n, d in zip(entity_results, node_datas, node_degrees)
+                if n is not None
+            ]
+            entity_retrieved_segments = entity_retrieved_segments.union(await _find_most_related_segments_from_entities(
+                global_config["retrieval_topk_chunks"], node_datas, text_chunks_db, knowledge_graph_inst
+            ))
 
     # visual retrieval
     query_for_visual_retrieval = await _refine_visual_retrieval_query(
@@ -653,16 +660,18 @@ async def videorag_query(
         for n in segment_results:
             visual_retrieved_segments.add(n['__id__'])
 
-    # causal retrieval (Event-Causal KG, Yan et al. 2026)
+    # causal retrieval (EC-RAG Event-Causal KG, Yan et al. 2026)
     causal_retrieved_segments = set()
-    if event_causal_vdb is not None and event_causal_graph is not None:
-        causal_retrieved_segments = await causal_chain_retrieval(
+    causal_chain_text = ""
+    if use_causal_retrieval and event_causal_vdb is not None and event_causal_graph is not None:
+        causal_retrieved_segments, causal_chain_text = await causal_chain_retrieval(
             query,
             event_causal_vdb,
             event_causal_graph,
             text_chunks_db,
             global_config,
             top_k_events=query_param.top_k,
+            return_chain_text=True,
         )
         print(f"Retrieved Causal Segments {causal_retrieved_segments}")
 
@@ -682,6 +691,80 @@ async def videorag_query(
     print(query_for_visual_retrieval)
     print(f"Retrieved Visual Segments {visual_retrieved_segments}")
 
+    # ==================== 诊断代码开始 ====================
+    print(f"\n{'='*80}")
+    print(f"🔍 FILTER 阶段诊断")
+    print(f"{'='*80}")
+    print(f"检索到的片段总数: {len(retrieved_segments)}")
+    print(f"  - Entity检索: {len(entity_retrieved_segments)}")
+    print(f"  - Visual检索: {len(visual_retrieved_segments)}")
+    print(f"  - Causal检索: {len(causal_retrieved_segments)}")
+
+    if retrieved_segments:
+        print(f"\n前5个片段ID示例:")
+        for i, s_id in enumerate(list(retrieved_segments)[:5], 1):
+            print(f"  {i}. {s_id}")
+
+    # 检查 video_segments._data 的结构
+    print(f"\n📊 video_segments._data 结构:")
+    video_names = list(video_segments._data.keys())
+    print(f"  可用视频数量: {len(video_names)}")
+    if video_names:
+        first_video = video_names[0]
+        print(f"  示例视频: {first_video}")
+        indices = list(video_segments._data[first_video].keys())
+        print(f"  该视频的片段索引数量: {len(indices)}")
+        print(f"  前5个索引: {indices[:5]}")
+        print(f"  索引类型: {type(indices[0]) if indices else 'N/A'}")
+
+    # 尝试解析每个检索到的片段
+    print(f"\n🔧 解析测试:")
+    parsing_success = 0
+    parsing_failed = 0
+    failed_examples = []
+
+    for s_id in retrieved_segments:
+        video_name = '_'.join(s_id.split('_')[:-1])
+        index = s_id.split('_')[-1]
+
+        try:
+            content = video_segments._data[video_name][index]["content"]
+            parsing_success += 1
+        except KeyError as e:
+            parsing_failed += 1
+            if len(failed_examples) < 3:
+                failed_examples.append({
+                    's_id': s_id,
+                    'parsed_video': video_name,
+                    'parsed_index': index,
+                    'error': str(e)
+                })
+
+    print(f"  ✓ 成功解析: {parsing_success}")
+    print(f"  ✗ 解析失败: {parsing_failed}")
+
+    if failed_examples:
+        print(f"\n❌ 失败示例:")
+        for i, ex in enumerate(failed_examples, 1):
+            print(f"  {i}. 片段ID: {ex['s_id']}")
+            print(f"     解析出的视频名: {ex['parsed_video']}")
+            print(f"     解析出的索引: {ex['parsed_index']} (type: {type(ex['parsed_index'])})")
+            print(f"     错误: {ex['error']}")
+
+            # 尝试显示实际可用的内容
+            parsed_video = ex['parsed_video']
+            if parsed_video in video_segments._data:
+                available = list(video_segments._data[parsed_video].keys())[:3]
+                print(f"     该视频实际可用的索引: {available}")
+            else:
+                print(f"     该视频不在 video_segments._data 中!")
+                similar = [v for v in video_names if ex['parsed_video'] in v or v in ex['parsed_video']]
+                if similar:
+                    print(f"     相似的视频名: {similar[:3]}")
+
+    print(f"{'='*80}\n")
+    # ==================== 诊断代码结束 ====================
+
     already_processed = 0
     async def _filter_single_segment(knowledge: str, segment_key_dp: tuple[str, str]):
         nonlocal use_model_func, already_processed
@@ -700,7 +783,7 @@ async def videorag_query(
             flush=True,
         )
         return (segment_key, result)
-    
+
     rough_captions = {}
     for s_id in retrieved_segments:
         video_name = '_'.join(s_id.split('_')[:-1])
@@ -746,6 +829,15 @@ async def videorag_query(
     text_units_context = list_of_list_to_csv(text_units_section_list)
 
     retreived_video_context = f"\n-----Retrieved Knowledge From Videos-----\n```csv\n{text_units_context}\n```\n"
+
+    # EC-RAG: inject the serialised event-causal chain (events + pre/post states +
+    # TEMPORAL_NEXT links) so the LLM can reason over causal structure, not just
+    # raw segment captions (faithful to EC-RAG Section 3.3).
+    if causal_chain_text:
+        retreived_video_context += (
+            "\n-----Retrieved Event-Causal Chain (EC-RAG)-----\n"
+            + causal_chain_text + "\n"
+        )
     
     if query_param.wo_reference:
         sys_prompt_temp = PROMPTS["videorag_response_wo_reference"]
@@ -803,31 +895,38 @@ async def videorag_query_multiple_choice(
     else:
         retreived_chunk_context = "No Content"
         
-    # visual retrieval
-    query_for_entity_retrieval = await _refine_entity_retrieval_query(
-        query,
-        query_param,
-        global_config,
-    )
-    entity_results = await entities_vdb.query(query_for_entity_retrieval, top_k=query_param.top_k)
+    # Retrieval-source ablation switch (Entity-Relation KG vs EC-RAG Event-Causal KG).
+    retrieval_mode = getattr(query_param, "retrieval_mode", "all")
+    use_entity_retrieval = retrieval_mode in ("entity_only", "all")
+    use_causal_retrieval = retrieval_mode in ("causal_only", "all")
+
+    # entity-relation graph retrieval
+    query_for_entity_retrieval = ""
     entity_retrieved_segments = set()
-    if len(entity_results):
-        node_datas = await asyncio.gather(
-            *[knowledge_graph_inst.get_node(r["entity_name"]) for r in entity_results]
+    if use_entity_retrieval:
+        query_for_entity_retrieval = await _refine_entity_retrieval_query(
+            query,
+            query_param,
+            global_config,
         )
-        if not all([n is not None for n in node_datas]):
-            logger.warning("Some nodes are missing, maybe the storage is damaged")
-        node_degrees = await asyncio.gather(
-            *[knowledge_graph_inst.node_degree(r["entity_name"]) for r in entity_results]
-        )
-        node_datas = [
-            {**n, "entity_name": k["entity_name"], "rank": d}
-            for k, n, d in zip(entity_results, node_datas, node_degrees)
-            if n is not None
-        ]
-        entity_retrieved_segments = entity_retrieved_segments.union(await _find_most_related_segments_from_entities(
-            global_config["retrieval_topk_chunks"], node_datas, text_chunks_db, knowledge_graph_inst
-        ))
+        entity_results = await entities_vdb.query(query_for_entity_retrieval, top_k=query_param.top_k)
+        if len(entity_results):
+            node_datas = await asyncio.gather(
+                *[knowledge_graph_inst.get_node(r["entity_name"]) for r in entity_results]
+            )
+            if not all([n is not None for n in node_datas]):
+                logger.warning("Some nodes are missing, maybe the storage is damaged")
+            node_degrees = await asyncio.gather(
+                *[knowledge_graph_inst.node_degree(r["entity_name"]) for r in entity_results]
+            )
+            node_datas = [
+                {**n, "entity_name": k["entity_name"], "rank": d}
+                for k, n, d in zip(entity_results, node_datas, node_degrees)
+                if n is not None
+            ]
+            entity_retrieved_segments = entity_retrieved_segments.union(await _find_most_related_segments_from_entities(
+                global_config["retrieval_topk_chunks"], node_datas, text_chunks_db, knowledge_graph_inst
+            ))
 
     # visual retrieval
     query_for_visual_retrieval = await _refine_visual_retrieval_query(
@@ -841,16 +940,18 @@ async def videorag_query_multiple_choice(
         for n in segment_results:
             visual_retrieved_segments.add(n['__id__'])
 
-    # causal retrieval (Event-Causal KG, Yan et al. 2026)
+    # causal retrieval (EC-RAG Event-Causal KG, Yan et al. 2026)
     causal_retrieved_segments = set()
-    if event_causal_vdb is not None and event_causal_graph is not None:
-        causal_retrieved_segments = await causal_chain_retrieval(
+    causal_chain_text = ""
+    if use_causal_retrieval and event_causal_vdb is not None and event_causal_graph is not None:
+        causal_retrieved_segments, causal_chain_text = await causal_chain_retrieval(
             query,
             event_causal_vdb,
             event_causal_graph,
             text_chunks_db,
             global_config,
             top_k_events=query_param.top_k,
+            return_chain_text=True,
         )
         print(f"Retrieved Causal Segments {causal_retrieved_segments}")
 
@@ -870,6 +971,80 @@ async def videorag_query_multiple_choice(
     print(query_for_visual_retrieval)
     print(f"Retrieved Visual Segments {visual_retrieved_segments}")
 
+    # ==================== 诊断代码开始 ====================
+    print(f"\n{'='*80}")
+    print(f"🔍 FILTER 阶段诊断")
+    print(f"{'='*80}")
+    print(f"检索到的片段总数: {len(retrieved_segments)}")
+    print(f"  - Entity检索: {len(entity_retrieved_segments)}")
+    print(f"  - Visual检索: {len(visual_retrieved_segments)}")
+    print(f"  - Causal检索: {len(causal_retrieved_segments)}")
+
+    if retrieved_segments:
+        print(f"\n前5个片段ID示例:")
+        for i, s_id in enumerate(list(retrieved_segments)[:5], 1):
+            print(f"  {i}. {s_id}")
+
+    # 检查 video_segments._data 的结构
+    print(f"\n📊 video_segments._data 结构:")
+    video_names = list(video_segments._data.keys())
+    print(f"  可用视频数量: {len(video_names)}")
+    if video_names:
+        first_video = video_names[0]
+        print(f"  示例视频: {first_video}")
+        indices = list(video_segments._data[first_video].keys())
+        print(f"  该视频的片段索引数量: {len(indices)}")
+        print(f"  前5个索引: {indices[:5]}")
+        print(f"  索引类型: {type(indices[0]) if indices else 'N/A'}")
+
+    # 尝试解析每个检索到的片段
+    print(f"\n🔧 解析测试:")
+    parsing_success = 0
+    parsing_failed = 0
+    failed_examples = []
+
+    for s_id in retrieved_segments:
+        video_name = '_'.join(s_id.split('_')[:-1])
+        index = s_id.split('_')[-1]
+
+        try:
+            content = video_segments._data[video_name][index]["content"]
+            parsing_success += 1
+        except KeyError as e:
+            parsing_failed += 1
+            if len(failed_examples) < 3:
+                failed_examples.append({
+                    's_id': s_id,
+                    'parsed_video': video_name,
+                    'parsed_index': index,
+                    'error': str(e)
+                })
+
+    print(f"  ✓ 成功解析: {parsing_success}")
+    print(f"  ✗ 解析失败: {parsing_failed}")
+
+    if failed_examples:
+        print(f"\n❌ 失败示例:")
+        for i, ex in enumerate(failed_examples, 1):
+            print(f"  {i}. 片段ID: {ex['s_id']}")
+            print(f"     解析出的视频名: {ex['parsed_video']}")
+            print(f"     解析出的索引: {ex['parsed_index']} (type: {type(ex['parsed_index'])})")
+            print(f"     错误: {ex['error']}")
+
+            # 尝试显示实际可用的内容
+            parsed_video = ex['parsed_video']
+            if parsed_video in video_segments._data:
+                available = list(video_segments._data[parsed_video].keys())[:3]
+                print(f"     该视频实际可用的索引: {available}")
+            else:
+                print(f"     该视频不在 video_segments._data 中!")
+                similar = [v for v in video_names if ex['parsed_video'] in v or v in ex['parsed_video']]
+                if similar:
+                    print(f"     相似的视频名: {similar[:3]}")
+
+    print(f"{'='*80}\n")
+    # ==================== 诊断代码结束 ====================
+
     already_processed = 0
     async def _filter_single_segment(knowledge: str, segment_key_dp: tuple[str, str]):
         nonlocal use_model_func, already_processed
@@ -888,7 +1063,7 @@ async def videorag_query_multiple_choice(
             flush=True,
         )
         return (segment_key, result)
-    
+
     rough_captions = {}
     for s_id in retrieved_segments:
         video_name = '_'.join(s_id.split('_')[:-1])
@@ -934,6 +1109,15 @@ async def videorag_query_multiple_choice(
     text_units_context = list_of_list_to_csv(text_units_section_list)
 
     retreived_video_context = f"\n-----Retrieved Knowledge From Videos-----\n```csv\n{text_units_context}\n```\n"
+
+    # EC-RAG: inject the serialised event-causal chain (events + pre/post states +
+    # TEMPORAL_NEXT links) so the LLM can reason over causal structure, not just
+    # raw segment captions (faithful to EC-RAG Section 3.3).
+    if causal_chain_text:
+        retreived_video_context += (
+            "\n-----Retrieved Event-Causal Chain (EC-RAG)-----\n"
+            + causal_chain_text + "\n"
+        )
     
     # NOTE: I update here to use a different prompt
     sys_prompt_temp = PROMPTS["videorag_response_for_multiple_choice_question"]

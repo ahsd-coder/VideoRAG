@@ -1,5 +1,6 @@
 import os
 import torch
+import multiprocessing
 import numpy as np
 from PIL import Image
 from tqdm import tqdm
@@ -136,33 +137,81 @@ def adaptive_frame_selection(video, start, end, k=5):
     return dense_times[selected_indices]
 
 
-def segment_caption(video_name, video_path, segment_index2name, transcripts, segment_times_info, caption_result, error_queue):
+def _caption_worker(gpu_id, video_name, video_path, sub_indices,
+                    segment_times_info, transcripts, caption_result, error_queue):
+    """Caption a subset of segments on a single pinned GPU.
+
+    Runs as a spawned child process. CUDA_VISIBLE_DEVICES is set BEFORE any CUDA
+    use so this worker only sees its assigned GPU (re-numbered to cuda:0). Note:
+    `import torch` at module top does not initialise a CUDA context, so setting
+    the env var here still takes effect for the actual model load below.
+    """
+    os.environ["CUDA_VISIBLE_DEVICES"] = str(gpu_id)
+    import torch as _torch
+    from transformers import AutoModel, AutoTokenizer
+    from moviepy.video.io.VideoFileClip import VideoFileClip
     try:
         model = AutoModel.from_pretrained('./MiniCPM-V-2_6-int4', trust_remote_code=True)
         tokenizer = AutoTokenizer.from_pretrained('./MiniCPM-V-2_6-int4', trust_remote_code=True)
         model.eval()
-
         with VideoFileClip(video_path) as video:
-            for index in tqdm(segment_index2name, desc=f"Captioning Video {video_name}"):
-                # Adaptive frame selection: K-Means++ on color histograms
-                # instead of uniform np.linspace
+            for index in tqdm(sub_indices, desc=f"[GPU{gpu_id}] Caption {video_name}"):
                 start, end = segment_times_info[index]["timestamp"]
                 frame_times = adaptive_frame_selection(video, int(start), int(end), k=5)
                 video_frames = encode_video(video, frame_times)
                 segment_transcript = transcripts[index]
                 query = f"The transcript of the current video:\n{segment_transcript}.\nNow provide a description (caption) of the video in English."
                 msgs = [{'role': 'user', 'content': video_frames + [query]}]
-                params = {}
-                params["use_image_id"] = False
-                params["max_slice_nums"] = 2
-                segment_caption = model.chat(
-                    image=None,
-                    msgs=msgs,
-                    tokenizer=tokenizer,
-                    **params
-                )
-                caption_result[index] = segment_caption.replace("\n", "").replace("<|endoftext|>", "")
-                torch.cuda.empty_cache()
+                cap = model.chat(image=None, msgs=msgs, tokenizer=tokenizer,
+                                 use_image_id=False, max_slice_nums=2)
+                caption_result[index] = cap.replace("\n", "").replace("<|endoftext|>", "")
+                _torch.cuda.empty_cache()
+    except Exception as e:
+        error_queue.put(f"[GPU{gpu_id}] Error in _caption_worker: {str(e)}")
+        raise
+
+
+def segment_caption(video_name, video_path, segment_index2name, transcripts, segment_times_info, caption_result, error_queue):
+    """Dispatch caption work across multiple GPUs (one worker per GPU).
+
+    GPU set is chosen from env VIDEORAG_CAPTION_GPUS="0,1,2" (comma-separated);
+    if unset, uses all visible GPUs. Segments are round-robin sharded so each GPU
+    handles ~1/N. Falls back to a single worker when only one GPU / one segment.
+    """
+    try:
+        gpus_env = os.environ.get("VIDEORAG_CAPTION_GPUS", "").strip()
+        if gpus_env:
+            gpu_ids = [int(x) for x in gpus_env.split(",") if x.strip() != ""]
+        else:
+            n = torch.cuda.device_count()
+            gpu_ids = list(range(n)) if n > 0 else [0]
+
+        indices = list(segment_index2name.keys())
+
+        if len(gpu_ids) <= 1 or len(indices) <= 1:
+            # Single-GPU path (original behaviour).
+            _caption_worker(gpu_ids[0], video_name, video_path, indices,
+                            segment_times_info, transcripts, caption_result, error_queue)
+            return
+
+        # Multi-GPU: round-robin shard segments, spawn one worker per GPU.
+        ctx = multiprocessing.get_context("spawn")
+        shards = [indices[i::len(gpu_ids)] for i in range(len(gpu_ids))]
+        procs = []
+        for gpu_id, shard in zip(gpu_ids, shards):
+            if not shard:
+                continue
+            p = ctx.Process(
+                target=_caption_worker,
+                args=(gpu_id, video_name, video_path, shard,
+                      segment_times_info, transcripts, caption_result, error_queue),
+            )
+            p.start()
+            procs.append((gpu_id, p))
+        for gpu_id, p in procs:
+            p.join()
+            if p.exitcode not in (0, None):
+                error_queue.put(f"[GPU{gpu_id}] caption worker exited with code {p.exitcode}")
     except Exception as e:
         error_queue.put(f"Error in segment_caption:\n {str(e)}")
         raise RuntimeError

@@ -123,6 +123,9 @@ def enclose_string_with_quotes(content: Any) -> str:
         return str(content)
     content = str(content)
     content = content.strip().strip("'").strip('"')
+    # Escape curly braces to prevent .format() errors when this content
+    # is embedded in prompt templates that use .format()
+    content = content.replace("{", "{{").replace("}", "}}")
     return f'"{content}"'
 
 

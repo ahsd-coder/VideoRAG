@@ -181,19 +181,49 @@ def saving_video_segments(
         video_segment_cache_path = os.path.join(working_dir, '_cache', video_name)
 
         if ffmpeg:
-            # Fast path: ffmpeg stream copy (no re-encoding, near-instant)
+            # Detect source video codec ONCE. decord (used later by ImageBind for
+            # visual retrieval) cannot decode AV1 — stream-copying AV1 segments makes
+            # them unreadable and drops all visual vectors. So for decord-unfriendly
+            # codecs we transcode the video stream to H.264; otherwise fast copy.
+            DECORD_OK = {"h264", "hevc", "h265", "vp9", "vp8", "mpeg4", "mpeg2video"}
+            src_vcodec = ""
+            ffprobe = _find_ffmpeg_tool('ffprobe')
+            if ffprobe:
+                try:
+                    src_vcodec = subprocess.run(
+                        [ffprobe, '-v', 'error', '-select_streams', 'v:0',
+                         '-show_entries', 'stream=codec_name', '-of',
+                         'default=nw=1:nk=1', video_path],
+                        capture_output=True, text=True, timeout=30
+                    ).stdout.strip()
+                except Exception:
+                    src_vcodec = ""
+            need_transcode = src_vcodec not in DECORD_OK  # unknown → transcode to be safe
+
+            if need_transcode:
+                logger.info(
+                    f"[Split] {video_name}: source vcodec='{src_vcodec or 'unknown'}' "
+                    f"not decord-friendly → transcoding segments to H.264"
+                )
             for index in tqdm(segment_index2name, desc=f"Cutting Video Segments {video_name}"):
                 start, end = segment_times_info[index]["timestamp"][0], segment_times_info[index]["timestamp"][1]
                 video_file = f'{segment_index2name[index]}.{video_output_format}'
                 output_path = os.path.join(video_segment_cache_path, video_file)
-                # -c copy copies streams without re-encoding; -ss after -i for accurate cuts
+                if need_transcode:
+                    codec_args = ['-c:v', 'libx264', '-preset', 'veryfast',
+                                  '-pix_fmt', 'yuv420p', '-c:a', 'aac']
+                    timeout_s = 300
+                else:
+                    codec_args = ['-c', 'copy']
+                    timeout_s = 60
+                # -ss after -i for accurate cuts
                 subprocess.run([
                     ffmpeg, '-y', '-loglevel', 'error',
                     '-ss', str(start), '-i', video_path,
-                    '-t', str(end - start), '-c', 'copy',
+                    '-t', str(end - start), *codec_args,
                     '-avoid_negative_ts', 'make_zero',
                     output_path
-                ], check=True, timeout=60)
+                ], check=True, timeout=timeout_s)
         else:
             # Slow fallback: moviepy re-encode
             with VideoFileClip(video_path) as video:

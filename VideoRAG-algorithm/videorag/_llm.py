@@ -380,14 +380,14 @@ async def ollama_embedding(model_name: str, texts: list[str]) -> np.ndarray:
 
 ollama_config = LLMConfig(
     embedding_func_raw = ollama_embedding,
-    embedding_model_name = "nomic-embed-text:latest",
-    embedding_dim = 768,
+    embedding_model_name = "qwen3-embedding:4b",  # EC-RAG 论文所用；2560维，中英检索质量0优于 nomic
+    embedding_dim = 2560,
     embedding_max_token_size=8192,
-    embedding_batch_num = 1,
-    embedding_func_max_async = 1,
+    embedding_batch_num = 8,   # 降低防崩溃：32+async4 两次crash；8+async2更保守
+    embedding_func_max_async = 2,  # 同上，减少并发压力
     query_better_than_threshold = 0.2,
     best_model_func_raw = ollama_complete ,
-    best_model_name = "gemma2:latest", # need to be a solid instruct model 知识图谱构建和实体抽取，这类模型需要高质量的输出，格式严格（JSON），所以用强模型;Gemma2 在英文指令遵循和结构化输出上更可靠，Qwen2.5:7b 中文强但做严格JSON任务时容易"自由发挥"，导致解析失败卡死。
+    best_model_name = "qwen2.5:14b", # 14B 指令遵循强，SES/实体抽取的严格JSON稳定，最终生成质量优于 gemma2-9B。有 SES 容错解析(_extract_json_block)兜底。
     best_model_max_token_size = 32768,
     best_model_max_async  = 1,
     cheap_model_func_raw = ollama_mini_complete,
@@ -395,6 +395,126 @@ ollama_config = LLMConfig(
     cheap_model_max_token_size = 32768,
     cheap_model_max_async = 1
 )
+
+###### vLLM Configuration
+# vLLM 以 OpenAI 兼容 API 对外暴露，LLM 和 Embedding 分别跑在不同端口
+# 启动命令（集合4跑完后执行）：
+#   CUDA_VISIBLE_DEVICES=0 vllm serve Qwen/Qwen2.5-14B-Instruct \
+#       --port 8000 --gpu-memory-utilization 0.85 --max-model-len 32768
+#   CUDA_VISIBLE_DEVICES=0 vllm serve Qwen/Qwen3-Embedding-4B \
+#       --port 8001 --task embed --gpu-memory-utilization 0.15
+
+VLLM_LLM_BASE_URL   = os.environ.get("VLLM_LLM_BASE_URL",   "http://127.0.0.1:8000/v1")
+VLLM_EMBED_BASE_URL = os.environ.get("VLLM_EMBED_BASE_URL",  "http://127.0.0.1:8001/v1")
+
+# 本地模型路径（ModelScope 下载到 /home/gjw/models/）
+VLLM_LLM_MODEL_PATH   = "/home/gjw/models/Qwen2.5-14B-Instruct"
+VLLM_EMBED_MODEL_PATH = "/home/gjw/models/Qwen3-Embedding-4B"
+
+global_vllm_llm_client   = None
+global_vllm_embed_client = None
+
+def get_vllm_llm_client_instance():
+    global global_vllm_llm_client
+    if global_vllm_llm_client is None:
+        global_vllm_llm_client = AsyncOpenAI(
+            base_url=VLLM_LLM_BASE_URL,
+            api_key="EMPTY",   # vLLM 不需要真正的 key
+        )
+    return global_vllm_llm_client
+
+def get_vllm_embed_client_instance():
+    global global_vllm_embed_client
+    if global_vllm_embed_client is None:
+        global_vllm_embed_client = AsyncOpenAI(
+            base_url=VLLM_EMBED_BASE_URL,
+            api_key="EMPTY",
+        )
+    return global_vllm_embed_client
+
+@retry(
+    stop=stop_after_attempt(5),
+    wait=wait_exponential(multiplier=1, min=4, max=10),
+    retry=retry_if_exception_type((RateLimitError, APIConnectionError)),
+)
+async def vllm_complete_if_cache(
+    model, prompt, system_prompt=None, history_messages=[], **kwargs
+) -> str:
+    client = get_vllm_llm_client_instance()
+    hashing_kv: BaseKVStorage = kwargs.pop("hashing_kv", None)
+    use_cache = kwargs.pop("use_cache", True)
+
+    messages = []
+    if system_prompt:
+        messages.append({"role": "system", "content": system_prompt})
+    messages.extend(history_messages)
+    messages.append({"role": "user", "content": prompt})
+
+    if hashing_kv is not None and use_cache:
+        args_hash = compute_args_hash(model, messages)
+        if_cache_return = await hashing_kv.get_by_id(args_hash)
+        if if_cache_return is not None and if_cache_return["return"] is not None:
+            return if_cache_return["return"]
+
+    response = await client.chat.completions.create(
+        model=model, messages=messages
+    )
+    content = response.choices[0].message.content
+
+    if hashing_kv is not None and use_cache:
+        await hashing_kv.upsert(
+            {args_hash: {"return": content, "model": model}}
+        )
+        await hashing_kv.index_done_callback()
+
+    return content
+
+async def vllm_complete(model_name, prompt, system_prompt=None, history_messages=[], **kwargs) -> str:
+    return await vllm_complete_if_cache(
+        model_name, prompt,
+        system_prompt=system_prompt,
+        history_messages=history_messages,
+    )
+
+async def vllm_mini_complete(model_name, prompt, system_prompt=None, history_messages=[], **kwargs) -> str:
+    return await vllm_complete_if_cache(
+        model_name, prompt,
+        system_prompt=system_prompt,
+        history_messages=history_messages,
+    )
+
+@retry(
+    stop=stop_after_attempt(5),
+    wait=wait_exponential(multiplier=1, min=4, max=10),
+    retry=retry_if_exception_type((RateLimitError, APIConnectionError)),
+)
+async def vllm_embedding(model_name: str, texts: list[str]) -> np.ndarray:
+    client = get_vllm_embed_client_instance()
+    response = await client.embeddings.create(
+        model=model_name, input=texts, encoding_format="float"
+    )
+    return np.array([dp.embedding for dp in response.data])
+
+vllm_config = LLMConfig(
+    embedding_func_raw       = vllm_embedding,
+    embedding_model_name     = VLLM_EMBED_MODEL_PATH,  # 本地路径
+    embedding_dim            = 2560,
+    embedding_max_token_size = 8192,
+    embedding_batch_num      = 32,   # vLLM 并发稳定，可用大 batch
+    embedding_func_max_async = 8,
+    query_better_than_threshold = 0.2,
+
+    best_model_func_raw      = vllm_complete,
+    best_model_name          = VLLM_LLM_MODEL_PATH,   # 本地路径
+    best_model_max_token_size= 32768,
+    best_model_max_async     = 8,    # vLLM continuous batching，高并发不崩
+
+    cheap_model_func_raw     = vllm_mini_complete,
+    cheap_model_name         = VLLM_LLM_MODEL_PATH,
+    cheap_model_max_token_size = 32768,
+    cheap_model_max_async    = 8,
+)
+
 ###### DeepSeek Configuration
 @retry(
     stop=stop_after_attempt(5),

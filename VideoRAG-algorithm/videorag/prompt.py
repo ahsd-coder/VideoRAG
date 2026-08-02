@@ -230,7 +230,6 @@ Output:
 """
 
 
-
 PROMPTS[
     "query_rewrite_for_visual_retrieval"
 ] = """-Goal-
@@ -262,7 +261,6 @@ Question: {input_text}
 ######################
 Output:
 """
-
 
 
 PROMPTS[
@@ -303,19 +301,38 @@ PROMPTS[
     "filtering_segment"
 ] = """---Role---
 
-You are a helpful assistant to determine whether the video may contain information relevant to the knowledge based on its rough caption.
-Please note that this is a rough caption of the video segments, which means it may not directly contain the answer but may indicate that the video segment is likely to contain information relevant to answering the question. 
+You are a relevance judge for a video retrieval system. Your job is to decide whether a video segment might be useful for answering a query.
 
----Video Caption---
+---Important Notes---
+
+1. This caption is automatically generated and may be imprecise or incomplete — the actual segment may contain more relevant information than the caption suggests.
+2. Be INCLUSIVE rather than strict. It is better to keep a potentially useful segment than to discard something important.
+3. When in doubt, answer "yes".
+
+---Video Segment Caption---
 
 {caption}
 
----Knowledge We Need---
+---User Query---
 
 {knowledge}
 
----Answer---
-Please provide an answer that begins with "yes" or "no," followed by a brief step-by-step explanation.
+---Criteria---
+
+Answer "yes" if ANY of the following apply:
+- The caption mentions topics, people, objects, or events related to the query.
+- The caption describes a scene or context that could help answer the query, even indirectly.
+- You are uncertain but see some potential relevance.
+
+Answer "no" ONLY if you are confident the segment is completely unrelated to the query.
+
+---Output Format---
+
+Start your answer with "yes" or "no", followed by a brief explanation.
+
+Example:
+yes, the caption mentions AI agent frameworks which is directly related to the query about comparing agent systems.
+
 Answer:
 """
 
@@ -445,54 +462,86 @@ Key points:
 # Event-Causal Knowledge Graph Prompts (Yan et al. 2026)
 # =============================================================================
 
+# -----------------------------------------------------------------------------
+# SES (State-Event-State) Extraction Prompt
+# Faithful to EC-RAG (Yan et al. 2026), Section 3.2 & Appendix B.1.
+# Entity-First, two-step CoT, strict JSON output.
+# -----------------------------------------------------------------------------
 PROMPTS[
-    "event_extraction"
-] = """-Goal-
-Given a video segment's caption and transcript, identify all atomic events that occur in this segment.
-An "event" is a self-contained occurrence, action, or state change that happens at a specific time in the video.
-Focus on events that are meaningful for understanding the video's narrative or causal structure.
+    "ses_extraction"
+] = """You are a state-of-the-art Video-to-Graph Parser designed for high-fidelity Event-Causal Reasoning.
+Given a video segment's caption and transcript, deconstruct it into a chronological State-Event-State (SES) causal graph.
 
--Steps-
-1. Read the caption and transcript carefully to understand what happens in this segment.
-2. Identify all distinct atomic events. Each event should be a single, self-contained occurrence.
-3. For each event, extract the following information:
-   - event_description: A concise description of what happened (one sentence, in English)
-   - event_actors: The main entities (people, objects, concepts) involved in the event, separated by commas
-   - event_type: One of [action, state_change, speech, decision, discovery, conflict, resolution, other]
+[Strict Graph Construction Rules]
+1. Task-Level Physical Actions (the "Goldilocks" Granularity): Describe specific, observable actions and interactions.
+   - DO NOT use vague umbrella terms (e.g., "performing", "doing something").
+   - DO NOT over-decompose into meaningless micro-motions (e.g., "moving finger 1cm").
+2. Visual Attribute Injection (CRITICAL): NEVER use generic IDs or pronouns. Refer to each entity by distinct
+   visual/semantic attributes (e.g., write "the instructor in the black shirt", NOT "he" or "E1"). This ensures
+   downstream topological merging works correctly.
+3. Micro-Detail Exhaustion: Capture secondary/background events, held props, on-screen text, and named concepts.
+4. Direct Evidence Only: Preserve only information directly supported by the caption/transcript. If something is
+   uncertain or not stated, use an empty string.
+5. Strict Causality: An "event" is a directed transition bridging a "pre_state" and a "post_state".
+   - pre_state: the situation/condition immediately BEFORE the event.
+   - post_state: the situation/condition immediately AFTER the event (this often becomes the pre_state of the next event).
+6. Chronology: Assign a 1-based integer "temporal_order" to each event, reflecting the order it occurs in the segment.
 
-Format each event as:
-("event"<|><event_description><|><event_actors><|><event_type>)
+[Two-Step Chain-of-Thought]
+Step 1 - scene_inventory: Enumerate ALL interacting entities (people, objects, concepts) with their distinct attributes.
+Step 2 - events: Map the task-level physical/semantic events, each with its pre_state and post_state.
 
-4. Return output in English. Use ## as the delimiter between events.
-5. When finished, output <|COMPLETE|>
+[Output Format]
+Output ONLY pure JSON, no markdown, no commentary. Use this exact schema:
+{{
+  "scene_inventory": ["<entity with visual/semantic attribute>", ...],
+  "events": [
+    {{
+      "temporal_order": <int>,
+      "location": "<where it happens, or empty string>",
+      "description": "<one concise sentence describing the event>",
+      "entities": ["<entity>", ...],
+      "pre_state": "<situation before the event>",
+      "post_state": "<situation after the event>"
+    }}
+  ]
+}}
 
 ######################
--Examples-
+-Example-
 ######################
-Example 1:
-Caption: The instructor explains the backpropagation algorithm using a diagram on the whiteboard.
-Transcript: "So this is how gradients flow backward through the network. Each layer receives the gradient from the layer above..."
+Segment Content:
+Caption: The instructor explains the backpropagation algorithm using a diagram on the whiteboard, then assigns homework.
+Transcript: "So this is how gradients flow backward through the network. For next week, complete exercises 1 to 5."
 
-################
 Output:
-("event"<|>"The instructor explains the backpropagation algorithm using a whiteboard diagram"<|>"instructor, backpropagation algorithm, whiteboard"<|>"speech")##
-("event"<|>"Gradients flow backward through the network layers during backpropagation"<|>"gradients, network layers"<|>"state_change")<|COMPLETE|>
+{{
+  "scene_inventory": ["the instructor at the whiteboard", "the whiteboard diagram", "the backpropagation algorithm", "the homework exercises"],
+  "events": [
+    {{
+      "temporal_order": 1,
+      "location": "classroom whiteboard",
+      "description": "The instructor explains the backpropagation algorithm using the whiteboard diagram",
+      "entities": ["the instructor at the whiteboard", "the backpropagation algorithm", "the whiteboard diagram"],
+      "pre_state": "the students do not yet understand how gradients flow backward",
+      "post_state": "the students have seen an explanation of backward gradient flow"
+    }},
+    {{
+      "temporal_order": 2,
+      "location": "classroom",
+      "description": "The instructor assigns homework exercises 1 to 5 for next week",
+      "entities": ["the instructor at the whiteboard", "the homework exercises"],
+      "pre_state": "the students have seen an explanation of backward gradient flow",
+      "post_state": "the students are assigned homework exercises 1 to 5"
+    }}
+  ]
+}}
 
-#############################
-Example 2:
-Caption: A character named Alex confronts another character named Jordan about a missing document. Jordan denies taking it.
-Transcript: "I know you took the file, Jordan. Just admit it." "I have no idea what you're talking about, Alex."
-
-################
-Output:
-("event"<|>"Alex confronts Jordan about a missing document"<|>"Alex, Jordan, missing document"<|>"conflict")##
-("event"<|>"Jordan denies taking the missing document"<|>"Jordan, Alex, missing document"<|>"action")<|COMPLETE|>
-
-#############################
+######################
 -Real Data-
 ######################
 Segment Content: {segment_content}
-######################
+
 Output:
 """
 
