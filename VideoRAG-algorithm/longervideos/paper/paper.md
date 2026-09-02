@@ -798,7 +798,203 @@ EC-RAG达到51.8%综合胜率，略优于实体图（48.2%）。**密度是最�
 
 ---
 
-## 参考文献
+## Appendix C: EC-RAG Implementation Details
+
+This appendix provides the technical implementation details of the Event-Causal RAG (EC-RAG) framework used in our experiments, adapted from Yan et al. (2026).
+
+### C.1 Algorithm Pseudocode
+
+The EC-RAG pipeline consists of three main phases: (1) Perception Layer for video chunking, (2) Cognition Layer for SES graph construction, and (3) Retrieval & Generation with deduplication.
+
+```
+Algorithm 1: EC-RAG Construction and Retrieval
+Input: Video V, Vision encoder Ψv, VLM, Embedder Ψe, Query Q
+      ASR Speech Islands A, Thresholds τevent, τbg, γ, τdup
+Output: Event-Causal Knowledge Graph G, Answer A
+
+// Phase 1: Dual-Modal Sentinel Chunking
+B ← ∅, C ← ∅
+for each frame ft ∈ V do
+    vt ← Ψv(ft)              // Extract vision features
+    B ← B ∪ {vt}
+    
+    if |B| ≥ 2 then
+        // Compute smoothed visual dissimilarity
+        Dsmooth(t) ← GaussianFilter(1 - cos(vt-1, vt))
+        
+        if Dsmooth(t) > τevent and is_local_maximum then
+            tcore ← t        // Core event boundary
+            
+            // Expand boundaries using background threshold
+            tstart ← TraverseBack(tcore, until Dsmooth < τbg)
+            tend ← TraverseForward(tcore, until Dsmooth < τbg)
+            
+            // Align with speech islands (audio modality)
+            for each speech island [tas, tae] ∈ A do
+                if [tas, tae] ∩ [tstart, tend] ≠ ∅ then
+                    tstart ← min(tstart, tas)
+                    tend ← max(tend, tae)
+            
+            C ← C ∪ {Sample(V[tstart:tend], 8.0 FPS)}
+
+// Phase 2: SES Graph Construction & Merging
+G ← ∅, Sprev ← NULL
+for each chunk c ∈ C do
+    // Generate State-Event-State triple via VLM
+    SESc ← VLM.Generate(c, Prompt_SES)
+    G ← G ∪ SESc
+    Insert SESc to VectorDB
+    
+    // Merge adjacent chunks via state alignment
+    if Sprev ≠ NULL then
+        vpost ← Ψe(Sprev.Post_State)
+        vpre ← Ψe(SESc.Pre_State)
+        
+        if cos(vpost, vpre) > γ then
+            Create edge: Sprev --[:TEMPORAL_NEXT]--> SESc
+
+    Sprev ← SESc
+
+// Phase 3: Retrieval & Generation with Deduplication
+Anchors ← VectorDB.TopK(Ψe(Q), K=3)
+Mseen ← ∅, Ctx ← ∅
+
+for each anchor a ∈ Anchors do
+    SubGraph ← GraphDB.BFS(a, MaxHops=2)
+    
+    for each node n ∈ SubGraph do
+        // Deduplication via semantic similarity
+        if Mseen ≠ ∅ then
+            Smax ← max{cos(Ψe(n.Text), v) | v ∈ Mseen}
+        else
+            Smax ← 0
+        
+        if Smax ≤ τdup then
+            Ctx ← Ctx ∪ {n.Text}
+            Mseen ← Mseen ∪ {Ψe(n.Text)}
+
+A ← LLM.Generate(Q, Ctx)
+return A
+```
+
+**Key Parameters:**
+- `τevent = 0.72`: Event boundary detection threshold
+- `τbg = 0.60`: Background stability threshold
+- `γ = 0.75`: State alignment threshold for temporal merging
+- `τdup = 0.85`: Deduplication threshold to avoid redundant context
+- Sampling rate: 8.0 FPS for selected chunks
+
+### C.2 SES Graph Construction Prompt
+
+To ensure reproducible graph construction, we provide the core prompt template used with the VLM (Vision-Language Model):
+
+```
+[SYSTEM PROMPT]
+You are a Video-to-Graph Parser for Event-Causal Reasoning.
+
+[Graph Construction Rules]:
+1. Task-Level Physical Actions: Describe specific, observable tasks
+   - AVOID vague terms (e.g., "performing")
+   - AVOID over-decomposition into low-level kinematics
+   
+2. Visual Attribute Injection (CRITICAL): NEVER use pronouns or generic IDs
+   - Write "The man in the black t-shirt", NOT "E1" or "he"
+   - Enables seamless graph merging across chunks
+   
+3. Micro-Detail Exhaustion: Capture secondary events, props, screen text
+   
+4. Direct Visual Evidence: Preserve only visible evidence
+   - If text is unclear, output empty string
+   
+5. Strict Causality: Link Pre-State → Event → Post-State explicitly
+   
+6. Output Format: JSON only
+
+[USER PROMPT]
+Timestamp: {start_time} - {end_time}
+Audio Context: {transcribed_speech}
+
+Task: Deconstruct this video chunk into a causal graph.
+
+Step 1: List ALL entities with visual attributes
+   Example: "The woman in red jacket", "The blue laptop"
+
+Step 2: Identify task-level physical actions
+   Example: "opens the laptop lid", "pours water into the glass"
+
+Step 3: For each action, define:
+   - Pre-State: What conditions enable this action?
+   - Event: The action itself (active verb + object)
+   - Post-State: What changed after the action?
+   - Causal Relations: Which events CAUSE or ENABLE other events?
+
+Output as JSON:
+{
+  "entities": [...],
+  "events": [
+    {
+      "event_id": "E1",
+      "description": "The woman in red jacket opens the laptop lid",
+      "pre_state": "Laptop is closed on the desk",
+      "post_state": "Laptop screen is visible and powered on",
+      "causal_relations": {
+        "causes": ["E2"],
+        "enables": ["E3", "E4"]
+      }
+    },
+    ...
+  ]
+}
+```
+
+### C.3 Dual-Store Retrieval Strategy
+
+EC-RAG employs a **hybrid retrieval strategy** combining vector similarity and graph traversal:
+
+**Vector DB (Semantic Matching):**
+- Embedding model: `text-embedding-3-large` (OpenAI) or equivalent
+- TopK = 3 anchor nodes retrieved based on cosine similarity
+- Serves as entry points for graph traversal
+
+**Graph DB (Topological Expansion):**
+- BFS traversal from each anchor, MaxHops = 2
+- Follows edges: `[:TEMPORAL_NEXT]`, `[:CAUSES]`, `[:ENABLES]`, `[:FEEDBACK_LOOP]`
+- Collects connected SES triples for comprehensive context
+
+**Deduplication:**
+- Compute pairwise similarity between all retrieved nodes
+- Threshold τdup = 0.85 filters near-duplicate content
+- Reduces token cost while maintaining information coverage
+
+### C.4 Implementation Stack
+
+**Vision Encoder:** CLIP ViT-L/14 for chunk boundary detection
+
+**VLM for SES Generation:** Qwen2-VL-7B-Instruct or GPT-4V
+
+**Embedder:** OpenAI text-embedding-3-large (3072-dim)
+
+**Vector DB:** Milvus or Qdrant
+
+**Graph DB:** Neo4j with Cypher queries
+
+**LLM for Final Generation:** GPT-4 or Claude-3.5-Sonnet
+
+**ASR:** Whisper-large-v3 for speech island extraction
+
+### C.5 Differences from Our Entity Graph Baseline
+
+| Aspect | EC-RAG (Event-Causal) | Entity Graph |
+|--------|----------------------|--------------|
+| **Node Type** | Events + States | Entities + Concepts |
+| **Edge Type** | :CAUSES, :ENABLES, :TEMPORAL_NEXT | :PERFORMS, :HAS_PROPERTY, :PART_OF |
+| **Graph Structure** | Directed acyclic + feedback loops | Mostly undirected / bidirectional |
+| **Chunking** | Dual-modal sentinel (vision+audio) | Fixed-length (30s segments) |
+| **Merging Strategy** | State alignment (cos > 0.75) | No cross-segment merging |
+| **Retrieval** | Vector + Graph BFS (2-hop) | Vector only |
+| **Best For** | Procedural, causal reasoning | Descriptive, enumeration |
+
+This implementation strictly follows Yan et al. (2026) to ensure fair comparison in our experiments.
 
 详见 `references.bib` 文件。
 
