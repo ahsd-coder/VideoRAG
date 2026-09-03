@@ -1425,20 +1425,20 @@ for each frame ft ∈ V do
     if |B| ≥ 2 then
         // Compute smoothed visual dissimilarity
         Dsmooth(t) ← GaussianFilter(1 - cos(vt-1, vt))
-      
+    
         if Dsmooth(t) > τevent and is_local_maximum then
             tcore ← t        // Core event boundary
-          
+        
             // Expand boundaries using background threshold
             tstart ← TraverseBack(tcore, until Dsmooth < τbg)
             tend ← TraverseForward(tcore, until Dsmooth < τbg)
-          
+        
             // Align with speech islands (audio modality)
             for each speech island [tas, tae] ∈ A do
                 if [tas, tae] ∩ [tstart, tend] ≠ ∅ then
                     tstart ← min(tstart, tas)
                     tend ← max(tend, tae)
-          
+        
             C ← C ∪ {Sample(V[tstart:tend], 8.0 FPS)}
 
 // Phase 2: SES Graph Construction & Merging
@@ -1453,7 +1453,7 @@ for each chunk c ∈ C do
     if Sprev ≠ NULL then
         vpost ← Ψe(Sprev.Post_State)
         vpre ← Ψe(SESc.Pre_State)
-      
+    
         if cos(vpost, vpre) > γ then
             Create edge: Sprev --[:TEMPORAL_NEXT]--> SESc
 
@@ -1472,7 +1472,7 @@ for each anchor a ∈ Anchors do
             Smax ← max{cos(Ψe(n.Text), v) | v ∈ Mseen}
         else
             Smax ← 0
-      
+    
         if Smax ≤ τdup then
             Ctx ← Ctx ∪ {n.Text}
             Mseen ← Mseen ∪ {Ψe(n.Text)}
