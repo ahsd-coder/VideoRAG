@@ -380,6 +380,7 @@ Agentic_RAG --[:USES]--> LangGraph
 
 这5个维度来自先前工作的既定评估框架，已在多个RAG研究中得到验证。
 
+
 ### 4.3 实验3：Ablation Study
 
 为验证我们方法中各组件的贡献，我们进行了消融实验：
@@ -1424,23 +1425,22 @@ LongerVideos is a comprehensive benchmark dataset designed to evaluate knowledge
 
 ### B.1 Dataset Overview
 
-**Input Data:** A diverse collection of long videos, with durations ranging from 18 minutes to 3 hours.
+**Input Data:** A diverse collection of long videos, with durations ranging from minutes to hours.
 
-**Questions:** Open-ended questions carefully tailored to each video collection, covering factual, procedural, causal, and enumerative query types.
+**Questions:** A series of open-ended questions carefully tailored to the provided video list..
 
-**Expected Output:** Comprehensive responses generated based on information extracted from video knowledge graphs.
+**Expected Output:** Individual responses generated based on the information extracted from videos.
 
 ### B.2 Construction Methodology
 
 The LongerVideos dataset was constructed by systematically curating diverse video collections from YouTube, leveraging thematic content across educational lectures, documentaries, and entertainment shows. Major data sources comprised:
 
 1. **Online course videos**: Typically segmented into multiple recordings corresponding to distinct course chapters (e.g., AI/ML lectures, trading tutorials, decision science courses)
-
 2. **Documentary series**: BBC nature documentaries, cultural exploration series
-
 3. **Live event recordings**: Award ceremonies, tech conferences, interviews
 
 For each video, we employed the `yt-dlp` tool to download content in 720p resolution. Questions were prepared semi-automatically with human verification, covering diverse query types:
+
 - **Factual** ("What is X?")
 - **Procedural** ("How does X work?")
 - **Causal** ("Why does X happen?")
@@ -1453,48 +1453,50 @@ The final LongerVideos dataset consists of **22 carefully curated video lists**,
 
 **Table B.1: Detailed statistics of the LongerVideos dataset**
 
-| Video Type | Video List Name | #video | #query | Overall Duration |
-|------------|-----------------|--------|--------|------------------|
-| **Lecture** | climate-week-at-columbia-engineering | 4 | 26 | 5.91 hours |
-| | rag-lecture | 19 | 38 | 5.34 hours |
-| | ai-agent-lecture | 39 | 45 | 9.35 hours |
-| | daubechies-wavelet-lecture | 4 | 25 | 8.97 hours |
-| | daubechies-art-and-mathematics-lecture | 4 | 21 | 4.87 hours |
-| | tech-ceo-lecture | 4 | 31 | 4.83 hours |
-| | dspy-lecture | 9 | 38 | 4.22 hours |
-| | trading-for-beginners | 2 | 23 | 4.11 hours |
-| | ahp-superdecision | 11 | 24 | 2.40 hours |
-| | decision-making-science | 4 | 26 | 2.20 hours |
-| | 12-days-of-openai | 12 | 35 | 3.43 hours |
-| | autogen | 23 | 44 | 8.70 hours |
-| **Documentary** | fights-in-animal-kingdom | 1 | 11 | 3.00 hours |
-| | nature-scenes | 1 | 17 | 3.98 hours |
-| | education-united-nations | 6 | 39 | 8.41 hours |
-| | elon-musk | 1 | 13 | 8.63 hours |
-| | jeff-bezos | 3 | 34 | 4.47 hours |
-| **Entertainment** | black-myth-wukong | 10 | 23 | 21.36 hours |
-| | primetime-emmy-awards | 3 | 17 | 7.31 hours |
-| | journey-through-china | 1 | 27 | 3.37 hours |
-| | fia-awards | 1 | 27 | 3.02 hours |
-| | game-awards | 2 | 18 | 6.73 hours |
+| Video Type              | Video List Name                        | #video | #query | #overall duration |
+| ----------------------- | -------------------------------------- | ------ | ------ | ----------------- |
+| **Lecture**       | climate-week-at-columbia-engineering   | 4      | 26     | 5.91 hours        |
+|                         | rag-lecture                            | 19     | 38     | 5.34 hours        |
+|                         | ai-agent-lecture                       | 39     | 45     | 9.35 hours        |
+|                         | daubechies-wavelet-lecture             | 4      | 25     | 8.97 hours        |
+|                         | daubechies-art-and-mathematics-lecture | 4      | 21     | 4.87 hours        |
+|                         | tech-ceo-lecture                       | 4      | 31     | 4.83 hours        |
+|                         | dspy-lecture                           | 9      | 38     | 4.22 hours        |
+|                         | trading-for-beginners                  | 2      | 23     | 4.11 hours        |
+|                         | ahp-superdecision                      | 11     | 24     | 2.40 hours        |
+|                         | decision-making-science                | 4      | 26     | 2.20 hours        |
+|                         | 12-days-of-openai                      | 12     | 35     | 3.43 hours        |
+|                         | autogen                                | 23     | 44     | 8.70 hours        |
+| **Documentary**   | fights-in-animal-kingdom               | 1      | 11     | 3.00 hours        |
+|                         | nature-scenes                          | 1      | 17     | 3.98 hours        |
+|                         | education-united-nations               | 6      | 39     | 8.41 hours        |
+|                         | elon-musk                              | 1      | 13     | 8.63 hours        |
+|                         | jeff-bezos                             | 3      | 34     | 4.47 hours        |
+| **Entertainment** | black-myth-wukong                      | 10     | 23     | 21.36 hours       |
+|                         | primetime-emmy-awards                  | 3      | 17     | 7.31 hours        |
+|                         | journey-through-china                  | 1      | 27     | 3.37 hours        |
+|                         | fia-awards                             | 1      | 27     | 3.02 hours        |
+|                         | game-awards                            | 2      | 18     | 6.73 hours        |
 
 ### B.4 Domain Distribution
 
 - **Lecture** (Educational): 12 video lists, 376 questions (62.5%)
+
   - Focus: Algorithms, system architectures, technical workflows, scientific principles
   - Typical queries: "How does X work?", "Why is Y effective?", "Explain the process of Z"
-
 - **Documentary** (Descriptive): 5 video lists, 114 questions (18.9%)
+
   - Focus: Natural phenomena, animal behaviors, cultural elements, biographical narratives
   - Typical queries: "What are the characteristics of X?", "List all Y", "Who does what?"
-
 - **Entertainment** (Mixed): 5 video lists, 112 questions (18.6%)
+
   - Focus: Gaming analysis, award ceremonies, cultural journeys, live events
   - Typical queries: Mix of factual, descriptive, and event-based questions
 
 ### B.5 Data Sources and Licensing
 
 All videos are sourced from publicly available YouTube content, including:
+
 - Academic lectures from universities and research institutions
 - BBC nature documentaries (publicly shared clips)
 - Official live-streamed award ceremonies
@@ -1525,20 +1527,20 @@ for each frame ft ∈ V do
     if |B| ≥ 2 then
         // Compute smoothed visual dissimilarity
         Dsmooth(t) ← GaussianFilter(1 - cos(vt-1, vt))
-    
+  
         if Dsmooth(t) > τevent and is_local_maximum then
             tcore ← t        // Core event boundary
-        
+    
             // Expand boundaries using background threshold
             tstart ← TraverseBack(tcore, until Dsmooth < τbg)
             tend ← TraverseForward(tcore, until Dsmooth < τbg)
-        
+    
             // Align with speech islands (audio modality)
             for each speech island [tas, tae] ∈ A do
                 if [tas, tae] ∩ [tstart, tend] ≠ ∅ then
                     tstart ← min(tstart, tas)
                     tend ← max(tend, tae)
-        
+    
             C ← C ∪ {Sample(V[tstart:tend], 8.0 FPS)}
 
 // Phase 2: SES Graph Construction & Merging
@@ -1553,7 +1555,7 @@ for each chunk c ∈ C do
     if Sprev ≠ NULL then
         vpost ← Ψe(Sprev.Post_State)
         vpre ← Ψe(SESc.Pre_State)
-    
+  
         if cos(vpost, vpre) > γ then
             Create edge: Sprev --[:TEMPORAL_NEXT]--> SESc
 
@@ -1572,7 +1574,7 @@ for each anchor a ∈ Anchors do
             Smax ← max{cos(Ψe(n.Text), v) | v ∈ Mseen}
         else
             Smax ← 0
-    
+  
         if Smax ≤ τdup then
             Ctx ← Ctx ∪ {n.Text}
             Mseen ← Mseen ∪ {Ψe(n.Text)}
