@@ -1371,11 +1371,11 @@ The final LongerVideos dataset consists of **22 carefully curated video lists** 
 | | education-united-nations | 6 | 39 | 8.41 hours |
 | | elon-musk | 1 | 13 | 8.63 hours |
 | | jeff-bezos | 3 | 34 | 4.47 hours |
-| **Entertainment** | black-myth-wukong | 10 | 30 | 4.28 hours |
-| | primetime-emmy-awards | 3 | 25 | 7.18 hours |
-| | journey-through-china | 4 | 36 | 4.45 hours |
-| | fia-awards | 1 | 18 | 6.02 hours |
-| | game-awards | 1 | 30 | 9.12 hours |
+| | black-myth-wukong | 10 | 23 | 21.36 hours |
+| | primetime-emmy-awards | 3 | 17 | 7.31 hours |
+| **Entertainment** | journey-through-china | 1 | 27 | 3.37 hours |
+| | fia-awards | 1 | 27 | 3.02 hours |
+| | game-awards | 2 | 18 | 6.73 hours |
 
 ### B.4 Domain Distribution
 
@@ -1383,12 +1383,12 @@ The final LongerVideos dataset consists of **22 carefully curated video lists** 
   - Focus: Algorithms, system architectures, technical workflows, scientific principles
   - Typical queries: "How does X work?", "Why is Y effective?", "Explain the process of Z"
 
-- **Documentary** (Descriptive): 5 video lists, 114 questions (20.1%)
-  - Focus: Natural phenomena, animal behaviors, cultural elements, biographical narratives
+- **Documentary** (Descriptive): 7 video lists, 154 questions (27.1%)
+  - Focus: Natural phenomena, animal behaviors, cultural elements, biographical narratives, gaming analysis
   - Typical queries: "What are the characteristics of X?", "List all Y", "Who does what?"
 
-- **Entertainment** (Mixed): 5 video lists, 139 questions (24.5%)
-  - Focus: Event highlights, award recipients, game features, interview insights
+- **Entertainment** (Event-based): 3 video lists, 72 questions (12.7%)
+  - Focus: Award ceremonies, cultural journeys, live events
   - Typical queries: Mix of factual and descriptive
 
 ### B.5 Data Sources and Licensing
