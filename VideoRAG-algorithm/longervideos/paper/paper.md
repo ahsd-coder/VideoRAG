@@ -1348,7 +1348,7 @@ For each video, we employed the `yt-dlp` tool to download content in 720p resolu
 
 ### B.3 Dataset Statistics
 
-The final LongerVideos dataset consists of **22 carefully curated video lists** with **568 verified questions**, totaling approximately **122 hours** of video content across **165 individual videos**.
+The final LongerVideos dataset consists of **22 carefully curated video lists**, totaling approximately **122 hours** of video content across **165 individual videos**.
 
 **Table B.1: Detailed statistics of the LongerVideos dataset**
 
@@ -1371,25 +1371,25 @@ The final LongerVideos dataset consists of **22 carefully curated video lists** 
 | | education-united-nations | 6 | 39 | 8.41 hours |
 | | elon-musk | 1 | 13 | 8.63 hours |
 | | jeff-bezos | 3 | 34 | 4.47 hours |
-| | black-myth-wukong | 10 | 23 | 21.36 hours |
+| **Entertainment** | black-myth-wukong | 10 | 23 | 21.36 hours |
 | | primetime-emmy-awards | 3 | 17 | 7.31 hours |
-| **Entertainment** | journey-through-china | 1 | 27 | 3.37 hours |
+| | journey-through-china | 1 | 27 | 3.37 hours |
 | | fia-awards | 1 | 27 | 3.02 hours |
 | | game-awards | 2 | 18 | 6.73 hours |
 
 ### B.4 Domain Distribution
 
-- **Lecture** (Educational): 12 video lists, 376 questions (66.2%)
+- **Lecture** (Educational): 12 video lists, 376 questions (62.5%)
   - Focus: Algorithms, system architectures, technical workflows, scientific principles
   - Typical queries: "How does X work?", "Why is Y effective?", "Explain the process of Z"
 
-- **Documentary** (Descriptive): 7 video lists, 154 questions (27.1%)
-  - Focus: Natural phenomena, animal behaviors, cultural elements, biographical narratives, gaming analysis
+- **Documentary** (Descriptive): 5 video lists, 114 questions (18.9%)
+  - Focus: Natural phenomena, animal behaviors, cultural elements, biographical narratives
   - Typical queries: "What are the characteristics of X?", "List all Y", "Who does what?"
 
-- **Entertainment** (Event-based): 3 video lists, 72 questions (12.7%)
-  - Focus: Award ceremonies, cultural journeys, live events
-  - Typical queries: Mix of factual and descriptive
+- **Entertainment** (Mixed): 5 video lists, 112 questions (18.6%)
+  - Focus: Gaming analysis, award ceremonies, cultural journeys, live events
+  - Typical queries: Mix of factual, descriptive, and event-based questions
 
 ### B.5 Data Sources and Licensing
 
