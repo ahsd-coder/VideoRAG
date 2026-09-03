@@ -1348,47 +1348,46 @@ For each video, we employed the `yt-dlp` tool to download content in 720p resolu
 
 ### B.3 Dataset Statistics
 
-The final LongerVideos dataset consists of **22 carefully curated video collections** with **525 verified questions**, totaling approximately **22 hours** of video content.
+The final LongerVideos dataset consists of **22 carefully curated video lists** with **568 verified questions**, totaling approximately **122 hours** of video content across **165 individual videos**.
 
 **Table B.1: Detailed statistics of the LongerVideos dataset**
 
-| Video Type | Video Collection Name | #Videos | #Questions | Duration |
-|------------|----------------------|---------|------------|----------|
-| **Lecture** | climate-week-at-columbia-engineering | 4 | 25 | 1:32:00 |
-| | rag-lecture | 1 | 16 | 42:00 |
-| | ai-agent-lecture | 1 | 20 | 55:00 |
-| | daubechies-wavelet-lecture | 4 | 22 | 1:08:00 |
-| | daubechies-art-and-mathematics-lecture | 4 | 20 | 58:00 |
-| | tech-ceo-lecture | 4 | 24 | 1:15:00 |
-| | dspy-lecture | 9 | 24 | 48:00 |
-| | trading-for-beginners | 2 | 25 | 2:10:00 |
-| | ahp-superdecision | 11 | 21 | 1:12:00 |
-| | decision-making-science | 4 | 20 | 1:05:00 |
-| | 12-days-of-openai | 12 | 28 | 2:30:00 |
-| | autogen | 23 | 23 | 52:00 |
-| **Documentary** | fights-in-animal-kingdom | 1 | 24 | 42:18 |
-| | nature-scenes | 1 | 18 | 18:45 |
-| | journey-through-china | 1 | 24 | 45:00 |
-| | education-united-nations | 6 | 22 | 1:28:00 |
-| | elon-musk | 1 | 25 | 1:35:00 |
-| **Entertainment** | black-myth-wukong | 1 | 25 | 25:38 |
-| | primetime-emmy-awards | 1 | 26 | 3:05:00 |
-| | fia-awards | 1 | 23 | 1:52:00 |
-| | game-awards | 1 | 27 | 2:45:00 |
-| | jeff-bezos | 3 | 23 | 1:20:00 |
-| **Total** | **22 collections** | **96** | **525** | **~22 hours** |
+| Video Type | Video List Name | #video | #query | Overall Duration |
+|------------|-----------------|--------|--------|------------------|
+| **Lecture** | climate-week-at-columbia-engineering | 4 | 26 | 5.91 hours |
+| | rag-lecture | 19 | 38 | 5.34 hours |
+| | ai-agent-lecture | 39 | 45 | 9.35 hours |
+| | daubechies-wavelet-lecture | 4 | 25 | 8.97 hours |
+| | daubechies-art-and-mathematics-lecture | 4 | 21 | 4.87 hours |
+| | tech-ceo-lecture | 4 | 31 | 4.83 hours |
+| | dspy-lecture | 9 | 38 | 4.22 hours |
+| | trading-for-beginners | 2 | 23 | 4.11 hours |
+| | ahp-superdecision | 11 | 24 | 2.40 hours |
+| | decision-making-science | 4 | 26 | 2.20 hours |
+| | 12-days-of-openai | 12 | 35 | 3.43 hours |
+| | autogen | 23 | 44 | 8.70 hours |
+| **Documentary** | fights-in-animal-kingdom | 1 | 11 | 3.00 hours |
+| | nature-scenes | 1 | 17 | 3.98 hours |
+| | education-united-nations | 6 | 39 | 8.41 hours |
+| | elon-musk | 1 | 13 | 8.63 hours |
+| | jeff-bezos | 3 | 34 | 4.47 hours |
+| **Entertainment** | black-myth-wukong | 10 | 30 | 4.28 hours |
+| | primetime-emmy-awards | 3 | 25 | 7.18 hours |
+| | journey-through-china | 4 | 36 | 4.45 hours |
+| | fia-awards | 1 | 18 | 6.02 hours |
+| | game-awards | 1 | 30 | 9.12 hours |
 
 ### B.4 Domain Distribution
 
-- **Lecture** (Educational): 12 collections, 319 questions (60.8%)
+- **Lecture** (Educational): 12 video lists, 376 questions (66.2%)
   - Focus: Algorithms, system architectures, technical workflows, scientific principles
   - Typical queries: "How does X work?", "Why is Y effective?", "Explain the process of Z"
 
-- **Documentary** (Descriptive): 5 collections, 107 questions (20.4%)
+- **Documentary** (Descriptive): 5 video lists, 114 questions (20.1%)
   - Focus: Natural phenomena, animal behaviors, cultural elements, biographical narratives
   - Typical queries: "What are the characteristics of X?", "List all Y", "Who does what?"
 
-- **Entertainment** (Mixed): 5 collections, 99 questions (18.8%)
+- **Entertainment** (Mixed): 5 video lists, 139 questions (24.5%)
   - Focus: Event highlights, award recipients, game features, interview insights
   - Typical queries: Mix of factual and descriptive
 
