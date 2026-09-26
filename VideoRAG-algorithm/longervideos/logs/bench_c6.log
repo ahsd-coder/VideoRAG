@@ -1,0 +1,3233 @@
+nohup: ignoring input
+推理后端: vLLM (LLM:8000 + Embed:8001), 主进程GPU: 1,2
+=== 批处理集合: ['6'] ===
+
+============================================================
+集合 6: daubechies-wavelet-lecture
+============================================================
+[索引] 集合 6: 4 个视频 → /home/gjw/VideoRAG-main/VideoRAG-algorithm/longervideos/ecrag-workdir/6
+INFO:nano-graphrag:Load KV video_path with 4 data
+INFO:nano-graphrag:Load KV video_segments with 4 data
+INFO:nano-graphrag:Load KV text_chunks with 285 data
+INFO:nano-graphrag:Load KV llm_response_cache with 0 data
+INFO:nano-graphrag:Loaded graph from /home/gjw/VideoRAG-main/VideoRAG-algorithm/longervideos/ecrag-workdir/6/graph_chunk_entity_relation.graphml with 1125 nodes, 1964 edges
+INFO:nano-graphrag:Loaded graph from /home/gjw/VideoRAG-main/VideoRAG-algorithm/longervideos/ecrag-workdir/6/graph_event_causal.graphml with 4367 nodes, 2832 edges
+INFO:nano-vectordb:Load (1118, 2560) data
+INFO:nano-vectordb:Init {'embedding_dim': 2560, 'metric': 'cosine', 'storage_file': '/home/gjw/VideoRAG-main/VideoRAG-algorithm/longervideos/ecrag-workdir/6/vdb_entities.json'} 1118 data
+INFO:nano-vectordb:Load (285, 2560) data
+INFO:nano-vectordb:Init {'embedding_dim': 2560, 'metric': 'cosine', 'storage_file': '/home/gjw/VideoRAG-main/VideoRAG-algorithm/longervideos/ecrag-workdir/6/vdb_chunks.json'} 285 data
+INFO:nano-vectordb:Load (1078, 1024) data
+INFO:nano-vectordb:Init {'embedding_dim': 1024, 'metric': 'cosine', 'storage_file': '/home/gjw/VideoRAG-main/VideoRAG-algorithm/longervideos/ecrag-workdir/6/vdb_video_segment_feature.json'} 1078 data
+INFO:nano-vectordb:Load (4367, 2560) data
+INFO:nano-vectordb:Init {'embedding_dim': 2560, 'metric': 'cosine', 'storage_file': '/home/gjw/VideoRAG-main/VideoRAG-algorithm/longervideos/ecrag-workdir/6/vdb_event_causal_vdb.json'} 4367 data
+INFO:nano-graphrag:Find the video named 1s9zZ6ERAko.mp4 in storage and skip it.
+INFO:nano-graphrag:Find the video named 2zaJZ_F7Xrk.mp4 in storage and skip it.
+INFO:nano-graphrag:Find the video named RNqXpdwd9AA.mp4 in storage and skip it.
+INFO:nano-graphrag:Find the video named RkGK0MloK0E.mp4 in storage and skip it.
+WARNING:nano-graphrag:All chunks are already in the storage
+INFO:nano-graphrag:Writing graph with 1125 nodes, 1964 edges
+INFO:nano-graphrag:Writing graph with 4367 nodes, 2832 edges
+INFO:nano-graphrag:Load KV video_path with 4 data
+INFO:nano-graphrag:Load KV video_segments with 4 data
+INFO:nano-graphrag:Load KV text_chunks with 285 data
+INFO:nano-graphrag:Load KV llm_response_cache with 0 data
+INFO:nano-graphrag:Loaded graph from /home/gjw/VideoRAG-main/VideoRAG-algorithm/longervideos/ecrag-workdir/6/graph_chunk_entity_relation.graphml with 1125 nodes, 1964 edges
+INFO:nano-graphrag:Loaded graph from /home/gjw/VideoRAG-main/VideoRAG-algorithm/longervideos/ecrag-workdir/6/graph_event_causal.graphml with 4367 nodes, 2832 edges
+INFO:nano-vectordb:Load (1118, 2560) data
+INFO:nano-vectordb:Init {'embedding_dim': 2560, 'metric': 'cosine', 'storage_file': '/home/gjw/VideoRAG-main/VideoRAG-algorithm/longervideos/ecrag-workdir/6/vdb_entities.json'} 1118 data
+INFO:nano-vectordb:Load (285, 2560) data
+INFO:nano-vectordb:Init {'embedding_dim': 2560, 'metric': 'cosine', 'storage_file': '/home/gjw/VideoRAG-main/VideoRAG-algorithm/longervideos/ecrag-workdir/6/vdb_chunks.json'} 285 data
+INFO:nano-vectordb:Load (1078, 1024) data
+INFO:nano-vectordb:Init {'embedding_dim': 1024, 'metric': 'cosine', 'storage_file': '/home/gjw/VideoRAG-main/VideoRAG-algorithm/longervideos/ecrag-workdir/6/vdb_video_segment_feature.json'} 1078 data
+INFO:nano-vectordb:Load (4367, 2560) data
+INFO:nano-vectordb:Init {'embedding_dim': 2560, 'metric': 'cosine', 'storage_file': '/home/gjw/VideoRAG-main/VideoRAG-algorithm/longervideos/ecrag-workdir/6/vdb_event_causal_vdb.json'} 4367 data
+INFO:transformers_modules.MiniCPM-V-2_6-int4.configuration_minicpm:vision_config is None, using default vision config
+
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading checkpoint shards:  50%|█████     | 1/2 [00:02<00:02,  2.28s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:03<00:00,  1.56s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:03<00:00,  1.67s/it]
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+  [查询] 集合6 q0 entity_only: What are the inherent limitations of tim
+INFO:nano-graphrag:Truncate 20 to 11 chunks
+INFO:nano-graphrag:[ImageBind] Loading model for query (first time only)
+The inherent limitations of time-frequency localization.
+Retrieved Text Segments {'RkGK0MloK0E_81', 'RkGK0MloK0E_80', 'RkGK0MloK0E_82', 'RkGK0MloK0E_83', '2zaJZ_F7Xrk_132', '2zaJZ_F7Xrk_131', '2zaJZ_F7Xrk_130', '2zaJZ_F7Xrk_129'}
+It seems there might be a misunderstanding in the application of the given instruction to the provided "Real Data" example. The previous examples were focused on generating sentences related to video content retrieval based on questions about scenes from movies or videos. However, the "Real Data" question is about the inherent limitations of time-frequency localization, which pertains more to signal processing or physics rather than describing a video scene.
+
+To adhere strictly to the format and intent of the original examples, we should stick with creating queries for video content. But if we interpret this as needing a similar kind of query generation but adapted to the context of the question, it would not fit the initial instruction perfectly since it's not about video scenes.
+
+However, if we were to create a hypothetical video scenario that could relate to the concept of time-frequency localization, one could imagine a video explaining signal processing concepts. Here's a possible adaptation:
+
+For the question "What are the inherent limitations of time-frequency localization?" in a video explaining signal processing concepts, the output could be:
+
+A video segment explaining the limitations of time-frequency localization techniques.
+
+This statement serves as a query for a video that discusses the constraints or challenges associated with localizing signals in both time and frequency domains.
+Retrieved Visual Segments {'2zaJZ_F7Xrk_51', '2zaJZ_F7Xrk_91', '2zaJZ_F7Xrk_50', '2zaJZ_F7Xrk_59'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 12
+  - Entity检索: 8
+  - Visual检索: 4
+  - Causal检索: 0
+
+前5个片段ID示例:
+  1. 2zaJZ_F7Xrk_50
+  2. 2zaJZ_F7Xrk_51
+  3. 2zaJZ_F7Xrk_59
+  4. 2zaJZ_F7Xrk_91
+  5. 2zaJZ_F7Xrk_129
+
+📊 video_segments._data 结构:
+  可用视频数量: 4
+  示例视频: 1s9zZ6ERAko
+  该视频的片段索引数量: 410
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 12
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments
+⠹ Checked 2 segments
+⠸ Checked 3 segments
+⠼ Checked 4 segments
+⠴ Checked 5 segments
+⠦ Checked 6 segments
+⠧ Checked 7 segments
+⠇ Checked 8 segments
+⠏ Checked 9 segments
+⠋ Checked 10 segments
+⠙ Checked 11 segments
+⠹ Checked 12 segments
+0 Video Segments remain after filtering
+Since no segments remain after filtering, we utilized all the retrieved segments.
+Remain segments ['2zaJZ_F7Xrk_50', '2zaJZ_F7Xrk_51', '2zaJZ_F7Xrk_59', '2zaJZ_F7Xrk_91', '2zaJZ_F7Xrk_129', '2zaJZ_F7Xrk_130', '2zaJZ_F7Xrk_131', '2zaJZ_F7Xrk_132', 'RkGK0MloK0E_80', 'RkGK0MloK0E_81', 'RkGK0MloK0E_82', 'RkGK0MloK0E_83']
+Keywords: time-frequency, localization, limitations
+
+Captioning Segments for Given Query:   0%|          | 0/12 [00:00<?, ?it/s]Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+
+Captioning Segments for Given Query:   8%|▊         | 1/12 [00:32<05:55, 32.30s/it]
+Captioning Segments for Given Query:  17%|█▋        | 2/12 [00:56<04:36, 27.67s/it]
+Captioning Segments for Given Query:  25%|██▌       | 3/12 [01:21<03:57, 26.37s/it]
+Captioning Segments for Given Query:  33%|███▎      | 4/12 [01:55<03:55, 29.44s/it]
+Captioning Segments for Given Query:  42%|████▏     | 5/12 [02:22<03:19, 28.54s/it]
+Captioning Segments for Given Query:  50%|█████     | 6/12 [02:48<02:45, 27.63s/it]
+Captioning Segments for Given Query:  58%|█████▊    | 7/12 [03:09<02:07, 25.57s/it]
+Captioning Segments for Given Query:  67%|██████▋   | 8/12 [03:30<01:36, 24.16s/it]
+Captioning Segments for Given Query:  75%|███████▌  | 9/12 [03:51<01:08, 22.99s/it]
+Captioning Segments for Given Query:  83%|████████▎ | 10/12 [04:11<00:44, 22.15s/it]
+Captioning Segments for Given Query:  92%|█████████▏| 11/12 [04:41<00:24, 24.44s/it]
+Captioning Segments for Given Query: 100%|██████████| 12/12 [05:04<00:00, 23.96s/it]
+Captioning Segments for Given Query: 100%|██████████| 12/12 [05:04<00:00, 25.35s/it]
+  [查询] 集合6 q0 causal_only: What are the inherent limitations of tim
+INFO:nano-graphrag:Truncate 20 to 11 chunks
+INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The inherent limitations of time-frequency localization and their impacts on signal analysis.
+INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
+INFO:nano-graphrag:[Causal Retrieval] 56 events after 2-hop bidirectional walk (from 20 seeds)
+INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 56 → 47 nodes (tau_dup=0.85)
+INFO:nano-graphrag:[Causal Retrieval] Retrieved 16 segments from 47 deduplicated events
+INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 47 events, 16693 chars
+Retrieved Causal Segments {'RNqXpdwd9AA_39', '2zaJZ_F7Xrk_92', '2zaJZ_F7Xrk_116', '2zaJZ_F7Xrk_84', 'RkGK0MloK0E_217', '1s9zZ6ERAko_182', 'RNqXpdwd9AA_15', '2zaJZ_F7Xrk_18', 'RkGK0MloK0E_7', '2zaJZ_F7Xrk_24', '1s9zZ6ERAko_197', '2zaJZ_F7Xrk_20', 'RkGK0MloK0E_4', '1s9zZ6ERAko_181', 'RNqXpdwd9AA_66', 'RNqXpdwd9AA_1'}
+
+Retrieved Text Segments set()
+It seems like the provided question is not related to generating a query for retrieving video segments but rather pertains to a theoretical aspect of signal processing or a similar field. However, following the instruction format strictly for video retrieval queries, we should avoid deviating from the given example structure. Since the question about time-frequency localization doesn't fit the context of scene-related video content, let's focus on creating queries based on scene-related questions only.
+
+If you have a scene-related question ready, please provide it, and I'll assist in formulating an appropriate output query for retrieving relevant video segments.
+Retrieved Visual Segments {'2zaJZ_F7Xrk_51', '2zaJZ_F7Xrk_91', '2zaJZ_F7Xrk_50', '2zaJZ_F7Xrk_59'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 20
+  - Entity检索: 0
+  - Visual检索: 4
+  - Causal检索: 16
+
+前5个片段ID示例:
+  1. 1s9zZ6ERAko_181
+  2. 1s9zZ6ERAko_182
+  3. 1s9zZ6ERAko_197
+  4. 2zaJZ_F7Xrk_18
+  5. 2zaJZ_F7Xrk_20
+
+📊 video_segments._data 结构:
+  可用视频数量: 4
+  示例视频: 1s9zZ6ERAko
+  该视频的片段索引数量: 410
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 20
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments
+⠹ Checked 2 segments
+⠸ Checked 3 segments
+⠼ Checked 4 segments
+⠴ Checked 5 segments
+⠦ Checked 6 segments
+⠧ Checked 7 segments
+⠇ Checked 8 segments
+⠏ Checked 9 segments
+⠋ Checked 10 segments
+⠙ Checked 11 segments
+⠹ Checked 12 segments
+⠸ Checked 13 segments
+⠼ Checked 14 segments
+⠴ Checked 15 segments
+⠦ Checked 16 segments
+⠧ Checked 17 segments
+⠇ Checked 18 segments
+⠏ Checked 19 segments
+⠋ Checked 20 segments
+3 Video Segments remain after filtering
+Remain segments ['RNqXpdwd9AA_15', 'RNqXpdwd9AA_66', 'RkGK0MloK0E_217']
+Keywords: time-frequency, localization, limitations
+
+Captioning Segments for Given Query:   0%|          | 0/3 [00:00<?, ?it/s]
+Captioning Segments for Given Query:  33%|███▎      | 1/3 [00:22<00:45, 22.66s/it]
+Captioning Segments for Given Query:  67%|██████▋   | 2/3 [00:48<00:24, 24.55s/it]
+Captioning Segments for Given Query: 100%|██████████| 3/3 [01:13<00:00, 24.57s/it]
+Captioning Segments for Given Query: 100%|██████████| 3/3 [01:13<00:00, 24.37s/it]
+  [查询] 集合6 q1 entity_only: How do different window functions impact
+INFO:nano-graphrag:Truncate 20 to 11 chunks
+How do different window functions impact time-frequency analysis?
+Retrieved Text Segments {'1s9zZ6ERAko_36', '1s9zZ6ERAko_38', '2zaJZ_F7Xrk_109', '2zaJZ_F7Xrk_111', '1s9zZ6ERAko_39', '1s9zZ6ERAko_37', '2zaJZ_F7Xrk_110'}
+The output for the given question should focus on the visual demonstration or explanation of how different window functions affect time-frequency analysis in a video context. However, since the original examples aim at describing scenes from movies or videos, this particular question seems to be more theoretical and less scene-oriented. Nonetheless, sticking to the format provided:
+
+Output:
+Different window functions impacting time-frequency analysis in a visual demonstration.
+Retrieved Visual Segments {'2zaJZ_F7Xrk_51', '2zaJZ_F7Xrk_91', '2zaJZ_F7Xrk_50', '2zaJZ_F7Xrk_59'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 11
+  - Entity检索: 7
+  - Visual检索: 4
+  - Causal检索: 0
+
+前5个片段ID示例:
+  1. 1s9zZ6ERAko_36
+  2. 1s9zZ6ERAko_37
+  3. 1s9zZ6ERAko_38
+  4. 1s9zZ6ERAko_39
+  5. 2zaJZ_F7Xrk_50
+
+📊 video_segments._data 结构:
+  可用视频数量: 4
+  示例视频: 1s9zZ6ERAko
+  该视频的片段索引数量: 410
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 11
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments
+⠹ Checked 2 segments
+⠸ Checked 3 segments
+⠼ Checked 4 segments
+⠴ Checked 5 segments
+⠦ Checked 6 segments
+⠧ Checked 7 segments
+⠇ Checked 8 segments
+⠏ Checked 9 segments
+⠋ Checked 10 segments
+⠙ Checked 11 segments
+1 Video Segments remain after filtering
+Remain segments ['2zaJZ_F7Xrk_111']
+Keywords: window functions, time-frequency analysis
+
+Captioning Segments for Given Query:   0%|          | 0/1 [00:00<?, ?it/s]
+Captioning Segments for Given Query: 100%|██████████| 1/1 [00:25<00:00, 25.80s/it]
+Captioning Segments for Given Query: 100%|██████████| 1/1 [00:25<00:00, 25.81s/it]
+  [查询] 集合6 q1 causal_only: How do different window functions impact
+INFO:nano-graphrag:Truncate 20 to 11 chunks
+INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The application of different window functions and their impacts on time-frequency analysis results.
+INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
+INFO:nano-graphrag:[Causal Retrieval] 69 events after 2-hop bidirectional walk (from 20 seeds)
+INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 69 → 55 nodes (tau_dup=0.85)
+INFO:nano-graphrag:[Causal Retrieval] Retrieved 19 segments from 55 deduplicated events
+INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 55 events, 19651 chars
+Retrieved Causal Segments {'1s9zZ6ERAko_182', '2zaJZ_F7Xrk_18', '2zaJZ_F7Xrk_92', 'RkGK0MloK0E_8', '2zaJZ_F7Xrk_135', '2zaJZ_F7Xrk_146', '2zaJZ_F7Xrk_15', 'RkGK0MloK0E_112', '2zaJZ_F7Xrk_109', 'RkGK0MloK0E_7', 'RNqXpdwd9AA_1', '2zaJZ_F7Xrk_116', '2zaJZ_F7Xrk_84', '2zaJZ_F7Xrk_24', '1s9zZ6ERAko_197', 'RkGK0MloK0E_156', 'RNqXpdwd9AA_152', '2zaJZ_F7Xrk_73', '2zaJZ_F7Xrk_20'}
+
+Retrieved Text Segments set()
+The output for the given question does not fit the pattern of generating a sentence to retrieve a relevant video segment, as the question is more theoretical and pertains to a technical explanation rather than a visual scene. However, if we were to adapt it to fit the instruction's requirement of generating a query for a video segment, it could be rephrased as:
+
+Demonstration of time-frequency analysis using different window functions.
+Retrieved Visual Segments {'2zaJZ_F7Xrk_51', '2zaJZ_F7Xrk_91', '2zaJZ_F7Xrk_50', '2zaJZ_F7Xrk_59'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 23
+  - Entity检索: 0
+  - Visual检索: 4
+  - Causal检索: 19
+
+前5个片段ID示例:
+  1. 1s9zZ6ERAko_182
+  2. 1s9zZ6ERAko_197
+  3. 2zaJZ_F7Xrk_15
+  4. 2zaJZ_F7Xrk_18
+  5. 2zaJZ_F7Xrk_20
+
+📊 video_segments._data 结构:
+  可用视频数量: 4
+  示例视频: 1s9zZ6ERAko
+  该视频的片段索引数量: 410
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 23
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments
+⠹ Checked 2 segments
+⠸ Checked 3 segments
+⠼ Checked 4 segments
+⠴ Checked 5 segments
+⠦ Checked 6 segments
+⠧ Checked 7 segments
+⠇ Checked 8 segments
+⠏ Checked 9 segments
+⠋ Checked 10 segments
+⠙ Checked 11 segments
+⠹ Checked 12 segments
+⠸ Checked 13 segments
+⠼ Checked 14 segments
+⠴ Checked 15 segments
+⠦ Checked 16 segments
+⠧ Checked 17 segments
+⠇ Checked 18 segments
+⠏ Checked 19 segments
+⠋ Checked 20 segments
+⠙ Checked 21 segments
+⠹ Checked 22 segments
+⠸ Checked 23 segments
+1 Video Segments remain after filtering
+Remain segments ['RkGK0MloK0E_156']
+Keywords: window functions, time-frequency analysis
+
+Captioning Segments for Given Query:   0%|          | 0/1 [00:00<?, ?it/s]
+Captioning Segments for Given Query: 100%|██████████| 1/1 [00:28<00:00, 28.43s/it]
+Captioning Segments for Given Query: 100%|██████████| 1/1 [00:28<00:00, 28.43s/it]
+  [查询] 集合6 q2 entity_only: Explain Daubechies' 'Zak transform' and 
+INFO:nano-graphrag:Truncate 20 to 11 chunks
+Explain Daubechies' Zak transform and its purpose.
+Retrieved Text Segments {'RNqXpdwd9AA_4', 'RkGK0MloK0E_2', 'RNqXpdwd9AA_3', 'RkGK0MloK0E_3', 'RkGK0MloK0E_0', 'RNqXpdwd9AA_5', 'RkGK0MloK0E_1'}
+The output for the given question does not fit the pattern described in the goal, which is to generate a declarative sentence to serve as a query for retrieving relevant video segments. The question asks for an explanation of a mathematical concept rather than a scene-related query. However, if we were to follow the format strictly and assume there might be a video explaining this concept, a possible output could be:
+
+Output:
+A video segment explaining Daubechies' Zak transform and its purpose.
+Retrieved Visual Segments {'2zaJZ_F7Xrk_51', '2zaJZ_F7Xrk_91', '2zaJZ_F7Xrk_50', '2zaJZ_F7Xrk_59'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 11
+  - Entity检索: 7
+  - Visual检索: 4
+  - Causal检索: 0
+
+前5个片段ID示例:
+  1. 2zaJZ_F7Xrk_50
+  2. 2zaJZ_F7Xrk_51
+  3. 2zaJZ_F7Xrk_59
+  4. 2zaJZ_F7Xrk_91
+  5. RNqXpdwd9AA_3
+
+📊 video_segments._data 结构:
+  可用视频数量: 4
+  示例视频: 1s9zZ6ERAko
+  该视频的片段索引数量: 410
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 11
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments
+⠹ Checked 2 segments
+⠸ Checked 3 segments
+⠼ Checked 4 segments
+⠴ Checked 5 segments
+⠦ Checked 6 segments
+⠧ Checked 7 segments
+⠇ Checked 8 segments
+⠏ Checked 9 segments
+⠋ Checked 10 segments
+⠙ Checked 11 segments
+0 Video Segments remain after filtering
+Since no segments remain after filtering, we utilized all the retrieved segments.
+Remain segments ['2zaJZ_F7Xrk_50', '2zaJZ_F7Xrk_51', '2zaJZ_F7Xrk_59', '2zaJZ_F7Xrk_91', 'RNqXpdwd9AA_3', 'RNqXpdwd9AA_4', 'RNqXpdwd9AA_5', 'RkGK0MloK0E_0', 'RkGK0MloK0E_1', 'RkGK0MloK0E_2', 'RkGK0MloK0E_3']
+Keywords: Daubechies, Zak transform, purpose
+
+Captioning Segments for Given Query:   0%|          | 0/11 [00:00<?, ?it/s]
+Captioning Segments for Given Query:   9%|▉         | 1/11 [00:23<03:50, 23.08s/it]
+Captioning Segments for Given Query:  18%|█▊        | 2/11 [00:46<03:27, 23.02s/it]
+Captioning Segments for Given Query:  27%|██▋       | 3/11 [01:08<03:01, 22.72s/it]
+Captioning Segments for Given Query:  36%|███▋      | 4/11 [01:40<03:05, 26.44s/it]
+Captioning Segments for Given Query:  45%|████▌     | 5/11 [02:18<03:02, 30.41s/it]
+Captioning Segments for Given Query:  55%|█████▍    | 6/11 [02:44<02:26, 29.24s/it]
+Captioning Segments for Given Query:  64%|██████▎   | 7/11 [03:20<02:05, 31.28s/it]
+Captioning Segments for Given Query:  73%|███████▎  | 8/11 [03:47<01:29, 29.95s/it]
+Captioning Segments for Given Query:  82%|████████▏ | 9/11 [04:14<00:58, 29.13s/it]
+Captioning Segments for Given Query:  91%|█████████ | 10/11 [04:41<00:28, 28.32s/it]
+Captioning Segments for Given Query: 100%|██████████| 11/11 [05:03<00:00, 26.54s/it]
+Captioning Segments for Given Query: 100%|██████████| 11/11 [05:03<00:00, 27.63s/it]
+  [查询] 集合6 q2 causal_only: Explain Daubechies' 'Zak transform' and 
+INFO:nano-graphrag:Truncate 20 to 11 chunks
+INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The development of Daubechies' Zak transform and its intended purpose in signal processing.
+INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
+INFO:nano-graphrag:[Causal Retrieval] 49 events after 2-hop bidirectional walk (from 20 seeds)
+INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 49 → 40 nodes (tau_dup=0.85)
+INFO:nano-graphrag:[Causal Retrieval] Retrieved 15 segments from 40 deduplicated events
+INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 40 events, 15730 chars
+Retrieved Causal Segments {'2zaJZ_F7Xrk_115', 'RkGK0MloK0E_60', '2zaJZ_F7Xrk_146', 'RNqXpdwd9AA_75', '2zaJZ_F7Xrk_116', '1s9zZ6ERAko_254', '1s9zZ6ERAko_396', 'RkGK0MloK0E_2', 'RkGK0MloK0E_134', 'RNqXpdwd9AA_16', '2zaJZ_F7Xrk_24', 'RkGK0MloK0E_61', 'RNqXpdwd9AA_19', 'RNqXpdwd9AA_250', 'RkGK0MloK0E_102'}
+
+Retrieved Text Segments set()
+The output for the given question should focus on the visual content related to explaining Daubechies' 'Zak transform', which in a video context might not directly translate to a typical scene description but rather a demonstration or explanation segment. However, since the request is to formulate a query for retrieving relevant video segments, we can assume a scenario where this concept is visually explained. Thus,
+
+Output:
+A video segment explaining Daubechies' 'Zak transform' and its purpose.
+Retrieved Visual Segments {'2zaJZ_F7Xrk_51', '2zaJZ_F7Xrk_91', '2zaJZ_F7Xrk_50', '2zaJZ_F7Xrk_59'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 19
+  - Entity检索: 0
+  - Visual检索: 4
+  - Causal检索: 15
+
+前5个片段ID示例:
+  1. 1s9zZ6ERAko_254
+  2. 1s9zZ6ERAko_396
+  3. 2zaJZ_F7Xrk_24
+  4. 2zaJZ_F7Xrk_50
+  5. 2zaJZ_F7Xrk_51
+
+📊 video_segments._data 结构:
+  可用视频数量: 4
+  示例视频: 1s9zZ6ERAko
+  该视频的片段索引数量: 410
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 19
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments
+⠹ Checked 2 segments
+⠸ Checked 3 segments
+⠼ Checked 4 segments
+⠴ Checked 5 segments
+⠦ Checked 6 segments
+⠧ Checked 7 segments
+⠇ Checked 8 segments
+⠏ Checked 9 segments
+⠋ Checked 10 segments
+⠙ Checked 11 segments
+⠹ Checked 12 segments
+⠸ Checked 13 segments
+⠼ Checked 14 segments
+⠴ Checked 15 segments
+⠦ Checked 16 segments
+⠧ Checked 17 segments
+⠇ Checked 18 segments
+⠏ Checked 19 segments
+1 Video Segments remain after filtering
+Remain segments ['RkGK0MloK0E_102']
+Keywords: Daubechies, Zak transform, purpose
+
+Captioning Segments for Given Query:   0%|          | 0/1 [00:00<?, ?it/s]
+Captioning Segments for Given Query: 100%|██████████| 1/1 [00:25<00:00, 25.18s/it]
+Captioning Segments for Given Query: 100%|██████████| 1/1 [00:25<00:00, 25.18s/it]
+  [查询] 集合6 q3 entity_only: Discuss limitations of orthonormal bases
+INFO:nano-graphrag:Truncate 20 to 11 chunks
+Limitations of orthonormal bases in time-frequency analysis.
+Retrieved Text Segments {'1s9zZ6ERAko_36', '1s9zZ6ERAko_127', '1s9zZ6ERAko_38', '1s9zZ6ERAko_125', '1s9zZ6ERAko_39', '1s9zZ6ERAko_37', '1s9zZ6ERAko_126'}
+The given question does not pertain to generating a query for retrieving relevant video segments but rather seeks to discuss theoretical aspects of signal processing and mathematics. However, adhering strictly to the instruction format provided and attempting to fit this into the context of video retrieval:
+
+Output:
+A video segment explaining the limitations of using orthonormal bases in time-frequency analysis.
+Retrieved Visual Segments {'RNqXpdwd9AA_4', 'RNqXpdwd9AA_0', 'RNqXpdwd9AA_6', 'RNqXpdwd9AA_5'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 11
+  - Entity检索: 7
+  - Visual检索: 4
+  - Causal检索: 0
+
+前5个片段ID示例:
+  1. 1s9zZ6ERAko_36
+  2. 1s9zZ6ERAko_37
+  3. 1s9zZ6ERAko_38
+  4. 1s9zZ6ERAko_39
+  5. 1s9zZ6ERAko_125
+
+📊 video_segments._data 结构:
+  可用视频数量: 4
+  示例视频: 1s9zZ6ERAko
+  该视频的片段索引数量: 410
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 11
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments
+⠹ Checked 2 segments
+⠸ Checked 3 segments
+⠼ Checked 4 segments
+⠴ Checked 5 segments
+⠦ Checked 6 segments
+⠧ Checked 7 segments
+⠇ Checked 8 segments
+⠏ Checked 9 segments
+⠋ Checked 10 segments
+⠙ Checked 11 segments
+3 Video Segments remain after filtering
+Remain segments ['1s9zZ6ERAko_37', '1s9zZ6ERAko_125', 'RNqXpdwd9AA_0']
+Keywords: limitations, orthonormal bases, time-frequency analysis
+
+Captioning Segments for Given Query:   0%|          | 0/3 [00:00<?, ?it/s]
+Captioning Segments for Given Query:  33%|███▎      | 1/3 [00:25<00:50, 25.03s/it]
+Captioning Segments for Given Query:  67%|██████▋   | 2/3 [00:53<00:26, 26.93s/it]
+Captioning Segments for Given Query: 100%|██████████| 3/3 [01:32<00:00, 32.35s/it]
+Captioning Segments for Given Query: 100%|██████████| 3/3 [01:32<00:00, 30.69s/it]
+  [查询] 集合6 q3 causal_only: Discuss limitations of orthonormal bases
+INFO:nano-graphrag:Truncate 20 to 11 chunks
+INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The limitations of using orthonormal bases in time-frequency analysis and their consequences.
+INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
+INFO:nano-graphrag:[Causal Retrieval] 56 events after 2-hop bidirectional walk (from 20 seeds)
+INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 56 → 46 nodes (tau_dup=0.85)
+INFO:nano-graphrag:[Causal Retrieval] Retrieved 17 segments from 46 deduplicated events
+INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 46 events, 15924 chars
+Retrieved Causal Segments {'RNqXpdwd9AA_39', '2zaJZ_F7Xrk_146', 'RkGK0MloK0E_73', '2zaJZ_F7Xrk_116', '2zaJZ_F7Xrk_84', 'RkGK0MloK0E_112', '1s9zZ6ERAko_182', 'RNqXpdwd9AA_15', '2zaJZ_F7Xrk_18', 'RkGK0MloK0E_7', '2zaJZ_F7Xrk_24', 'RNqXpdwd9AA_62', '2zaJZ_F7Xrk_20', '1s9zZ6ERAko_197', '1s9zZ6ERAko_181', 'RNqXpdwd9AA_66', 'RNqXpdwd9AA_1'}
+
+Retrieved Text Segments set()
+The given question does not pertain to generating a query for retrieving video segments but rather seeks to discuss the limitations of orthonormal bases in time-frequency analysis. Therefore, it doesn't fit the format specified in your initial goal and examples. However, if we were to adapt this into a scenario related to video retrieval, we might consider a context where a video explains or demonstrates these limitations. 
+
+For instance, if we wanted to retrieve a video segment explaining the limitations of orthonormal bases in time-frequency analysis, the output could be:
+
+Output:
+A video segment explaining the limitations of using orthonormal bases in time-frequency analysis.
+Retrieved Visual Segments {'2zaJZ_F7Xrk_51', '2zaJZ_F7Xrk_91', '2zaJZ_F7Xrk_50', '2zaJZ_F7Xrk_59'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 21
+  - Entity检索: 0
+  - Visual检索: 4
+  - Causal检索: 17
+
+前5个片段ID示例:
+  1. 1s9zZ6ERAko_181
+  2. 1s9zZ6ERAko_182
+  3. 1s9zZ6ERAko_197
+  4. 2zaJZ_F7Xrk_18
+  5. 2zaJZ_F7Xrk_20
+
+📊 video_segments._data 结构:
+  可用视频数量: 4
+  示例视频: 1s9zZ6ERAko
+  该视频的片段索引数量: 410
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 21
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments
+⠹ Checked 2 segments
+⠸ Checked 3 segments
+⠼ Checked 4 segments
+⠴ Checked 5 segments
+⠦ Checked 6 segments
+⠧ Checked 7 segments
+⠇ Checked 8 segments
+⠏ Checked 9 segments
+⠋ Checked 10 segments
+⠙ Checked 11 segments
+⠹ Checked 12 segments
+⠸ Checked 13 segments
+⠼ Checked 14 segments
+⠴ Checked 15 segments
+⠦ Checked 16 segments
+⠧ Checked 17 segments
+⠇ Checked 18 segments
+⠏ Checked 19 segments
+⠋ Checked 20 segments
+⠙ Checked 21 segments
+4 Video Segments remain after filtering
+Remain segments ['1s9zZ6ERAko_197', '2zaJZ_F7Xrk_91', 'RNqXpdwd9AA_1', 'RNqXpdwd9AA_62']
+Keywords: limitations, orthonormal bases, time-frequency analysis
+
+Captioning Segments for Given Query:   0%|          | 0/4 [00:00<?, ?it/s]
+Captioning Segments for Given Query:  25%|██▌       | 1/4 [00:22<01:08, 22.81s/it]
+Captioning Segments for Given Query:  50%|█████     | 2/4 [00:56<00:58, 29.38s/it]
+Captioning Segments for Given Query:  75%|███████▌  | 3/4 [01:21<00:27, 27.30s/it]
+Captioning Segments for Given Query: 100%|██████████| 4/4 [01:46<00:00, 26.47s/it]
+Captioning Segments for Given Query: 100%|██████████| 4/4 [01:46<00:00, 26.70s/it]
+  [查询] 集合6 q4 entity_only: What mathematical structures underpin ti
+INFO:nano-graphrag:Truncate 20 to 11 chunks
+The mathematical structures that underpin time-frequency representations.
+Retrieved Text Segments {'RkGK0MloK0E_81', 'RkGK0MloK0E_80', 'RkGK0MloK0E_82', 'RkGK0MloK0E_83', '2zaJZ_F7Xrk_132', '2zaJZ_F7Xrk_131', '2zaJZ_F7Xrk_130', '2zaJZ_F7Xrk_129'}
+The question provided does not pertain to a scene from a video and seems more aligned with a theoretical or academic inquiry about mathematics. However, following the instruction strictly to generate a query for retrieving relevant video segments, this question might not fit the typical scenario since it's asking for theoretical knowledge rather than a visual scene.
+
+If we were to adapt it to a format that could potentially be used to retrieve educational videos explaining mathematical concepts, we could phrase it as:
+
+Output:
+A video explaining the mathematical structures underlying time-frequency representations.
+Retrieved Visual Segments {'2zaJZ_F7Xrk_51', '2zaJZ_F7Xrk_91', '2zaJZ_F7Xrk_50', '2zaJZ_F7Xrk_59'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 12
+  - Entity检索: 8
+  - Visual检索: 4
+  - Causal检索: 0
+
+前5个片段ID示例:
+  1. 2zaJZ_F7Xrk_50
+  2. 2zaJZ_F7Xrk_51
+  3. 2zaJZ_F7Xrk_59
+  4. 2zaJZ_F7Xrk_91
+  5. 2zaJZ_F7Xrk_129
+
+📊 video_segments._data 结构:
+  可用视频数量: 4
+  示例视频: 1s9zZ6ERAko
+  该视频的片段索引数量: 410
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 12
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments
+⠹ Checked 2 segments
+⠸ Checked 3 segments
+⠼ Checked 4 segments
+⠴ Checked 5 segments
+⠦ Checked 6 segments
+⠧ Checked 7 segments
+⠇ Checked 8 segments
+⠏ Checked 9 segments
+⠋ Checked 10 segments
+⠙ Checked 11 segments
+⠹ Checked 12 segments
+8 Video Segments remain after filtering
+Remain segments ['2zaJZ_F7Xrk_91', '2zaJZ_F7Xrk_129', '2zaJZ_F7Xrk_130', '2zaJZ_F7Xrk_131', 'RkGK0MloK0E_80', 'RkGK0MloK0E_81', 'RkGK0MloK0E_82', 'RkGK0MloK0E_83']
+Keywords: mathematical structures, time-frequency representations
+
+Captioning Segments for Given Query:   0%|          | 0/8 [00:00<?, ?it/s]
+Captioning Segments for Given Query:  12%|█▎        | 1/8 [00:24<02:54, 24.86s/it]
+Captioning Segments for Given Query:  25%|██▌       | 2/8 [00:50<02:33, 25.56s/it]
+Captioning Segments for Given Query:  38%|███▊      | 3/8 [01:17<02:10, 26.04s/it]
+Captioning Segments for Given Query:  50%|█████     | 4/8 [01:43<01:43, 25.88s/it]
+Captioning Segments for Given Query:  62%|██████▎   | 5/8 [02:02<01:10, 23.38s/it]
+Captioning Segments for Given Query:  75%|███████▌  | 6/8 [02:21<00:44, 22.05s/it]
+Captioning Segments for Given Query:  88%|████████▊ | 7/8 [02:51<00:24, 24.56s/it]
+Captioning Segments for Given Query: 100%|██████████| 8/8 [03:15<00:00, 24.49s/it]
+Captioning Segments for Given Query: 100%|██████████| 8/8 [03:15<00:00, 24.45s/it]
+  [查询] 集合6 q4 causal_only: What mathematical structures underpin ti
+INFO:nano-graphrag:Truncate 20 to 11 chunks
+INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The mathematical structures that underpin time-frequency representations and their foundational roles.
+INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
+INFO:nano-graphrag:[Causal Retrieval] 58 events after 2-hop bidirectional walk (from 20 seeds)
+INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 58 → 48 nodes (tau_dup=0.85)
+INFO:nano-graphrag:[Causal Retrieval] Retrieved 17 segments from 48 deduplicated events
+INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 48 events, 16884 chars
+Retrieved Causal Segments {'RNqXpdwd9AA_39', '2zaJZ_F7Xrk_146', '2zaJZ_F7Xrk_116', '2zaJZ_F7Xrk_84', 'RkGK0MloK0E_217', '1s9zZ6ERAko_101', 'RNqXpdwd9AA_15', '2zaJZ_F7Xrk_18', 'RkGK0MloK0E_7', '2zaJZ_F7Xrk_24', 'RNqXpdwd9AA_62', '2zaJZ_F7Xrk_20', '1s9zZ6ERAko_197', 'RkGK0MloK0E_4', '1s9zZ6ERAko_181', 'RNqXpdwd9AA_66', 'RNqXpdwd9AA_1'}
+
+Retrieved Text Segments set()
+The question provided does not pertain to a scene from a video or movie but rather asks about mathematical concepts related to time-frequency representations. Therefore, it doesn't fit the original goal of generating a query for retrieving relevant video segments based on scene-related information. However, if we were to formulate a query that could be used in an educational video context, it might look something like this:
+
+Output:
+An explanation of the mathematical structures underlying time-frequency representations in an educational video segment.
+Retrieved Visual Segments {'2zaJZ_F7Xrk_51', '2zaJZ_F7Xrk_91', '2zaJZ_F7Xrk_50', '2zaJZ_F7Xrk_59'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 21
+  - Entity检索: 0
+  - Visual检索: 4
+  - Causal检索: 17
+
+前5个片段ID示例:
+  1. 1s9zZ6ERAko_101
+  2. 1s9zZ6ERAko_181
+  3. 1s9zZ6ERAko_197
+  4. 2zaJZ_F7Xrk_18
+  5. 2zaJZ_F7Xrk_20
+
+📊 video_segments._data 结构:
+  可用视频数量: 4
+  示例视频: 1s9zZ6ERAko
+  该视频的片段索引数量: 410
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 21
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments
+⠹ Checked 2 segments
+⠸ Checked 3 segments
+⠼ Checked 4 segments
+⠴ Checked 5 segments
+⠦ Checked 6 segments
+⠧ Checked 7 segments
+⠇ Checked 8 segments
+⠏ Checked 9 segments
+⠋ Checked 10 segments
+⠙ Checked 11 segments
+⠹ Checked 12 segments
+⠸ Checked 13 segments
+⠼ Checked 14 segments
+⠴ Checked 15 segments
+⠦ Checked 16 segments
+⠧ Checked 17 segments
+⠇ Checked 18 segments
+⠏ Checked 19 segments
+⠋ Checked 20 segments
+⠙ Checked 21 segments
+16 Video Segments remain after filtering
+Remain segments ['1s9zZ6ERAko_101', '1s9zZ6ERAko_197', '2zaJZ_F7Xrk_20', '2zaJZ_F7Xrk_24', '2zaJZ_F7Xrk_84', '2zaJZ_F7Xrk_91', '2zaJZ_F7Xrk_116', '2zaJZ_F7Xrk_146', 'RNqXpdwd9AA_1', 'RNqXpdwd9AA_15', 'RNqXpdwd9AA_39', 'RNqXpdwd9AA_62', 'RNqXpdwd9AA_66', 'RkGK0MloK0E_4', 'RkGK0MloK0E_7', 'RkGK0MloK0E_217']
+Keywords: mathematical structures, time-frequency representations
+
+Captioning Segments for Given Query:   0%|          | 0/16 [00:00<?, ?it/s]
+Captioning Segments for Given Query:   6%|▋         | 1/16 [00:25<06:29, 25.99s/it]
+Captioning Segments for Given Query:  12%|█▎        | 2/16 [00:54<06:21, 27.28s/it]
+Captioning Segments for Given Query:  19%|█▉        | 3/16 [01:20<05:50, 26.94s/it]
+Captioning Segments for Given Query:  25%|██▌       | 4/16 [01:45<05:14, 26.22s/it]
+Captioning Segments for Given Query:  31%|███▏      | 5/16 [02:20<05:21, 29.26s/it]
+Captioning Segments for Given Query:  38%|███▊      | 6/16 [02:54<05:07, 30.73s/it]
+Captioning Segments for Given Query:  44%|████▍     | 7/16 [03:26<04:40, 31.19s/it]
+Captioning Segments for Given Query:  50%|█████     | 8/16 [03:49<03:50, 28.79s/it]
+Captioning Segments for Given Query:  56%|█████▋    | 9/16 [04:17<03:19, 28.44s/it]
+Captioning Segments for Given Query:  62%|██████▎   | 10/16 [04:44<02:48, 28.02s/it]
+Captioning Segments for Given Query:  69%|██████▉   | 11/16 [05:13<02:20, 28.15s/it]
+Captioning Segments for Given Query:  75%|███████▌  | 12/16 [05:42<01:53, 28.47s/it]
+Captioning Segments for Given Query:  81%|████████▏ | 13/16 [06:02<01:18, 26.06s/it]
+Captioning Segments for Given Query:  88%|████████▊ | 14/16 [06:27<00:51, 25.62s/it]
+Captioning Segments for Given Query:  94%|█████████▍| 15/16 [06:55<00:26, 26.28s/it]
+Captioning Segments for Given Query: 100%|██████████| 16/16 [07:20<00:00, 25.98s/it]
+Captioning Segments for Given Query: 100%|██████████| 16/16 [07:20<00:00, 27.53s/it]
+  [查询] 集合6 q5 entity_only: Describe the role of the Heisenberg grou
+INFO:nano-graphrag:Truncate 20 to 11 chunks
+The role of the Heisenberg group in time-frequency analysis.
+Retrieved Text Segments {'RkGK0MloK0E_81', 'RkGK0MloK0E_80', 'RkGK0MloK0E_82', 'RkGK0MloK0E_83', '2zaJZ_F7Xrk_132', '2zaJZ_F7Xrk_131', '2zaJZ_F7Xrk_130', '2zaJZ_F7Xrk_129'}
+The output for the given question does not fit the pattern of generating a sentence to retrieve a video segment since the question is about a mathematical concept rather than a scene from a video. However, if we were to adapt it to the task's requirements by imagining a theoretical educational video scenario, the output could be:
+
+Output:
+A video segment explaining the role of the Heisenberg group in time-frequency analysis.
+Retrieved Visual Segments {'2zaJZ_F7Xrk_51', '2zaJZ_F7Xrk_91', '2zaJZ_F7Xrk_50', '2zaJZ_F7Xrk_59'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 12
+  - Entity检索: 8
+  - Visual检索: 4
+  - Causal检索: 0
+
+前5个片段ID示例:
+  1. 2zaJZ_F7Xrk_50
+  2. 2zaJZ_F7Xrk_51
+  3. 2zaJZ_F7Xrk_59
+  4. 2zaJZ_F7Xrk_91
+  5. 2zaJZ_F7Xrk_129
+
+📊 video_segments._data 结构:
+  可用视频数量: 4
+  示例视频: 1s9zZ6ERAko
+  该视频的片段索引数量: 410
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 12
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments
+⠹ Checked 2 segments
+⠸ Checked 3 segments
+⠼ Checked 4 segments
+⠴ Checked 5 segments
+⠦ Checked 6 segments
+⠧ Checked 7 segments
+⠇ Checked 8 segments
+⠏ Checked 9 segments
+⠋ Checked 10 segments
+⠙ Checked 11 segments
+⠹ Checked 12 segments
+0 Video Segments remain after filtering
+Since no segments remain after filtering, we utilized all the retrieved segments.
+Remain segments ['2zaJZ_F7Xrk_50', '2zaJZ_F7Xrk_51', '2zaJZ_F7Xrk_59', '2zaJZ_F7Xrk_91', '2zaJZ_F7Xrk_129', '2zaJZ_F7Xrk_130', '2zaJZ_F7Xrk_131', '2zaJZ_F7Xrk_132', 'RkGK0MloK0E_80', 'RkGK0MloK0E_81', 'RkGK0MloK0E_82', 'RkGK0MloK0E_83']
+Keywords: Heisenberg group, time-frequency analysis, role
+
+Captioning Segments for Given Query:   0%|          | 0/12 [00:00<?, ?it/s]
+Captioning Segments for Given Query:   8%|▊         | 1/12 [00:28<05:09, 28.18s/it]
+Captioning Segments for Given Query:  17%|█▋        | 2/12 [00:52<04:16, 25.64s/it]
+Captioning Segments for Given Query:  25%|██▌       | 3/12 [01:16<03:44, 24.89s/it]
+Captioning Segments for Given Query:  33%|███▎      | 4/12 [01:42<03:24, 25.56s/it]
+Captioning Segments for Given Query:  42%|████▏     | 5/12 [02:08<03:00, 25.77s/it]
+Captioning Segments for Given Query:  50%|█████     | 6/12 [02:30<02:26, 24.48s/it]
+Captioning Segments for Given Query:  58%|█████▊    | 7/12 [02:53<01:59, 23.97s/it]
+Captioning Segments for Given Query:  67%|██████▋   | 8/12 [03:23<01:42, 25.69s/it]
+Captioning Segments for Given Query:  75%|███████▌  | 9/12 [03:44<01:13, 24.48s/it]
+Captioning Segments for Given Query:  83%|████████▎ | 10/12 [04:03<00:45, 22.59s/it]
+Captioning Segments for Given Query:  92%|█████████▏| 11/12 [04:31<00:24, 24.34s/it]
+Captioning Segments for Given Query: 100%|██████████| 12/12 [04:58<00:00, 25.25s/it]
+Captioning Segments for Given Query: 100%|██████████| 12/12 [04:58<00:00, 24.90s/it]
+  [查询] 集合6 q5 causal_only: Describe the role of the Heisenberg grou
+INFO:nano-graphrag:Truncate 20 to 11 chunks
+INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The involvement of the Heisenberg group and its impact on advancements in time-frequency analysis.
+INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
+INFO:nano-graphrag:[Causal Retrieval] 52 events after 2-hop bidirectional walk (from 20 seeds)
+INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 52 → 48 nodes (tau_dup=0.85)
+INFO:nano-graphrag:[Causal Retrieval] Retrieved 18 segments from 48 deduplicated events
+INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 48 events, 16955 chars
+Retrieved Causal Segments {'2zaJZ_F7Xrk_73', 'RNqXpdwd9AA_39', '2zaJZ_F7Xrk_146', '2zaJZ_F7Xrk_116', '2zaJZ_F7Xrk_108', '2zaJZ_F7Xrk_84', 'RkGK0MloK0E_217', '1s9zZ6ERAko_182', 'RkGK0MloK0E_196', 'RNqXpdwd9AA_15', '2zaJZ_F7Xrk_18', 'RkGK0MloK0E_7', '2zaJZ_F7Xrk_24', 'RNqXpdwd9AA_62', '1s9zZ6ERAko_181', 'RNqXpdwd9AA_66', 'RNqXpdwd9AA_152', 'RNqXpdwd9AA_1'}
+
+Retrieved Text Segments set()
+The output for the given question does not fit the pattern of generating a declarative sentence to retrieve a video segment, as the question pertains to a theoretical concept rather than a scene from a video or film. However, if we were to adapt this request into a format similar to the previous examples, it would not make sense since there's no visual content related to the Heisenberg group in time-frequency analysis to query. 
+
+If we were to create a hypothetical scenario based on the given instruction and question format, it might look something like this:
+
+Output:
+A lecture scene explaining the role of the Heisenberg group in time-frequency analysis.
+
+This sentence is constructed to fit the pattern of describing a video segment that could potentially exist, even though the original question is about a theoretical topic and not a visual scene.
+Retrieved Visual Segments {'2zaJZ_F7Xrk_51', '2zaJZ_F7Xrk_91', '2zaJZ_F7Xrk_50', '2zaJZ_F7Xrk_59'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 22
+  - Entity检索: 0
+  - Visual检索: 4
+  - Causal检索: 18
+
+前5个片段ID示例:
+  1. 1s9zZ6ERAko_181
+  2. 1s9zZ6ERAko_182
+  3. 2zaJZ_F7Xrk_18
+  4. 2zaJZ_F7Xrk_24
+  5. 2zaJZ_F7Xrk_50
+
+📊 video_segments._data 结构:
+  可用视频数量: 4
+  示例视频: 1s9zZ6ERAko
+  该视频的片段索引数量: 410
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 22
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments
+⠹ Checked 2 segments
+⠸ Checked 3 segments
+⠼ Checked 4 segments
+⠴ Checked 5 segments
+⠦ Checked 6 segments
+⠧ Checked 7 segments
+⠇ Checked 8 segments
+⠏ Checked 9 segments
+⠋ Checked 10 segments
+⠙ Checked 11 segments
+⠹ Checked 12 segments
+⠸ Checked 13 segments
+⠼ Checked 14 segments
+⠴ Checked 15 segments
+⠦ Checked 16 segments
+⠧ Checked 17 segments
+⠇ Checked 18 segments
+⠏ Checked 19 segments
+⠋ Checked 20 segments
+⠙ Checked 21 segments
+⠹ Checked 22 segments
+0 Video Segments remain after filtering
+Since no segments remain after filtering, we utilized all the retrieved segments.
+Remain segments ['1s9zZ6ERAko_181', '1s9zZ6ERAko_182', '2zaJZ_F7Xrk_18', '2zaJZ_F7Xrk_24', '2zaJZ_F7Xrk_50', '2zaJZ_F7Xrk_51', '2zaJZ_F7Xrk_59', '2zaJZ_F7Xrk_73', '2zaJZ_F7Xrk_84', '2zaJZ_F7Xrk_91', '2zaJZ_F7Xrk_108', '2zaJZ_F7Xrk_116', '2zaJZ_F7Xrk_146', 'RNqXpdwd9AA_1', 'RNqXpdwd9AA_15', 'RNqXpdwd9AA_39', 'RNqXpdwd9AA_62', 'RNqXpdwd9AA_66', 'RNqXpdwd9AA_152', 'RkGK0MloK0E_7', 'RkGK0MloK0E_196', 'RkGK0MloK0E_217']
+Keywords: Heisenberg group, time-frequency analysis, role
+
+Captioning Segments for Given Query:   0%|          | 0/22 [00:00<?, ?it/s]
+Captioning Segments for Given Query:   5%|▍         | 1/22 [00:27<09:46, 27.93s/it]
+Captioning Segments for Given Query:   9%|▉         | 2/22 [00:54<09:07, 27.35s/it]
+Captioning Segments for Given Query:  14%|█▎        | 3/22 [01:25<09:05, 28.72s/it]
+Captioning Segments for Given Query:  18%|█▊        | 4/22 [01:54<08:39, 28.86s/it]
+Captioning Segments for Given Query:  23%|██▎       | 5/22 [02:23<08:14, 29.11s/it]
+Captioning Segments for Given Query:  27%|██▋       | 6/22 [02:52<07:40, 28.78s/it]
+Captioning Segments for Given Query:  32%|███▏      | 7/22 [03:13<06:35, 26.37s/it]
+Captioning Segments for Given Query:  36%|███▋      | 8/22 [03:37<05:59, 25.68s/it]
+Captioning Segments for Given Query:  41%|████      | 9/22 [04:06<05:48, 26.80s/it]
+Captioning Segments for Given Query:  45%|████▌     | 10/22 [04:41<05:51, 29.31s/it]
+Captioning Segments for Given Query:  50%|█████     | 11/22 [05:11<05:23, 29.41s/it]
+Captioning Segments for Given Query:  55%|█████▍    | 12/22 [05:40<04:52, 29.24s/it]
+Captioning Segments for Given Query:  59%|█████▉    | 13/22 [06:00<03:57, 26.38s/it]
+Captioning Segments for Given Query:  64%|██████▎   | 14/22 [06:25<03:28, 26.04s/it]
+Captioning Segments for Given Query:  68%|██████▊   | 15/22 [06:46<02:51, 24.56s/it]
+Captioning Segments for Given Query:  73%|███████▎  | 16/22 [07:02<02:11, 21.94s/it]
+Captioning Segments for Given Query:  77%|███████▋  | 17/22 [07:34<02:05, 25.03s/it]
+Captioning Segments for Given Query:  82%|████████▏ | 18/22 [07:59<01:39, 24.88s/it]
+Captioning Segments for Given Query:  86%|████████▋ | 19/22 [08:25<01:16, 25.34s/it]
+Captioning Segments for Given Query:  91%|█████████ | 20/22 [09:02<00:57, 28.74s/it]
+Captioning Segments for Given Query:  95%|█████████▌| 21/22 [09:25<00:27, 27.04s/it]
+Captioning Segments for Given Query: 100%|██████████| 22/22 [09:47<00:00, 25.68s/it]
+Captioning Segments for Given Query: 100%|██████████| 22/22 [09:47<00:00, 26.72s/it]
+  [查询] 集合6 q6 entity_only: Compare and contrast windowed Fourier tr
+INFO:nano-graphrag:Truncate 20 to 12 chunks
+Compare and contrast windowed Fourier transforms and wavelet transforms.
+Retrieved Text Segments {'RNqXpdwd9AA_4', 'RNqXpdwd9AA_3', 'RkGK0MloK0E_144', 'RkGK0MloK0E_143', 'RNqXpdwd9AA_5', 'RkGK0MloK0E_142'}
+The output for the given question does not fit the pattern described in the instruction since it is asking for a comparison between two mathematical concepts rather than a query for a video segment. However, sticking to the format requested and assuming we need to formulate a video query related to the explanation or demonstration of these concepts:
+
+Output:
+A video segment explaining or demonstrating windowed Fourier transforms and wavelet transforms.
+Retrieved Visual Segments {'2zaJZ_F7Xrk_51', '2zaJZ_F7Xrk_91', '2zaJZ_F7Xrk_50', '2zaJZ_F7Xrk_59'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 10
+  - Entity检索: 6
+  - Visual检索: 4
+  - Causal检索: 0
+
+前5个片段ID示例:
+  1. 2zaJZ_F7Xrk_50
+  2. 2zaJZ_F7Xrk_51
+  3. 2zaJZ_F7Xrk_59
+  4. 2zaJZ_F7Xrk_91
+  5. RNqXpdwd9AA_3
+
+📊 video_segments._data 结构:
+  可用视频数量: 4
+  示例视频: 1s9zZ6ERAko
+  该视频的片段索引数量: 410
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 10
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments
+⠹ Checked 2 segments
+⠸ Checked 3 segments
+⠼ Checked 4 segments
+⠴ Checked 5 segments
+⠦ Checked 6 segments
+⠧ Checked 7 segments
+⠇ Checked 8 segments
+⠏ Checked 9 segments
+⠋ Checked 10 segments
+0 Video Segments remain after filtering
+Since no segments remain after filtering, we utilized all the retrieved segments.
+Remain segments ['2zaJZ_F7Xrk_50', '2zaJZ_F7Xrk_51', '2zaJZ_F7Xrk_59', '2zaJZ_F7Xrk_91', 'RNqXpdwd9AA_3', 'RNqXpdwd9AA_4', 'RNqXpdwd9AA_5', 'RkGK0MloK0E_142', 'RkGK0MloK0E_143', 'RkGK0MloK0E_144']
+Keywords: windowed Fourier transforms, wavelet transforms, compare, contrast
+
+Captioning Segments for Given Query:   0%|          | 0/10 [00:00<?, ?it/s]
+Captioning Segments for Given Query:  10%|█         | 1/10 [00:35<05:22, 35.83s/it]
+Captioning Segments for Given Query:  20%|██        | 2/10 [00:59<03:50, 28.78s/it]
+Captioning Segments for Given Query:  30%|███       | 3/10 [01:28<03:21, 28.78s/it]
+Captioning Segments for Given Query:  40%|████      | 4/10 [02:01<03:02, 30.37s/it]
+Captioning Segments for Given Query:  50%|█████     | 5/10 [02:29<02:27, 29.54s/it]
+Captioning Segments for Given Query:  60%|██████    | 6/10 [02:59<01:58, 29.63s/it]
+Captioning Segments for Given Query:  70%|███████   | 7/10 [03:30<01:31, 30.33s/it]
+Captioning Segments for Given Query:  80%|████████  | 8/10 [04:00<01:00, 30.06s/it]
+Captioning Segments for Given Query:  90%|█████████ | 9/10 [04:28<00:29, 29.58s/it]
+Captioning Segments for Given Query: 100%|██████████| 10/10 [04:48<00:00, 26.36s/it]
+Captioning Segments for Given Query: 100%|██████████| 10/10 [04:48<00:00, 28.81s/it]
+  [查询] 集合6 q6 causal_only: Compare and contrast windowed Fourier tr
+INFO:nano-graphrag:Truncate 20 to 12 chunks
+INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The processes and outcomes associated with using windowed Fourier transforms versus wavelet transforms in signal analysis.
+INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
+INFO:nano-graphrag:[Causal Retrieval] 60 events after 2-hop bidirectional walk (from 20 seeds)
+INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 60 → 52 nodes (tau_dup=0.85)
+INFO:nano-graphrag:[Causal Retrieval] Retrieved 16 segments from 52 deduplicated events
+INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 52 events, 20050 chars
+Retrieved Causal Segments {'2zaJZ_F7Xrk_115', '2zaJZ_F7Xrk_135', '2zaJZ_F7Xrk_146', '2zaJZ_F7Xrk_116', '2zaJZ_F7Xrk_15', 'RkGK0MloK0E_112', 'RkGK0MloK0E_139', 'RkGK0MloK0E_2', 'RkGK0MloK0E_134', '2zaJZ_F7Xrk_18', 'RkGK0MloK0E_7', '2zaJZ_F7Xrk_24', '2zaJZ_F7Xrk_40', 'RNqXpdwd9AA_19', 'RkGK0MloK0E_156', '2zaJZ_F7Xrk_92'}
+
+Retrieved Text Segments set()
+The question provided does not seem to fit the pattern of previous examples, which were related to retrieving video segment information based on scene descriptions. The given question asks for a comparison between two mathematical concepts, windowed Fourier transforms and wavelet transforms, which doesn't relate to querying video content.
+
+If we were to adapt this into a form similar to previous examples, it might need to be about visual demonstrations or explanations of these concepts within educational video content. However, since the original request seems to be about generating a query for video retrieval based on scene-related information, the current input does not align with that format.
+
+If the goal is to create a video query for educational content, an appropriate output could be:
+
+Output:
+A video segment explaining windowed Fourier transforms and wavelet transforms.
+
+This output serves as a broad query for video segments that explain these mathematical concepts visually. If more specific details are needed (such as comparing the two methods), additional criteria would need to be specified.
+Retrieved Visual Segments {'2zaJZ_F7Xrk_51', '2zaJZ_F7Xrk_91', '2zaJZ_F7Xrk_50', '2zaJZ_F7Xrk_59'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 20
+  - Entity检索: 0
+  - Visual检索: 4
+  - Causal检索: 16
+
+前5个片段ID示例:
+  1. 2zaJZ_F7Xrk_15
+  2. 2zaJZ_F7Xrk_18
+  3. 2zaJZ_F7Xrk_24
+  4. 2zaJZ_F7Xrk_40
+  5. 2zaJZ_F7Xrk_50
+
+📊 video_segments._data 结构:
+  可用视频数量: 4
+  示例视频: 1s9zZ6ERAko
+  该视频的片段索引数量: 410
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 20
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments
+⠹ Checked 2 segments
+⠸ Checked 3 segments
+⠼ Checked 4 segments
+⠴ Checked 5 segments
+⠦ Checked 6 segments
+⠧ Checked 7 segments
+⠇ Checked 8 segments
+⠏ Checked 9 segments
+⠋ Checked 10 segments
+⠙ Checked 11 segments
+⠹ Checked 12 segments
+⠸ Checked 13 segments
+⠼ Checked 14 segments
+⠴ Checked 15 segments
+⠦ Checked 16 segments
+⠧ Checked 17 segments
+⠇ Checked 18 segments
+⠏ Checked 19 segments
+⠋ Checked 20 segments
+1 Video Segments remain after filtering
+Remain segments ['2zaJZ_F7Xrk_15']
+Keywords: windowed Fourier transforms, wavelet transforms, compare, contrast
+
+Captioning Segments for Given Query:   0%|          | 0/1 [00:00<?, ?it/s]
+Captioning Segments for Given Query: 100%|██████████| 1/1 [00:32<00:00, 32.86s/it]
+Captioning Segments for Given Query: 100%|██████████| 1/1 [00:32<00:00, 32.86s/it]
+  [查询] 集合6 q7 entity_only: What is the significance of the paramete
+INFO:nano-graphrag:Truncate 20 to 12 chunks
+The significance of the parameter Ωτ in windowed Fourier transforms.
+Retrieved Text Segments {'RNqXpdwd9AA_4', 'RNqXpdwd9AA_3', 'RkGK0MloK0E_144', 'RkGK0MloK0E_143', 'RNqXpdwd9AA_5', 'RkGK0MloK0E_142'}
+It seems there might be a misunderstanding based on the given instruction and the provided example versus the "Real Data" input. The previous examples are focused on generating queries for video retrieval based on scene-related information. However, the "Real Data" question is about understanding the significance of a mathematical parameter in a specific context, which doesn't fit the initial format aimed at creating video retrieval queries.
+
+If we were to follow the exact pattern from the examples provided, focusing strictly on scene-related information for video retrieval, then the "Real Data" input wouldn't fit this format since it's not asking about a scene but rather about a technical concept.
+
+However, if we interpret your request broadly to mean formulating a query based on the information given, even though it's not scene-related, a possible output could be:
+
+Output:
+The significance of the parameter Ωτ in scenes involving windowed Fourier transforms.
+
+But ideally, for a more accurate response regarding the content of the question, it would be best to directly address the significance of Ωτ in the context of windowed Fourier transforms, which goes beyond the scope of scene-based video retrieval queries.
+Retrieved Visual Segments {'2zaJZ_F7Xrk_51', '2zaJZ_F7Xrk_91', '2zaJZ_F7Xrk_50', '2zaJZ_F7Xrk_59'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 10
+  - Entity检索: 6
+  - Visual检索: 4
+  - Causal检索: 0
+
+前5个片段ID示例:
+  1. 2zaJZ_F7Xrk_50
+  2. 2zaJZ_F7Xrk_51
+  3. 2zaJZ_F7Xrk_59
+  4. 2zaJZ_F7Xrk_91
+  5. RNqXpdwd9AA_3
+
+📊 video_segments._data 结构:
+  可用视频数量: 4
+  示例视频: 1s9zZ6ERAko
+  该视频的片段索引数量: 410
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 10
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments
+⠹ Checked 2 segments
+⠸ Checked 3 segments
+⠼ Checked 4 segments
+⠴ Checked 5 segments
+⠦ Checked 6 segments
+⠧ Checked 7 segments
+⠇ Checked 8 segments
+⠏ Checked 9 segments
+⠋ Checked 10 segments
+0 Video Segments remain after filtering
+Since no segments remain after filtering, we utilized all the retrieved segments.
+Remain segments ['2zaJZ_F7Xrk_50', '2zaJZ_F7Xrk_51', '2zaJZ_F7Xrk_59', '2zaJZ_F7Xrk_91', 'RNqXpdwd9AA_3', 'RNqXpdwd9AA_4', 'RNqXpdwd9AA_5', 'RkGK0MloK0E_142', 'RkGK0MloK0E_143', 'RkGK0MloK0E_144']
+Keywords: parameter, Ωτ, windowed Fourier transforms, significance
+
+Captioning Segments for Given Query:   0%|          | 0/10 [00:00<?, ?it/s]
+Captioning Segments for Given Query:  10%|█         | 1/10 [00:26<04:02, 26.93s/it]
+Captioning Segments for Given Query:  20%|██        | 2/10 [00:49<03:14, 24.32s/it]
+Captioning Segments for Given Query:  30%|███       | 3/10 [01:22<03:19, 28.50s/it]
+Captioning Segments for Given Query:  40%|████      | 4/10 [01:52<02:53, 28.94s/it]
+Captioning Segments for Given Query:  50%|█████     | 5/10 [02:31<02:42, 32.44s/it]
+Captioning Segments for Given Query:  60%|██████    | 6/10 [03:01<02:07, 31.83s/it]
+Captioning Segments for Given Query:  70%|███████   | 7/10 [03:31<01:33, 31.07s/it]
+Captioning Segments for Given Query:  80%|████████  | 8/10 [03:56<00:58, 29.08s/it]
+Captioning Segments for Given Query:  90%|█████████ | 9/10 [04:21<00:27, 27.88s/it]
+Captioning Segments for Given Query: 100%|██████████| 10/10 [04:52<00:00, 28.87s/it]
+Captioning Segments for Given Query: 100%|██████████| 10/10 [04:52<00:00, 29.25s/it]
+  [查询] 集合6 q7 causal_only: What is the significance of the paramete
+INFO:nano-graphrag:Truncate 20 to 12 chunks
+INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The influence of the parameter Ωτ on the outcomes observed in windowed Fourier transform applications.
+INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
+INFO:nano-graphrag:[Causal Retrieval] 53 events after 2-hop bidirectional walk (from 20 seeds)
+INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 53 → 47 nodes (tau_dup=0.85)
+INFO:nano-graphrag:[Causal Retrieval] Retrieved 17 segments from 47 deduplicated events
+INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 47 events, 17092 chars
+Retrieved Causal Segments {'2zaJZ_F7Xrk_135', '2zaJZ_F7Xrk_146', '2zaJZ_F7Xrk_92', 'RkGK0MloK0E_45', 'RkGK0MloK0E_112', '2zaJZ_F7Xrk_116', 'RkGK0MloK0E_176', 'RkGK0MloK0E_139', 'RkGK0MloK0E_166', 'RkGK0MloK0E_2', '2zaJZ_F7Xrk_18', 'RkGK0MloK0E_7', '2zaJZ_F7Xrk_24', '2zaJZ_F7Xrk_109', 'RkGK0MloK0E_156', 'RNqXpdwd9AA_152', 'RNqXpdwd9AA_1'}
+
+Retrieved Text Segments set()
+It seems there might be a misunderstanding in the provided format for the real data example. The previous examples were related to generating queries for video segment retrieval based on scene descriptions. However, the real data example you've given is about understanding a mathematical concept related to signal processing, specifically the parameter Ωτ in windowed Fourier transforms. This doesn't fit the pattern of generating a query for a video scene but rather requires an explanation or definition.
+
+If we were to adapt this into a similar format for generating a query for video content, it wouldn't make sense since mathematical concepts aren't typically depicted in video scenes unless it's educational content explaining such concepts. If your goal is to frame a query for educational video content that explains the significance of the parameter Ωτ in windowed Fourier transforms, then the output could be:
+
+Output:
+A video segment explaining the significance of the parameter Ωτ in windowed Fourier transforms.
+Retrieved Visual Segments {'2zaJZ_F7Xrk_51', '2zaJZ_F7Xrk_91', '2zaJZ_F7Xrk_50', '2zaJZ_F7Xrk_59'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 21
+  - Entity检索: 0
+  - Visual检索: 4
+  - Causal检索: 17
+
+前5个片段ID示例:
+  1. 2zaJZ_F7Xrk_18
+  2. 2zaJZ_F7Xrk_24
+  3. 2zaJZ_F7Xrk_50
+  4. 2zaJZ_F7Xrk_51
+  5. 2zaJZ_F7Xrk_59
+
+📊 video_segments._data 结构:
+  可用视频数量: 4
+  示例视频: 1s9zZ6ERAko
+  该视频的片段索引数量: 410
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 21
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments
+⠹ Checked 2 segments
+⠸ Checked 3 segments
+⠼ Checked 4 segments
+⠴ Checked 5 segments
+⠦ Checked 6 segments
+⠧ Checked 7 segments
+⠇ Checked 8 segments
+⠏ Checked 9 segments
+⠋ Checked 10 segments
+⠙ Checked 11 segments
+⠹ Checked 12 segments
+⠸ Checked 13 segments
+⠼ Checked 14 segments
+⠴ Checked 15 segments
+⠦ Checked 16 segments
+⠧ Checked 17 segments
+⠇ Checked 18 segments
+⠏ Checked 19 segments
+⠋ Checked 20 segments
+⠙ Checked 21 segments
+0 Video Segments remain after filtering
+Since no segments remain after filtering, we utilized all the retrieved segments.
+Remain segments ['2zaJZ_F7Xrk_18', '2zaJZ_F7Xrk_24', '2zaJZ_F7Xrk_50', '2zaJZ_F7Xrk_51', '2zaJZ_F7Xrk_59', '2zaJZ_F7Xrk_91', '2zaJZ_F7Xrk_92', '2zaJZ_F7Xrk_109', '2zaJZ_F7Xrk_116', '2zaJZ_F7Xrk_135', '2zaJZ_F7Xrk_146', 'RNqXpdwd9AA_1', 'RNqXpdwd9AA_152', 'RkGK0MloK0E_2', 'RkGK0MloK0E_7', 'RkGK0MloK0E_45', 'RkGK0MloK0E_112', 'RkGK0MloK0E_139', 'RkGK0MloK0E_156', 'RkGK0MloK0E_166', 'RkGK0MloK0E_176']
+Keywords: parameter, Ωτ, windowed Fourier transforms, significance
+
+Captioning Segments for Given Query:   0%|          | 0/21 [00:00<?, ?it/s]
+Captioning Segments for Given Query:   5%|▍         | 1/21 [00:28<09:29, 28.47s/it]
+Captioning Segments for Given Query:  10%|▉         | 2/21 [00:50<07:46, 24.54s/it]
+Captioning Segments for Given Query:  14%|█▍        | 3/21 [01:18<07:50, 26.16s/it]
+Captioning Segments for Given Query:  19%|█▉        | 4/21 [01:38<06:45, 23.87s/it]
+Captioning Segments for Given Query:  24%|██▍       | 5/21 [02:10<07:05, 26.62s/it]
+Captioning Segments for Given Query:  29%|██▊       | 6/21 [02:40<06:59, 27.96s/it]
+Captioning Segments for Given Query:  33%|███▎      | 7/21 [03:17<07:10, 30.77s/it]
+Captioning Segments for Given Query:  38%|███▊      | 8/21 [03:45<06:27, 29.81s/it]
+Captioning Segments for Given Query:  43%|████▎     | 9/21 [04:14<05:55, 29.62s/it]
+Captioning Segments for Given Query:  48%|████▊     | 10/21 [04:41<05:16, 28.77s/it]
+Captioning Segments for Given Query:  52%|█████▏    | 11/21 [05:10<04:49, 28.98s/it]
+Captioning Segments for Given Query:  57%|█████▋    | 12/21 [05:39<04:20, 28.93s/it]
+Captioning Segments for Given Query:  62%|██████▏   | 13/21 [06:02<03:36, 27.11s/it]
+Captioning Segments for Given Query:  67%|██████▋   | 14/21 [06:28<03:07, 26.76s/it]
+Captioning Segments for Given Query:  71%|███████▏  | 15/21 [06:53<02:37, 26.25s/it]
+Captioning Segments for Given Query:  76%|███████▌  | 16/21 [07:26<02:21, 28.36s/it]
+Captioning Segments for Given Query:  81%|████████  | 17/21 [07:54<01:53, 28.35s/it]
+Captioning Segments for Given Query:  86%|████████▌ | 18/21 [08:17<01:19, 26.47s/it]
+Captioning Segments for Given Query:  90%|█████████ | 19/21 [08:45<00:54, 27.18s/it]
+Captioning Segments for Given Query:  95%|█████████▌| 20/21 [09:07<00:25, 25.45s/it]
+Captioning Segments for Given Query: 100%|██████████| 21/21 [09:37<00:00, 26.80s/it]
+Captioning Segments for Given Query: 100%|██████████| 21/21 [09:37<00:00, 27.49s/it]
+  [查询] 集合6 q8 entity_only: Discuss the significance of using orthog
+INFO:nano-graphrag:Truncate 20 to 11 chunks
+The significance of using orthogonal windows in signal analysis.
+Retrieved Text Segments {'RkGK0MloK0E_144', '2zaJZ_F7Xrk_96', '2zaJZ_F7Xrk_95', 'RkGK0MloK0E_143', 'RkGK0MloK0E_142', '2zaJZ_F7Xrk_97'}
+The output for the given question does not fit the pattern of generating a declarative sentence to serve as a query for retrieving relevant video segments, since the question pertains to a concept in signal analysis rather than a visual scene in a video. However, if we were to adapt this to fit the format requested, it would need to be about a video scene related to signal analysis or orthogonal windows. Since there's no direct scene described in the question, a hypothetical scenario could be constructed:
+
+Output:
+A video segment showing the application of orthogonal windows in signal analysis.
+
+This output serves as a query for a video segment that might visually demonstrate the use of orthogonal windows in a practical signal analysis context.
+Retrieved Visual Segments {'2zaJZ_F7Xrk_51', '2zaJZ_F7Xrk_91', '2zaJZ_F7Xrk_50', '2zaJZ_F7Xrk_59'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 10
+  - Entity检索: 6
+  - Visual检索: 4
+  - Causal检索: 0
+
+前5个片段ID示例:
+  1. 2zaJZ_F7Xrk_50
+  2. 2zaJZ_F7Xrk_51
+  3. 2zaJZ_F7Xrk_59
+  4. 2zaJZ_F7Xrk_91
+  5. 2zaJZ_F7Xrk_95
+
+📊 video_segments._data 结构:
+  可用视频数量: 4
+  示例视频: 1s9zZ6ERAko
+  该视频的片段索引数量: 410
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 10
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments
+⠹ Checked 2 segments
+⠸ Checked 3 segments
+⠼ Checked 4 segments
+⠴ Checked 5 segments
+⠦ Checked 6 segments
+⠧ Checked 7 segments
+⠇ Checked 8 segments
+⠏ Checked 9 segments
+⠋ Checked 10 segments
+1 Video Segments remain after filtering
+Remain segments ['2zaJZ_F7Xrk_97']
+Keywords: orthogonal, windows, signal, analysis, significance
+
+Captioning Segments for Given Query:   0%|          | 0/1 [00:00<?, ?it/s]
+Captioning Segments for Given Query: 100%|██████████| 1/1 [00:28<00:00, 28.63s/it]
+Captioning Segments for Given Query: 100%|██████████| 1/1 [00:28<00:00, 28.63s/it]
+  [查询] 集合6 q8 causal_only: Discuss the significance of using orthog
+INFO:nano-graphrag:Truncate 20 to 11 chunks
+INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The use of orthogonal windows in signal analysis and its impact on signal processing outcomes.
+INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
+INFO:nano-graphrag:[Causal Retrieval] 61 events after 2-hop bidirectional walk (from 20 seeds)
+INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 61 → 53 nodes (tau_dup=0.85)
+INFO:nano-graphrag:[Causal Retrieval] Retrieved 18 segments from 53 deduplicated events
+INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 53 events, 19025 chars
+Retrieved Causal Segments {'2zaJZ_F7Xrk_40', '2zaJZ_F7Xrk_115', 'RkGK0MloK0E_47', 'RkGK0MloK0E_73', '2zaJZ_F7Xrk_106', '2zaJZ_F7Xrk_92', '2zaJZ_F7Xrk_116', 'RkGK0MloK0E_112', 'RNqXpdwd9AA_152', 'RkGK0MloK0E_159', '2zaJZ_F7Xrk_18', 'RkGK0MloK0E_7', '2zaJZ_F7Xrk_24', '2zaJZ_F7Xrk_122', 'RNqXpdwd9AA_17', 'RkGK0MloK0E_156', 'RkGK0MloK0E_46', 'RNqXpdwd9AA_1'}
+
+Retrieved Text Segments set()
+The output for the given question does not fit the pattern of previous examples since it is not related to retrieving a video segment based on scene information. However, following the instruction format and adapting it to fit the given question's context might look like this:
+
+Output:
+A discussion on the use of orthogonal windows in signal analysis.
+
+But since the task is specifically about generating queries for video retrieval based on scene information, the provided question does not align with the task's requirements. If we strictly follow the task guidelines, there would be no applicable output for this question as it does not describe a scene from a video.
+Retrieved Visual Segments {'2zaJZ_F7Xrk_51', '2zaJZ_F7Xrk_91', '2zaJZ_F7Xrk_50', '2zaJZ_F7Xrk_59'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 22
+  - Entity检索: 0
+  - Visual检索: 4
+  - Causal检索: 18
+
+前5个片段ID示例:
+  1. 2zaJZ_F7Xrk_18
+  2. 2zaJZ_F7Xrk_24
+  3. 2zaJZ_F7Xrk_40
+  4. 2zaJZ_F7Xrk_50
+  5. 2zaJZ_F7Xrk_51
+
+📊 video_segments._data 结构:
+  可用视频数量: 4
+  示例视频: 1s9zZ6ERAko
+  该视频的片段索引数量: 410
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 22
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments
+⠹ Checked 2 segments
+⠸ Checked 3 segments
+⠼ Checked 4 segments
+⠴ Checked 5 segments
+⠦ Checked 6 segments
+⠧ Checked 7 segments
+⠇ Checked 8 segments
+⠏ Checked 9 segments
+⠋ Checked 10 segments
+⠙ Checked 11 segments
+⠹ Checked 12 segments
+⠸ Checked 13 segments
+⠼ Checked 14 segments
+⠴ Checked 15 segments
+⠦ Checked 16 segments
+⠧ Checked 17 segments
+⠇ Checked 18 segments
+⠏ Checked 19 segments
+⠋ Checked 20 segments
+⠙ Checked 21 segments
+⠹ Checked 22 segments
+6 Video Segments remain after filtering
+Remain segments ['2zaJZ_F7Xrk_106', 'RNqXpdwd9AA_17', 'RkGK0MloK0E_47', 'RkGK0MloK0E_73', 'RkGK0MloK0E_112', 'RkGK0MloK0E_159']
+Keywords: orthogonal, windows, signal, analysis, significance
+
+Captioning Segments for Given Query:   0%|          | 0/6 [00:00<?, ?it/s]
+Captioning Segments for Given Query:  17%|█▋        | 1/6 [00:26<02:13, 26.73s/it]
+Captioning Segments for Given Query:  33%|███▎      | 2/6 [00:59<02:01, 30.39s/it]
+Captioning Segments for Given Query:  50%|█████     | 3/6 [01:29<01:29, 29.93s/it]
+Captioning Segments for Given Query:  67%|██████▋   | 4/6 [01:55<00:57, 28.54s/it]
+Captioning Segments for Given Query:  83%|████████▎ | 5/6 [02:24<00:28, 28.70s/it]
+Captioning Segments for Given Query: 100%|██████████| 6/6 [02:51<00:00, 28.07s/it]
+Captioning Segments for Given Query: 100%|██████████| 6/6 [02:51<00:00, 28.55s/it]
+  [查询] 集合6 q9 entity_only: Explain the 'no-go theorem' regarding or
+INFO:nano-graphrag:Truncate 20 to 11 chunks
+The 'no-go theorem' regarding orthonormal time-frequency bases.
+Retrieved Text Segments {'1s9zZ6ERAko_36', '1s9zZ6ERAko_127', '1s9zZ6ERAko_38', '1s9zZ6ERAko_125', '1s9zZ6ERAko_39', '1s9zZ6ERAko_37', '1s9zZ6ERAko_126'}
+The output for the given question should focus on the context of video retrieval rather than directly addressing the theoretical physics or mathematics question presented. However, adhering strictly to the instruction and format:
+
+Since the question about the 'no-go theorem' regarding orthonormal time-frequency bases is not related to a video scene, we can't formulate a typical scene-based query. But if we were to adapt it into a video retrieval context as per the instruction's format, it would be more appropriate to provide a generic placeholder that aligns with the expected output structure:
+
+Output:
+A video segment explaining the 'no-go theorem' in a theoretical context.
+Retrieved Visual Segments {'2zaJZ_F7Xrk_51', '2zaJZ_F7Xrk_91', '2zaJZ_F7Xrk_50', '2zaJZ_F7Xrk_59'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 11
+  - Entity检索: 7
+  - Visual检索: 4
+  - Causal检索: 0
+
+前5个片段ID示例:
+  1. 1s9zZ6ERAko_36
+  2. 1s9zZ6ERAko_37
+  3. 1s9zZ6ERAko_38
+  4. 1s9zZ6ERAko_39
+  5. 1s9zZ6ERAko_125
+
+📊 video_segments._data 结构:
+  可用视频数量: 4
+  示例视频: 1s9zZ6ERAko
+  该视频的片段索引数量: 410
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 11
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments
+⠹ Checked 2 segments
+⠸ Checked 3 segments
+⠼ Checked 4 segments
+⠴ Checked 5 segments
+⠦ Checked 6 segments
+⠧ Checked 7 segments
+⠇ Checked 8 segments
+⠏ Checked 9 segments
+⠋ Checked 10 segments
+⠙ Checked 11 segments
+0 Video Segments remain after filtering
+Since no segments remain after filtering, we utilized all the retrieved segments.
+Remain segments ['1s9zZ6ERAko_36', '1s9zZ6ERAko_37', '1s9zZ6ERAko_38', '1s9zZ6ERAko_39', '1s9zZ6ERAko_125', '1s9zZ6ERAko_126', '1s9zZ6ERAko_127', '2zaJZ_F7Xrk_50', '2zaJZ_F7Xrk_51', '2zaJZ_F7Xrk_59', '2zaJZ_F7Xrk_91']
+Keywords: no-go theorem, orthonormal, time-frequency, bases
+
+Captioning Segments for Given Query:   0%|          | 0/11 [00:00<?, ?it/s]
+Captioning Segments for Given Query:   9%|▉         | 1/11 [00:16<02:43, 16.39s/it]
+Captioning Segments for Given Query:  18%|█▊        | 2/11 [00:45<03:35, 23.95s/it]
+Captioning Segments for Given Query:  27%|██▋       | 3/11 [01:04<02:51, 21.44s/it]
+Captioning Segments for Given Query:  36%|███▋      | 4/11 [01:39<03:07, 26.77s/it]
+Captioning Segments for Given Query:  45%|████▌     | 5/11 [02:10<02:49, 28.32s/it]
+Captioning Segments for Given Query:  55%|█████▍    | 6/11 [02:42<02:28, 29.69s/it]
+Captioning Segments for Given Query:  64%|██████▎   | 7/11 [03:15<02:03, 30.82s/it]
+Captioning Segments for Given Query:  73%|███████▎  | 8/11 [03:34<01:21, 27.06s/it]
+Captioning Segments for Given Query:  82%|████████▏ | 9/11 [03:57<00:51, 25.69s/it]
+Captioning Segments for Given Query:  91%|█████████ | 10/11 [04:21<00:25, 25.24s/it]
+Captioning Segments for Given Query: 100%|██████████| 11/11 [04:59<00:00, 29.16s/it]
+Captioning Segments for Given Query: 100%|██████████| 11/11 [04:59<00:00, 27.23s/it]
+  [查询] 集合6 q9 causal_only: Explain the 'no-go theorem' regarding or
+INFO:nano-graphrag:Truncate 20 to 11 chunks
+INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The derivation and implications of the 'no-go theorem' concerning orthonormal time-frequency bases.
+INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
+INFO:nano-graphrag:[Causal Retrieval] 60 events after 2-hop bidirectional walk (from 20 seeds)
+INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 60 → 50 nodes (tau_dup=0.85)
+INFO:nano-graphrag:[Causal Retrieval] Retrieved 19 segments from 50 deduplicated events
+INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 50 events, 18408 chars
+Retrieved Causal Segments {'RkGK0MloK0E_217', '1s9zZ6ERAko_182', 'RNqXpdwd9AA_15', 'RkGK0MloK0E_4', 'RkGK0MloK0E_60', '2zaJZ_F7Xrk_146', 'RkGK0MloK0E_112', 'RkGK0MloK0E_7', 'RNqXpdwd9AA_1', 'RkGK0MloK0E_73', '2zaJZ_F7Xrk_116', '2zaJZ_F7Xrk_84', 'RNqXpdwd9AA_16', '2zaJZ_F7Xrk_24', 'RNqXpdwd9AA_29', '1s9zZ6ERAko_181', 'RNqXpdwd9AA_66', 'RkGK0MloK0E_61', '1s9zZ6ERAko_142'}
+
+Retrieved Text Segments set()
+The output for the given question does not fit the pattern of generating a declarative sentence to serve as a query for retrieving relevant video segments, since the topic "no-go theorem" regarding orthonormal time-frequency bases is more theoretical and pertains to signal processing or mathematics rather than a visual scene in a video. However, if we were to adapt the instruction to fit the context of video retrieval, we would need a scenario that includes a visual element. Since no specific visual context is provided, let's assume a hypothetical scenario:
+
+If the question was framed in a way that could be visualized, such as:
+Question: In a documentary about signal processing, how is the concept of the 'no-go theorem' regarding orthonormal time-frequency bases illustrated?
+
+Then the output would be:
+A documentary scene illustrating the concept of the 'no-go theorem' regarding orthonormal time-frequency bases.
+Retrieved Visual Segments {'2zaJZ_F7Xrk_51', '2zaJZ_F7Xrk_91', '2zaJZ_F7Xrk_50', '2zaJZ_F7Xrk_59'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 23
+  - Entity检索: 0
+  - Visual检索: 4
+  - Causal检索: 19
+
+前5个片段ID示例:
+  1. 1s9zZ6ERAko_142
+  2. 1s9zZ6ERAko_181
+  3. 1s9zZ6ERAko_182
+  4. 2zaJZ_F7Xrk_24
+  5. 2zaJZ_F7Xrk_50
+
+📊 video_segments._data 结构:
+  可用视频数量: 4
+  示例视频: 1s9zZ6ERAko
+  该视频的片段索引数量: 410
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 23
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments
+⠹ Checked 2 segments
+⠸ Checked 3 segments
+⠼ Checked 4 segments
+⠴ Checked 5 segments
+⠦ Checked 6 segments
+⠧ Checked 7 segments
+⠇ Checked 8 segments
+⠏ Checked 9 segments
+⠋ Checked 10 segments
+⠙ Checked 11 segments
+⠹ Checked 12 segments
+⠸ Checked 13 segments
+⠼ Checked 14 segments
+⠴ Checked 15 segments
+⠦ Checked 16 segments
+⠧ Checked 17 segments
+⠇ Checked 18 segments
+⠏ Checked 19 segments
+⠋ Checked 20 segments
+⠙ Checked 21 segments
+⠹ Checked 22 segments
+⠸ Checked 23 segments
+1 Video Segments remain after filtering
+Remain segments ['RNqXpdwd9AA_29']
+Keywords: no-go theorem, orthonormal, time-frequency, bases
+
+Captioning Segments for Given Query:   0%|          | 0/1 [00:00<?, ?it/s]
+Captioning Segments for Given Query: 100%|██████████| 1/1 [00:31<00:00, 31.57s/it]
+Captioning Segments for Given Query: 100%|██████████| 1/1 [00:31<00:00, 31.57s/it]
+  [查询] 集合6 q10 entity_only: Explain the significance of the product 
+INFO:nano-graphrag:Truncate 20 to 11 chunks
+The significance of the product ωτ = 2π in time-frequency analysis.
+Retrieved Text Segments {'1s9zZ6ERAko_36', 'RNqXpdwd9AA_4', 'RNqXpdwd9AA_3', '1s9zZ6ERAko_38', '1s9zZ6ERAko_39', '1s9zZ6ERAko_37', 'RNqXpdwd9AA_5'}
+The output generated based on the provided instruction and example format should focus on video segment retrieval related content. However, the given question pertains to a concept in time-frequency analysis which is not directly translatable into a visual scene query using the provided examples' format. But sticking strictly to the template and goal of generating a query for video segments, we might rephrase the question into a context where it could fit, though it's not a natural fit:
+
+Output:
+A scene explaining the significance of the product ωτ = 2π in a demonstration or explanation segment.
+
+However, since the original question is more about theoretical knowledge rather than a visual scene, a more accurate response would be to provide an explanation regarding the significance of ωτ = 2π in time-frequency analysis, which deviates from the format of generating a query for video segments. If the task is strictly to adhere to the format of generating queries for video segments, then the above response is the best attempt within the given constraints.
+Retrieved Visual Segments {'2zaJZ_F7Xrk_51', '2zaJZ_F7Xrk_91', '2zaJZ_F7Xrk_50', '2zaJZ_F7Xrk_59'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 11
+  - Entity检索: 7
+  - Visual检索: 4
+  - Causal检索: 0
+
+前5个片段ID示例:
+  1. 1s9zZ6ERAko_36
+  2. 1s9zZ6ERAko_37
+  3. 1s9zZ6ERAko_38
+  4. 1s9zZ6ERAko_39
+  5. 2zaJZ_F7Xrk_50
+
+📊 video_segments._data 结构:
+  可用视频数量: 4
+  示例视频: 1s9zZ6ERAko
+  该视频的片段索引数量: 410
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 11
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments
+⠹ Checked 2 segments
+⠸ Checked 3 segments
+⠼ Checked 4 segments
+⠴ Checked 5 segments
+⠦ Checked 6 segments
+⠧ Checked 7 segments
+⠇ Checked 8 segments
+⠏ Checked 9 segments
+⠋ Checked 10 segments
+⠙ Checked 11 segments
+0 Video Segments remain after filtering
+Since no segments remain after filtering, we utilized all the retrieved segments.
+Remain segments ['1s9zZ6ERAko_36', '1s9zZ6ERAko_37', '1s9zZ6ERAko_38', '1s9zZ6ERAko_39', '2zaJZ_F7Xrk_50', '2zaJZ_F7Xrk_51', '2zaJZ_F7Xrk_59', '2zaJZ_F7Xrk_91', 'RNqXpdwd9AA_3', 'RNqXpdwd9AA_4', 'RNqXpdwd9AA_5']
+Keywords: product, ωτ, 2π, time-frequency analysis, significance
+
+Captioning Segments for Given Query:   0%|          | 0/11 [00:00<?, ?it/s]
+Captioning Segments for Given Query:   9%|▉         | 1/11 [00:18<03:07, 18.77s/it]
+Captioning Segments for Given Query:  18%|█▊        | 2/11 [00:40<03:04, 20.47s/it]
+Captioning Segments for Given Query:  27%|██▋       | 3/11 [01:08<03:10, 23.83s/it]
+Captioning Segments for Given Query:  36%|███▋      | 4/11 [01:35<02:57, 25.31s/it]
+Captioning Segments for Given Query:  45%|████▌     | 5/11 [01:58<02:25, 24.29s/it]
+Captioning Segments for Given Query:  55%|█████▍    | 6/11 [02:28<02:10, 26.15s/it]
+Captioning Segments for Given Query:  64%|██████▎   | 7/11 [02:54<01:45, 26.39s/it]
+Captioning Segments for Given Query:  73%|███████▎  | 8/11 [03:26<01:24, 28.12s/it]
+Captioning Segments for Given Query:  82%|████████▏ | 9/11 [04:01<01:00, 30.08s/it]
+Captioning Segments for Given Query:  91%|█████████ | 10/11 [04:30<00:29, 29.84s/it]
+Captioning Segments for Given Query: 100%|██████████| 11/11 [05:05<00:00, 31.53s/it]
+Captioning Segments for Given Query: 100%|██████████| 11/11 [05:05<00:00, 27.80s/it]
+  [查询] 集合6 q10 causal_only: Explain the significance of the product 
+INFO:nano-graphrag:Truncate 20 to 11 chunks
+INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The significance of the product ωτ = 2π and its implications in time-frequency analysis.
+INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
+INFO:nano-graphrag:[Causal Retrieval] 54 events after 2-hop bidirectional walk (from 20 seeds)
+INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 54 → 45 nodes (tau_dup=0.85)
+INFO:nano-graphrag:[Causal Retrieval] Retrieved 16 segments from 45 deduplicated events
+INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 45 events, 15658 chars
+Retrieved Causal Segments {'RNqXpdwd9AA_39', '2zaJZ_F7Xrk_146', '2zaJZ_F7Xrk_116', '2zaJZ_F7Xrk_84', 'RkGK0MloK0E_217', '1s9zZ6ERAko_182', 'RNqXpdwd9AA_15', '2zaJZ_F7Xrk_18', 'RkGK0MloK0E_7', '2zaJZ_F7Xrk_24', 'RNqXpdwd9AA_62', '2zaJZ_F7Xrk_20', 'RkGK0MloK0E_4', '1s9zZ6ERAko_181', 'RNqXpdwd9AA_66', 'RNqXpdwd9AA_1'}
+
+Retrieved Text Segments set()
+The output for the given question should focus on retrieving a video segment that explains or demonstrates the significance of the product ωτ = 2π in the context of time-frequency analysis. However, since this question pertains more to theoretical content rather than a visual scene from a video, the typical format requested may not directly apply. But following the structure closely, we can phrase it as:
+
+Output:
+A segment explaining the significance of the product ωτ = 2π in time-frequency analysis.
+Retrieved Visual Segments {'2zaJZ_F7Xrk_51', '2zaJZ_F7Xrk_91', '2zaJZ_F7Xrk_50', '2zaJZ_F7Xrk_59'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 20
+  - Entity检索: 0
+  - Visual检索: 4
+  - Causal检索: 16
+
+前5个片段ID示例:
+  1. 1s9zZ6ERAko_181
+  2. 1s9zZ6ERAko_182
+  3. 2zaJZ_F7Xrk_18
+  4. 2zaJZ_F7Xrk_20
+  5. 2zaJZ_F7Xrk_24
+
+📊 video_segments._data 结构:
+  可用视频数量: 4
+  示例视频: 1s9zZ6ERAko
+  该视频的片段索引数量: 410
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 20
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments
+⠹ Checked 2 segments
+⠸ Checked 3 segments
+⠼ Checked 4 segments
+⠴ Checked 5 segments
+⠦ Checked 6 segments
+⠧ Checked 7 segments
+⠇ Checked 8 segments
+⠏ Checked 9 segments
+⠋ Checked 10 segments
+⠙ Checked 11 segments
+⠹ Checked 12 segments
+⠸ Checked 13 segments
+⠼ Checked 14 segments
+⠴ Checked 15 segments
+⠦ Checked 16 segments
+⠧ Checked 17 segments
+⠇ Checked 18 segments
+⠏ Checked 19 segments
+⠋ Checked 20 segments
+1 Video Segments remain after filtering
+Remain segments ['RNqXpdwd9AA_15']
+Keywords: product, ωτ, 2π, time-frequency analysis, significance
+
+Captioning Segments for Given Query:   0%|          | 0/1 [00:00<?, ?it/s]
+Captioning Segments for Given Query: 100%|██████████| 1/1 [00:24<00:00, 24.42s/it]
+Captioning Segments for Given Query: 100%|██████████| 1/1 [00:24<00:00, 24.42s/it]
+  [查询] 集合6 q11 entity_only: How does the synchrosqueezing transform 
+INFO:nano-graphrag:Truncate 20 to 11 chunks
+How does the synchrosqueezing transform enhance signal analysis?
+Retrieved Text Segments {'RNqXpdwd9AA_4', '2zaJZ_F7Xrk_35', 'RNqXpdwd9AA_3', '2zaJZ_F7Xrk_33', '2zaJZ_F7Xrk_34', 'RNqXpdwd9AA_5'}
+The output for the given question should focus on the visual representation or demonstration of how the synchrosqueezing transform enhances signal analysis, rather than describing a scene from a video. However, since the task specifically asks for a query to retrieve relevant video segments, we need to frame it within a context that could be visually demonstrated:
+
+Output:
+A video segment demonstrating how the synchrosquezing transform enhances signal analysis.
+Retrieved Visual Segments {'2zaJZ_F7Xrk_51', '2zaJZ_F7Xrk_91', '2zaJZ_F7Xrk_50', '2zaJZ_F7Xrk_59'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 10
+  - Entity检索: 6
+  - Visual检索: 4
+  - Causal检索: 0
+
+前5个片段ID示例:
+  1. 2zaJZ_F7Xrk_33
+  2. 2zaJZ_F7Xrk_34
+  3. 2zaJZ_F7Xrk_35
+  4. 2zaJZ_F7Xrk_50
+  5. 2zaJZ_F7Xrk_51
+
+📊 video_segments._data 结构:
+  可用视频数量: 4
+  示例视频: 1s9zZ6ERAko
+  该视频的片段索引数量: 410
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 10
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments
+⠹ Checked 2 segments
+⠸ Checked 3 segments
+⠼ Checked 4 segments
+⠴ Checked 5 segments
+⠦ Checked 6 segments
+⠧ Checked 7 segments
+⠇ Checked 8 segments
+⠏ Checked 9 segments
+⠋ Checked 10 segments
+1 Video Segments remain after filtering
+Remain segments ['2zaJZ_F7Xrk_34']
+Keywords: synchrosqueezing, transform, signal, analysis
+
+Captioning Segments for Given Query:   0%|          | 0/1 [00:00<?, ?it/s]
+Captioning Segments for Given Query: 100%|██████████| 1/1 [00:32<00:00, 32.30s/it]
+Captioning Segments for Given Query: 100%|██████████| 1/1 [00:32<00:00, 32.30s/it]
+  [查询] 集合6 q11 causal_only: How does the synchrosqueezing transform 
+INFO:nano-graphrag:Truncate 20 to 11 chunks
+INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The application of the synchrosqueezing transform and its effects on enhancing signal analysis.
+INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
+INFO:nano-graphrag:[Causal Retrieval] 59 events after 2-hop bidirectional walk (from 20 seeds)
+INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 59 → 47 nodes (tau_dup=0.85)
+INFO:nano-graphrag:[Causal Retrieval] Retrieved 15 segments from 47 deduplicated events
+INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 47 events, 17079 chars
+Retrieved Causal Segments {'2zaJZ_F7Xrk_115', '2zaJZ_F7Xrk_135', '2zaJZ_F7Xrk_146', '2zaJZ_F7Xrk_116', '2zaJZ_F7Xrk_15', '2zaJZ_F7Xrk_36', '2zaJZ_F7Xrk_12', '1s9zZ6ERAko_182', '2zaJZ_F7Xrk_18', 'RkGK0MloK0E_7', '2zaJZ_F7Xrk_24', '2zaJZ_F7Xrk_20', '2zaJZ_F7Xrk_40', '1s9zZ6ERAko_168', '2zaJZ_F7Xrk_92'}
+
+Retrieved Text Segments set()
+Output:
+A video segment demonstrating how synchrosqueezing transform enhances signal analysis.
+Retrieved Visual Segments {'2zaJZ_F7Xrk_32', '2zaJZ_F7Xrk_13', '2zaJZ_F7Xrk_11', '2zaJZ_F7Xrk_104'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 19
+  - Entity检索: 0
+  - Visual检索: 4
+  - Causal检索: 15
+
+前5个片段ID示例:
+  1. 1s9zZ6ERAko_168
+  2. 1s9zZ6ERAko_182
+  3. 2zaJZ_F7Xrk_11
+  4. 2zaJZ_F7Xrk_12
+  5. 2zaJZ_F7Xrk_13
+
+📊 video_segments._data 结构:
+  可用视频数量: 4
+  示例视频: 1s9zZ6ERAko
+  该视频的片段索引数量: 410
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 19
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments
+⠹ Checked 2 segments
+⠸ Checked 3 segments
+⠼ Checked 4 segments
+⠴ Checked 5 segments
+⠦ Checked 6 segments
+⠧ Checked 7 segments
+⠇ Checked 8 segments
+⠏ Checked 9 segments
+⠋ Checked 10 segments
+⠙ Checked 11 segments
+⠹ Checked 12 segments
+⠸ Checked 13 segments
+⠼ Checked 14 segments
+⠴ Checked 15 segments
+⠦ Checked 16 segments
+⠧ Checked 17 segments
+⠇ Checked 18 segments
+⠏ Checked 19 segments
+2 Video Segments remain after filtering
+Remain segments ['2zaJZ_F7Xrk_115', '2zaJZ_F7Xrk_116']
+Keywords: synchrosqueezing, transform, signal, analysis
+
+Captioning Segments for Given Query:   0%|          | 0/2 [00:00<?, ?it/s]
+Captioning Segments for Given Query:  50%|█████     | 1/2 [00:24<00:24, 24.18s/it]
+Captioning Segments for Given Query: 100%|██████████| 2/2 [00:50<00:00, 25.66s/it]
+Captioning Segments for Given Query: 100%|██████████| 2/2 [00:50<00:00, 25.44s/it]
+  [查询] 集合6 q12 entity_only: How does Daubechies illustrate the effec
+INFO:nano-graphrag:Truncate 20 to 11 chunks
+How does Daubechies illustrate the effectiveness of synchrosqueeing in extracting fetal heartbeats from maternal ECGs?
+Retrieved Text Segments {'RNqXpdwd9AA_4', '2zaJZ_F7Xrk_35', 'RNqXpdwd9AA_3', '2zaJZ_F7Xrk_33', '2zaJZ_F7Xrk_34', 'RNqXpdwd9AA_5'}
+Output:
+Daubechies illustrates the effectiveness of synchrosqueezing in extracting fetal heartbeats from maternal ECGs in a demonstration scene.
+
+(Note: Since the original request is geared towards generating queries for video segments and the provided question is more about a method demonstration which might not have a direct visual scene, the output is framed to imply a demonstrative scene in a video context.)
+Retrieved Visual Segments {'2zaJZ_F7Xrk_51', '2zaJZ_F7Xrk_91', '2zaJZ_F7Xrk_50', '2zaJZ_F7Xrk_59'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 10
+  - Entity检索: 6
+  - Visual检索: 4
+  - Causal检索: 0
+
+前5个片段ID示例:
+  1. 2zaJZ_F7Xrk_33
+  2. 2zaJZ_F7Xrk_34
+  3. 2zaJZ_F7Xrk_35
+  4. 2zaJZ_F7Xrk_50
+  5. 2zaJZ_F7Xrk_51
+
+📊 video_segments._data 结构:
+  可用视频数量: 4
+  示例视频: 1s9zZ6ERAko
+  该视频的片段索引数量: 410
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 10
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments
+⠹ Checked 2 segments
+⠸ Checked 3 segments
+⠼ Checked 4 segments
+⠴ Checked 5 segments
+⠦ Checked 6 segments
+⠧ Checked 7 segments
+⠇ Checked 8 segments
+⠏ Checked 9 segments
+⠋ Checked 10 segments
+0 Video Segments remain after filtering
+Since no segments remain after filtering, we utilized all the retrieved segments.
+Remain segments ['2zaJZ_F7Xrk_33', '2zaJZ_F7Xrk_34', '2zaJZ_F7Xrk_35', '2zaJZ_F7Xrk_50', '2zaJZ_F7Xrk_51', '2zaJZ_F7Xrk_59', '2zaJZ_F7Xrk_91', 'RNqXpdwd9AA_3', 'RNqXpdwd9AA_4', 'RNqXpdwd9AA_5']
+Keywords: Daubechies, illustrates, effectiveness, synchrosqueezing, extracting, fetal, heartbeats, maternal, ECGs
+
+Captioning Segments for Given Query:   0%|          | 0/10 [00:00<?, ?it/s]
+Captioning Segments for Given Query:  10%|█         | 1/10 [00:30<04:36, 30.73s/it]
+Captioning Segments for Given Query:  20%|██        | 2/10 [01:01<04:06, 30.84s/it]
+Captioning Segments for Given Query:  30%|███       | 3/10 [01:23<03:08, 26.89s/it]
+Captioning Segments for Given Query:  40%|████      | 4/10 [01:48<02:35, 25.94s/it]
+Captioning Segments for Given Query:  50%|█████     | 5/10 [02:16<02:12, 26.59s/it]
+Captioning Segments for Given Query:  60%|██████    | 6/10 [02:33<01:34, 23.61s/it]
+Captioning Segments for Given Query:  70%|███████   | 7/10 [03:02<01:16, 25.34s/it]
+Captioning Segments for Given Query:  80%|████████  | 8/10 [03:31<00:52, 26.27s/it]
+Captioning Segments for Given Query:  90%|█████████ | 9/10 [03:48<00:23, 23.48s/it]
+Captioning Segments for Given Query: 100%|██████████| 10/10 [04:13<00:00, 23.84s/it]
+Captioning Segments for Given Query: 100%|██████████| 10/10 [04:13<00:00, 25.31s/it]
+  [查询] 集合6 q12 causal_only: How does Daubechies illustrate the effec
+INFO:nano-graphrag:Truncate 20 to 11 chunks
+INFO:nano-graphrag:[Causal Retrieval] Rewritten query: Daubechies illustrates the effectiveness of synchrosqueezing by demonstrating its ability to extract fetal heartbeats from maternal ECGs.
+INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
+INFO:nano-graphrag:[Causal Retrieval] 44 events after 2-hop bidirectional walk (from 20 seeds)
+INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 44 → 40 nodes (tau_dup=0.85)
+INFO:nano-graphrag:[Causal Retrieval] Retrieved 15 segments from 40 deduplicated events
+INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 40 events, 14393 chars
+Retrieved Causal Segments {'2zaJZ_F7Xrk_159', '2zaJZ_F7Xrk_73', '2zaJZ_F7Xrk_135', '2zaJZ_F7Xrk_17', '2zaJZ_F7Xrk_146', '1s9zZ6ERAko_180', '2zaJZ_F7Xrk_8', '2zaJZ_F7Xrk_16', '2zaJZ_F7Xrk_116', '2zaJZ_F7Xrk_11', '2zaJZ_F7Xrk_36', '2zaJZ_F7Xrk_136', '2zaJZ_F7Xrk_18', '1s9zZ6ERAko_179', '1s9zZ6ERAko_175'}
+
+Retrieved Text Segments set()
+Output:
+Daubechies illustrates the effectiveness of synchrosqueezing in extracting fetal heartbeats from maternal ECGs in a demonstration scene.
+Retrieved Visual Segments {'2zaJZ_F7Xrk_136', '2zaJZ_F7Xrk_135', 'RkGK0MloK0E_7', '2zaJZ_F7Xrk_92'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 17
+  - Entity检索: 0
+  - Visual检索: 4
+  - Causal检索: 15
+
+前5个片段ID示例:
+  1. 1s9zZ6ERAko_175
+  2. 1s9zZ6ERAko_179
+  3. 1s9zZ6ERAko_180
+  4. 2zaJZ_F7Xrk_8
+  5. 2zaJZ_F7Xrk_11
+
+📊 video_segments._data 结构:
+  可用视频数量: 4
+  示例视频: 1s9zZ6ERAko
+  该视频的片段索引数量: 410
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 17
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments
+⠹ Checked 2 segments
+⠸ Checked 3 segments
+⠼ Checked 4 segments
+⠴ Checked 5 segments
+⠦ Checked 6 segments
+⠧ Checked 7 segments
+⠇ Checked 8 segments
+⠏ Checked 9 segments
+⠋ Checked 10 segments
+⠙ Checked 11 segments
+⠹ Checked 12 segments
+⠸ Checked 13 segments
+⠼ Checked 14 segments
+⠴ Checked 15 segments
+⠦ Checked 16 segments
+⠧ Checked 17 segments
+0 Video Segments remain after filtering
+Since no segments remain after filtering, we utilized all the retrieved segments.
+Remain segments ['1s9zZ6ERAko_175', '1s9zZ6ERAko_179', '1s9zZ6ERAko_180', '2zaJZ_F7Xrk_8', '2zaJZ_F7Xrk_11', '2zaJZ_F7Xrk_16', '2zaJZ_F7Xrk_17', '2zaJZ_F7Xrk_18', '2zaJZ_F7Xrk_36', '2zaJZ_F7Xrk_73', '2zaJZ_F7Xrk_92', '2zaJZ_F7Xrk_116', '2zaJZ_F7Xrk_135', '2zaJZ_F7Xrk_136', '2zaJZ_F7Xrk_146', '2zaJZ_F7Xrk_159', 'RkGK0MloK0E_7']
+Keywords: Daubechies, illustrates, effectiveness, synchrosqueezing, extracting, fetal, heartbeats, maternal, ECGs
+
+Captioning Segments for Given Query:   0%|          | 0/17 [00:00<?, ?it/s]
+Captioning Segments for Given Query:   6%|▌         | 1/17 [00:28<07:43, 28.96s/it]
+Captioning Segments for Given Query:  12%|█▏        | 2/17 [00:59<07:32, 30.15s/it]
+Captioning Segments for Given Query:  18%|█▊        | 3/17 [01:31<07:11, 30.85s/it]
+Captioning Segments for Given Query:  24%|██▎       | 4/17 [01:58<06:19, 29.20s/it]
+Captioning Segments for Given Query:  29%|██▉       | 5/17 [02:20<05:18, 26.53s/it]
+Captioning Segments for Given Query:  35%|███▌      | 6/17 [02:47<04:56, 26.96s/it]
+Captioning Segments for Given Query:  41%|████      | 7/17 [03:18<04:41, 28.17s/it]
+Captioning Segments for Given Query:  47%|████▋     | 8/17 [03:57<04:44, 31.59s/it]
+Captioning Segments for Given Query:  53%|█████▎    | 9/17 [04:27<04:08, 31.09s/it]
+Captioning Segments for Given Query:  59%|█████▉    | 10/17 [04:51<03:22, 28.97s/it]
+Captioning Segments for Given Query:  65%|██████▍   | 11/17 [05:27<03:05, 30.96s/it]
+Captioning Segments for Given Query:  71%|███████   | 12/17 [05:59<02:36, 31.24s/it]
+Captioning Segments for Given Query:  76%|███████▋  | 13/17 [06:35<02:10, 32.71s/it]
+Captioning Segments for Given Query:  82%|████████▏ | 14/17 [06:59<01:30, 30.26s/it]
+Captioning Segments for Given Query:  88%|████████▊ | 15/17 [07:24<00:57, 28.60s/it]
+Captioning Segments for Given Query:  94%|█████████▍| 16/17 [07:47<00:27, 27.05s/it]
+Captioning Segments for Given Query: 100%|██████████| 17/17 [08:21<00:00, 28.90s/it]
+Captioning Segments for Given Query: 100%|██████████| 17/17 [08:21<00:00, 29.48s/it]
+  [查询] 集合6 q13 entity_only: What insights can be gained from analyzi
+INFO:nano-graphrag:Truncate 20 to 12 chunks
+Insights that can be gained from analyzing bird songs using synchrosqueezing.
+Retrieved Text Segments {'2zaJZ_F7Xrk_35', '2zaJZ_F7Xrk_166', '2zaJZ_F7Xrk_165', '2zaJZ_F7Xrk_164', '2zaJZ_F7Xrk_33', '2zaJZ_F7Xrk_34'}
+The output for the given question does not fit the pattern of previous examples since it pertains to an analytical process rather than a scene from a video. However, following the instruction strictly and aiming to formulate a query related to a video segment:
+
+Output:
+Analyzing bird songs using synchrosqueezing in a video segment.
+Retrieved Visual Segments {'2zaJZ_F7Xrk_16', 'RNqXpdwd9AA_6', '2zaJZ_F7Xrk_17', '2zaJZ_F7Xrk_11'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 10
+  - Entity检索: 6
+  - Visual检索: 4
+  - Causal检索: 0
+
+前5个片段ID示例:
+  1. 2zaJZ_F7Xrk_11
+  2. 2zaJZ_F7Xrk_16
+  3. 2zaJZ_F7Xrk_17
+  4. 2zaJZ_F7Xrk_33
+  5. 2zaJZ_F7Xrk_34
+
+📊 video_segments._data 结构:
+  可用视频数量: 4
+  示例视频: 1s9zZ6ERAko
+  该视频的片段索引数量: 410
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 10
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments
+⠹ Checked 2 segments
+⠸ Checked 3 segments
+⠼ Checked 4 segments
+⠴ Checked 5 segments
+⠦ Checked 6 segments
+⠧ Checked 7 segments
+⠇ Checked 8 segments
+⠏ Checked 9 segments
+⠋ Checked 10 segments
+0 Video Segments remain after filtering
+Since no segments remain after filtering, we utilized all the retrieved segments.
+Remain segments ['2zaJZ_F7Xrk_11', '2zaJZ_F7Xrk_16', '2zaJZ_F7Xrk_17', '2zaJZ_F7Xrk_33', '2zaJZ_F7Xrk_34', '2zaJZ_F7Xrk_35', '2zaJZ_F7Xrk_164', '2zaJZ_F7Xrk_165', '2zaJZ_F7Xrk_166', 'RNqXpdwd9AA_6']
+Keywords: insights, analyzing, bird songs, synchrosqueezing
+
+Captioning Segments for Given Query:   0%|          | 0/10 [00:00<?, ?it/s]
+Captioning Segments for Given Query:  10%|█         | 1/10 [00:36<05:29, 36.64s/it]
+Captioning Segments for Given Query:  20%|██        | 2/10 [01:05<04:17, 32.16s/it]
+Captioning Segments for Given Query:  30%|███       | 3/10 [01:37<03:44, 32.09s/it]
+Captioning Segments for Given Query:  40%|████      | 4/10 [01:59<02:49, 28.22s/it]
+Captioning Segments for Given Query:  50%|█████     | 5/10 [02:28<02:22, 28.46s/it]
+Captioning Segments for Given Query:  60%|██████    | 6/10 [03:00<01:57, 29.38s/it]
+Captioning Segments for Given Query:  70%|███████   | 7/10 [03:30<01:28, 29.60s/it]
+Captioning Segments for Given Query:  80%|████████  | 8/10 [03:52<00:54, 27.20s/it]
+Captioning Segments for Given Query:  90%|█████████ | 9/10 [04:16<00:26, 26.41s/it]
+Captioning Segments for Given Query: 100%|██████████| 10/10 [04:45<00:00, 27.27s/it]
+Captioning Segments for Given Query: 100%|██████████| 10/10 [04:45<00:00, 28.60s/it]
+  [查询] 集合6 q13 causal_only: What insights can be gained from analyzi
+INFO:nano-graphrag:Truncate 20 to 12 chunks
+INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The analysis of bird songs using synchrosqueezing and the resulting insights gained from this method.
+INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
+INFO:nano-graphrag:[Causal Retrieval] 46 events after 2-hop bidirectional walk (from 20 seeds)
+INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 46 → 35 nodes (tau_dup=0.85)
+INFO:nano-graphrag:[Causal Retrieval] Retrieved 13 segments from 35 deduplicated events
+INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 35 events, 11765 chars
+Retrieved Causal Segments {'RkGK0MloK0E_8', 'RkGK0MloK0E_9', '2zaJZ_F7Xrk_73', 'RkGK0MloK0E_120', '2zaJZ_F7Xrk_165', 'RNqXpdwd9AA_5', '2zaJZ_F7Xrk_168', '1s9zZ6ERAko_182', 'RNqXpdwd9AA_4', '2zaJZ_F7Xrk_18', 'RkGK0MloK0E_7', '1s9zZ6ERAko_168', '2zaJZ_F7Xrk_92'}
+
+Retrieved Text Segments set()
+Output:
+Analyzing bird songs using synchrosqueezing in a video segment.
+
+However, it seems the provided example doesn't fit well with the previous pattern since it's more about a topic of analysis rather than querying a specific scene in a video. If we're to adapt it into a form that fits the previous examples, it might look something like this:
+
+Output:
+A video segment demonstrating the analysis of bird songs using synchrosqueezing.
+Retrieved Visual Segments {'2zaJZ_F7Xrk_51', '2zaJZ_F7Xrk_91', '2zaJZ_F7Xrk_50', '2zaJZ_F7Xrk_59'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 17
+  - Entity检索: 0
+  - Visual检索: 4
+  - Causal检索: 13
+
+前5个片段ID示例:
+  1. 1s9zZ6ERAko_168
+  2. 1s9zZ6ERAko_182
+  3. 2zaJZ_F7Xrk_18
+  4. 2zaJZ_F7Xrk_50
+  5. 2zaJZ_F7Xrk_51
+
+📊 video_segments._data 结构:
+  可用视频数量: 4
+  示例视频: 1s9zZ6ERAko
+  该视频的片段索引数量: 410
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 17
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments
+⠹ Checked 2 segments
+⠸ Checked 3 segments
+⠼ Checked 4 segments
+⠴ Checked 5 segments
+⠦ Checked 6 segments
+⠧ Checked 7 segments
+⠇ Checked 8 segments
+⠏ Checked 9 segments
+⠋ Checked 10 segments
+⠙ Checked 11 segments
+⠹ Checked 12 segments
+⠸ Checked 13 segments
+⠼ Checked 14 segments
+⠴ Checked 15 segments
+⠦ Checked 16 segments
+⠧ Checked 17 segments
+0 Video Segments remain after filtering
+Since no segments remain after filtering, we utilized all the retrieved segments.
+Remain segments ['1s9zZ6ERAko_168', '1s9zZ6ERAko_182', '2zaJZ_F7Xrk_18', '2zaJZ_F7Xrk_50', '2zaJZ_F7Xrk_51', '2zaJZ_F7Xrk_59', '2zaJZ_F7Xrk_73', '2zaJZ_F7Xrk_91', '2zaJZ_F7Xrk_92', '2zaJZ_F7Xrk_165', '2zaJZ_F7Xrk_168', 'RNqXpdwd9AA_4', 'RNqXpdwd9AA_5', 'RkGK0MloK0E_7', 'RkGK0MloK0E_8', 'RkGK0MloK0E_9', 'RkGK0MloK0E_120']
+Keywords: bird songs, synchrosqueezing, insights, analyzing
+
+Captioning Segments for Given Query:   0%|          | 0/17 [00:00<?, ?it/s]
+Captioning Segments for Given Query:   6%|▌         | 1/17 [00:27<07:20, 27.54s/it]
+Captioning Segments for Given Query:  12%|█▏        | 2/17 [00:56<07:03, 28.22s/it]
+Captioning Segments for Given Query:  18%|█▊        | 3/17 [01:29<07:05, 30.38s/it]
+Captioning Segments for Given Query:  24%|██▎       | 4/17 [01:49<05:41, 26.23s/it]
+Captioning Segments for Given Query:  29%|██▉       | 5/17 [02:11<04:56, 24.70s/it]
+Captioning Segments for Given Query:  35%|███▌      | 6/17 [02:37<04:39, 25.39s/it]
+Captioning Segments for Given Query:  41%|████      | 7/17 [02:57<03:54, 23.44s/it]
+Captioning Segments for Given Query:  47%|████▋     | 8/17 [03:32<04:03, 27.08s/it]
+Captioning Segments for Given Query:  53%|█████▎    | 9/17 [04:01<03:43, 27.88s/it]
+Captioning Segments for Given Query:  59%|█████▉    | 10/17 [04:28<03:11, 27.43s/it]
+Captioning Segments for Given Query:  65%|██████▍   | 11/17 [04:52<02:39, 26.55s/it]
+Captioning Segments for Given Query:  71%|███████   | 12/17 [05:19<02:13, 26.66s/it]
+Captioning Segments for Given Query:  76%|███████▋  | 13/17 [05:39<01:38, 24.54s/it]
+Captioning Segments for Given Query:  82%|████████▏ | 14/17 [06:06<01:16, 25.50s/it]
+Captioning Segments for Given Query:  88%|████████▊ | 15/17 [06:38<00:54, 27.38s/it]
+Captioning Segments for Given Query:  94%|█████████▍| 16/17 [07:04<00:26, 26.94s/it]
+Captioning Segments for Given Query: 100%|██████████| 17/17 [07:37<00:00, 28.75s/it]
+Captioning Segments for Given Query: 100%|██████████| 17/17 [07:37<00:00, 26.92s/it]
+  [查询] 集合6 q14 entity_only: What is the specific medical application
+INFO:nano-graphrag:Truncate 20 to 12 chunks
+The specific medical application for time-frequency analysis in the context of fetal health that Daubechies highlights.
+Retrieved Text Segments {'2zaJZ_F7Xrk_166', 'RkGK0MloK0E_2', '2zaJZ_F7Xrk_165', '2zaJZ_F7Xrk_164', 'RkGK0MloK0E_3', 'RkGK0MloK0E_0', 'RkGK0MloK0E_1'}
+Daubechies highlights a specific medical application of time-frequency analysis in the context of fetal health.
+Retrieved Visual Segments {'RNqXpdwd9AA_0', 'RkGK0MloK0E_0', '2zaJZ_F7Xrk_0', 'RNqXpdwd9AA_5'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 10
+  - Entity检索: 7
+  - Visual检索: 4
+  - Causal检索: 0
+
+前5个片段ID示例:
+  1. 2zaJZ_F7Xrk_0
+  2. 2zaJZ_F7Xrk_164
+  3. 2zaJZ_F7Xrk_165
+  4. 2zaJZ_F7Xrk_166
+  5. RNqXpdwd9AA_0
+
+📊 video_segments._data 结构:
+  可用视频数量: 4
+  示例视频: 1s9zZ6ERAko
+  该视频的片段索引数量: 410
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 10
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments
+⠹ Checked 2 segments
+⠸ Checked 3 segments
+⠼ Checked 4 segments
+⠴ Checked 5 segments
+⠦ Checked 6 segments
+⠧ Checked 7 segments
+⠇ Checked 8 segments
+⠏ Checked 9 segments
+⠋ Checked 10 segments
+0 Video Segments remain after filtering
+Since no segments remain after filtering, we utilized all the retrieved segments.
+Remain segments ['2zaJZ_F7Xrk_0', '2zaJZ_F7Xrk_164', '2zaJZ_F7Xrk_165', '2zaJZ_F7Xrk_166', 'RNqXpdwd9AA_0', 'RNqXpdwd9AA_5', 'RkGK0MloK0E_0', 'RkGK0MloK0E_1', 'RkGK0MloK0E_2', 'RkGK0MloK0E_3']
+Keywords: medical application, Daubechies, time-frequency analysis, fetal health
+
+Captioning Segments for Given Query:   0%|          | 0/10 [00:00<?, ?it/s]
+Captioning Segments for Given Query:  10%|█         | 1/10 [00:31<04:44, 31.58s/it]
+Captioning Segments for Given Query:  20%|██        | 2/10 [00:56<03:41, 27.69s/it]
+Captioning Segments for Given Query:  30%|███       | 3/10 [01:19<02:58, 25.56s/it]
+Captioning Segments for Given Query:  40%|████      | 4/10 [01:48<02:41, 26.92s/it]
+Captioning Segments for Given Query:  50%|█████     | 5/10 [02:10<02:05, 25.17s/it]
+Captioning Segments for Given Query:  60%|██████    | 6/10 [02:31<01:34, 23.64s/it]
+Captioning Segments for Given Query:  70%|███████   | 7/10 [02:57<01:13, 24.58s/it]
+Captioning Segments for Given Query:  80%|████████  | 8/10 [03:28<00:52, 26.37s/it]
+Captioning Segments for Given Query:  90%|█████████ | 9/10 [03:52<00:25, 25.79s/it]
+Captioning Segments for Given Query: 100%|██████████| 10/10 [04:18<00:00, 25.80s/it]
+Captioning Segments for Given Query: 100%|██████████| 10/10 [04:18<00:00, 25.84s/it]
+  [查询] 集合6 q14 causal_only: What is the specific medical application
+INFO:nano-graphrag:Truncate 20 to 12 chunks
+INFO:nano-graphrag:[Causal Retrieval] Rewritten query: Daubechies highlights the use of time-frequency analysis in detecting specific patterns in fetal heart rate signals to improve the assessment of fetal health.
+INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
+INFO:nano-graphrag:[Causal Retrieval] 51 events after 2-hop bidirectional walk (from 20 seeds)
+INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 51 → 43 nodes (tau_dup=0.85)
+INFO:nano-graphrag:[Causal Retrieval] Retrieved 16 segments from 43 deduplicated events
+INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 43 events, 15946 chars
+Retrieved Causal Segments {'2zaJZ_F7Xrk_159', '2zaJZ_F7Xrk_135', '2zaJZ_F7Xrk_17', '2zaJZ_F7Xrk_164', '1s9zZ6ERAko_180', '2zaJZ_F7Xrk_16', '2zaJZ_F7Xrk_116', '2zaJZ_F7Xrk_84', 'RNqXpdwd9AA_5', 'RNqXpdwd9AA_4', '2zaJZ_F7Xrk_136', '2zaJZ_F7Xrk_18', '1s9zZ6ERAko_197', '1s9zZ6ERAko_179', '1s9zZ6ERAko_175', '2zaJZ_F7Xrk_46'}
+
+Retrieved Text Segments set()
+Daubechies highlights a specific medical application of time-frequency analysis in the context of fetal health in a video segment.
+Retrieved Visual Segments {'RNqXpdwd9AA_0', 'RkGK0MloK0E_0', '2zaJZ_F7Xrk_0', 'RNqXpdwd9AA_5'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 19
+  - Entity检索: 0
+  - Visual检索: 4
+  - Causal检索: 16
+
+前5个片段ID示例:
+  1. 1s9zZ6ERAko_175
+  2. 1s9zZ6ERAko_179
+  3. 1s9zZ6ERAko_180
+  4. 1s9zZ6ERAko_197
+  5. 2zaJZ_F7Xrk_0
+
+📊 video_segments._data 结构:
+  可用视频数量: 4
+  示例视频: 1s9zZ6ERAko
+  该视频的片段索引数量: 410
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 19
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments
+⠹ Checked 2 segments
+⠸ Checked 3 segments
+⠼ Checked 4 segments
+⠴ Checked 5 segments
+⠦ Checked 6 segments
+⠧ Checked 7 segments
+⠇ Checked 8 segments
+⠏ Checked 9 segments
+⠋ Checked 10 segments
+⠙ Checked 11 segments
+⠹ Checked 12 segments
+⠸ Checked 13 segments
+⠼ Checked 14 segments
+⠴ Checked 15 segments
+⠦ Checked 16 segments
+⠧ Checked 17 segments
+⠇ Checked 18 segments
+⠏ Checked 19 segments
+0 Video Segments remain after filtering
+Since no segments remain after filtering, we utilized all the retrieved segments.
+Remain segments ['1s9zZ6ERAko_175', '1s9zZ6ERAko_179', '1s9zZ6ERAko_180', '1s9zZ6ERAko_197', '2zaJZ_F7Xrk_0', '2zaJZ_F7Xrk_16', '2zaJZ_F7Xrk_17', '2zaJZ_F7Xrk_18', '2zaJZ_F7Xrk_46', '2zaJZ_F7Xrk_84', '2zaJZ_F7Xrk_116', '2zaJZ_F7Xrk_135', '2zaJZ_F7Xrk_136', '2zaJZ_F7Xrk_159', '2zaJZ_F7Xrk_164', 'RNqXpdwd9AA_0', 'RNqXpdwd9AA_4', 'RNqXpdwd9AA_5', 'RkGK0MloK0E_0']
+Keywords: medical application, Daubechies, time-frequency analysis, fetal health
+
+Captioning Segments for Given Query:   0%|          | 0/19 [00:00<?, ?it/s]
+Captioning Segments for Given Query:   5%|▌         | 1/19 [00:30<09:08, 30.49s/it]
+Captioning Segments for Given Query:  11%|█         | 2/19 [00:56<07:49, 27.63s/it]
+Captioning Segments for Given Query:  16%|█▌        | 3/19 [01:29<08:00, 30.04s/it]
+Captioning Segments for Given Query:  21%|██        | 4/19 [01:57<07:20, 29.37s/it]
+Captioning Segments for Given Query:  26%|██▋       | 5/19 [02:25<06:45, 28.98s/it]
+Captioning Segments for Given Query:  32%|███▏      | 6/19 [02:47<05:43, 26.39s/it]
+Captioning Segments for Given Query:  37%|███▋      | 7/19 [03:16<05:28, 27.40s/it]
+Captioning Segments for Given Query:  42%|████▏     | 8/19 [03:50<05:24, 29.50s/it]
+Captioning Segments for Given Query:  47%|████▋     | 9/19 [04:09<04:21, 26.18s/it]
+Captioning Segments for Given Query:  53%|█████▎    | 10/19 [04:44<04:19, 28.79s/it]
+Captioning Segments for Given Query:  58%|█████▊    | 11/19 [05:10<03:43, 27.95s/it]
+Captioning Segments for Given Query:  63%|██████▎   | 12/19 [05:40<03:21, 28.78s/it]
+Captioning Segments for Given Query:  68%|██████▊   | 13/19 [06:05<02:45, 27.65s/it]
+Captioning Segments for Given Query:  74%|███████▎  | 14/19 [06:36<02:22, 28.57s/it]
+Captioning Segments for Given Query:  79%|███████▉  | 15/19 [06:57<01:45, 26.28s/it]
+Captioning Segments for Given Query:  84%|████████▍ | 16/19 [07:22<01:17, 25.80s/it]
+Captioning Segments for Given Query:  89%|████████▉ | 17/19 [07:48<00:52, 26.11s/it]
+Captioning Segments for Given Query:  95%|█████████▍| 18/19 [08:22<00:28, 28.22s/it]
+Captioning Segments for Given Query: 100%|██████████| 19/19 [08:49<00:00, 27.94s/it]
+Captioning Segments for Given Query: 100%|██████████| 19/19 [08:49<00:00, 27.86s/it]
+  [查询] 集合6 q15 entity_only: What specific features of bird songs mak
+INFO:nano-graphrag:Truncate 20 to 12 chunks
+The specific features of bird songs that make them interesting for analysis using time-frequency methods and the biological questions researchers are hoping to address.
+Retrieved Text Segments {'1s9zZ6ERAko_36', 'RNqXpdwd9AA_4', 'RNqXpdwd9AA_3', '1s9zZ6ERAko_38', '1s9zZ6ERAko_39', '1s9zZ6ERAko_37', 'RNqXpdwd9AA_5'}
+Output: Researchers analyze specific features of bird songs using time-frequency methods to address various biological questions.
+Retrieved Visual Segments {'RkGK0MloK0E_8', '2zaJZ_F7Xrk_17', '2zaJZ_F7Xrk_18', 'RkGK0MloK0E_7'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 11
+  - Entity检索: 7
+  - Visual检索: 4
+  - Causal检索: 0
+
+前5个片段ID示例:
+  1. 1s9zZ6ERAko_36
+  2. 1s9zZ6ERAko_37
+  3. 1s9zZ6ERAko_38
+  4. 1s9zZ6ERAko_39
+  5. 2zaJZ_F7Xrk_17
+
+📊 video_segments._data 结构:
+  可用视频数量: 4
+  示例视频: 1s9zZ6ERAko
+  该视频的片段索引数量: 410
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 11
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments
+⠹ Checked 2 segments
+⠸ Checked 3 segments
+⠼ Checked 4 segments
+⠴ Checked 5 segments
+⠦ Checked 6 segments
+⠧ Checked 7 segments
+⠇ Checked 8 segments
+⠏ Checked 9 segments
+⠋ Checked 10 segments
+⠙ Checked 11 segments
+0 Video Segments remain after filtering
+Since no segments remain after filtering, we utilized all the retrieved segments.
+Remain segments ['1s9zZ6ERAko_36', '1s9zZ6ERAko_37', '1s9zZ6ERAko_38', '1s9zZ6ERAko_39', '2zaJZ_F7Xrk_17', '2zaJZ_F7Xrk_18', 'RNqXpdwd9AA_3', 'RNqXpdwd9AA_4', 'RNqXpdwd9AA_5', 'RkGK0MloK0E_7', 'RkGK0MloK0E_8']
+Keywords: features, bird songs, interesting, analysis, time-frequency methods, biological questions, researchers, address
+
+Captioning Segments for Given Query:   0%|          | 0/11 [00:00<?, ?it/s]
+Captioning Segments for Given Query:   9%|▉         | 1/11 [00:24<04:06, 24.66s/it]
+Captioning Segments for Given Query:  18%|█▊        | 2/11 [00:56<04:19, 28.89s/it]
+Captioning Segments for Given Query:  27%|██▋       | 3/11 [01:16<03:20, 25.04s/it]
+Captioning Segments for Given Query:  36%|███▋      | 4/11 [01:45<03:06, 26.59s/it]
+Captioning Segments for Given Query:  45%|████▌     | 5/11 [02:23<03:03, 30.61s/it]
+Captioning Segments for Given Query:  55%|█████▍    | 6/11 [03:00<02:43, 32.68s/it]
+Captioning Segments for Given Query:  64%|██████▎   | 7/11 [03:30<02:07, 31.78s/it]
+Captioning Segments for Given Query:  73%|███████▎  | 8/11 [04:00<01:33, 31.12s/it]
+Captioning Segments for Given Query:  82%|████████▏ | 9/11 [04:26<00:59, 29.77s/it]
+Captioning Segments for Given Query:  91%|█████████ | 10/11 [05:02<00:31, 31.47s/it]
+Captioning Segments for Given Query: 100%|██████████| 11/11 [05:30<00:00, 30.44s/it]
+Captioning Segments for Given Query: 100%|██████████| 11/11 [05:30<00:00, 30.02s/it]
+  [查询] 集合6 q15 causal_only: What specific features of bird songs mak
+INFO:nano-graphrag:Truncate 20 to 12 chunks
+INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The specific features of bird songs that make them interesting for analysis using time-frequency methods and the biological questions researchers aim to address through such analysis.
+INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
+INFO:nano-graphrag:[Causal Retrieval] 64 events after 2-hop bidirectional walk (from 20 seeds)
+INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 64 → 52 nodes (tau_dup=0.85)
+INFO:nano-graphrag:[Causal Retrieval] Retrieved 16 segments from 52 deduplicated events
+INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 52 events, 19282 chars
+Retrieved Causal Segments {'RkGK0MloK0E_8', '2zaJZ_F7Xrk_165', '2zaJZ_F7Xrk_164', '2zaJZ_F7Xrk_116', '2zaJZ_F7Xrk_15', '2zaJZ_F7Xrk_84', '2zaJZ_F7Xrk_168', '1s9zZ6ERAko_182', '2zaJZ_F7Xrk_18', 'RkGK0MloK0E_7', '2zaJZ_F7Xrk_20', '1s9zZ6ERAko_168', 'RkGK0MloK0E_4', '1s9zZ6ERAko_181', '1s9zZ6ERAko_175', '2zaJZ_F7Xrk_92'}
+
+Retrieved Text Segments set()
+Output:
+Video segment showing analysis of bird songs using time-frequency methods and discussions on related biological research questions.
+Retrieved Visual Segments {'RkGK0MloK0E_8', '2zaJZ_F7Xrk_18', '2zaJZ_F7Xrk_17', 'RkGK0MloK0E_7'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 17
+  - Entity检索: 0
+  - Visual检索: 4
+  - Causal检索: 16
+
+前5个片段ID示例:
+  1. 1s9zZ6ERAko_168
+  2. 1s9zZ6ERAko_175
+  3. 1s9zZ6ERAko_181
+  4. 1s9zZ6ERAko_182
+  5. 2zaJZ_F7Xrk_15
+
+📊 video_segments._data 结构:
+  可用视频数量: 4
+  示例视频: 1s9zZ6ERAko
+  该视频的片段索引数量: 410
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 17
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments
+⠹ Checked 2 segments
+⠸ Checked 3 segments
+⠼ Checked 4 segments
+⠴ Checked 5 segments
+⠦ Checked 6 segments
+⠧ Checked 7 segments
+⠇ Checked 8 segments
+⠏ Checked 9 segments
+⠋ Checked 10 segments
+⠙ Checked 11 segments
+⠹ Checked 12 segments
+⠸ Checked 13 segments
+⠼ Checked 14 segments
+⠴ Checked 15 segments
+⠦ Checked 16 segments
+⠧ Checked 17 segments
+0 Video Segments remain after filtering
+Since no segments remain after filtering, we utilized all the retrieved segments.
+Remain segments ['1s9zZ6ERAko_168', '1s9zZ6ERAko_175', '1s9zZ6ERAko_181', '1s9zZ6ERAko_182', '2zaJZ_F7Xrk_15', '2zaJZ_F7Xrk_17', '2zaJZ_F7Xrk_18', '2zaJZ_F7Xrk_20', '2zaJZ_F7Xrk_84', '2zaJZ_F7Xrk_92', '2zaJZ_F7Xrk_116', '2zaJZ_F7Xrk_164', '2zaJZ_F7Xrk_165', '2zaJZ_F7Xrk_168', 'RkGK0MloK0E_4', 'RkGK0MloK0E_7', 'RkGK0MloK0E_8']
+Keywords: features, bird songs, interesting, analysis, time-frequency methods, biological questions, researchers, address
+
+Captioning Segments for Given Query:   0%|          | 0/17 [00:00<?, ?it/s]
+Captioning Segments for Given Query:   6%|▌         | 1/17 [00:29<07:50, 29.39s/it]
+Captioning Segments for Given Query:  12%|█▏        | 2/17 [01:02<07:55, 31.71s/it]
+Captioning Segments for Given Query:  18%|█▊        | 3/17 [01:31<07:08, 30.58s/it]
+Captioning Segments for Given Query:  24%|██▎       | 4/17 [02:01<06:30, 30.05s/it]
+Captioning Segments for Given Query:  29%|██▉       | 5/17 [02:34<06:12, 31.05s/it]
+Captioning Segments for Given Query:  35%|███▌      | 6/17 [03:07<05:50, 31.82s/it]
+Captioning Segments for Given Query:  41%|████      | 7/17 [03:32<04:57, 29.77s/it]
+Captioning Segments for Given Query:  47%|████▋     | 8/17 [04:09<04:46, 31.83s/it]
+Captioning Segments for Given Query:  53%|█████▎    | 9/17 [04:42<04:19, 32.45s/it]
+Captioning Segments for Given Query:  59%|█████▉    | 10/17 [05:16<03:50, 32.90s/it]
+Captioning Segments for Given Query:  65%|██████▍   | 11/17 [05:54<03:25, 34.27s/it]
+Captioning Segments for Given Query:  71%|███████   | 12/17 [06:10<02:24, 28.85s/it]
+Captioning Segments for Given Query:  76%|███████▋  | 13/17 [06:36<01:51, 28.00s/it]
+Captioning Segments for Given Query:  82%|████████▏ | 14/17 [06:57<01:17, 25.86s/it]
+Captioning Segments for Given Query:  88%|████████▊ | 15/17 [07:17<00:48, 24.12s/it]
+Captioning Segments for Given Query:  94%|█████████▍| 16/17 [07:49<00:26, 26.38s/it]
+Captioning Segments for Given Query: 100%|██████████| 17/17 [08:16<00:00, 26.56s/it]
+Captioning Segments for Given Query: 100%|██████████| 17/17 [08:16<00:00, 29.19s/it]
+  [查询] 集合6 q16 entity_only: How does Daubechies describe the appeara
+INFO:nano-graphrag:Truncate 20 to 11 chunks
+How does Daubechies describe the appearance of a spectrogram for a signal with time-varying frequencies, and what features indicate changes in frequency content over time?
+Retrieved Text Segments {'RNqXpdwd9AA_4', 'RkGK0MloK0E_2', 'RNqXpdwd9AA_3', 'RkGK0MloK0E_3', 'RNqXpdwd9AA_5', 'RkGK0MloK0E_0', 'RkGK0MloK0E_1'}
+Daubechies describes the appearance of a spectrogram for a signal with time-varying frequencies and the features indicating changes in frequency content over time.
+Retrieved Visual Segments {'RkGK0MloK0E_8', 'RkGK0MloK0E_7', 'RNqXpdwd9AA_0', '2zaJZ_F7Xrk_92'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 11
+  - Entity检索: 7
+  - Visual检索: 4
+  - Causal检索: 0
+
+前5个片段ID示例:
+  1. 2zaJZ_F7Xrk_92
+  2. RNqXpdwd9AA_0
+  3. RNqXpdwd9AA_3
+  4. RNqXpdwd9AA_4
+  5. RNqXpdwd9AA_5
+
+📊 video_segments._data 结构:
+  可用视频数量: 4
+  示例视频: 1s9zZ6ERAko
+  该视频的片段索引数量: 410
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 11
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments
+⠹ Checked 2 segments
+⠸ Checked 3 segments
+⠼ Checked 4 segments
+⠴ Checked 5 segments
+⠦ Checked 6 segments
+⠧ Checked 7 segments
+⠇ Checked 8 segments
+⠏ Checked 9 segments
+⠋ Checked 10 segments
+⠙ Checked 11 segments
+0 Video Segments remain after filtering
+Since no segments remain after filtering, we utilized all the retrieved segments.
+Remain segments ['2zaJZ_F7Xrk_92', 'RNqXpdwd9AA_0', 'RNqXpdwd9AA_3', 'RNqXpdwd9AA_4', 'RNqXpdwd9AA_5', 'RkGK0MloK0E_0', 'RkGK0MloK0E_1', 'RkGK0MloK0E_2', 'RkGK0MloK0E_3', 'RkGK0MloK0E_7', 'RkGK0MloK0E_8']
+Keywords: Daubechies, describe, appearance, spectrogram, signal, time-varying, frequencies, features, indicate, changes, frequency, content, time
+
+Captioning Segments for Given Query:   0%|          | 0/11 [00:00<?, ?it/s]
+Captioning Segments for Given Query:   9%|▉         | 1/11 [00:38<06:25, 38.54s/it]
+Captioning Segments for Given Query:  18%|█▊        | 2/11 [01:10<05:09, 34.39s/it]
+Captioning Segments for Given Query:  27%|██▋       | 3/11 [01:37<04:11, 31.41s/it]
+Captioning Segments for Given Query:  36%|███▋      | 4/11 [02:03<03:24, 29.20s/it]
+Captioning Segments for Given Query:  45%|████▌     | 5/11 [02:27<02:42, 27.16s/it]
+Captioning Segments for Given Query:  55%|█████▍    | 6/11 [02:58<02:23, 28.67s/it]
+Captioning Segments for Given Query:  64%|██████▎   | 7/11 [03:26<01:53, 28.33s/it]
+Captioning Segments for Given Query:  73%|███████▎  | 8/11 [03:52<01:23, 27.76s/it]
+Captioning Segments for Given Query:  82%|████████▏ | 9/11 [04:15<00:51, 25.96s/it]
+Captioning Segments for Given Query:  91%|█████████ | 10/11 [04:45<00:27, 27.51s/it]
+Captioning Segments for Given Query: 100%|██████████| 11/11 [05:10<00:00, 26.71s/it]
+Captioning Segments for Given Query: 100%|██████████| 11/11 [05:10<00:00, 28.26s/it]
+  [查询] 集合6 q16 causal_only: How does Daubechies describe the appeara
+INFO:nano-graphrag:Truncate 20 to 11 chunks
+INFO:nano-graphrag:[Causal Retrieval] Rewritten query: Daubechies describes the appearance of a spectrogram for a signal with time-varying frequencies and the features that indicate changes in frequency content over time.
+INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
+INFO:nano-graphrag:[Causal Retrieval] 45 events after 2-hop bidirectional walk (from 20 seeds)
+INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 45 → 32 nodes (tau_dup=0.85)
+INFO:nano-graphrag:[Causal Retrieval] Retrieved 12 segments from 32 deduplicated events
+INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 32 events, 10444 chars
+Retrieved Causal Segments {'RkGK0MloK0E_8', 'RkGK0MloK0E_19', '2zaJZ_F7Xrk_135', '1s9zZ6ERAko_169', '2zaJZ_F7Xrk_137', '2zaJZ_F7Xrk_168', '2zaJZ_F7Xrk_12', 'RkGK0MloK0E_6', '2zaJZ_F7Xrk_18', 'RkGK0MloK0E_7', '2zaJZ_F7Xrk_20', '1s9zZ6ERAko_168'}
+
+Retrieved Text Segments set()
+Output: Daubechies describes the appearance of a spectrogram for a signal with time-varying frequencies and the features indicating changes in frequency content over time.
+Retrieved Visual Segments {'RNqXpdwd9AA_5', 'RkGK0MloK0E_8', 'RkGK0MloK0  E_7', '2zaJZ_F7Xrk_92'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 14
+  - Entity检索: 0
+  - Visual检索: 4
+  - Causal检索: 12
+
+前5个片段ID示例:
+  1. 1s9zZ6ERAko_168
+  2. 1s9zZ6ERAko_169
+  3. 2zaJZ_F7Xrk_12
+  4. 2zaJZ_F7Xrk_18
+  5. 2zaJZ_F7Xrk_20
+
+📊 video_segments._data 结构:
+  可用视频数量: 4
+  示例视频: 1s9zZ6ERAko
+  该视频的片段索引数量: 410
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 14
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments
+⠹ Checked 2 segments
+⠸ Checked 3 segments
+⠼ Checked 4 segments
+⠴ Checked 5 segments
+⠦ Checked 6 segments
+⠧ Checked 7 segments
+⠇ Checked 8 segments
+⠏ Checked 9 segments
+⠋ Checked 10 segments
+⠙ Checked 11 segments
+⠹ Checked 12 segments
+⠸ Checked 13 segments
+⠼ Checked 14 segments
+0 Video Segments remain after filtering
+Since no segments remain after filtering, we utilized all the retrieved segments.
+Remain segments ['1s9zZ6ERAko_168', '1s9zZ6ERAko_169', '2zaJZ_F7Xrk_12', '2zaJZ_F7Xrk_18', '2zaJZ_F7Xrk_20', '2zaJZ_F7Xrk_92', '2zaJZ_F7Xrk_135', '2zaJZ_F7Xrk_137', '2zaJZ_F7Xrk_168', 'RNqXpdwd9AA_5', 'RkGK0MloK0E_6', 'RkGK0MloK0E_7', 'RkGK0MloK0E_8', 'RkGK0MloK0E_19']
+Keywords: Daubechies, describe, appearance, spectrogram, signal, time-varying, frequencies, features, indicate, changes, frequency, content, time
+
+Captioning Segments for Given Query:   0%|          | 0/14 [00:00<?, ?it/s]
+Captioning Segments for Given Query:   7%|▋         | 1/14 [00:22<04:50, 22.36s/it]
+Captioning Segments for Given Query:  14%|█▍        | 2/14 [00:48<04:57, 24.78s/it]
+Captioning Segments for Given Query:  21%|██▏       | 3/14 [01:24<05:29, 29.94s/it]
+Captioning Segments for Given Query:  29%|██▊       | 4/14 [01:58<05:12, 31.30s/it]
+Captioning Segments for Given Query:  36%|███▌      | 5/14 [02:28<04:36, 30.73s/it]
+Captioning Segments for Given Query:  43%|████▎     | 6/14 [03:02<04:16, 32.01s/it]
+Captioning Segments for Given Query:  50%|█████     | 7/14 [03:28<03:30, 30.07s/it]
+Captioning Segments for Given Query:  57%|█████▋    | 8/14 [04:02<03:08, 31.44s/it]
+Captioning Segments for Given Query:  64%|██████▍   | 9/14 [04:25<02:23, 28.76s/it]
+Captioning Segments for Given Query:  71%|███████▏  | 10/14 [04:55<01:56, 29.08s/it]
+Captioning Segments for Given Query:  79%|███████▊  | 11/14 [05:19<01:22, 27.58s/it]
+Captioning Segments for Given Query:  86%|████████▌ | 12/14 [05:45<00:54, 27.07s/it]
+Captioning Segments for Given Query:  93%|█████████▎| 13/14 [06:12<00:27, 27.07s/it]
+Captioning Segments for Given Query: 100%|██████████| 14/14 [06:39<00:00, 26.85s/it]
+Captioning Segments for Given Query: 100%|██████████| 14/14 [06:39<00:00, 28.51s/it]
+  [查询] 集合6 q17 entity_only: What specific time-frequency patterns do
+INFO:nano-graphrag:Truncate 20 to 11 chunks
+The specific time-frequency patterns that Daubechies describes as indicative of singularities in a signal.
+Retrieved Text Segments {'1s9zZ6ERAko_36', 'RNqXpdwd9AA_4', 'RNqXpdwd9AA_3', '1s9zZ6ERAko_38', '1s9zZ6ERAko_39', '1s9zZ6ERAko_37', 'RNqXpdwd9AA_5'}
+The output for the given question should focus on the context of video retrieval related to the description provided. However, since the question pertains to a detailed technical explanation from Daubechies regarding signal analysis which is not a visual scene but rather a theoretical concept, it doesn't directly fit the pattern of previous examples which were about visual scenes in movies or videos.
+
+If we were to follow the instruction strictly and assume there's a video explaining Daubechies' work with visualizations of signals and their singularities, an appropriate query could be:
+
+Output:
+Daubechies describes specific time-frequency patterns indicative of singularities in a signal.
+
+This sentence aims to capture the essence of the question in a way that could be used to retrieve a video segment where such concepts are explained visually.
+Retrieved Visual Segments {'2zaJZ_F7Xrk_51', '2zaJZ_F7Xrk_91', '2zaJZ_F7Xrk_50', '2zaJZ_F7Xrk_59'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 11
+  - Entity检索: 7
+  - Visual检索: 4
+  - Causal检索: 0
+
+前5个片段ID示例:
+  1. 1s9zZ6ERAko_36
+  2. 1s9zZ6ERAko_37
+  3. 1s9zZ6ERAko_38
+  4. 1s9zZ6ERAko_39
+  5. 2zaJZ_F7Xrk_50
+
+📊 video_segments._data 结构:
+  可用视频数量: 4
+  示例视频: 1s9zZ6ERAko
+  该视频的片段索引数量: 410
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 11
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments
+⠹ Checked 2 segments
+⠸ Checked 3 segments
+⠼ Checked 4 segments
+⠴ Checked 5 segments
+⠦ Checked 6 segments
+⠧ Checked 7 segments
+⠇ Checked 8 segments
+⠏ Checked 9 segments
+⠋ Checked 10 segments
+⠙ Checked 11 segments
+0 Video Segments remain after filtering
+Since no segments remain after filtering, we utilized all the retrieved segments.
+Remain segments ['1s9zZ6ERAko_36', '1s9zZ6ERAko_37', '1s9zZ6ERAko_38', '1s9zZ6ERAko_39', '2zaJZ_F7Xrk_50', '2zaJZ_F7Xrk_51', '2zaJZ_F7Xrk_59', '2zaJZ_F7Xrk_91', 'RNqXpdwd9AA_3', 'RNqXpdwd9AA_4', 'RNqXpdwd9AA_5']
+Keywords: Daubechies, time-frequency patterns, singularities, signal
+
+Captioning Segments for Given Query:   0%|          | 0/11 [00:00<?, ?it/s]
+Captioning Segments for Given Query:   9%|▉         | 1/11 [00:23<03:58, 23.85s/it]
+Captioning Segments for Given Query:  18%|█▊        | 2/11 [00:52<04:01, 26.85s/it]
+Captioning Segments for Given Query:  27%|██▋       | 3/11 [01:18<03:30, 26.28s/it]
+Captioning Segments for Given Query:  36%|███▋      | 4/11 [01:49<03:17, 28.26s/it]
+Captioning Segments for Given Query:  45%|████▌     | 5/11 [02:27<03:10, 31.69s/it]
+Captioning Segments for Given Query:  55%|█████▍    | 6/11 [02:53<02:28, 29.78s/it]
+Captioning Segments for Given Query:  64%|██████▎   | 7/11 [03:19<01:53, 28.45s/it]
+Captioning Segments for Given Query:  73%|███████▎  | 8/11 [03:55<01:33, 31.03s/it]
+Captioning Segments for Given Query:  82%|████████▏ | 9/11 [04:28<01:03, 31.55s/it]
+Captioning Segments for Given Query:  91%|█████████ | 10/11 [05:02<00:32, 32.27s/it]
+Captioning Segments for Given Query: 100%|██████████| 11/11 [05:30<00:00, 30.97s/it]
+Captioning Segments for Given Query: 100%|██████████| 11/11 [05:30<00:00, 30.04s/it]
+  [查询] 集合6 q17 causal_only: What specific time-frequency patterns do
+INFO:nano-graphrag:Truncate 20 to 11 chunks
+INFO:nano-graphrag:[Causal Retrieval] Rewritten query: Daubechies describes specific time-frequency patterns and their role in indicating singularities within a signal.
+INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
+INFO:nano-graphrag:[Causal Retrieval] 50 events after 2-hop bidirectional walk (from 20 seeds)
+INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 50 → 43 nodes (tau_dup=0.85)
+INFO:nano-graphrag:[Causal Retrieval] Retrieved 16 segments from 43 deduplicated events
+INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 43 events, 15930 chars
+Retrieved Causal Segments {'2zaJZ_F7Xrk_135', '2zaJZ_F7Xrk_146', '2zaJZ_F7Xrk_116', '2zaJZ_F7Xrk_84', 'RkGK0MloK0E_217', '2zaJZ_F7Xrk_121', '2zaJZ_F7Xrk_12', 'RNqXpdwd9AA_15', '2zaJZ_F7Xrk_27', 'RkGK0MloK0E_134', '2zaJZ_F7Xrk_18', '1s9zZ6ERAko_182', '1s9zZ6ERAko_197', '2zaJZ_F7Xrk_20', 'RNqXpdwd9AA_19', 'RNqXpdwd9AA_24'}
+
+Retrieved Text Segments set()
+The output for the given question does not fit the pattern of generating a declarative sentence to serve as a query for retrieving relevant video segments. The question pertains to a concept described in signal processing and mathematics, specifically related to the work of Ingrid Daubechies on wavelets and singularities in signals. Given the context of the instruction and examples provided, it seems the task is focused on generating video segment queries based on scene descriptions from movies or visual content.
+
+However, if we were to adapt this to fit within the given framework, focusing on a hypothetical video explaining Daubechies' work or a lecture segment where these concepts are discussed:
+
+Output:
+In a lecture segment, Daubechies describes time-frequency patterns indicative of singularities in a signal.
+Retrieved Visual Segments {'2zaJZ_F7Xrk_51', '2zaJZ_F7Xrk_91', '2zaJZ_F7Xrk_50', '2zaJZ_F7Xrk_59'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 20
+  - Entity检索: 0
+  - Visual检索: 4
+  - Causal检索: 16
+
+前5个片段ID示例:
+  1. 1s9zZ6ERAko_182
+  2. 1s9zZ6ERAko_197
+  3. 2zaJZ_F7Xrk_12
+  4. 2zaJZ_F7Xrk_18
+  5. 2zaJZ_F7Xrk_20
+
+📊 video_segments._data 结构:
+  可用视频数量: 4
+  示例视频: 1s9zZ6ERAko
+  该视频的片段索引数量: 410
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 20
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments
+⠹ Checked 2 segments
+⠸ Checked 3 segments
+⠼ Checked 4 segments
+⠴ Checked 5 segments
+⠦ Checked 6 segments
+⠧ Checked 7 segments
+⠇ Checked 8 segments
+⠏ Checked 9 segments
+⠋ Checked 10 segments
+⠙ Checked 11 segments
+⠹ Checked 12 segments
+⠸ Checked 13 segments
+⠼ Checked 14 segments
+⠴ Checked 15 segments
+⠦ Checked 16 segments
+⠧ Checked 17 segments
+⠇ Checked 18 segments
+⠏ Checked 19 segments
+⠋ Checked 20 segments
+0 Video Segments remain after filtering
+Since no segments remain after filtering, we utilized all the retrieved segments.
+Remain segments ['1s9zZ6ERAko_182', '1s9zZ6ERAko_197', '2zaJZ_F7Xrk_12', '2zaJZ_F7Xrk_18', '2zaJZ_F7Xrk_20', '2zaJZ_F7Xrk_27', '2zaJZ_F7Xrk_50', '2zaJZ_F7Xrk_51', '2zaJZ_F7Xrk_59', '2zaJZ_F7Xrk_84', '2zaJZ_F7Xrk_91', '2zaJZ_F7Xrk_116', '2zaJZ_F7Xrk_121', '2zaJZ_F7Xrk_135', '2zaJZ_F7Xrk_146', 'RNqXpdwd9AA_15', 'RNqXpdwd9AA_19', 'RNqXpdwd9AA_24', 'RkGK0MloK0E_134', 'RkGK0MloK0E_217']
+Keywords: Daubechies, time-frequency, patterns, singularities, signal
+
+Captioning Segments for Given Query:   0%|          | 0/20 [00:00<?, ?it/s]
+Captioning Segments for Given Query:   5%|▌         | 1/20 [00:29<09:19, 29.46s/it]
+Captioning Segments for Given Query:  10%|█         | 2/20 [00:52<07:40, 25.59s/it]
+Captioning Segments for Given Query:  15%|█▌        | 3/20 [01:22<07:47, 27.51s/it]
+Captioning Segments for Given Query:  20%|██        | 4/20 [01:58<08:18, 31.18s/it]
+Captioning Segments for Given Query:  25%|██▌       | 5/20 [02:41<08:51, 35.40s/it]
+Captioning Segments for Given Query:  30%|███       | 6/20 [03:15<08:07, 34.84s/it]
+Captioning Segments for Given Query:  35%|███▌      | 7/20 [03:41<06:55, 31.96s/it]
+Captioning Segments for Given Query:  40%|████      | 8/20 [04:00<05:32, 27.67s/it]
+Captioning Segments for Given Query:  45%|████▌     | 9/20 [04:26<04:58, 27.15s/it]
+Captioning Segments for Given Query:  50%|█████     | 10/20 [04:58<04:47, 28.72s/it]
+Captioning Segments for Given Query:  55%|█████▌    | 11/20 [05:37<04:47, 31.91s/it]
+Captioning Segments for Given Query:  60%|██████    | 12/20 [05:59<03:50, 28.87s/it]
+Captioning Segments for Given Query:  65%|██████▌   | 13/20 [06:26<03:18, 28.41s/it]
+Captioning Segments for Given Query:  70%|███████   | 14/20 [06:59<02:57, 29.62s/it]
+Captioning Segments for Given Query:  75%|███████▌  | 15/20 [07:23<02:20, 28.01s/it]
+Captioning Segments for Given Query:  80%|████████  | 16/20 [07:55<01:56, 29.25s/it]
+Captioning Segments for Given Query:  85%|████████▌ | 17/20 [08:35<01:37, 32.46s/it]
+Captioning Segments for Given Query:  90%|█████████ | 18/20 [09:09<01:05, 32.85s/it]
+Captioning Segments for Given Query:  95%|█████████▌| 19/20 [09:33<00:30, 30.33s/it]
+Captioning Segments for Given Query: 100%|██████████| 20/20 [09:56<00:00, 28.20s/it]
+Captioning Segments for Given Query: 100%|██████████| 20/20 [09:56<00:00, 29.85s/it]
+  [查询] 集合6 q18 entity_only: How does Daubechies motivate the use of 
+INFO:nano-graphrag:Truncate 20 to 11 chunks
+How does Daubechies use an analogy to the human auditory system to motivate the use of 'interval statistics' in signal analysis?
+Retrieved Text Segments {'2zaJZ_F7Xrk_72', '2zaJZ_F7Xrk_73', 'RkGK0MloK0E_2', 'RkGK0MloK0E_3', 'RkGK0MloK0E_0', '2zaJZ_F7Xrk_74', 'RkGK0MloK0E_1'}
+Output: Daubechies uses an analogy to the human auditory system to motivate the use of interval statistics in signal analysis.
+Retrieved Visual Segments {'RNqXpdwd9AA_0', 'RkGK0MloK0E_0', 'RNqXpdwd9AA_5', '2zaJZ_F7Xrk_13'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 10
+  - Entity检索: 7
+  - Visual检索: 4
+  - Causal检索: 0
+
+前5个片段ID示例:
+  1. 2zaJZ_F7Xrk_13
+  2. 2zaJZ_F7Xrk_72
+  3. 2zaJZ_F7Xrk_73
+  4. 2zaJZ_F7Xrk_74
+  5. RNqXpdwd9AA_0
+
+📊 video_segments._data 结构:
+  可用视频数量: 4
+  示例视频: 1s9zZ6ERAko
+  该视频的片段索引数量: 410
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 10
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments
+⠹ Checked 2 segments
+⠸ Checked 3 segments
+⠼ Checked 4 segments
+⠴ Checked 5 segments
+⠦ Checked 6 segments
+⠧ Checked 7 segments
+⠇ Checked 8 segments
+⠏ Checked 9 segments
+⠋ Checked 10 segments
+0 Video Segments remain after filtering
+Since no segments remain after filtering, we utilized all the retrieved segments.
+Remain segments ['2zaJZ_F7Xrk_13', '2zaJZ_F7Xrk_72', '2zaJZ_F7Xrk_73', '2zaJZ_F7Xrk_74', 'RNqXpdwd9AA_0', 'RNqXpdwd9AA_5', 'RkGK0MloK0E_0', 'RkGK0MloK0E_1', 'RkGK0MloK0E_2', 'RkGK0MloK0E_3']
+Keywords: Daubechies, interval statistics, signal analysis, analogy, human auditory system
+
+Captioning Segments for Given Query:   0%|          | 0/10 [00:00<?, ?it/s]
+Captioning Segments for Given Query:  10%|█         | 1/10 [00:31<04:46, 31.79s/it]
+Captioning Segments for Given Query:  20%|██        | 2/10 [00:56<03:42, 27.87s/it]
+Captioning Segments for Given Query:  30%|███       | 3/10 [01:23<03:11, 27.29s/it]
+Captioning Segments for Given Query:  40%|████      | 4/10 [01:48<02:37, 26.32s/it]
+Captioning Segments for Given Query:  50%|█████     | 5/10 [02:17<02:17, 27.43s/it]
+Captioning Segments for Given Query:  60%|██████    | 6/10 [02:36<01:37, 24.48s/it]
+Captioning Segments for Given Query:  70%|███████   | 7/10 [03:02<01:15, 25.08s/it]
+Captioning Segments for Given Query:  80%|████████  | 8/10 [03:29<00:50, 25.49s/it]
+Captioning Segments for Given Query:  90%|█████████ | 9/10 [03:54<00:25, 25.38s/it]
+Captioning Segments for Given Query: 100%|██████████| 10/10 [04:18<00:00, 25.03s/it]
+Captioning Segments for Given Query: 100%|██████████| 10/10 [04:18<00:00, 25.85s/it]
+  [查询] 集合6 q18 causal_only: How does Daubechies motivate the use of 
+INFO:nano-graphrag:Truncate 20 to 11 chunks
+INFO:nano-graphrag:[Causal Retrieval] Rewritten query: Daubechies motivates the use of interval statistics in signal analysis by drawing an analogy to how the human auditory system processes sound.
+INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
+INFO:nano-graphrag:[Causal Retrieval] 60 events after 2-hop bidirectional walk (from 20 seeds)
+INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 60 → 50 nodes (tau_dup=0.85)
+INFO:nano-graphrag:[Causal Retrieval] Retrieved 16 segments from 50 deduplicated events
+INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 50 events, 18960 chars
+Retrieved Causal Segments {'2zaJZ_F7Xrk_159', '2zaJZ_F7Xrk_73', '2zaJZ_F7Xrk_146', '1s9zZ6ERAko_173', '1s9zZ6ERAko_180', '2zaJZ_F7Xrk_168', '1s9zZ6ERAko_182', '2zaJZ_F7Xrk_70', '1s9zZ6ERAko_172', '2zaJZ_F7Xrk_109', '2zaJZ_F7Xrk_69', 'RkGK0MloK0E_7', '1s9zZ6ERAko_168', 'RNqXpdwd9AA_19', '2zaJZ_F7Xrk_58', '2zaJZ_F7Xrk_46'}
+
+Retrieved Text Segments set()
+Output: Daubechies uses an analogy to the human auditory system to explain the motivation behind using 'interval statistics' in signal analysis.
+Retrieved Visual Segments {'RNqXpdwd9AA_5', 'RNqXpdwd9AA_0', 'RkGK0MloK0E_0', '2zaJZ_F7Xrk_13'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 20
+  - Entity检索: 0
+  - Visual检索: 4
+  - Causal检索: 16
+
+前5个片段ID示例:
+  1. 1s9zZ6ERAko_168
+  2. 1s9zZ6ERAko_172
+  3. 1s9zZ6ERAko_173
+  4. 1s9zZ6ERAko_180
+  5. 1s9zZ6ERAko_182
+
+📊 video_segments._data 结构:
+  可用视频数量: 4
+  示例视频: 1s9zZ6ERAko
+  该视频的片段索引数量: 410
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 20
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments
+⠹ Checked 2 segments
+⠸ Checked 3 segments
+⠼ Checked 4 segments
+⠴ Checked 5 segments
+⠦ Checked 6 segments
+⠧ Checked 7 segments
+⠇ Checked 8 segments
+⠏ Checked 9 segments
+⠋ Checked 10 segments
+⠙ Checked 11 segments
+⠹ Checked 12 segments
+⠸ Checked 13 segments
+⠼ Checked 14 segments
+⠴ Checked 15 segments
+⠦ Checked 16 segments
+⠧ Checked 17 segments
+⠇ Checked 18 segments
+⠏ Checked 19 segments
+⠋ Checked 20 segments
+0 Video Segments remain after filtering
+Since no segments remain after filtering, we utilized all the retrieved segments.
+Remain segments ['1s9zZ6ERAko_168', '1s9zZ6ERAko_172', '1s9zZ6ERAko_173', '1s9zZ6ERAko_180', '1s9zZ6ERAko_182', '2zaJZ_F7Xrk_13', '2zaJZ_F7Xrk_46', '2zaJZ_F7Xrk_58', '2zaJZ_F7Xrk_69', '2zaJZ_F7Xrk_70', '2zaJZ_F7Xrk_73', '2zaJZ_F7Xrk_109', '2zaJZ_F7Xrk_146', '2zaJZ_F7Xrk_159', '2zaJZ_F7Xrk_168', 'RNqXpdwd9AA_0', 'RNqXpdwd9AA_5', 'RNqXpdwd9AA_19', 'RkGK0MloK0E_0', 'RkGK0MloK0E_7']
+Keywords: Daubechies, interval statistics, signal analysis, analogy, human auditory system
+
+Captioning Segments for Given Query:   0%|          | 0/20 [00:00<?, ?it/s]
+Captioning Segments for Given Query:   5%|▌         | 1/20 [00:27<08:50, 27.90s/it]
+Captioning Segments for Given Query:  10%|█         | 2/20 [00:51<07:34, 25.23s/it]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   Captioning Segments for Given Query:  64%|██████▍   | 16/25 [07:45<04:18, 28.67s/it]Captioning Segments for Given Query:  68%|██████▊   | 17/25 [08:21<04:06, 30.77s/it]Captioning Segments for Given Query:  72%|███████▏  | 18/25 [08:52<03:35, 30.83s/it]Captioning Segments for Given Query:  76%|███████▌  | 19/25 [09:17<02:54, 29.04s/it]Captioning Segments for Given Query:  80%|████████  | 20/25 [09:49<02:29, 29.89s/it]Captioning Segments for Given Query:  84%|████████▍ | 21/25 [10:17<01:58, 29.57s/it]Captioning Segments for Given Query:  88%|████████▊ | 22/25 [10:49<01:30, 30.13s/it]Captioning Segments for Given Query:  92%|█████████▏| 23/25 [11:10<00:55, 27.56s/it]Captioning Segments for Given Query:  96%|█████████▌| 24/25 [11:41<00:28, 28.53s/it]Captioning Segments for Given Query: 100%|██████████| 25/25 [12:07<00:00, 27.79s/it]Captioning Segments for Given Query: 100%|██████████| 25/25 [12:07<00:00, 29.11s/it]
+  [查询] 集合6 q20 entity_only: Daubechies describes an analysis of a si
+INFO:nano-graphrag:Truncate 20 to 12 chunks
+The specific observations Daubechies makes about the resulting time-frequency representation of a simulated signal with two cosine components and varying instantaneous frequencies.
+Retrieved Text Segments {'RNqXpdwd9AA_4', 'RkGK0MloK0E_2', 'RNqXpdwd9AA_3', 'RkGK0MloK0E_3', 'RkGK0MloK0E_0', 'RNqXpdwd9AA_5', 'RkGK0MloK0E_1'}
+Daubechies observes the time-frequency representation of a simulated signal with two cosine components and varying instantaneous frequencies.
+Retrieved Visual Segments {'2zaJZ_F7Xrk_0', 'RNqXpdwd9AA_0', '1s9zZ6ERAko_0', 'RkGK0MloK0E_0'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 10
+  - Entity检索: 7
+  - Visual检索: 4
+  - Causal检索: 0
+
+前5个片段ID示例:
+  1. 1s9zZ6ERAko_0
+  2. 2zaJZ_F7Xrk_0
+  3. RNqXpdwd9AA_0
+  4. RNqXpdwd9AA_3
+  5. RNqXpdwd9AA_4
+
+📊 video_segments._data 结构:
+  可用视频数量: 4
+  示例视频: 1s9zZ6ERAko
+  该视频的片段索引数量: 410
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 10
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments0 Video Segments remain after filtering
+Since no segments remain after filtering, we utilized all the retrieved segments.
+Remain segments ['1s9zZ6ERAko_0', '2zaJZ_F7Xrk_0', 'RNqXpdwd9AA_0', 'RNqXpdwd9AA_3', 'RNqXpdwd9AA_4', 'RNqXpdwd9AA_5', 'RkGK0MloK0E_0', 'RkGK0MloK0E_1', 'RkGK0MloK0E_2', 'RkGK0MloK0E_3']
+Keywords: Daubechies, analysis, simulated signal, cosine components, instantaneous frequencies, time-frequency representation, observations
+Captioning Segments for Given Query:   0%|          | 0/10 [00:00<?, ?it/s]Captioning Segments for Given Query:  10%|█         | 1/10 [00:27<04:09, 27.76s/it]Captioning Segments for Given Query:  20%|██        | 2/10 [01:01<04:08, 31.04s/it]Captioning Segments for Given Query:  30%|███       | 3/10 [01:34<03:44, 32.13s/it]Captioning Segments for Given Query:  40%|████      | 4/10 [02:10<03:21, 33.56s/it]Captioning Segments for Given Query:  50%|█████     | 5/10 [02:41<02:43, 32.64s/it]Captioning Segments for Given Query:  60%|██████    | 6/10 [03:13<02:10, 32.55s/it]Captioning Segments for Given Query:  70%|███████   | 7/10 [03:43<01:35, 31.72s/it]Captioning Segments for Given Query:  80%|████████  | 8/10 [04:12<01:01, 30.85s/it]Captioning Segments for Given Query:  90%|█████████ | 9/10 [04:41<00:30, 30.25s/it]Captioning Segments for Given Query: 100%|██████████| 10/10 [05:05<00:00, 28.39s/it]Captioning Segments for Given Query: 100%|██████████| 10/10 [05:05<00:00, 30.58s/it]
+  [查询] 集合6 q20 causal_only: Daubechies describes an analysis of a si
+INFO:nano-graphrag:Truncate 20 to 12 chunks
+INFO:nano-graphrag:[Causal Retrieval] Rewritten query: Daubechies made specific observations about the time-frequency representation resulting from her analysis of a simulated signal containing two cosine components with varying instantaneous frequencies.
+INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
+INFO:nano-graphrag:[Causal Retrieval] 53 events after 2-hop bidirectional walk (from 20 seeds)
+INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 53 → 44 nodes (tau_dup=0.85)
+INFO:nano-graphrag:[Causal Retrieval] Retrieved 16 segments from 44 deduplicated events
+INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 44 events, 16600 chars
+Retrieved Causal Segments {'RNqXpdwd9AA_39', '2zaJZ_F7Xrk_146', '2zaJZ_F7Xrk_116', '2zaJZ_F7Xrk_15', '2zaJZ_F7Xrk_84', 'RNqXpdwd9AA_5', '2zaJZ_F7Xrk_121', '2zaJZ_F7Xrk_12', 'RNqXpdwd9AA_4', 'RkGK0MloK0E_6', '2zaJZ_F7Xrk_18', 'RNqXpdwd9AA_62', '1s9zZ6ERAko_197', '2zaJZ_F7Xrk_20', 'RNqXpdwd9AA_19', 'RkGK0MloK0E_4'}
+
+Retrieved Text Segments set()
+Daubechies observes specific characteristics about the time-frequency representation of a simulated signal with two cosine components and varying instantaneous frequencies.
+Retrieved Visual Segments {'2zaJZ_F7Xrk_0', 'RNqXpdwd9AA_0', '1s9zZ6ERAko_0', 'RkGK0MloK0E_0'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 20
+  - Entity检索: 0
+  - Visual检索: 4
+  - Causal检索: 16
+
+前5个片段ID示例:
+  1. 1s9zZ6ERAko_0
+  2. 1s9zZ6ERAko_197
+  3. 2zaJZ_F7Xrk_0
+  4. 2zaJZ_F7Xrk_12
+  5. 2zaJZ_F7Xrk_15
+
+📊 video_segments._data 结构:
+  可用视频数量: 4
+  示例视频: 1s9zZ6ERAko
+  该视频的片段索引数量: 410
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 20
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments⠙ Checked 11 segments⠹ Checked 12 segments⠸ Checked 13 segments⠼ Checked 14 segments⠴ Checked 15 segments⠦ Checked 16 segments⠧ Checked 17 segments⠇ Checked 18 segments⠏ Checked 19 segments⠋ Checked 20 segments0 Video Segments remain after filtering
+Since no segments remain after filtering, we utilized all the retrieved segments.
+Remain segments ['1s9zZ6ERAko_0', '1s9zZ6ERAko_197', '2zaJZ_F7Xrk_0', '2zaJZ_F7Xrk_12', '2zaJZ_F7Xrk_15', '2zaJZ_F7Xrk_18', '2zaJZ_F7Xrk_20', '2zaJZ_F7Xrk_84', '2zaJZ_F7Xrk_116', '2zaJZ_F7Xrk_121', '2zaJZ_F7Xrk_146', 'RNqXpdwd9AA_0', 'RNqXpdwd9AA_4', 'RNqXpdwd9AA_5', 'RNqXpdwd9AA_19', 'RNqXpdwd9AA_39', 'RNqXpdwd9AA_62', 'RkGK0MloK0E_0', 'RkGK0MloK0E_4', 'RkGK0MloK0E_6']
+Keywords: Daubechies, analysis, simulated signal, cosine components, varying instantaneous frequencies, time-frequency representation, observations
+Captioning Segments for Given Query:   0%|          | 0/20 [00:00<?, ?it/s]Captioning Segments for Given Query:   5%|▌         | 1/20 [00:31<10:05, 31.89s/it]Captioning Segments for Given Query:  10%|█         | 2/20 [01:00<08:57, 29.88s/it]Captioning Segments for Given Query:  15%|█▌        | 3/20 [01:34<08:58, 31.69s/it]Captioning Segments for Given Query:  20%|██        | 4/20 [02:06<08:28, 31.78s/it]Captioning Segments for Given Query:  25%|██▌       | 5/20 [02:34<07:35, 30.39s/it]Captioning Segments for Given Query:  30%|███       | 6/20 [03:01<06:53, 29.54s/it]Captioning Segments for Given Query:  35%|███▌      | 7/20 [03:37<06:49, 31.52s/it]Captioning Segments for Given Query:  40%|████      | 8/20 [04:08<06:15, 31.30s/it]Captioning Segments for Given Query:  45%|████▌     | 9/20 [04:30<05:13, 28.48s/it]Captioning Segments for Given Query:  50%|█████     | 10/20 [04:52<04:24, 26.41s/it]Captioning Segments for Given Query:  55%|█████▌    | 11/20 [05:20<04:02, 26.99s/it]Captioning Segments for Given Query:  60%|██████    | 12/20 [05:50<03:42, 27.86s/it]Captioning Segments for Given Query:  65%|██████▌   | 13/20 [06:21<03:20, 28.65s/it]Captioning Segments for Given Query:  70%|███████   | 14/20 [06:50<02:54, 29.01s/it]Captioning Segments for Given Query:  75%|███████▌  | 15/20 [07:21<02:27, 29.43s/it]Captioning Segments for Given Query:  80%|████████  | 16/20 [07:50<01:57, 29.38s/it]Captioning Segments for Given Query:  85%|████████▌ | 17/20 [08:19<01:27, 29.20s/it]Captioning Segments for Given Query:  90%|█████████ | 18/20 [08:54<01:02, 31.06s/it]Captioning Segments for Given Query:  95%|█████████▌| 19/20 [09:19<00:29, 29.31s/it]Captioning Segments for Given Query: 100%|██████████| 20/20 [09:52<00:00, 30.34s/it]Captioning Segments for Given Query: 100%|██████████| 20/20 [09:52<00:00, 29.64s/it]
+  [查询] 集合6 q21 entity_only: What limitations does Daubechies acknowl
+INFO:nano-graphrag:Truncate 20 to 11 chunks
+The limitations that Daubechies acknowledges in the use of the cepstrum for extracting signal components.
+Retrieved Text Segments {'RNqXpdwd9AA_4', 'RNqXpdwd9AA_3', '2zaJZ_F7Xrk_44', '2zaJZ_F7Xrk_43', '2zaJZ_F7Xrk_42', 'RNqXpdwd9AA_5'}
+The output for the given question should focus on video content rather than text-based information or academic acknowledgments. However, since the question asks about limitations acknowledged by Daubechies regarding the cepstrum in a context likely discussed in a video, we can frame it as follows:
+
+Output:
+Daubechies discusses the limitations of using cepstrum for extracting signal components in a video segment.
+Retrieved Visual Segments {'2zaJZ_F7Xrk_51', '2zaJZ_F7Xrk_91', '2zaJZ_F7Xrk_50', '2zaJZ_F7Xrk_59'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 10
+  - Entity检索: 6
+  - Visual检索: 4
+  - Causal检索: 0
+
+前5个片段ID示例:
+  1. 2zaJZ_F7Xrk_42
+  2. 2zaJZ_F7Xrk_43
+  3. 2zaJZ_F7Xrk_44
+  4. 2zaJZ_F7Xrk_50
+  5. 2zaJZ_F7Xrk_51
+
+📊 video_segments._data 结构:
+  可用视频数量: 4
+  示例视频: 1s9zZ6ERAko
+  该视频的片段索引数量: 410
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 10
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments0 Video Segments remain after filtering
+Since no segments remain after filtering, we utilized all the retrieved segments.
+Remain segments ['2zaJZ_F7Xrk_42', '2zaJZ_F7Xrk_43', '2zaJZ_F7Xrk_44', '2zaJZ_F7Xrk_50', '2zaJZ_F7Xrk_51', '2zaJZ_F7Xrk_59', '2zaJZ_F7Xrk_91', 'RNqXpdwd9AA_3', 'RNqXpdwd9AA_4', 'RNqXpdwd9AA_5']
+Keywords: limitations, Daubechies, cepstrum, signal components
+Captioning Segments for Given Query:   0%|          | 0/10 [00:00<?, ?it/s]Captioning Segments for Given Query:  10%|█         | 1/10 [00:20<03:04, 20.49s/it]Captioning Segments for Given Query:  20%|██        | 2/10 [00:45<03:04, 23.02s/it]Captioning Segments for Given Query:  30%|███       | 3/10 [01:15<03:03, 26.17s/it]Captioning Segments for Given Query:  40%|████      | 4/10 [01:33<02:19, 23.23s/it]Captioning Segments for Given Query:  50%|█████     | 5/10 [02:05<02:11, 26.26s/it]Captioning Segments for Given Query:  60%|██████    | 6/10 [02:29<01:42, 25.51s/it]Captioning Segments for Given Query:  70%|███████   | 7/10 [03:00<01:22, 27.36s/it]Captioning Segments for Given Query:  80%|████████  | 8/10 [03:35<00:59, 29.85s/it]Captioning Segments for Given Query:  90%|█████████ | 9/10 [04:01<00:28, 28.63s/it]Captioning Segments for Given Query: 100%|██████████| 10/10 [04:20<00:00, 25.45s/it]Captioning Segments for Given Query: 100%|██████████| 10/10 [04:20<00:00, 26.02s/it]
+  [查询] 集合6 q21 causal_only: What limitations does Daubechies acknowl
+INFO:nano-graphrag:Truncate 20 to 11 chunks
+INFO:nano-graphrag:[Causal Retrieval] Rewritten query: Daubechies acknowledges the limitations in the use of the cepstrum for extracting signal components and their impacts.
+INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
+INFO:nano-graphrag:[Causal Retrieval] 65 events after 2-hop bidirectional walk (from 20 seeds)
+INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 65 → 53 nodes (tau_dup=0.85)
+INFO:nano-graphrag:[Causal Retrieval] Retrieved 16 segments from 53 deduplicated events
+INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 53 events, 20169 chars
+Retrieved Causal Segments {'RkGK0MloK0E_8', 'RkGK0MloK0E_19', '2zaJZ_F7Xrk_146', '2zaJZ_F7Xrk_92', '2zaJZ_F7Xrk_15', '2zaJZ_F7Xrk_84', '2zaJZ_F7Xrk_121', '2zaJZ_F7Xrk_168', '1s9zZ6ERAko_182', 'RkGK0MloK0E_7', '2zaJZ_F7Xrk_69', '1s9zZ6ERAko_160', '1s9zZ6ERAko_168', '1s9zZ6ERAko_142', '1s9zZ6ERAko_175', '2zaJZ_F7Xrk_46'}
+
+Retrieved Text Segments set()
+The output for the given question should focus on the context of video retrieval related to the limitations Daubechies acknowledges regarding the cepstrum's usage in signal processing scenes. However, since the original task is about generating a query for video segments based on scene-related information and the provided question is more text-based and technical in nature, we can adapt it to fit the pattern:
+
+If we were to frame this in terms of a video segment that might contain Daubechies discussing limitations in a lecture or presentation setting, the output could be:
+
+Daubechies discusses limitations of using cepstrum for signal component extraction in a presentation.
+
+This serves as a query for a video segment where Daubechies is likely speaking about the limitations of cepstrum usage in signal processing.
+Retrieved Visual Segments {'2zaJZ_F7Xrk_51', '2zaJZ_F7Xrk_91', '2zaJZ_F7Xrk_50', '2zaJZ_F7Xrk_59'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 20
+  - Entity检索: 0
+  - Visual检索: 4
+  - Causal检索: 16
+
+前5个片段ID示例:
+  1. 1s9zZ6ERAko_142
+  2. 1s9zZ6ERAko_160
+  3. 1s9zZ6ERAko_168
+  4. 1s9zZ6ERAko_175
+  5. 1s9zZ6ERAko_182
+
+📊 video_segments._data 结构:
+  可用视频数量: 4
+  示例视频: 1s9zZ6ERAko
+  该视频的片段索引数量: 410
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 20
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments⠙ Checked 11 segments⠹ Checked 12 segments⠸ Checked 13 segments⠼ Checked 14 segments⠴ Checked 15 segments⠦ Checked 16 segments⠧ Checked 17 segments⠇ Checked 18 segments⠏ Checked 19 segments⠋ Checked 20 segments0 Video Segments remain after filtering
+Since no segments remain after filtering, we utilized all the retrieved segments.
+Remain segments ['1s9zZ6ERAko_142', '1s9zZ6ERAko_160', '1s9zZ6ERAko_168', '1s9zZ6ERAko_175', '1s9zZ6ERAko_182', '2zaJZ_F7Xrk_15', '2zaJZ_F7Xrk_46', '2zaJZ_F7Xrk_50', '2zaJZ_F7Xrk_51', '2zaJZ_F7Xrk_59', '2zaJZ_F7Xrk_69', '2zaJZ_F7Xrk_84', '2zaJZ_F7Xrk_91', '2zaJZ_F7Xrk_92', '2zaJZ_F7Xrk_121', '2zaJZ_F7Xrk_146', '2zaJZ_F7Xrk_168', 'RkGK0MloK0E_7', 'RkGK0MloK0E_8', 'RkGK0MloK0E_19']
+Keywords: limitations, Daubechies, cepstrum, extracting, signal components
+Captioning Segments for Given Query:   0%|          | 0/20 [00:00<?, ?it/s]Captioning Segments for Given Query:   5%|▌         | 1/20 [00:31<09:56, 31.42s/it]Captioning Segments for Given Query:  10%|█         | 2/20 [01:01<09:10, 30.57s/it]Captioning Segments for Given Query:  15%|█▌        | 3/20 [01:29<08:21, 29.51s/it]Captioning Segments for Given Query:  20%|██        | 4/20 [01:57<07:38, 28.67s/it]Captioning Segments for Given Query:  25%|██▌       | 5/20 [02:23<06:58, 27.93s/it]Captioning Segments for Given Query:  30%|███       | 6/20 [02:55<06:49, 29.22s/it]Captioning Segments for Given Query:  35%|███▌      | 7/20 [03:11<05:25, 25.01s/it]Captioning Segments for Given Query:  40%|████      | 8/20 [03:35<04:57, 24.78s/it]Captioning Segments for Given Query:  45%|████▌     | 9/20 [04:03<04:40, 25.52s/it]Captioning Segments for Given Query:  50%|█████     | 10/20 [04:30<04:20, 26.02s/it]Captioning Segments for Given Query:  55%|█████▌    | 11/20 [04:58<03:59, 26.61s/it]Captioning Segments for Given Query:  60%|██████    | 12/20 [05:33<03:54, 29.29s/it]Captioning Segments for Given Query:  65%|██████▌   | 13/20 [06:03<03:27, 29.61s/it]Captioning Segments for Given Query:  70%|███████   | 14/20 [06:33<02:58, 29.71s/it]Captioning Segments for Given Query:  75%|███████▌  | 15/20 [06:59<02:22, 28.41s/it]Captioning Segments for Given Query:  80%|████████  | 16/20 [07:22<01:47, 26.83s/it]Captioning Segments for Given Query:  85%|████████▌ | 17/20 [07:48<01:19, 26.54s/it]Captioning Segments for Given Query:  90%|█████████ | 18/20 [08:12<00:51, 25.69s/it]Captioning Segments for Given Query:  95%|█████████▌| 19/20 [08:43<00:27, 27.46s/it]Captioning Segments for Given Query: 100%|██████████| 20/20 [09:10<00:00, 27.31s/it]Captioning Segments for Given Query: 100%|██████████| 20/20 [09:10<00:00, 27.53s/it]
+  [查询] 集合6 q22 entity_only: What future directions for research does
+INFO:nano-graphrag:Truncate 20 to 12 chunks
+The future directions for research that Daubechies suggests in the context of analyzing animal vocalizations using time-frequency methods.
+Retrieved Text Segments {'RNqXpdwd9AA_4', 'RkGK0MloK0E_2', 'RNqXpdwd9AA_3', 'RkGK0MloK0E_3', 'RkGK0MloK0E_0', 'RNqXpdwd9AA_5', 'RkGK0MloK0E_1'}
+Output:
+Daubechies suggests future research directions in the context of analyzing animal vocalizations using time-frequency methods.
+Retrieved Visual Segments {'RNqXpdwd9AA_4', 'RNqXpdwd9AA_0', 'RkGK0MloK0E_8', 'RNqXpdwd9AA_5'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 9
+  - Entity检索: 7
+  - Visual检索: 4
+  - Causal检索: 0
+
+前5个片段ID示例:
+  1. RNqXpdwd9AA_0
+  2. RNqXpdwd9AA_3
+  3. RNqXpdwd9AA_4
+  4. RNqXpdwd9AA_5
+  5. RkGK0MloK0E_0
+
+📊 video_segments._data 结构:
+  可用视频数量: 4
+  示例视频: 1s9zZ6ERAko
+  该视频的片段索引数量: 410
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 9
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments0 Video Segments remain after filtering
+Since no segments remain after filtering, we utilized all the retrieved segments.
+Remain segments ['RNqXpdwd9AA_0', 'RNqXpdwd9AA_3', 'RNqXpdwd9AA_4', 'RNqXpdwd9AA_5', 'RkGK0MloK0E_0', 'RkGK0MloK0E_1', 'RkGK0MloK0E_2', 'RkGK0MloK0E_3', 'RkGK0MloK0E_8']
+Keywords: future directions, research, Daubechies, animal vocalizations, time-frequency methods
+Captioning Segments for Given Query:   0%|          | 0/9 [00:00<?, ?it/s]Captioning Segments for Given Query:  11%|█         | 1/9 [00:30<04:01, 30.20s/it]Captioning Segments for Given Query:  22%|██▏       | 2/9 [01:04<03:47, 32.50s/it]Captioning Segments for Given Query:  33%|███▎      | 3/9 [01:31<03:00, 30.08s/it]Captioning Segments for Given Query:  44%|████▍     | 4/9 [01:58<02:23, 28.75s/it]Captioning Segments for Given Query:  56%|█████▌    | 5/9 [02:30<01:59, 29.98s/it]Captioning Segments for Given Query:  67%|██████▋   | 6/9 [02:57<01:26, 28.85s/it]Captioning Segments for Given Query:  78%|███████▊  | 7/9 [03:31<01:01, 30.59s/it]Captioning Segments for Given Query:  89%|████████▉ | 8/9 [04:01<00:30, 30.65s/it]Captioning Segments for Given Query: 100%|██████████| 9/9 [04:33<00:00, 30.93s/it]Captioning Segments for Given Query: 100%|██████████| 9/9 [04:33<00:00, 30.39s/it]
+  [查询] 集合6 q22 causal_only: What future directions for research does
+INFO:nano-graphrag:Truncate 20 to 12 chunks
+INFO:nano-graphrag:[Causal Retrieval] Rewritten query: Daubechies' suggestions for future research directions in the context of using time-frequency methods to analyze animal vocalizations.
+INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
+INFO:nano-graphrag:[Causal Retrieval] 56 events after 2-hop bidirectional walk (from 20 seeds)
+INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 56 → 45 nodes (tau_dup=0.85)
+INFO:nano-graphrag:[Causal Retrieval] Retrieved 17 segments from 45 deduplicated events
+INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 45 events, 15972 chars
+Retrieved Causal Segments {'2zaJZ_F7Xrk_73', 'RNqXpdwd9AA_39', '2zaJZ_F7Xrk_146', '2zaJZ_F7Xrk_164', '2zaJZ_F7Xrk_165', '2zaJZ_F7Xrk_92', '2zaJZ_F7Xrk_116', '2zaJZ_F7Xrk_84', 'RNqXpdwd9AA_5', '1s9zZ6ERAko_182', 'RNqXpdwd9AA_4', '2zaJZ_F7Xrk_18', 'RkGK0MloK0E_7', '2zaJZ_F7Xrk_20', '1s9zZ6ERAko_168', '1s9zZ6ERAko_181', 'RNqXpdwd9AA_1'}
+
+Retrieved Text Segments set()
+Output:
+Daubechies suggests future research directions in the context of analyzing animal vocalizations using time-frequency methods.
+Retrieved Visual Segments {'RNqXpdwd9AA_4', 'RNqXpdwd9AA_0', 'RkGK0MloK0E_8', 'RNqXpdwd9AA_5'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 19
+  - Entity检索: 0
+  - Visual检索: 4
+  - Causal检索: 17
+
+前5个片段ID示例:
+  1. 1s9zZ6ERAko_168
+  2. 1s9zZ6ERAko_181
+  3. 1s9zZ6ERAko_182
+  4. 2zaJZ_F7Xrk_18
+  5. 2zaJZ_F7Xrk_20
+
+📊 video_segments._data 结构:
+  可用视频数量: 4
+  示例视频: 1s9zZ6ERAko
+  该视频的片段索引数量: 410
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 19
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments⠙ Checked 11 segments⠹ Checked 12 segments⠸ Checked 13 segments⠼ Checked 14 segments⠴ Checked 15 segments⠦ Checked 16 segments⠧ Checked 17 segments⠇ Checked 18 segments⠏ Checked 19 segments0 Video Segments remain after filtering
+Since no segments remain after filtering, we utilized all the retrieved segments.
+Remain segments ['1s9zZ6ERAko_168', '1s9zZ6ERAko_181', '1s9zZ6ERAko_182', '2zaJZ_F7Xrk_18', '2zaJZ_F7Xrk_20', '2zaJZ_F7Xrk_73', '2zaJZ_F7Xrk_84', '2zaJZ_F7Xrk_92', '2zaJZ_F7Xrk_116', '2zaJZ_F7Xrk_146', '2zaJZ_F7Xrk_164', '2zaJZ_F7Xrk_165', 'RNqXpdwd9AA_0', 'RNqXpdwd9AA_1', 'RNqXpdwd9AA_4', 'RNqXpdwd9AA_5', 'RNqXpdwd9AA_39', 'RkGK0MloK0E_7', 'RkGK0MloK0E_8']
+Keywords: future directions, research, Daubechies, animal vocalizations, time-frequency methods
+Captioning Segments for Given Query:   0%|          | 0/19 [00:00<?, ?it/s]Captioning Segments for Given Query:   5%|▌         | 1/19 [00:25<07:42, 25.71s/it]Captioning Segments for Given Query:  11%|█         | 2/19 [00:58<08:30, 30.01s/it]Captioning Segments for Given Query:  16%|█▌        | 3/19 [01:23<07:20, 27.55s/it]Captioning Segments for Given Query:  21%|██        | 4/19 [01:51<06:58, 27.93s/it]Captioning Segments for Given Query:  26%|██▋       | 5/19 [02:37<08:00, 34.30s/it]Captioning Segments for Given Query:  32%|███▏      | 6/19 [03:07<07:08, 32.98s/it]Captioning Segments for Given Query:  37%|███▋      | 7/19 [03:46<06:58, 34.85s/it]Captioning Segments for Given Query:  42%|████▏     | 8/19 [04:20<06:21, 34.65s/it]Captioning Segments for Given Query:  47%|████▋     | 9/19 [04:57<05:52, 35.21s/it]Captioning Segments for Given Query:  53%|█████▎    | 10/19 [05:27<05:01, 33.54s/it]Captioning Segments for Given Query:  58%|█████▊    | 11/19 [05:52<04:08, 31.11s/it]Captioning Segments for Given Query:  63%|██████▎   | 12/19 [06:26<03:44, 32.00s/it]Captioning Segments for Given Query:  68%|██████▊   | 13/19 [06:45<02:48, 28.12s/it]Captioning Segments for Given Query:  74%|███████▎  | 14/19 [07:13<02:19, 27.88s/it]Captioning Segments for Given Query:  79%|███████▉  | 15/19 [07:45<01:57, 29.37s/it]Captioning Segments for Given Query:  84%|████████▍ | 16/19 [08:15<01:28, 29.51s/it]Captioning Segments for Given Query:  89%|████████▉ | 17/19 [08:47<01:00, 30.04s/it]Captioning Segments for Given Query:  95%|█████████▍| 18/19 [09:17<00:30, 30.23s/it]Captioning Segments for Given Query: 100%|██████████| 19/19 [09:48<00:00, 30.33s/it]Captioning Segments for Given Query: 100%|██████████| 19/19 [09:48<00:00, 30.97s/it]
+  [查询] 集合6 q23 entity_only: Throughout the lectures, Daubechies emph
+INFO:nano-graphrag:Truncate 20 to 11 chunks
+How does understanding the underlying signal model, as emphasized by Daubechies throughout the lectures, guide the choice and interpretation of time-frequency analysis techniques?
+Retrieved Text Segments {'RkGK0MloK0E_2', '2zaJZ_F7Xrk_109', '2zaJZ_F7Xrk_111', 'RkGK0MloK0E_3', 'RkGK0MloK0E_0', 'RkGK0MloK0E_1', '2zaJZ_F7Xrk_110'}
+Output:
+Daubechies emphasizes the importance of the underlying signal model in her lectures. How does this influence the selection and interpretation of time-frequency analysis techniques? 
+
+Note: Since the original request pertains to generating queries for video retrieval, and the provided example does not contain visual elements or scenes, the generated output is adjusted to fit the format while acknowledging the context shift from visual content to lecture content. However, for video retrieval purposes, the question might need to be rephrased to include visual elements if applicable.
+Retrieved Visual Segments {'2zaJZ_F7Xrk_51', '2zaJZ_F7Xrk_91', '2zaJZ_F7Xrk_50', '2zaJZ_F7Xrk_59'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 11
+  - Entity检索: 7
+  - Visual检索: 4
+  - Causal检索: 0
+
+前5个片段ID示例:
+  1. 2zaJZ_F7Xrk_50
+  2. 2zaJZ_F7Xrk_51
+  3. 2zaJZ_F7Xrk_59
+  4. 2zaJZ_F7Xrk_91
+  5. 2zaJZ_F7Xrk_109
+
+📊 video_segments._data 结构:
+  可用视频数量: 4
+  示例视频: 1s9zZ6ERAko
+  该视频的片段索引数量: 410
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 11
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments⠙ Checked 11 segments0 Video Segments remain after filtering
+Since no segments remain after filtering, we utilized all the retrieved segments.
+Remain segments ['2zaJZ_F7Xrk_50', '2zaJZ_F7Xrk_51', '2zaJZ_F7Xrk_59', '2zaJZ_F7Xrk_91', '2zaJZ_F7Xrk_109', '2zaJZ_F7Xrk_110', '2zaJZ_F7Xrk_111', 'RkGK0MloK0E_0', 'RkGK0MloK0E_1', 'RkGK0MloK0E_2', 'RkGK0MloK0E_3']
+Keywords: lectures, Daubechies, understanding, underlying signal model, choice, interpretation, time-frequency analysis techniques
+Captioning Segments for Given Query:   0%|          | 0/11 [00:00<?, ?it/s]Captioning Segments for Given Query:   9%|▉         | 1/11 [00:24<04:08, 24.84s/it]Captioning Segments for Given Query:  18%|█▊        | 2/11 [00:53<04:02, 26.90s/it]Captioning Segments for Given Query:  27%|██▋       | 3/11 [01:17<03:26, 25.81s/it]Captioning Segments for Given Query:  36%|███▋      | 4/11 [01:55<03:35, 30.74s/it]Captioning Segments for Given Query:  45%|████▌     | 5/11 [02:15<02:39, 26.56s/it]Captioning Segments for Given Query:  55%|█████▍    | 6/11 [02:41<02:12, 26.59s/it]Captioning Segments for Given Query:  64%|██████▎   | 7/11 [03:08<01:46, 26.69s/it]Captioning Segments for Given Query:  73%|███████▎  | 8/11 [03:30<01:15, 25.15s/it]Captioning Segments for Given Query:  82%|████████▏ | 9/11 [04:03<00:55, 27.68s/it]Captioning Segments for Given Query:  91%|█████████ | 10/11 [04:28<00:26, 26.85s/it]Captioning Segments for Given Query: 100%|██████████| 11/11 [04:59<00:00, 27.93s/it]Captioning Segments for Given Query: 100%|██████████| 11/11 [04:59<00:00, 27.19s/it]
+  [查询] 集合6 q23 causal_only: Throughout the lectures, Daubechies emph
+INFO:nano-graphrag:Truncate 20 to 11 chunks
+INFO:nano-graphrag:[Causal Retrieval] Rewritten query: Daubechies's emphasis on understanding the underlying signal model throughout the lectures and its influence on the selection and interpretation of time-frequency analysis techniques.
+INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
+INFO:nano-graphrag:[Causal Retrieval] 54 events after 2-hop bidirectional walk (from 20 seeds)
+INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 54 → 44 nodes (tau_dup=0.85)
+INFO:nano-graphrag:[Causal Retrieval] Retrieved 19 segments from 44 deduplicated events
+INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 44 events, 16575 chars
+Retrieved Causal Segments {'RNqXpdwd9AA_39', 'RkGK0MloK0E_47', '2zaJZ_F7Xrk_106', '2zaJZ_F7Xrk_132', 'RNqXpdwd9AA_19', 'RkGK0MloK0E_4', '2zaJZ_F7Xrk_46', '2zaJZ_F7Xrk_146', 'RkGK0MloK0E_171', 'RNqXpdwd9AA_4', '2zaJZ_F7Xrk_116', '2zaJZ_F7Xrk_84', 'RkGK0MloK0E_6', '1s9zZ6ERAko_197', 'RkGK0MloK0E_0', 'RNqXpdwd9AA_5', '1s9zZ6ERAko_177', '2zaJZ_F7Xrk_131', 'RkGK0MloK0E_222'}
+
+Retrieved Text Segments set()
+Output:
+Daubechies emphasizes the importance of understanding the underlying signal model throughout her lectures. How does this perspective influence the selection and interpretation of time-frequency analysis techniques? 
+
+(Note: The generated output is slightly adjusted to better fit the context of video retrieval, though the given question is more suited for text-based analysis or discussion rather than video segment retrieval. However, if aiming to retrieve a video segment where such concepts are discussed, the above sentence could serve as a query.)
+Retrieved Visual Segments {'2zaJZ_F7Xrk_51', '2zaJZ_F7Xrk_91', '2zaJZ_F7Xrk_50', '2zaJZ_F7Xrk_59'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 23
+  - Entity检索: 0
+  - Visual检索: 4
+  - Causal检索: 19
+
+前5个片段ID示例:
+  1. 1s9zZ6ERAko_177
+  2. 1s9zZ6ERAko_197
+  3. 2zaJZ_F7Xrk_46
+  4. 2zaJZ_F7Xrk_50
+  5. 2zaJZ_F7Xrk_51
+
+📊 video_segments._data 结构:
+  可用视频数量: 4
+  示例视频: 1s9zZ6ERAko
+  该视频的片段索引数量: 410
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 23
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments⠙ Checked 11 segments⠹ Checked 12 segments⠸ Checked 13 segments⠼ Checked 14 segments⠴ Checked 15 segments⠦ Checked 16 segments⠧ Checked 17 segments⠇ Checked 18 segments⠏ Checked 19 segments⠋ Checked 20 segments⠙ Checked 21 segments⠹ Checked 22 segments⠸ Checked 23 segments0 Video Segments remain after filtering
+Since no segments remain after filtering, we utilized all the retrieved segments.
+Remain segments ['1s9zZ6ERAko_177', '1s9zZ6ERAko_197', '2zaJZ_F7Xrk_46', '2zaJZ_F7Xrk_50', '2zaJZ_F7Xrk_51', '2zaJZ_F7Xrk_59', '2zaJZ_F7Xrk_84', '2zaJZ_F7Xrk_91', '2zaJZ_F7Xrk_106', '2zaJZ_F7Xrk_116', '2zaJZ_F7Xrk_131', '2zaJZ_F7Xrk_132', '2zaJZ_F7Xrk_146', 'RNqXpdwd9AA_4', 'RNqXpdwd9AA_5', 'RNqXpdwd9AA_19', 'RNqXpdwd9AA_39', 'RkGK0MloK0E_0', 'RkGK0MloK0E_4', 'RkGK0MloK0E_6', 'RkGK0MloK0E_47', 'RkGK0MloK0E_171', 'RkGK0MloK0E_222']
+Keywords: lectures, Daubechies, understanding, signal model, perspective, choice, interpretation, time-frequency analysis techniques
+Captioning Segments for Given Query:   0%|          | 0/23 [00:00<?, ?it/s]Captioning Segments for Given Query:   4%|▍         | 1/23 [00:25<09:15, 25.24s/it]Captioning Segments for Given Query:   9%|▊         | 2/23 [00:54<09:39, 27.60s/it]Captioning Segments for Given Query:  13%|█▎        | 3/23 [01:17<08:29, 25.50s/it]Captioning Segments for Given Query:  17%|█▋        | 4/23 [01:55<09:41, 30.60s/it]Captioning Segments for Given Query:  22%|██▏       | 5/23 [02:15<07:59, 26.66s/it]Captioning Segments for Given Query:  26%|██▌       | 6/23 [02:45<07:52, 27.79s/it]Captioning Segments for Given Query:  30%|███       | 7/23 [03:15<07:34, 28.44s/it]Captioning Segments for Given Query:  35%|███▍      | 8/23 [03:49<07:32, 30.15s/it]Captioning Segments for Given Query:  39%|███▉      | 9/23 [04:16<06:50, 29.33s/it]Captioning Segments for Given Query:  43%|████▎     | 10/23 [04:43<06:12, 28.68s/it]Captioning Segments for Given Query:  48%|████▊     | 11/23 [05:09<05:32, 27.68s/it]Captioning Segments for Given Query:  52%|█████▏    | 12/23 [05:34<04:57, 27.03s/it]Captioning Segments for Given Query:  57%|█████▋    | 13/23 [06:04<04:36, 27.69s/it]Captioning Segments for Given Query:  61%|██████    | 14/23 [06:35<04:18, 28.68s/it]Captioning Segments for Given Query:  65%|██████▌   | 15/23 [07:05<03:54, 29.33s/it]Captioning Segments for Given Query:  70%|██████▉   | 16/23 [07:36<03:27, 29.60s/it]Captioning Segments for Given Query:  74%|███████▍  | 17/23 [07:59<02:46, 27.76s/it]Captioning Segments for Given Query:  78%|███████▊  | 18/23 [08:28<02:19, 28.00s/it]Captioning Segments for Given Query:  83%|████████▎ | 19/23 [08:45<01:39, 24.86s/it]Captioning Segments for Given Query:  87%|████████▋ | 20/23 [09:10<01:14, 24.91s/it]Captioning Segments for Given Query:  91%|█████████▏| 21/23 [09:36<00:50, 25.21s/it]Captioning Segments for Given Query:  96%|█████████▌| 22/23 [10:09<00:27, 27.54s/it]Captioning Segments for Given Query: 100%|██████████| 23/23 [10:37<00:00, 27.58s/it]Captioning Segments for Given Query: 100%|██████████| 23/23 [10:37<00:00, 27.71s/it]
+  [查询] 集合6 q24 entity_only: What general insights does Daubechies of
+INFO:nano-graphrag:Truncate 20 to 11 chunks
+General insights offered by Daubechies on the interplay between mathematical theory, computational methods, and real-world applications in the field of time-frequency analysis.
+Retrieved Text Segments {'2zaJZ_F7Xrk_159', '2zaJZ_F7Xrk_132', '2zaJZ_F7Xrk_129', '2zaJZ_F7Xrk_131', '2zaJZ_F7Xrk_158', '2zaJZ_F7Xrk_130', '2zaJZ_F7Xrk_157'}
+Daubechies provides insights into the relationship between mathematical theory, computational methods, and practical applications within the domain of time-frequency analysis.
+Retrieved Visual Segments {'RNqXpdwd9AA_0', '2zaJZ_F7Xrk_0', 'RkGK0MloK0E_0', '1s9zZ6ERAko_0'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 11
+  - Entity检索: 7
+  - Visual检索: 4
+  - Causal检索: 0
+
+前5个片段ID示例:
+  1. 1s9zZ6ERAko_0
+  2. 2zaJZ_F7Xrk_0
+  3. 2zaJZ_F7Xrk_129
+  4. 2zaJZ_F7Xrk_130
+  5. 2zaJZ_F7Xrk_131
+
+📊 video_segments._data 结构:
+  可用视频数量: 4
+  示例视频: 1s9zZ6ERAko
+  该视频的片段索引数量: 410
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 11
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments⠙ Checked 11 segments0 Video Segments remain after filtering
+Since no segments remain after filtering, we utilized all the retrieved segments.
+Remain segments ['1s9zZ6ERAko_0', '2zaJZ_F7Xrk_0', '2zaJZ_F7Xrk_129', '2zaJZ_F7Xrk_130', '2zaJZ_F7Xrk_131', '2zaJZ_F7Xrk_132', '2zaJZ_F7Xrk_157', '2zaJZ_F7Xrk_158', '2zaJZ_F7Xrk_159', 'RNqXpdwd9AA_0', 'RkGK0MloK0E_0']
+Keywords: Daubechies, insights, mathematical theory, computational methods, real-world applications, time-frequency analysis
+Captioning Segments for Given Query:   0%|          | 0/11 [00:00<?, ?it/s]Captioning Segments for Given Query:   9%|▉         | 1/11 [00:34<05:49, 34.98s/it]Captioning Segments for Given Query:  18%|█▊        | 2/11 [01:01<04:29, 29.90s/it]Captioning Segments for Given Query:  27%|██▋       | 3/11 [01:34<04:12, 31.60s/it]Captioning Segments for Given Query:  36%|███▋      | 4/11 [02:01<03:28, 29.80s/it]Captioning Segments for Given Query:  45%|████▌     | 5/11 [02:31<02:57, 29.63s/it]Captioning Segments for Given Query:  55%|█████▍    | 6/11 [02:58<02:24, 28.93s/it]Captioning Segments for Given Query:  64%|██████▎   | 7/11 [03:28<01:57, 29.30s/it]Captioning Segments for Given Query:  73%|███████▎  | 8/11 [03:46<01:16, 25.49s/it]Captioning Segments for Given Query:  82%|████████▏ | 9/11 [04:10<00:50, 25.18s/it]Captioning Segments for Given Query:  91%|█████████ | 10/11 [04:43<00:27, 27.56s/it]Captioning Segments for Given Query: 100%|██████████| 11/11 [05:15<00:00, 28.75s/it]Captioning Segments for Given Query: 100%|██████████| 11/11 [05:15<00:00, 28.65s/it]
+  [查询] 集合6 q24 causal_only: What general insights does Daubechies of
+INFO:nano-graphrag:Truncate 20 to 11 chunks
+INFO:nano-graphrag:[Causal Retrieval] Rewritten query: Daubechies' insights into how mathematical theory, computational methods, and real-world applications interact within the field of time-frequency analysis.
+INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
+INFO:nano-graphrag:[Causal Retrieval] 50 events after 2-hop bidirectional walk (from 20 seeds)
+INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 50 → 42 nodes (tau_dup=0.85)
+INFO:nano-graphrag:[Causal Retrieval] Retrieved 16 segments from 42 deduplicated events
+INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 42 events, 15729 chars
+Retrieved Causal Segments {'RNqXpdwd9AA_39', '2zaJZ_F7Xrk_146', '2zaJZ_F7Xrk_164', '2zaJZ_F7Xrk_116', '2zaJZ_F7Xrk_84', 'RNqXpdwd9AA_5', 'RkGK0MloK0E_217', 'RNqXpdwd9AA_4', 'RNqXpdwd9AA_15', '1s9zZ6ERAko_197', 'RNqXpdwd9AA_62', 'RkGK0MloK0E_4', '1s9zZ6ERAko_165', 'RNqXpdwd9AA_66', 'RNqXpdwd9AA_24', '1s9zZ6ERAko_181'}
+
+Retrieved Text Segments set()
+Daubechies provides insights into the relationship between mathematical theory, computational methods, and practical applications within the domain of time-frequency analysis.
+Retrieved Visual Segments {'RNqXpdwd9AA_0', '2zaJZ_F7Xrk_0', 'RkGK0MloK0E_0', '1s9zZ6ERAko_0'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 20
+  - Entity检索: 0
+  - Visual检索: 4
+  - Causal检索: 16
+
+前5个片段ID示例:
+  1. 1s9zZ6ERAko_0
+  2. 1s9zZ6ERAko_165
+  3. 1s9zZ6ERAko_181
+  4. 1s9zZ6ERAko_197
+  5. 2zaJZ_F7Xrk_0
+
+📊 video_segments._data 结构:
+  可用视频数量: 4
+  示例视频: 1s9zZ6ERAko
+  该视频的片段索引数量: 410
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 20
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments⠙ Checked 11 segments⠹ Checked 12 segments⠸ Checked 13 segments⠼ Checked 14 segments⠴ Checked 15 segments⠦ Checked 16 segments⠧ Checked 17 segments⠇ Checked 18 segments⠏ Checked 19 segments⠋ Checked 20 segments0 Video Segments remain after filtering
+Since no segments remain after filtering, we utilized all the retrieved segments.
+Remain segments ['1s9zZ6ERAko_0', '1s9zZ6ERAko_165', '1s9zZ6ERAko_181', '1s9zZ6ERAko_197', '2zaJZ_F7Xrk_0', '2zaJZ_F7Xrk_84', '2zaJZ_F7Xrk_116', '2zaJZ_F7Xrk_146', '2zaJZ_F7Xrk_164', 'RNqXpdwd9AA_0', 'RNqXpdwd9AA_4', 'RNqXpdwd9AA_5', 'RNqXpdwd9AA_15', 'RNqXpdwd9AA_24', 'RNqXpdwd9AA_39', 'RNqXpdwd9AA_62', 'RNqXpdwd9AA_66', 'RkGK0MloK0E_0', 'RkGK0MloK0E_4', 'RkGK0MloK0E_217']
+Keywords: Daubechies, mathematical theory, computational methods, real-world applications, time-frequency analysis
+Captioning Segments for Given Query:   0%|          | 0/20 [00:00<?, ?it/s]Captioning Segments for Given Query:   5%|▌         | 1/20 [00:33<10:37, 33.54s/it]Captioning Segments for Given Query:  10%|█         | 2/20 [00:58<08:37, 28.76s/it]Captioning Segments for Given Query:  15%|█▌        | 3/20 [01:31<08:38, 30.50s/it]Captioning Segments for Given Query:  20%|██        | 4/20 [02:01<08:04, 30.29s/it]Captioning Segments for Given Query:  25%|██▌       | 5/20 [02:36<08:00, 32.03s/it]Captioning Segments for Given Query:  30%|███       | 6/20 [03:04<07:08, 30.61s/it]Captioning Segments for Given Query:  35%|███▌      | 7/20 [03:34<06:33, 30.27s/it]Captioning Segments for Given Query:  40%|████      | 8/20 [04:02<05:57, 29.81s/it]Captioning Segments for Given Query:  45%|████▌     | 9/20 [04:31<05:23, 29.38s/it]Captioning Segments for Given Query:  50%|█████     | 10/20 [05:05<05:08, 30.83s/it]Captioning Segments for Given Query:  55%|█████▌    | 11/20 [05:31<04:23, 29.30s/it]Captioning Segments for Given Query:  60%|██████    | 12/20 [06:02<03:59, 29.92s/it]Captioning Segments for Given Query:  65%|██████▌   | 13/20 [06:24<03:12, 27.54s/it]Captioning Segments for Given Query:  70%|███████   | 14/20 [06:53<02:47, 27.96s/it]Captioning Segments for Given Query:  75%|███████▌  | 15/20 [07:11<02:04, 24.98s/it]Captioning Segments for Given Query:  80%|████████  | 16/20 [07:32<01:35, 23.79s/it]Captioning Segments for Given Query:  85%|████████▌ | 17/20 [07:53<01:08, 22.96s/it]Captioning Segments for Given Query:  90%|█████████ | 18/20 [08:24<00:50, 25.25s/it]Captioning Segments for Given Query:  95%|█████████▌| 19/20 [08:48<00:25, 25.04s/it]Captioning Segments for Given Query: 100%|██████████| 20/20 [09:13<00:00, 24.93s/it]Captioning Segments for Given Query: 100%|██████████| 20/20 [09:13<00:00, 27.67s/it]
+
+=== 批处理完成 ===

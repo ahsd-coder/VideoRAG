@@ -1,0 +1,78 @@
+评判器: vLLM /home/gjw/models/Selene-1-Mini-Llama-3.1-8B @ http://127.0.0.1:8002/v1
+temperature=0.7, runs=5, 并发=100
+
+=== 集合 21: autogen (44题) ===
+  q0: entity (22s) 票:e6/c4
+  q1: causal (20s) 票:e0/c10
+  q2: causal (19s) 票:e0/c10
+  q3: entity (21s) 票:e10/c0
+  q4: entity (21s) 票:e10/c0
+  q5: entity (19s) 票:e10/c0
+  q6: causal (19s) 票:e0/c10
+  q7: entity (20s) 票:e7/c3
+  q8: entity (19s) 票:e8/c2
+  q9: 无多数 (20s) 票:e5/c5 → 剔除
+  q10: entity (20s) 票:e10/c0
+  q11: entity (21s) 票:e6/c4
+  q12: causal (22s) 票:e0/c10
+  q13: entity (20s) 票:e8/c2
+  q14: causal (21s) 票:e0/c10
+  q15: 无多数 (22s) 票:e5/c5 → 剔除
+  q16: entity (21s) 票:e6/c4
+  q17: entity (21s) 票:e10/c0
+  q18: causal (19s) 票:e0/c10
+  q19: causal (22s) 票:e1/c9
+  q20: 无多数 (20s) 票:e5/c5 → 剔除
+  q21: causal (20s) 票:e3/c7
+  q22: entity (18s) 票:e10/c0
+  q23: 无多数 (20s) 票:e5/c5 → 剔除
+  q24: causal (20s) 票:e0/c10
+  q25: causal (19s) 票:e0/c10
+  q26: causal (22s) 票:e2/c8
+  q27: entity (23s) 票:e7/c3
+  q28: causal (23s) 票:e0/c10
+  q29: 无多数 (19s) 票:e5/c5 → 剔除
+  q30: entity (20s) 票:e10/c0
+  q31: entity (21s) 票:e10/c0
+  q32: 无多数 (20s) 票:e5/c5 → 剔除
+  q33: entity (20s) 票:e10/c0
+  q34: causal (21s) 票:e0/c10
+  q35: entity (20s) 票:e10/c0
+  q36: entity (20s) 票:e7/c3
+  q37: entity (21s) 票:e9/c1
+  q38: causal (23s) 票:e2/c8
+  q39: entity (19s) 票:e10/c0
+  q40: causal (19s) 票:e0/c10
+  q41: 无多数 (19s) 票:e5/c5 → 剔除
+  q42: entity (19s) 票:e10/c0
+  q43: causal (19s) 票:e0/c10
+
+# EC-RAG(causal) vs 实体图(entity) · 正反双序 + 5-run多数票 (异步并发)
+裁判: /home/gjw/models/Selene-1-Mini-Llama-3.1-8B (temperature=0.7, 并发=100)
+题目: 37/44 有效 (跳过0, 无多数剔除7)
+
+## 各维度胜率 (causal胜 / entity胜 / 有效题数)
+| 维度 | causal | entity | causal胜率 | 有效题数 |
+|---|---|---|---|---|
+| Comprehensiveness | 16 | 21 | 43% | 37 |
+| Empowerment | 16 | 20 | 44% | 36 |
+| Trustworthiness | 16 | 18 | 47% | 34 |
+| Depth | 16 | 20 | 44% | 36 |
+| Density | 15 | 20 | 42% | 35 |
+| Overall Winner | 16 | 21 | 43% | 37 |
+
+### 集合 21
+| 维度 | causal | entity | causal胜率 | 有效题数 |
+|---|---|---|---|---|
+| Comprehensiveness | 16 | 21 | 43% | 37 |
+| Empowerment | 16 | 20 | 44% | 36 |
+| Trustworthiness | 16 | 18 | 47% | 34 |
+| Depth | 16 | 20 | 44% | 36 |
+| Density | 15 | 20 | 42% | 35 |
+| Overall Winner | 16 | 21 | 43% | 37 |
+
+---
+总计 370 次评判调用，37 题有效，7 题无明确多数被剔除
+
+详细: /home/gjw/VideoRAG-main/VideoRAG-algorithm/longervideos/eval_results_v3.json
+汇总: /home/gjw/VideoRAG-main/VideoRAG-algorithm/longervideos/eval_summary_v3.md

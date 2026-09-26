@@ -1,0 +1,65 @@
+评判器: vLLM /home/gjw/models/Selene-1-Mini-Llama-3.1-8B @ http://127.0.0.1:8002/v1
+temperature=0.7, runs=5, 并发=100
+
+=== 集合 8: tech-ceo-lecture (31题) ===
+  q0: entity (23s) 票:e7/c3
+  q1: causal (20s) 票:e0/c10
+  q2: causal (20s) 票:e0/c10
+  q3: 无多数 (17s) 票:e5/c5 → 剔除
+  q4: entity (16s) 票:e9/c1
+  q5: causal (20s) 票:e1/c9
+  q6: entity (22s) 票:e7/c3
+  q7: entity (20s) 票:e6/c4
+  q8: entity (18s) 票:e8/c2
+  q9: causal (18s) 票:e1/c9
+  q10: causal (20s) 票:e0/c10
+  q11: 无多数 (19s) 票:e5/c5 → 剔除
+  q12: 无多数 (20s) 票:e5/c5 → 剔除
+  q13: causal (23s) 票:e2/c8
+  q14: causal (20s) 票:e0/c10
+  q15: entity (19s) 票:e10/c0
+  q16: entity (20s) 票:e9/c1
+  q17: entity (23s) 票:e7/c3
+  q18: causal (23s) 票:e1/c9
+  q19: causal (18s) 票:e3/c7
+  q20: causal (20s) 票:e0/c10
+  q21: entity (19s) 票:e9/c1
+  q22: causal (19s) 票:e0/c10
+  q23: entity (17s) 票:e10/c0
+  q24: entity (19s) 票:e10/c0
+  q25: 无多数 (18s) 票:e5/c5 → 剔除
+  q26: entity (21s) 票:e10/c0
+  q27: 无多数 (20s) 票:e5/c5 → 剔除
+  q28: causal (22s) 票:e0/c10
+  q29: causal (21s) 票:e0/c10
+  q30: entity (19s) 票:e10/c0
+
+# EC-RAG(causal) vs 实体图(entity) · 正反双序 + 5-run多数票 (异步并发)
+裁判: /home/gjw/models/Selene-1-Mini-Llama-3.1-8B (temperature=0.7, 并发=100)
+题目: 26/31 有效 (跳过0, 无多数剔除5)
+
+## 各维度胜率 (causal胜 / entity胜 / 有效题数)
+| 维度 | causal | entity | causal胜率 | 有效题数 |
+|---|---|---|---|---|
+| Comprehensiveness | 12 | 13 | 48% | 25 |
+| Empowerment | 12 | 13 | 48% | 25 |
+| Trustworthiness | 10 | 13 | 43% | 23 |
+| Depth | 13 | 13 | 50% | 26 |
+| Density | 12 | 10 | 54% | 22 |
+| Overall Winner | 13 | 13 | 50% | 26 |
+
+### 集合 8
+| 维度 | causal | entity | causal胜率 | 有效题数 |
+|---|---|---|---|---|
+| Comprehensiveness | 12 | 13 | 48% | 25 |
+| Empowerment | 12 | 13 | 48% | 25 |
+| Trustworthiness | 10 | 13 | 43% | 23 |
+| Depth | 13 | 13 | 50% | 26 |
+| Density | 12 | 10 | 54% | 22 |
+| Overall Winner | 13 | 13 | 50% | 26 |
+
+---
+总计 260 次评判调用，26 题有效，5 题无明确多数被剔除
+
+详细: /home/gjw/VideoRAG-main/VideoRAG-algorithm/longervideos/eval_results_v3.json
+汇总: /home/gjw/VideoRAG-main/VideoRAG-algorithm/longervideos/eval_summary_v3.md

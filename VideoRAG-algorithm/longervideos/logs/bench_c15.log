@@ -1,0 +1,1590 @@
+nohup: ignoring input
+推理后端: vLLM (LLM:8000 + Embed:8001), 主进程GPU: 1,2
+=== 批处理集合: ['15'] ===
+
+============================================================
+集合 15: game-awards
+============================================================
+[索引] 集合 15: 2 个视频 → /home/gjw/VideoRAG-main/VideoRAG-algorithm/longervideos/ecrag-workdir/15
+INFO:nano-graphrag:Load KV video_path with 2 data
+INFO:nano-graphrag:Load KV video_segments with 2 data
+INFO:nano-graphrag:Load KV text_chunks with 322 data
+INFO:nano-graphrag:Load KV llm_response_cache with 0 data
+INFO:nano-graphrag:Loaded graph from /home/gjw/VideoRAG-main/VideoRAG-algorithm/longervideos/ecrag-workdir/15/graph_chunk_entity_relation.graphml with 2122 nodes, 2710 edges
+INFO:nano-graphrag:Loaded graph from /home/gjw/VideoRAG-main/VideoRAG-algorithm/longervideos/ecrag-workdir/15/graph_event_causal.graphml with 4793 nodes, 2758 edges
+INFO:nano-vectordb:Load (2050, 2560) data
+INFO:nano-vectordb:Init {'embedding_dim': 2560, 'metric': 'cosine', 'storage_file': '/home/gjw/VideoRAG-main/VideoRAG-algorithm/longervideos/ecrag-workdir/15/vdb_entities.json'} 2050 data
+INFO:nano-vectordb:Load (322, 2560) data
+INFO:nano-vectordb:Init {'embedding_dim': 2560, 'metric': 'cosine', 'storage_file': '/home/gjw/VideoRAG-main/VideoRAG-algorithm/longervideos/ecrag-workdir/15/vdb_chunks.json'} 322 data
+INFO:nano-vectordb:Load (808, 1024) data
+INFO:nano-vectordb:Init {'embedding_dim': 1024, 'metric': 'cosine', 'storage_file': '/home/gjw/VideoRAG-main/VideoRAG-algorithm/longervideos/ecrag-workdir/15/vdb_video_segment_feature.json'} 808 data
+INFO:nano-vectordb:Load (4793, 2560) data
+INFO:nano-vectordb:Init {'embedding_dim': 2560, 'metric': 'cosine', 'storage_file': '/home/gjw/VideoRAG-main/VideoRAG-algorithm/longervideos/ecrag-workdir/15/vdb_event_causal_vdb.json'} 4793 data
+INFO:nano-graphrag:Find the video named YI1dXSw17Y8.mp4 in storage and skip it.
+INFO:nano-graphrag:Find the video named h-WGw4BypDY.mp4 in storage and skip it.
+WARNING:nano-graphrag:All chunks are already in the storage
+INFO:nano-graphrag:Writing graph with 2122 nodes, 2710 edges
+INFO:nano-graphrag:Writing graph with 4793 nodes, 2758 edges
+INFO:nano-graphrag:Load KV video_path with 2 data
+INFO:nano-graphrag:Load KV video_segments with 2 data
+INFO:nano-graphrag:Load KV text_chunks with 322 data
+INFO:nano-graphrag:Load KV llm_response_cache with 0 data
+INFO:nano-graphrag:Loaded graph from /home/gjw/VideoRAG-main/VideoRAG-algorithm/longervideos/ecrag-workdir/15/graph_chunk_entity_relation.graphml with 2122 nodes, 2710 edges
+INFO:nano-graphrag:Loaded graph from /home/gjw/VideoRAG-main/VideoRAG-algorithm/longervideos/ecrag-workdir/15/graph_event_causal.graphml with 4793 nodes, 2758 edges
+INFO:nano-vectordb:Load (2050, 2560) data
+INFO:nano-vectordb:Init {'embedding_dim': 2560, 'metric': 'cosine', 'storage_file': '/home/gjw/VideoRAG-main/VideoRAG-algorithm/longervideos/ecrag-workdir/15/vdb_entities.json'} 2050 data
+INFO:nano-vectordb:Load (322, 2560) data
+INFO:nano-vectordb:Init {'embedding_dim': 2560, 'metric': 'cosine', 'storage_file': '/home/gjw/VideoRAG-main/VideoRAG-algorithm/longervideos/ecrag-workdir/15/vdb_chunks.json'} 322 data
+INFO:nano-vectordb:Load (808, 1024) data
+INFO:nano-vectordb:Init {'embedding_dim': 1024, 'metric': 'cosine', 'storage_file': '/home/gjw/VideoRAG-main/VideoRAG-algorithm/longervideos/ecrag-workdir/15/vdb_video_segment_feature.json'} 808 data
+INFO:nano-vectordb:Load (4793, 2560) data
+INFO:nano-vectordb:Init {'embedding_dim': 2560, 'metric': 'cosine', 'storage_file': '/home/gjw/VideoRAG-main/VideoRAG-algorithm/longervideos/ecrag-workdir/15/vdb_event_causal_vdb.json'} 4793 data
+INFO:transformers_modules.MiniCPM-V-2_6-int4.configuration_minicpm:vision_config is None, using default vision config
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:02<00:02,  2.44s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:03<00:00,  1.65s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:03<00:00,  1.77s/it]
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+  [查询] 集合15 q0 entity_only: How has the role of the Game Awards evol
+INFO:nano-graphrag:Truncate 20 to 11 chunks
+INFO:nano-graphrag:[ImageBind] Loading model for query (first time only)
+How has the role of The Game Awards evolved over the past 10 years, according to Hideo Kojima?
+Retrieved Text Segments {'h-WGw4BypDY_178', 'h-WGw4BypDY_179', 'h-WGw4BypDY_28', 'h-WGw4BypDY_27'}
+Output: The evolution of The Game Awards' role over the past 10 years as described by Hideo Kojima.
+Retrieved Visual Segments {'h-WGw4BypDY_208', 'h-WGw4BypDY_375', 'h-WGw4BypDY_211', 'h-WGw4BypDY_111'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 8
+  - Entity检索: 4
+  - Visual检索: 4
+  - Causal检索: 0
+
+前5个片段ID示例:
+  1. h-WGw4BypDY_27
+  2. h-WGw4BypDY_28
+  3. h-WGw4BypDY_111
+  4. h-WGw4BypDY_178
+  5. h-WGw4BypDY_179
+
+📊 video_segments._data 结构:
+  可用视频数量: 2
+  示例视频: YI1dXSw17Y8
+  该视频的片段索引数量: 381
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 8
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments2 Video Segments remain after filtering
+Remain segments ['h-WGw4BypDY_111', 'h-WGw4BypDY_208']
+Keywords: role, Game Awards, evolved, past 10 years, Hideo Kojima
+Captioning Segments for Given Query:   0%|          | 0/2 [00:00<?, ?it/s]Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Captioning Segments for Given Query:  50%|█████     | 1/2 [00:37<00:37, 37.85s/it]Captioning Segments for Given Query: 100%|██████████| 2/2 [01:17<00:00, 38.69s/it]Captioning Segments for Given Query: 100%|██████████| 2/2 [01:17<00:00, 38.56s/it]
+  [查询] 集合15 q0 causal_only: How has the role of the Game Awards evol
+INFO:nano-graphrag:Truncate 20 to 11 chunks
+INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The evolution of the Game Awards' role over the past 10 years as described by Hideo Kojima and the associated causal factors.
+INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
+INFO:nano-graphrag:[Causal Retrieval] 44 events after 2-hop bidirectional walk (from 20 seeds)
+INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 44 → 40 nodes (tau_dup=0.85)
+INFO:nano-graphrag:[Causal Retrieval] Retrieved 17 segments from 40 deduplicated events
+INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 40 events, 12184 chars
+Retrieved Causal Segments {'h-WGw4BypDY_12', 'YI1dXSw17Y8_47', 'h-WGw4BypDY_177', 'h-WGw4BypDY_26', 'YI1dXSw17Y8_193', 'YI1dXSw17Y8_14', 'YI1dXSw17Y8_30', 'YI1dXSw17Y8_348', 'YI1dXSw17Y8_157', 'h-WGw4BypDY_328', 'h-WGw4BypDY_349', 'h-WGw4BypDY_64', 'YI1dXSw17Y8_72', 'YI1dXSw17Y8_118', 'YI1dXSw17Y8_379', 'YI1dXSw17Y8_313', 'YI1dXSw17Y8_16'}
+
+Retrieved Text Segments set()
+Output: The evolution of The Game Awards' role over the past 10 years as described by Hideo Kojima.
+Retrieved Visual Segments {'h-WGw4BypDY_208', 'h-WGw4BypDY_375', 'h-WGw4BypDY_211', 'h-WGw4BypDY_111'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 21
+  - Entity检索: 0
+  - Visual检索: 4
+  - Causal检索: 17
+
+前5个片段ID示例:
+  1. YI1dXSw17Y8_14
+  2. YI1dXSw17Y8_16
+  3. YI1dXSw17Y8_30
+  4. YI1dXSw17Y8_47
+  5. YI1dXSw17Y8_72
+
+📊 video_segments._data 结构:
+  可用视频数量: 2
+  示例视频: YI1dXSw17Y8
+  该视频的片段索引数量: 381
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 21
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments⠙ Checked 11 segments⠹ Checked 12 segments⠸ Checked 13 segments⠼ Checked 14 segments⠴ Checked 15 segments⠦ Checked 16 segments⠧ Checked 17 segments⠇ Checked 18 segments⠏ Checked 19 segments⠋ Checked 20 segments⠙ Checked 21 segments6 Video Segments remain after filtering
+Remain segments ['YI1dXSw17Y8_14', 'YI1dXSw17Y8_30', 'YI1dXSw17Y8_118', 'YI1dXSw17Y8_379', 'h-WGw4BypDY_177', 'h-WGw4BypDY_208']
+Keywords: role, Game Awards, evolved, past 10 years, Hideo Kojima
+Captioning Segments for Given Query:   0%|          | 0/6 [00:00<?, ?it/s]Captioning Segments for Given Query:  17%|█▋        | 1/6 [00:35<02:57, 35.57s/it]Captioning Segments for Given Query:  33%|███▎      | 2/6 [01:12<02:25, 36.31s/it]Captioning Segments for Given Query:  50%|█████     | 3/6 [02:03<02:09, 43.06s/it]Captioning Segments for Given Query:  67%|██████▋   | 4/6 [02:44<01:24, 42.34s/it]Captioning Segments for Given Query:  83%|████████▎ | 5/6 [03:20<00:40, 40.12s/it]Captioning Segments for Given Query: 100%|██████████| 6/6 [04:00<00:00, 39.86s/it]Captioning Segments for Given Query: 100%|██████████| 6/6 [04:00<00:00, 40.04s/it]
+  [查询] 集合15 q1 entity_only: How does the success of 'League of Legen
+INFO:nano-graphrag:Truncate 20 to 11 chunks
+How does the success of 'League of Legends' and its adaptation 'Arcane' reflect the growing influence of multimedia franchises in the gaming industry?
+Retrieved Text Segments {'YI1dXSw17Y8_341', 'YI1dXSw17Y8_145', 'YI1dXSw17Y8_340', 'YI1dXSw17Y8_339', 'YI1dXSw17Y8_144'}
+Output:
+The success of 'League of Legends' and its adaptation 'Arcane' in reflecting the growing influence of multimedia franchises in the gaming industry. 
+
+Note: Since there's no specific video segment context provided in the real data example, the output focuses on summarizing the query about the influence of multimedia franchises based on the given question. For a video retrieval scenario, this would likely need to be adapted to reference specific scenes or content within videos discussing or showcasing these topics.
+Retrieved Visual Segments {'YI1dXSw17Y8_177', 'YI1dXSw17Y8_203', 'YI1dXSw17Y8_215', 'YI1dXSw17Y8_118'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 9
+  - Entity检索: 5
+  - Visual检索: 4
+  - Causal检索: 0
+
+前5个片段ID示例:
+  1. YI1dXSw17Y8_118
+  2. YI1dXSw17Y8_144
+  3. YI1dXSw17Y8_145
+  4. YI1dXSw17Y8_177
+  5. YI1dXSw17Y8_203
+
+📊 video_segments._data 结构:
+  可用视频数量: 2
+  示例视频: YI1dXSw17Y8
+  该视频的片段索引数量: 381
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 9
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments2 Video Segments remain after filtering
+Remain segments ['YI1dXSw17Y8_118', 'YI1dXSw17Y8_341']
+Keywords: success, League of Legends, Arcane, multimedia franchises, gaming industry
+Captioning Segments for Given Query:   0%|          | 0/2 [00:00<?, ?it/s]Captioning Segments for Given Query:  50%|█████     | 1/2 [00:41<00:41, 41.08s/it]Captioning Segments for Given Query: 100%|██████████| 2/2 [01:16<00:00, 37.86s/it]Captioning Segments for Given Query: 100%|██████████| 2/2 [01:16<00:00, 38.34s/it]
+  [查询] 集合15 q1 causal_only: How does the success of 'League of Legen
+INFO:nano-graphrag:Truncate 20 to 11 chunks
+INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The success of 'League of Legends' and its adaptation 'Arcane', and their implications on the increasing influence of multimedia franchises within the gaming industry.
+INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
+INFO:nano-graphrag:[Causal Retrieval] 57 events after 2-hop bidirectional walk (from 20 seeds)
+INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 57 → 56 nodes (tau_dup=0.85)
+INFO:nano-graphrag:[Causal Retrieval] Retrieved 17 segments from 56 deduplicated events
+INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 56 events, 22247 chars
+Retrieved Causal Segments {'YI1dXSw17Y8_249', 'h-WGw4BypDY_26', 'h-WGw4BypDY_62', 'YI1dXSw17Y8_15', 'h-WGw4BypDY_150', 'h-WGw4BypDY_283', 'h-WGw4BypDY_183', 'YI1dXSw17Y8_352', 'h-WGw4BypDY_349', 'YI1dXSw17Y8_225', 'h-WGw4BypDY_158', 'h-WGw4BypDY_24', 'YI1dXSw17Y8_379', 'h-WGw4BypDY_321', 'h-WGw4BypDY_61', 'YI1dXSw17Y8_16', 'h-WGw4BypDY_269'}
+
+Retrieved Text Segments set()
+Output:
+The success of 'League of Legends' and its adaptation 'Arcane' in reflecting the growing influence of multimedia franchises in the gaming industry. 
+
+Note: Since there's no specific scene description provided in this question, the output focuses on summarizing the query about the influence of multimedia franchises based on the given context. If a video segment were to be retrieved, it would likely contain interviews, analysis, or discussions related to the success of 'League of Legends' and 'Arcane'.
+Retrieved Visual Segments {'YI1dXSw17Y8_177', 'YI1dXSw17Y8_203', 'YI1dXSw17Y8_215', 'YI1dXSw17Y8_118'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 21
+  - Entity检索: 0
+  - Visual检索: 4
+  - Causal检索: 17
+
+前5个片段ID示例:
+  1. YI1dXSw17Y8_15
+  2. YI1dXSw17Y8_16
+  3. YI1dXSw17Y8_118
+  4. YI1dXSw17Y8_177
+  5. YI1dXSw17Y8_203
+
+📊 video_segments._data 结构:
+  可用视频数量: 2
+  示例视频: YI1dXSw17Y8
+  该视频的片段索引数量: 381
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 21
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments⠙ Checked 11 segments⠹ Checked 12 segments⠸ Checked 13 segments⠼ Checked 14 segments⠴ Checked 15 segments⠦ Checked 16 segments⠧ Checked 17 segments⠇ Checked 18 segments⠏ Checked 19 segments⠋ Checked 20 segments⠙ Checked 21 segments10 Video Segments remain after filtering
+Remain segments ['YI1dXSw17Y8_15', 'YI1dXSw17Y8_16', 'YI1dXSw17Y8_118', 'YI1dXSw17Y8_225', 'YI1dXSw17Y8_249', 'h-WGw4BypDY_24', 'h-WGw4BypDY_26', 'h-WGw4BypDY_61', 'h-WGw4BypDY_62', 'h-WGw4BypDY_283']
+Keywords: success, League of Legends, Arcane, multimedia franchises, gaming industry
+Captioning Segments for Given Query:   0%|          | 0/10 [00:00<?, ?it/s]Captioning Segments for Given Query:  10%|█         | 1/10 [00:36<05:32, 36.94s/it]Captioning Segments for Given Query:  20%|██        | 2/10 [01:14<04:56, 37.03s/it]Captioning Segments for Given Query:  30%|███       | 3/10 [01:59<04:46, 40.89s/it]Captioning Segments for Given Query:  40%|████      | 4/10 [02:39<04:04, 40.68s/it]Captioning Segments for Given Query:  50%|█████     | 5/10 [03:29<03:39, 43.83s/it]Captioning Segments for Given Query:  60%|██████    | 6/10 [04:12<02:54, 43.66s/it]Captioning Segments for Given Query:  70%|███████   | 7/10 [04:46<02:01, 40.55s/it]Captioning Segments for Given Query:  80%|████████  | 8/10 [05:24<01:19, 39.81s/it]Captioning Segments for Given Query:  90%|█████████ | 9/10 [06:04<00:39, 39.58s/it]Captioning Segments for Given Query: 100%|██████████| 10/10 [06:48<00:00, 41.10s/it]Captioning Segments for Given Query: 100%|██████████| 10/10 [06:48<00:00, 40.86s/it]
+  [查询] 集合15 q2 entity_only: Are there any recurring trends or patter
+INFO:nano-graphrag:Truncate 20 to 12 chunks
+Recurring trends or patterns in the types of games that have been nominated for Game of the Year over the past decade.
+Retrieved Text Segments {'YI1dXSw17Y8_341', 'YI1dXSw17Y8_340', 'YI1dXSw17Y8_342', 'YI1dXSw17Y8_339', 'YI1dXSw17Y8_343'}
+Output:
+Video segments showing Game of the Year nominees from the past decade.
+Retrieved Visual Segments {'h-WGw4BypDY_413', 'h-WGw4BypDY_284', 'YI1dXSw17Y8_195', 'h-WGw4BypDY_285'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 9
+  - Entity检索: 5
+  - Visual检索: 4
+  - Causal检索: 0
+
+前5个片段ID示例:
+  1. YI1dXSw17Y8_195
+  2. YI1dXSw17Y8_339
+  3. YI1dXSw17Y8_340
+  4. YI1dXSw17Y8_341
+  5. YI1dXSw17Y8_342
+
+📊 video_segments._data 结构:
+  可用视频数量: 2
+  示例视频: YI1dXSw17Y8
+  该视频的片段索引数量: 381
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 9
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments4 Video Segments remain after filtering
+Remain segments ['YI1dXSw17Y8_195', 'YI1dXSw17Y8_339', 'YI1dXSw17Y8_342', 'h-WGw4BypDY_284']
+Keywords: recurring trends, patterns, games, nominated, Game of the Year, past decade
+Captioning Segments for Given Query:   0%|          | 0/4 [00:00<?, ?it/s]Captioning Segments for Given Query:  25%|██▌       | 1/4 [00:39<01:58, 39.36s/it]Captioning Segments for Given Query:  50%|█████     | 2/4 [01:24<01:25, 42.70s/it]Captioning Segments for Given Query:  75%|███████▌  | 3/4 [02:01<00:40, 40.22s/it]Captioning Segments for Given Query: 100%|██████████| 4/4 [02:31<00:00, 35.99s/it]Captioning Segments for Given Query: 100%|██████████| 4/4 [02:31<00:00, 37.80s/it]
+  [查询] 集合15 q2 causal_only: Are there any recurring trends or patter
+INFO:nano-graphrag:Truncate 20 to 12 chunks
+INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The recurring trends and patterns in the types of games that have been nominated for Game of the Year over the past decade. 
+
+Note: This output slightly deviates from the exact format requested since the original question seeks patterns rather than direct causality. However, it aligns with capturing the essence of the query in terms of identifying recurring trends, which can be seen as a sequence of related events or patterns over time. If strictly adhering to causal relationships, we might need more specific information about how these trends affect other events.
+INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
+INFO:nano-graphrag:[Causal Retrieval] 55 events after 2-hop bidirectional walk (from 20 seeds)
+INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 55 → 50 nodes (tau_dup=0.85)
+INFO:nano-graphrag:[Causal Retrieval] Retrieved 20 segments from 50 deduplicated events
+INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 50 events, 17621 chars
+Retrieved Causal Segments {'h-WGw4BypDY_177', 'h-WGw4BypDY_284', 'h-WGw4BypDY_178', 'YI1dXSw17Y8_16', 'YI1dXSw17Y8_351', 'YI1dXSw17Y8_181', 'YI1dXSw17Y8_99', 'YI1dXSw17Y8_159', 'YI1dXSw17Y8_228', 'YI1dXSw17Y8_98', 'h-WGw4BypDY_240', 'h-WGw4BypDY_61', 'YI1dXSw17Y8_252', 'h-WGw4BypDY_176', 'h-WGw4BypDY_62', 'YI1dXSw17Y8_97', 'YI1dXSw17Y8_320', 'h-WGw4BypDY_108', 'h-WGw4BypDY_206', 'YI1dXSw17Y8_225'}
+
+Retrieved Text Segments set()
+Output:
+Trends and patterns in the types of games nominated for Game of the Year over the past decade.
+Retrieved Visual Segments {'h-WGw4BypDY_413', 'YI1dXSw17Y8_195', 'h-WGw4BypDY_178', 'YI1dXSw17Y8_98'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 22
+  - Entity检索: 0
+  - Visual检索: 4
+  - Causal检索: 20
+
+前5个片段ID示例:
+  1. YI1dXSw17Y8_16
+  2. YI1dXSw17Y8_97
+  3. YI1dXSw17Y8_98
+  4. YI1dXSw17Y8_99
+  5. YI1dXSw17Y8_159
+
+📊 video_segments._data 结构:
+  可用视频数量: 2
+  示例视频: YI1dXSw17Y8
+  该视频的片段索引数量: 381
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 22
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments⠙ Checked 11 segments⠹ Checked 12 segments⠸ Checked 13 segments⠼ Checked 14 segments⠴ Checked 15 segments⠦ Checked 16 segments⠧ Checked 17 segments⠇ Checked 18 segments⠏ Checked 19 segments⠋ Checked 20 segments⠙ Checked 21 segments⠹ Checked 22 segments17 Video Segments remain after filtering
+Remain segments ['YI1dXSw17Y8_16', 'YI1dXSw17Y8_97', 'YI1dXSw17Y8_98', 'YI1dXSw17Y8_159', 'YI1dXSw17Y8_181', 'YI1dXSw17Y8_195', 'YI1dXSw17Y8_225', 'YI1dXSw17Y8_228', 'YI1dXSw17Y8_252', 'YI1dXSw17Y8_351', 'h-WGw4BypDY_61', 'h-WGw4BypDY_62', 'h-WGw4BypDY_108', 'h-WGw4BypDY_177', 'h-WGw4BypDY_206', 'h-WGw4BypDY_240', 'h-WGw4BypDY_284']
+Keywords: recurring trends, patterns, games, nominated, Game of the Year, past decade
+Captioning Segments for Given Query:   0%|          | 0/17 [00:00<?, ?it/s]Captioning Segments for Given Query:   6%|▌         | 1/17 [00:28<07:39, 28.75s/it]Captioning Segments for Given Query:  12%|█▏        | 2/17 [01:12<09:27, 37.84s/it]Captioning Segments for Given Query:  18%|█▊        | 3/17 [02:02<10:05, 43.28s/it]Captioning Segments for Given Query:  24%|██▎       | 4/17 [02:34<08:24, 38.84s/it]Captioning Segments for Given Query:  29%|██▉       | 5/17 [03:11<07:37, 38.14s/it]Captioning Segments for Given Query:  35%|███▌      | 6/17 [03:41<06:29, 35.39s/it]Captioning Segments for Given Query:  41%|████      | 7/17 [04:27<06:26, 38.67s/it]Captioning Segments for Given Query:  47%|████▋     | 8/17 [05:09<05:59, 39.97s/it]Captioning Segments for Given Query:  53%|█████▎    | 9/17 [05:50<05:22, 40.30s/it]Captioning Segments for Given Query:  59%|█████▉    | 10/17 [06:25<04:29, 38.57s/it]Captioning Segments for Given Query:  65%|██████▍   | 11/17 [07:00<03:44, 37.34s/it]Captioning Segments for Given Query:  71%|███████   | 12/17 [07:41<03:13, 38.69s/it]Captioning Segments for Given Query:  76%|███████▋  | 13/17 [08:17<02:31, 37.87s/it]Captioning Segments for Given Query:  82%|████████▏ | 14/17 [08:51<01:49, 36.47s/it]Captioning Segments for Given Query:  88%|████████▊ | 15/17 [09:38<01:19, 39.67s/it]Captioning Segments for Given Query:  94%|█████████▍| 16/17 [10:25<00:41, 41.84s/it]Captioning Segments for Given Query: 100%|██████████| 17/17 [11:05<00:00, 41.31s/it]Captioning Segments for Given Query: 100%|██████████| 17/17 [11:05<00:00, 39.13s/it]
+  [查询] 集合15 q3 entity_only: What insights does the story of Amir Sap
+INFO:nano-graphrag:Truncate 20 to 12 chunks
+The insights provided by the story of Amir Sapot, the TGA Game Changer, regarding the challenges and resilience within the game development community.
+Retrieved Text Segments {'h-WGw4BypDY_221', 'h-WGw4BypDY_220', 'YI1dXSw17Y8_242', 'YI1dXSw17Y8_244', 'h-WGw4BypDY_222', 'YI1dXSw17Y8_243'}
+A video segment showing insights from Amir Sapot's story as the TGA Game Changer, highlighting challenges and resilience in the game development community.
+Retrieved Visual Segments {'YI1dXSw17Y8_76', 'YI1dXSw17Y8_68', 'h-WGw4BypDY_275', 'YI1dXSw17Y8_77'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 10
+  - Entity检索: 6
+  - Visual检索: 4
+  - Causal检索: 0
+
+前5个片段ID示例:
+  1. YI1dXSw17Y8_68
+  2. YI1dXSw17Y8_76
+  3. YI1dXSw17Y8_77
+  4. YI1dXSw17Y8_242
+  5. YI1dXSw17Y8_243
+
+📊 video_segments._data 结构:
+  可用视频数量: 2
+  示例视频: YI1dXSw17Y8
+  该视频的片段索引数量: 381
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 10
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments2 Video Segments remain after filtering
+Remain segments ['YI1dXSw17Y8_76', 'YI1dXSw17Y8_77']
+Keywords: Amir Sapot, TGA Game Changer, story, insights, challenges, resilience, game development community
+Captioning Segments for Given Query:   0%|          | 0/2 [00:00<?, ?it/s]Captioning Segments for Given Query:  50%|█████     | 1/2 [01:01<01:01, 61.00s/it]Captioning Segments for Given Query: 100%|██████████| 2/2 [01:44<00:00, 50.96s/it]Captioning Segments for Given Query: 100%|██████████| 2/2 [01:44<00:00, 52.47s/it]
+  [查询] 集合15 q3 causal_only: What insights does the story of Amir Sap
+INFO:nano-graphrag:Truncate 20 to 12 chunks
+INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The story of Amir Sapot, the TGA Game Changer, and the insights it provides regarding the challenges faced and resilience demonstrated within the game development community.
+INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
+INFO:nano-graphrag:[Causal Retrieval] 57 events after 2-hop bidirectional walk (from 20 seeds)
+INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 57 → 51 nodes (tau_dup=0.85)
+INFO:nano-graphrag:[Causal Retrieval] Retrieved 17 segments from 51 deduplicated events
+INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 51 events, 17877 chars
+Retrieved Causal Segments {'YI1dXSw17Y8_367', 'h-WGw4BypDY_243', 'h-WGw4BypDY_305', 'YI1dXSw17Y8_15', 'YI1dXSw17Y8_318', 'YI1dXSw17Y8_75', 'YI1dXSw17Y8_131', 'YI1dXSw17Y8_198', 'YI1dXSw17Y8_81', 'h-WGw4BypDY_158', 'YI1dXSw17Y8_379', 'h-WGw4BypDY_403', 'YI1dXSw17Y8_74', 'h-WGw4BypDY_157', 'h-WGw4BypDY_61', 'YI1dXSw17Y8_16', 'h-WGw4BypDY_384'}
+
+Retrieved Text Segments set()
+A video segment showing insights from Amir Sapot's story as the TGA Game Changer regarding challenges and resilience in the game development community.
+Retrieved Visual Segments {'YI1dXSw17Y8_76', 'h-WGw4BypDY_152', 'YI1dXSw17Y8_248', 'YI1dXSw17Y8_77'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 21
+  - Entity检索: 0
+  - Visual检索: 4
+  - Causal检索: 17
+
+前5个片段ID示例:
+  1. YI1dXSw17Y8_15
+  2. YI1dXSw17Y8_16
+  3. YI1dXSw17Y8_74
+  4. YI1dXSw17Y8_75
+  5. YI1dXSw17Y8_76
+
+📊 video_segments._data 结构:
+  可用视频数量: 2
+  示例视频: YI1dXSw17Y8
+  该视频的片段索引数量: 381
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 21
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments⠙ Checked 11 segments⠹ Checked 12 segments⠸ Checked 13 segments⠼ Checked 14 segments⠴ Checked 15 segments⠦ Checked 16 segments⠧ Checked 17 segments⠇ Checked 18 segments⠏ Checked 19 segments⠋ Checked 20 segments⠙ Checked 21 segments14 Video Segments remain after filtering
+Remain segments ['YI1dXSw17Y8_16', 'YI1dXSw17Y8_75', 'YI1dXSw17Y8_76', 'YI1dXSw17Y8_77', 'YI1dXSw17Y8_81', 'YI1dXSw17Y8_198', 'YI1dXSw17Y8_248', 'YI1dXSw17Y8_318', 'YI1dXSw17Y8_367', 'h-WGw4BypDY_61', 'h-WGw4BypDY_152', 'h-WGw4BypDY_157', 'h-WGw4BypDY_243', 'h-WGw4BypDY_403']
+Keywords: Amir Sapot, TGA Game Changer, story, insights, challenges, resilience, game development community
+Captioning Segments for Given Query:   0%|          | 0/14 [00:00<?, ?it/s]Captioning Segments for Given Query:   7%|▋         | 1/14 [00:36<07:58, 36.81s/it]Captioning Segments for Given Query:  14%|█▍        | 2/14 [01:15<07:36, 38.02s/it]Captioning Segments for Given Query:  21%|██▏       | 3/14 [02:09<08:15, 45.02s/it]Captioning Segments for Given Query:  29%|██▊       | 4/14 [02:48<07:09, 42.97s/it]Captioning Segments for Given Query:  36%|███▌      | 5/14 [03:20<05:48, 38.75s/it]Captioning Segments for Given Query:  43%|████▎     | 6/14 [03:53<04:54, 36.77s/it]Captioning Segments for Given Query:  50%|█████     | 7/14 [04:36<04:31, 38.80s/it]Captioning Segments for Given Query:  57%|█████▋    | 8/14 [05:12<03:48, 38.11s/it]Captioning Segments for Given Query:  64%|██████▍   | 9/14 [05:45<03:02, 36.51s/it]Captioning Segments for Given Query:  71%|███████▏  | 10/14 [06:24<02:28, 37.19s/it]Captioning Segments for Given Query:  79%|███████▊  | 11/14 [07:00<01:50, 36.82s/it]Captioning Segments for Given Query:  86%|████████▌ | 12/14 [07:35<01:12, 36.21s/it]Captioning Segments for Given Query:  93%|█████████▎| 13/14 [08:07<00:34, 34.96s/it]Captioning Segments for Given Query: 100%|██████████| 14/14 [08:48<00:00, 36.81s/it]Captioning Segments for Given Query: 100%|██████████| 14/14 [08:48<00:00, 37.74s/it]
+  [查询] 集合15 q4 entity_only: Does the announcement of 'The Witcher 4'
+INFO:nano-graphrag:Truncate 20 to 12 chunks
+Does the announcement of 'The Witcher 4' confirm or refute previous leaks and rumors regarding the game's development and its protagonist?
+Retrieved Text Segments {'YI1dXSw17Y8_341', 'YI1dXSw17Y8_339', 'YI1dXSw17Y8_345', 'YI1dXSw17Y8_340', 'YI1dXSw17Y8_344', 'YI1dXSw17Y8_346'}
+Output:
+An announcement related to 'The Witcher 4' and its confirmation or refutation of previous leaks and rumors about the game's development and protagonist.
+Retrieved Visual Segments {'YI1dXSw17Y8_44', 'YI1dXSw17Y8_38', 'YI1dXSw17Y8_43', 'YI1dXSw17Y8_39'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 10
+  - Entity检索: 6
+  - Visual检索: 4
+  - Causal检索: 0
+
+前5个片段ID示例:
+  1. YI1dXSw17Y8_38
+  2. YI1dXSw17Y8_39
+  3. YI1dXSw17Y8_43
+  4. YI1dXSw17Y8_44
+  5. YI1dXSw17Y8_339
+
+📊 video_segments._data 结构:
+  可用视频数量: 2
+  示例视频: YI1dXSw17Y8
+  该视频的片段索引数量: 381
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 10
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments3 Video Segments remain after filtering
+Remain segments ['YI1dXSw17Y8_38', 'YI1dXSw17Y8_44', 'YI1dXSw17Y8_341']
+Keywords: announcement, The Witcher 4, confirm, refute, leaks, rumors, game's development, protagonist
+Captioning Segments for Given Query:   0%|          | 0/3 [00:00<?, ?it/s]Captioning Segments for Given Query:  33%|███▎      | 1/3 [00:36<01:13, 36.55s/it]Captioning Segments for Given Query:  67%|██████▋   | 2/3 [01:17<00:39, 39.02s/it]Captioning Segments for Given Query: 100%|██████████| 3/3 [01:51<00:00, 37.01s/it]Captioning Segments for Given Query: 100%|██████████| 3/3 [01:51<00:00, 37.30s/it]
+  [查询] 集合15 q4 causal_only: Does the announcement of 'The Witcher 4'
+INFO:nano-graphrag:Truncate 20 to 12 chunks
+INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The announcement of 'The Witcher 4' and its impact on confirming or refuting previous leaks and rumors about the game's development and protagonist.
+INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
+INFO:nano-graphrag:[Causal Retrieval] 61 events after 2-hop bidirectional walk (from 20 seeds)
+INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 61 → 57 nodes (tau_dup=0.85)
+INFO:nano-graphrag:[Causal Retrieval] Retrieved 16 segments from 57 deduplicated events
+INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 57 events, 19589 chars
+Retrieved Causal Segments {'h-WGw4BypDY_289', 'h-WGw4BypDY_172', 'h-WGw4BypDY_43', 'h-WGw4BypDY_82', 'YI1dXSw17Y8_97', 'h-WGw4BypDY_344', 'h-WGw4BypDY_79', 'YI1dXSw17Y8_87', 'h-WGw4BypDY_37', 'h-WGw4BypDY_91', 'YI1dXSw17Y8_118', 'h-WGw4BypDY_101', 'h-WGw4BypDY_218', 'YI1dXSw17Y8_92', 'h-WGw4BypDY_331', 'h-WGw4BypDY_104'}
+
+Retrieved Text Segments set()
+Output:
+An announcement related to 'The Witcher 4' and its confirmation or refutation of previous leaks and rumors about the game's development and protagonist.
+Retrieved Visual Segments {'YI1dXSw17Y8_44', 'YI1dXSw17Y8_38', 'YI1dXSw17Y8_43', 'YI1dXSw17Y8_39'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 20
+  - Entity检索: 0
+  - Visual检索: 4
+  - Causal检索: 16
+
+前5个片段ID示例:
+  1. YI1dXSw17Y8_38
+  2. YI1dXSw17Y8_39
+  3. YI1dXSw17Y8_43
+  4. YI1dXSw17Y8_44
+  5. YI1dXSw17Y8_87
+
+📊 video_segments._data 结构:
+  可用视频数量: 2
+  示例视频: YI1dXSw17Y8
+  该视频的片段索引数量: 381
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 20
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments⠙ Checked 11 segments⠹ Checked 12 segments⠸ Checked 13 segments⠼ Checked 14 segments⠴ Checked 15 segments⠦ Checked 16 segments⠧ Checked 17 segments⠇ Checked 18 segments⠏ Checked 19 segments⠋ Checked 20 segments7 Video Segments remain after filtering
+Remain segments ['YI1dXSw17Y8_38', 'YI1dXSw17Y8_44', 'YI1dXSw17Y8_87', 'h-WGw4BypDY_79', 'h-WGw4BypDY_91', 'h-WGw4BypDY_101', 'h-WGw4BypDY_331']
+Keywords: announcement, The Witcher 4, confirm, refute, leaks, rumors, game, development, protagonist
+Captioning Segments for Given Query:   0%|          | 0/7 [00:00<?, ?it/s]Captioning Segments for Given Query:  14%|█▍        | 1/7 [00:37<03:47, 37.97s/it]Captioning Segments for Given Query:  29%|██▊       | 2/7 [01:22<03:29, 41.95s/it]Captioning Segments for Given Query:  43%|████▎     | 3/7 [02:00<02:40, 40.15s/it]Captioning Segments for Given Query:  57%|█████▋    | 4/7 [02:40<02:00, 40.00s/it]Captioning Segments for Given Query:  71%|███████▏  | 5/7 [03:26<01:24, 42.02s/it]Captioning Segments for Given Query:  86%|████████▌ | 6/7 [04:08<00:42, 42.09s/it]Captioning Segments for Given Query: 100%|██████████| 7/7 [04:44<00:00, 40.08s/it]Captioning Segments for Given Query: 100%|██████████| 7/7 [04:44<00:00, 40.61s/it]
+  [查询] 集合15 q5 entity_only: Based on the trailers showcased, are the
+INFO:nano-graphrag:Truncate 20 to 12 chunks
+Are there any noticeable advancements in game graphics or technology based on the trailers showcased, compared to previous years?
+Retrieved Text Segments {'YI1dXSw17Y8_341', 'YI1dXSw17Y8_340', 'YI1dXSw17Y8_342', 'YI1dXSw17Y8_339', 'YI1dXSw17Y8_343'}
+Output: Advancements in game graphics or technology compared to previous years as shown in the trailers.
+Retrieved Visual Segments {'YI1dXSw17Y8_62', 'YI1dXSw17Y8_63', 'YI1dXSw17Y8_58', 'YI1dXSw17Y8_140'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 9
+  - Entity检索: 5
+  - Visual检索: 4
+  - Causal检索: 0
+
+前5个片段ID示例:
+  1. YI1dXSw17Y8_58
+  2. YI1dXSw17Y8_62
+  3. YI1dXSw17Y8_63
+  4. YI1dXSw17Y8_140
+  5. YI1dXSw17Y8_339
+
+📊 video_segments._data 结构:
+  可用视频数量: 2
+  示例视频: YI1dXSw17Y8
+  该视频的片段索引数量: 381
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 9
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments6 Video Segments remain after filtering
+Remain segments ['YI1dXSw17Y8_58', 'YI1dXSw17Y8_62', 'YI1dXSw17Y8_63', 'YI1dXSw17Y8_140', 'YI1dXSw17Y8_339', 'YI1dXSw17Y8_342']
+Keywords: trailers, advancements, game graphics, technology, previous years
+Captioning Segments for Given Query:   0%|          | 0/6 [00:00<?, ?it/s]Captioning Segments for Given Query:  17%|█▋        | 1/6 [00:44<03:43, 44.65s/it]Captioning Segments for Given Query:  33%|███▎      | 2/6 [01:20<02:38, 39.70s/it]Captioning Segments for Given Query:  50%|█████     | 3/6 [01:57<01:55, 38.46s/it]Captioning Segments for Given Query:  67%|██████▋   | 4/6 [02:33<01:14, 37.42s/it]Captioning Segments for Given Query:  83%|████████▎ | 5/6 [03:08<00:36, 36.39s/it]Captioning Segments for Given Query: 100%|██████████| 6/6 [03:39<00:00, 34.75s/it]Captioning Segments for Given Query: 100%|██████████| 6/6 [03:39<00:00, 36.64s/it]
+  [查询] 集合15 q5 causal_only: Based on the trailers showcased, are the
+INFO:nano-graphrag:Truncate 20 to 12 chunks
+INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The advancements in game graphics or technology showcased in the trailers compared to previous years. 
+
+To better fit the template and emphasize the causal relationship and sequence of events, we could rephrase it as:
+The noticeable advancements in game graphics or technology in the recently showcased trailers and their comparison to the state of previous years.
+INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
+INFO:nano-graphrag:[Causal Retrieval] 65 events after 2-hop bidirectional walk (from 20 seeds)
+INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 65 → 62 nodes (tau_dup=0.85)
+INFO:nano-graphrag:[Causal Retrieval] Retrieved 19 segments from 62 deduplicated events
+INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 62 events, 21491 chars
+Retrieved Causal Segments {'h-WGw4BypDY_99', 'h-WGw4BypDY_305', 'YI1dXSw17Y8_188', 'h-WGw4BypDY_129', 'h-WGw4BypDY_273', 'YI1dXSw17Y8_47', 'YI1dXSw17Y8_9', 'h-WGw4BypDY_334', 'YI1dXSw17Y8_187', 'h-WGw4BypDY_125', 'h-WGw4BypDY_24', 'YI1dXSw17Y8_106', 'h-WGw4BypDY_240', 'h-WGw4BypDY_202', 'YI1dXSw17Y8_363', 'h-WGw4BypDY_62', 'YI1dXSw17Y8_85', 'h-WGw4BypDY_226', 'h-WGw4BypDY_302'}
+
+Retrieved Text Segments set()
+Output: Comparing advancements in game graphics or technology in the trailers to previous years.
+Retrieved Visual Segments {'YI1dXSw17Y8_62', 'YI1dXSw17Y8_63', 'YI1dXSw17Y8_58', 'h-WGw4BypDY_134'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 23
+  - Entity检索: 0
+  - Visual检索: 4
+  - Causal检索: 19
+
+前5个片段ID示例:
+  1. YI1dXSw17Y8_9
+  2. YI1dXSw17Y8_47
+  3. YI1dXSw17Y8_58
+  4. YI1dXSw17Y8_62
+  5. YI1dXSw17Y8_63
+
+📊 video_segments._data 结构:
+  可用视频数量: 2
+  示例视频: YI1dXSw17Y8
+  该视频的片段索引数量: 381
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 23
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments⠙ Checked 11 segments⠹ Checked 12 segments⠸ Checked 13 segments⠼ Checked 14 segments⠴ Checked 15 segments⠦ Checked 16 segments⠧ Checked 17 segments⠇ Checked 18 segments⠏ Checked 19 segments⠋ Checked 20 segments⠙ Checked 21 segments⠹ Checked 22 segments⠸ Checked 23 segments19 Video Segments remain after filtering
+Remain segments ['YI1dXSw17Y8_9', 'YI1dXSw17Y8_47', 'YI1dXSw17Y8_58', 'YI1dXSw17Y8_62', 'YI1dXSw17Y8_63', 'YI1dXSw17Y8_85', 'YI1dXSw17Y8_106', 'YI1dXSw17Y8_188', 'h-WGw4BypDY_24', 'h-WGw4BypDY_99', 'h-WGw4BypDY_129', 'h-WGw4BypDY_134', 'h-WGw4BypDY_202', 'h-WGw4BypDY_226', 'h-WGw4BypDY_240', 'h-WGw4BypDY_273', 'h-WGw4BypDY_302', 'h-WGw4BypDY_305', 'h-WGw4BypDY_334']
+Keywords: trailers, advancements, game graphics, technology, previous years
+Captioning Segments for Given Query:   0%|          | 0/19 [00:00<?, ?it/s]Captioning Segments for Given Query:   5%|▌         | 1/19 [00:51<15:18, 51.01s/it]Captioning Segments for Given Query:  11%|█         | 2/19 [01:37<13:42, 48.37s/it]Captioning Segments for Given Query:  16%|█▌        | 3/19 [02:21<12:20, 46.30s/it]Captioning Segments for Given Query:  21%|██        | 4/19 [02:55<10:22, 41.51s/it]Captioning Segments for Given Query:  26%|██▋       | 5/19 [03:38<09:46, 41.87s/it]Captioning Segments for Given Query:  32%|███▏      | 6/19 [04:25<09:28, 43.70s/it]Captioning Segments for Given Query:  37%|███▋      | 7/19 [05:01<08:15, 41.33s/it]Captioning Segments for Given Query:  42%|████▏     | 8/19 [05:43<07:36, 41.47s/it]Captioning Segments for Given Query:  47%|████▋     | 9/19 [06:39<07:40, 46.03s/it]Captioning Segments for Given Query:  53%|█████▎    | 10/19 [07:16<06:28, 43.14s/it]Captioning Segments for Given Query:  58%|█████▊    | 11/19 [07:51<05:24, 40.58s/it]Captioning Segments for Given Query:  63%|██████▎   | 12/19 [08:23<04:26, 38.14s/it]Captioning Segments for Given Query:  68%|██████▊   | 13/19 [09:04<03:53, 39.00s/it]Captioning Segments for Given Query:  74%|███████▎  | 14/19 [09:42<03:13, 38.65s/it]Captioning Segments for Given Query:  79%|███████▉  | 15/19 [10:24<02:38, 39.61s/it]Captioning Segments for Given Query:  84%|████████▍ | 16/19 [11:01<01:56, 38.83s/it]Captioning Segments for Given Query:  89%|████████▉ | 17/19 [11:36<01:15, 37.70s/it]Captioning Segments for Given Query:  95%|█████████▍| 18/19 [12:13<00:37, 37.57s/it]Captioning Segments for Given Query: 100%|██████████| 19/19 [12:54<00:00, 38.43s/it]Captioning Segments for Given Query: 100%|██████████| 19/19 [12:54<00:00, 40.74s/it]
+  [查询] 集合15 q6 entity_only: Given the host's reaction to the announc
+INFO:nano-graphrag:Truncate 20 to 13 chunks
+How does the host's reaction to the announcement of 'Elden Ring: Nights' indicate the potential impact on expectations within the gaming community regarding the game's development?
+Retrieved Text Segments {'YI1dXSw17Y8_341', 'h-WGw4BypDY_96', 'YI1dXSw17Y8_340', 'YI1dXSw17Y8_339', 'h-WGw4BypDY_97', 'h-WGw4BypDY_95'}
+Output: The host reacts to the announcement of 'Elden Ring: Nights', indicating potential impacts on the gaming community's expectations.
+
+However, to align more closely with the format of generating a query for retrieving relevant video segments based on scene-related information:
+
+Output: The host's reaction to the 'Elden Ring: Nights' announcement in a gaming news segment.
+Retrieved Visual Segments {'YI1dXSw17Y8_366', 'YI1dXSw17Y8_363', 'h-WGw4BypDY_266', 'h-WGw4BypDY_98'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 10
+  - Entity检索: 6
+  - Visual检索: 4
+  - Causal检索: 0
+
+前5个片段ID示例:
+  1. YI1dXSw17Y8_339
+  2. YI1dXSw17Y8_340
+  3. YI1dXSw17Y8_341
+  4. YI1dXSw17Y8_363
+  5. YI1dXSw17Y8_366
+
+📊 video_segments._data 结构:
+  可用视频数量: 2
+  示例视频: YI1dXSw17Y8
+  该视频的片段索引数量: 381
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 10
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments6 Video Segments remain after filtering
+Remain segments ['YI1dXSw17Y8_363', 'YI1dXSw17Y8_366', 'h-WGw4BypDY_95', 'h-WGw4BypDY_96', 'h-WGw4BypDY_97', 'h-WGw4BypDY_98']
+Keywords: host, reaction, announcement, Elden Ring: Nights, game's development, expectations, gaming community
+Captioning Segments for Given Query:   0%|          | 0/6 [00:00<?, ?it/s]Captioning Segments for Given Query:  17%|█▋        | 1/6 [00:34<02:53, 34.63s/it]Captioning Segments for Given Query:  33%|███▎      | 2/6 [01:06<02:11, 32.96s/it]Captioning Segments for Given Query:  50%|█████     | 3/6 [01:39<01:38, 32.93s/it]Captioning Segments for Given Query:  67%|██████▋   | 4/6 [02:15<01:08, 34.07s/it]Captioning Segments for Given Query:  83%|████████▎ | 5/6 [02:52<00:35, 35.39s/it]Captioning Segments for Given Query: 100%|██████████| 6/6 [03:27<00:00, 35.13s/it]Captioning Segments for Given Query: 100%|██████████| 6/6 [03:27<00:00, 34.58s/it]
+  [查询] 集合15 q6 causal_only: Given the host's reaction to the announc
+INFO:nano-graphrag:Truncate 20 to 13 chunks
+INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The host's reaction to the announcement of 'Elden Ring: Nights' and the potential impacts of the game's development on the expectations within the gaming community.
+INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
+INFO:nano-graphrag:[Causal Retrieval] 62 events after 2-hop bidirectional walk (from 20 seeds)
+INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 62 → 58 nodes (tau_dup=0.85)
+INFO:nano-graphrag:[Causal Retrieval] Retrieved 17 segments from 58 deduplicated events
+INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 58 events, 20963 chars
+Retrieved Causal Segments {'h-WGw4BypDY_289', 'h-WGw4BypDY_105', 'YI1dXSw17Y8_244', 'h-WGw4BypDY_344', 'YI1dXSw17Y8_322', 'YI1dXSw17Y8_51', 'YI1dXSw17Y8_363', 'YI1dXSw17Y8_366', 'YI1dXSw17Y8_370', 'h-WGw4BypDY_92', 'h-WGw4BypDY_349', 'YI1dXSw17Y8_369', 'h-WGw4BypDY_286', 'h-WGw4BypDY_101', 'YI1dXSw17Y8_74', 'h-WGw4BypDY_97', 'h-WGw4BypDY_104'}
+
+Retrieved Text Segments set()
+Output: The host's reaction to the announcement of 'Elden Ring: Nights' and its potential impact on the gaming community's expectations.
+
+However, to better fit the format of generating a declarative sentence for querying relevant video segments, we can adjust it to:
+
+The host reacts to the 'Elden Ring: Nights' announcement and discusses its implications for game expectations.
+Retrieved Visual Segments {'YI1dXSw17Y8_366', 'YI1dXSw17Y8_363', 'YI1dXSw17Y8_371', 'h-WGw4BypDY_97'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 18
+  - Entity检索: 0
+  - Visual检索: 4
+  - Causal检索: 17
+
+前5个片段ID示例:
+  1. YI1dXSw17Y8_51
+  2. YI1dXSw17Y8_74
+  3. YI1dXSw17Y8_244
+  4. YI1dXSw17Y8_322
+  5. YI1dXSw17Y8_363
+
+📊 video_segments._data 结构:
+  可用视频数量: 2
+  示例视频: YI1dXSw17Y8
+  该视频的片段索引数量: 381
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 18
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments⠙ Checked 11 segments⠹ Checked 12 segments⠸ Checked 13 segments⠼ Checked 14 segments⠴ Checked 15 segments⠦ Checked 16 segments⠧ Checked 17 segments⠇ Checked 18 segments16 Video Segments remain after filtering
+Remain segments ['YI1dXSw17Y8_51', 'YI1dXSw17Y8_244', 'YI1dXSw17Y8_322', 'YI1dXSw17Y8_363', 'YI1dXSw17Y8_366', 'YI1dXSw17Y8_369', 'YI1dXSw17Y8_370', 'YI1dXSw17Y8_371', 'h-WGw4BypDY_92', 'h-WGw4BypDY_97', 'h-WGw4BypDY_101', 'h-WGw4BypDY_104', 'h-WGw4BypDY_105', 'h-WGw4BypDY_286', 'h-WGw4BypDY_289', 'h-WGw4BypDY_344']
+Keywords: host, reaction, announcement, Elden Ring: Nights, game's development, expectations, gaming community
+Captioning Segments for Given Query:   0%|          | 0/16 [00:00<?, ?it/s]Captioning Segments for Given Query:   6%|▋         | 1/16 [00:41<10:15, 41.00s/it]Captioning Segments for Given Query:  12%|█▎        | 2/16 [01:14<08:33, 36.69s/it]Captioning Segments for Given Query:  19%|█▉        | 3/16 [01:49<07:47, 35.99s/it]Captioning Segments for Given Query:  25%|██▌       | 4/16 [02:24<07:06, 35.54s/it]Captioning Segments for Given Query:  31%|███▏      | 5/16 [03:07<06:59, 38.12s/it]Captioning Segments for Given Query:  38%|███▊      | 6/16 [03:44<06:18, 37.81s/it]Captioning Segments for Given Query:  44%|████▍     | 7/16 [04:12<05:11, 34.65s/it]Captioning Segments for Given Query:  50%|█████     | 8/16 [04:45<04:32, 34.03s/it]Captioning Segments for Given Query:  56%|█████▋    | 9/16 [05:22<04:05, 35.12s/it]Captioning Segments for Given Query:  62%|██████▎   | 10/16 [06:05<03:43, 37.32s/it]Captioning Segments for Given Query:  69%|██████▉   | 11/16 [06:44<03:09, 37.82s/it]Captioning Segments for Given Query:  75%|███████▌  | 12/16 [07:19<02:28, 37.22s/it]Captioning Segments for Given Query:  81%|████████▏ | 13/16 [07:58<01:52, 37.53s/it]Captioning Segments for Given Query:  88%|████████▊ | 14/16 [08:43<01:19, 39.74s/it]Captioning Segments for Given Query:  94%|█████████▍| 15/16 [09:23<00:39, 39.90s/it]Captioning Segments for Given Query: 100%|██████████| 16/16 [10:00<00:00, 39.06s/it]Captioning Segments for Given Query: 100%|██████████| 16/16 [10:00<00:00, 37.53s/it]
+  [查询] 集合15 q7 entity_only: Considering the variety of games showcas
+INFO:nano-graphrag:Truncate 20 to 12 chunks
+How does the Game Awards reflect the diversity of gaming experiences and player preferences considering the variety of games showcased?
+Retrieved Text Segments {'h-WGw4BypDY_178', 'h-WGw4BypDY_179', 'h-WGw4BypDY_28', 'h-WGw4BypDY_27'}
+Output: The Game Awards showcase the diversity of gaming experiences and player preferences through a variety of games.
+Retrieved Visual Segments {'h-WGw4BypDY_49', 'YI1dXSw17Y8_3', 'h-WGw4BypDY_178', 'YI1dXSw17Y8_98'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 7
+  - Entity检索: 4
+  - Visual检索: 4
+  - Causal检索: 0
+
+前5个片段ID示例:
+  1. YI1dXSw17Y8_3
+  2. YI1dXSw17Y8_98
+  3. h-WGw4BypDY_27
+  4. h-WGw4BypDY_28
+  5. h-WGw4BypDY_49
+
+📊 video_segments._data 结构:
+  可用视频数量: 2
+  示例视频: YI1dXSw17Y8
+  该视频的片段索引数量: 381
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 7
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments7 Video Segments remain after filtering
+Remain segments ['YI1dXSw17Y8_3', 'YI1dXSw17Y8_98', 'h-WGw4BypDY_27', 'h-WGw4BypDY_28', 'h-WGw4BypDY_49', 'h-WGw4BypDY_178', 'h-WGw4BypDY_179']
+Keywords: Game Awards, diversity, gaming experiences, player preferences, variety, games
+Captioning Segments for Given Query:   0%|          | 0/7 [00:00<?, ?it/s]Captioning Segments for Given Query:  14%|█▍        | 1/7 [00:33<03:21, 33.61s/it]Captioning Segments for Given Query:  29%|██▊       | 2/7 [01:20<03:25, 41.17s/it]Captioning Segments for Given Query:  43%|████▎     | 3/7 [02:12<03:05, 46.37s/it]Captioning Segments for Given Query:  57%|█████▋    | 4/7 [02:48<02:07, 42.38s/it]Captioning Segments for Given Query:  71%|███████▏  | 5/7 [03:27<01:22, 41.03s/it]Captioning Segments for Given Query:  86%|████████▌ | 6/7 [04:03<00:39, 39.37s/it]Captioning Segments for Given Query: 100%|██████████| 7/7 [04:39<00:00, 38.36s/it]Captioning Segments for Given Query: 100%|██████████| 7/7 [04:39<00:00, 40.00s/it]
+  [查询] 集合15 q7 causal_only: Considering the variety of games showcas
+INFO:nano-graphrag:Truncate 20 to 12 chunks
+INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The variety of games showcased at The Game Awards and their reflection of diverse gaming experiences and player preferences.
+INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
+INFO:nano-graphrag:[Causal Retrieval] 38 events after 2-hop bidirectional walk (from 20 seeds)
+INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 38 → 35 nodes (tau_dup=0.85)
+INFO:nano-graphrag:[Causal Retrieval] Retrieved 17 segments from 35 deduplicated events
+INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 35 events, 11294 chars
+Retrieved Causal Segments {'YI1dXSw17Y8_252', 'h-WGw4BypDY_12', 'h-WGw4BypDY_177', 'YI1dXSw17Y8_193', 'h-WGw4BypDY_26', 'h-WGw4BypDY_358', 'h-WGw4BypDY_108', 'h-WGw4BypDY_206', 'YI1dXSw17Y8_157', 'h-WGw4BypDY_349', 'YI1dXSw17Y8_248', 'YI1dXSw17Y8_73', 'YI1dXSw17Y8_118', 'YI1dXSw17Y8_379', 'h-WGw4BypDY_328', 'YI1dXSw17Y8_72', 'h-WGw4BypDY_269'}
+
+Retrieved Text Segments set()
+Output: The Game Awards showcases the diversity of gaming experiences and player preferences through various games.
+Retrieved Visual Segments {'h-WGw4BypDY_49', 'YI1dXSw17Y8_3', 'h-WGw4BypDY_178', 'YI1dXSw17Y8_98'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 21
+  - Entity检索: 0
+  - Visual检索: 4
+  - Causal检索: 17
+
+前5个片段ID示例:
+  1. YI1dXSw17Y8_3
+  2. YI1dXSw17Y8_72
+  3. YI1dXSw17Y8_73
+  4. YI1dXSw17Y8_98
+  5. YI1dXSw17Y8_118
+
+📊 video_segments._data 结构:
+  可用视频数量: 2
+  示例视频: YI1dXSw17Y8
+  该视频的片段索引数量: 381
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 21
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments⠙ Checked 11 segments⠹ Checked 12 segments⠸ Checked 13 segments⠼ Checked 14 segments⠴ Checked 15 segments⠦ Checked 16 segments⠧ Checked 17 segments⠇ Checked 18 segments⠏ Checked 19 segments⠋ Checked 20 segments⠙ Checked 21 segments20 Video Segments remain after filtering
+Remain segments ['YI1dXSw17Y8_3', 'YI1dXSw17Y8_72', 'YI1dXSw17Y8_73', 'YI1dXSw17Y8_98', 'YI1dXSw17Y8_118', 'YI1dXSw17Y8_157', 'YI1dXSw17Y8_193', 'YI1dXSw17Y8_248', 'YI1dXSw17Y8_252', 'YI1dXSw17Y8_379', 'h-WGw4BypDY_12', 'h-WGw4BypDY_26', 'h-WGw4BypDY_49', 'h-WGw4BypDY_108', 'h-WGw4BypDY_177', 'h-WGw4BypDY_178', 'h-WGw4BypDY_206', 'h-WGw4BypDY_269', 'h-WGw4BypDY_328', 'h-WGw4BypDY_358']
+Keywords: Game Awards, diversity, gaming experiences, player preferences, variety, games
+Captioning Segments for Given Query:   0%|          | 0/20 [00:00<?, ?it/s]Captioning Segments for Given Query:   5%|▌         | 1/20 [00:29<09:22, 29.62s/it]Captioning Segments for Given Query:  10%|█         | 2/20 [01:10<10:56, 36.47s/it]Captioning Segments for Given Query:  15%|█▌        | 3/20 [01:40<09:29, 33.49s/it]Captioning Segments for Given Query:  20%|██        | 4/20 [02:19<09:31, 35.70s/it]Captioning Segments for Given Query:  25%|██▌       | 5/20 [03:01<09:26, 37.79s/it]Captioning Segments for Given Query:  30%|███       | 6/20 [03:42<09:06, 39.00s/it]Captioning Segments for Given Query:  35%|███▌      | 7/20 [04:19<08:17, 38.30s/it]Captioning Segments for Given Query:  40%|████      | 8/20 [04:55<07:31, 37.61s/it]Captioning Segments for Given Query:  45%|████▌     | 9/20 [05:26<06:28, 35.33s/it]Captioning Segments for Given Query:  50%|█████     | 10/20 [05:58<05:45, 34.52s/it]Captioning Segments for Given Query:  55%|█████▌    | 11/20 [06:37<05:22, 35.84s/it]Captioning Segments for Given Query:  60%|██████    | 12/20 [07:19<05:02, 37.82s/it]Captioning Segments for Given Query:  65%|██████▌   | 13/20 [08:00<04:31, 38.72s/it]Captioning Segments for Given Query:  70%|███████   | 14/20 [08:39<03:52, 38.67s/it]Captioning Segments for Given Query:  75%|███████▌  | 15/20 [09:19<03:15, 39.20s/it]Captioning Segments for Given Query:  80%|████████  | 16/20 [09:56<02:34, 38.56s/it]Captioning Segments for Given Query:  85%|████████▌ | 17/20 [10:40<01:59, 39.98s/it]Captioning Segments for Given Query:  90%|█████████ | 18/20 [11:18<01:18, 39.45s/it]Captioning Segments for Given Query:  95%|█████████▌| 19/20 [11:48<00:36, 36.82s/it]Captioning Segments for Given Query: 100%|██████████| 20/20 [12:32<00:00, 38.77s/it]Captioning Segments for Given Query: 100%|██████████| 20/20 [12:32<00:00, 37.61s/it]
+  [查询] 集合15 q8 entity_only: Based on the games nominated for Best On
+INFO:nano-graphrag:Truncate 20 to 11 chunks
+The factors that contribute to a game maintaining player engagement and longevity based on the games nominated for Best Ongoing Game.
+Retrieved Text Segments {'YI1dXSw17Y8_341', 'YI1dXSw17Y8_340', 'YI1dXSw17Y8_342', 'YI1dXSw17Y8_339', 'YI1dXSw17Y8_343'}
+Output:
+Factors contributing to player engagement and longevity in games nominated for Best Ongoing Game.
+Retrieved Visual Segments {'YI1dXSw17Y8_195', 'h-WGw4BypDY_284', 'h-WGw4BypDY_285', 'YI1dXSw17Y8_98'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 9
+  - Entity检索: 5
+  - Visual检索: 4
+  - Causal检索: 0
+
+前5个片段ID示例:
+  1. YI1dXSw17Y8_98
+  2. YI1dXSw17Y8_195
+  3. YI1dXSw17Y8_339
+  4. YI1dXSw17Y8_340
+  5. YI1dXSw17Y8_341
+
+📊 video_segments._data 结构:
+  可用视频数量: 2
+  示例视频: YI1dXSw17Y8
+  该视频的片段索引数量: 381
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 9
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments7 Video Segments remain after filtering
+Remain segments ['YI1dXSw17Y8_98', 'YI1dXSw17Y8_195', 'YI1dXSw17Y8_339', 'YI1dXSw17Y8_341', 'YI1dXSw17Y8_342', 'h-WGw4BypDY_284', 'h-WGw4BypDY_285']
+Keywords: games, Best Ongoing Game, player engagement, longevity
+Captioning Segments for Given Query:   0%|          | 0/7 [00:00<?, ?it/s]Captioning Segments for Given Query:  14%|█▍        | 1/7 [00:42<04:17, 42.86s/it]Captioning Segments for Given Query:  29%|██▊       | 2/7 [01:22<03:25, 41.14s/it]Captioning Segments for Given Query:  43%|████▎     | 3/7 [01:56<02:30, 37.59s/it]Captioning Segments for Given Query:  57%|█████▋    | 4/7 [02:33<01:52, 37.51s/it]Captioning Segments for Given Query:  71%|███████▏  | 5/7 [03:04<01:09, 34.97s/it]Captioning Segments for Given Query:  86%|████████▌ | 6/7 [03:42<00:36, 36.30s/it]Captioning Segments for Given Query: 100%|██████████| 7/7 [04:18<00:00, 36.01s/it]Captioning Segments for Given Query: 100%|██████████| 7/7 [04:18<00:00, 36.90s/it]
+  [查询] 集合15 q8 causal_only: Based on the games nominated for Best On
+INFO:nano-graphrag:Truncate 20 to 11 chunks
+INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The factors that contribute to the games nominated for Best Ongoing Game maintaining player engagement and their longevity.
+INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
+INFO:nano-graphrag:[Causal Retrieval] 63 events after 2-hop bidirectional walk (from 20 seeds)
+INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 63 → 53 nodes (tau_dup=0.85)
+INFO:nano-graphrag:[Causal Retrieval] Retrieved 20 segments from 53 deduplicated events
+INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 53 events, 17082 chars
+Retrieved Causal Segments {'h-WGw4BypDY_385', 'h-WGw4BypDY_284', 'h-WGw4BypDY_128', 'YI1dXSw17Y8_2', 'h-WGw4BypDY_178', 'YI1dXSw17Y8_198', 'YI1dXSw17Y8_379', 'YI1dXSw17Y8_361', 'h-WGw4BypDY_285', 'h-WGw4BypDY_183', 'h-WGw4BypDY_330', 'YI1dXSw17Y8_181', 'YI1dXSw17Y8_99', 'YI1dXSw17Y8_98', 'h-WGw4BypDY_349', 'YI1dXSw17Y8_97', 'h-WGw4BypDY_47', 'h-WGw4BypDY_108', 'h-WGw4BypDY_268', 'h-WGw4BypDY_352'}
+
+Retrieved Text Segments set()
+Output:
+Factors contributing to player engagement and longevity in games nominated for Best Ongoing Game.
+Retrieved Visual Segments {'YI1dXSw17Y8_195', 'h-WGw4BypDY_284', 'h-WGw4BypDY_285', 'YI1dXSw17Y8_98'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 21
+  - Entity检索: 0
+  - Visual检索: 4
+  - Causal检索: 20
+
+前5个片段ID示例:
+  1. YI1dXSw17Y8_2
+  2. YI1dXSw17Y8_97
+  3. YI1dXSw17Y8_98
+  4. YI1dXSw17Y8_99
+  5. YI1dXSw17Y8_181
+
+📊 video_segments._data 结构:
+  可用视频数量: 2
+  示例视频: YI1dXSw17Y8
+  该视频的片段索引数量: 381
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 21
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments⠙ Checked 11 segments⠹ Checked 12 segments⠸ Checked 13 segments⠼ Checked 14 segments⠴ Checked 15 segments⠦ Checked 16 segments⠧ Checked 17 segments⠇ Checked 18 segments⠏ Checked 19 segments⠋ Checked 20 segments⠙ Checked 21 segments21 Video Segments remain after filtering
+Remain segments ['YI1dXSw17Y8_2', 'YI1dXSw17Y8_97', 'YI1dXSw17Y8_98', 'YI1dXSw17Y8_99', 'YI1dXSw17Y8_181', 'YI1dXSw17Y8_195', 'YI1dXSw17Y8_198', 'YI1dXSw17Y8_361', 'YI1dXSw17Y8_379', 'h-WGw4BypDY_47', 'h-WGw4BypDY_108', 'h-WGw4BypDY_128', 'h-WGw4BypDY_178', 'h-WGw4BypDY_183', 'h-WGw4BypDY_268', 'h-WGw4BypDY_284', 'h-WGw4BypDY_285', 'h-WGw4BypDY_330', 'h-WGw4BypDY_349', 'h-WGw4BypDY_352', 'h-WGw4BypDY_385']
+Keywords: games, nominated, Best Ongoing Game, player engagement, longevity
+Captioning Segments for Given Query:   0%|          | 0/21 [00:00<?, ?it/s]Captioning Segments for Given Query:   5%|▍         | 1/21 [00:38<12:57, 38.90s/it]Captioning Segments for Given Query:  10%|▉         | 2/21 [01:12<11:16, 35.63s/it]Captioning Segments for Given Query:  14%|█▍        | 3/21 [01:48<10:48, 36.04s/it]Captioning Segments for Given Query:  19%|█▉        | 4/21 [02:28<10:35, 37.37s/it]Captioning Segments for Given Query:  24%|██▍       | 5/21 [03:02<09:37, 36.10s/it]Captioning Segments for Given Query:  29%|██▊       | 6/21 [03:36<08:54, 35.64s/it]Captioning Segments for Given Query:  33%|███▎      | 7/21 [04:05<07:47, 33.38s/it]Captioning Segments for Given Query:  38%|███▊      | 8/21 [04:39<07:14, 33.44s/it]Captioning Segments for Given Query:  43%|████▎     | 9/21 [05:11<06:37, 33.12s/it]Captioning Segments for Given Query:  48%|████▊     | 10/21 [05:54<06:37, 36.17s/it]Captioning Segments for Given Query:  52%|█████▏    | 11/21 [06:40<06:31, 39.11s/it]Captioning Segments for Given Query:  57%|█████▋    | 12/21 [07:23<06:02, 40.29s/it]Captioning Segments for Given Query:  62%|██████▏   | 13/21 [08:02<05:20, 40.06s/it]Captioning Segments for Given Query:  67%|██████▋   | 14/21 [08:42<04:38, 39.82s/it]Captioning Segments for Given Query:  71%|███████▏  | 15/21 [09:18<03:53, 38.88s/it]Captioning Segments for Given Query:  76%|███████▌  | 16/21 [10:03<03:22, 40.53s/it]Captioning Segments for Given Query:  81%|████████  | 17/21 [10:35<02:31, 37.95s/it]Captioning Segments for Given Query:  86%|████████▌ | 18/21 [11:15<01:56, 38.77s/it]Captioning Segments for Given Query:  90%|█████████ | 19/21 [12:03<01:23, 41.60s/it]Captioning Segments for Given Query:  95%|█████████▌| 20/21 [12:41<00:40, 40.47s/it]Captioning Segments for Given Query: 100%|██████████| 21/21 [13:18<00:00, 39.44s/it]Captioning Segments for Given Query: 100%|██████████| 21/21 [13:18<00:00, 38.04s/it]
+  [查询] 集合15 q9 entity_only: What does the inclusion of a performance
+INFO:nano-graphrag:Truncate 20 to 12 chunks
+What does the inclusion of a performance inspired by 'Arcane' suggest about the connection between gaming and other media forms, such as television?
+Retrieved Text Segments {'h-WGw4BypDY_356', 'YI1dXSw17Y8_341', 'YI1dXSw17Y8_340', 'YI1dXSw17Y8_339', 'h-WGw4BypDY_355'}
+A video segment showing a performance inspired by 'Arcane' and its implications on the relationship between gaming and television.
+Retrieved Visual Segments {'h-WGw4BypDY_155', 'h-WGw4BypDY_266', 'h-WGw4BypDY_180', 'h-WGw4BypDY_168'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 9
+  - Entity检索: 5
+  - Visual检索: 4
+  - Causal检索: 0
+
+前5个片段ID示例:
+  1. YI1dXSw17Y8_339
+  2. YI1dXSw17Y8_340
+  3. YI1dXSw17Y8_341
+  4. h-WGw4BypDY_155
+  5. h-WGw4BypDY_168
+
+📊 video_segments._data 结构:
+  可用视频数量: 2
+  示例视频: YI1dXSw17Y8
+  该视频的片段索引数量: 381
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 9
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments5 Video Segments remain after filtering
+Remain segments ['YI1dXSw17Y8_339', 'h-WGw4BypDY_168', 'h-WGw4BypDY_180', 'h-WGw4BypDY_266', 'h-WGw4BypDY_356']
+Keywords: performance, Arcane, gaming, television, media, relationship
+Captioning Segments for Given Query:   0%|          | 0/5 [00:00<?, ?it/s]Captioning Segments for Given Query:  20%|██        | 1/5 [00:46<03:07, 46.89s/it]Captioning Segments for Given Query:  40%|████      | 2/5 [01:23<02:02, 40.91s/it]Captioning Segments for Given Query:  60%|██████    | 3/5 [01:58<01:16, 38.12s/it]Captioning Segments for Given Query:  80%|████████  | 4/5 [02:37<00:38, 38.69s/it]Captioning Segments for Given Query: 100%|██████████| 5/5 [03:13<00:00, 37.60s/it]Captioning Segments for Given Query: 100%|██████████| 5/5 [03:13<00:00, 38.73s/it]
+  [查询] 集合15 q9 causal_only: What does the inclusion of a performance
+INFO:nano-graphrag:Truncate 20 to 12 chunks
+INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The inclusion of a performance inspired by 'Arcane' and its implications for the relationship between gaming and television media.
+INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
+INFO:nano-graphrag:[Causal Retrieval] 51 events after 2-hop bidirectional walk (from 20 seeds)
+INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 51 → 45 nodes (tau_dup=0.85)
+INFO:nano-graphrag:[Causal Retrieval] Retrieved 18 segments from 45 deduplicated events
+INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 45 events, 14912 chars
+Retrieved Causal Segments {'h-WGw4BypDY_133', 'YI1dXSw17Y8_245', 'h-WGw4BypDY_337', 'h-WGw4BypDY_26', 'YI1dXSw17Y8_247', 'h-WGw4BypDY_269', 'h-WGw4BypDY_173', 'h-WGw4BypDY_256', 'YI1dXSw17Y8_110', 'h-WGw4BypDY_183', 'h-WGw4BypDY_190', 'h-WGw4BypDY_349', 'h-WGw4BypDY_2', 'YI1dXSw17Y8_213', 'YI1dXSw17Y8_107', 'h-WGw4BypDY_73', 'h-WGw4BypDY_24', 'h-WGw4BypDY_105'}
+
+Retrieved Text Segments set()
+A video segment showing a performance inspired by 'Arcane' and its implications on the relationship between gaming and television.
+Retrieved Visual Segments {'h-WGw4BypDY_155', 'h-WGw4BypDY_266', 'h-WGw4BypDY_180', 'h-WGw4BypDY_168'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 22
+  - Entity检索: 0
+  - Visual检索: 4
+  - Causal检索: 18
+
+前5个片段ID示例:
+  1. YI1dXSw17Y8_107
+  2. YI1dXSw17Y8_110
+  3. YI1dXSw17Y8_213
+  4. YI1dXSw17Y8_245
+  5. YI1dXSw17Y8_247
+
+📊 video_segments._data 结构:
+  可用视频数量: 2
+  示例视频: YI1dXSw17Y8
+  该视频的片段索引数量: 381
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 22
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments⠙ Checked 11 segments⠹ Checked 12 segments⠸ Checked 13 segments⠼ Checked 14 segments⠴ Checked 15 segments⠦ Checked 16 segments⠧ Checked 17 segments⠇ Checked 18 segments⠏ Checked 19 segments⠋ Checked 20 segments⠙ Checked 21 segments⠹ Checked 22 segments18 Video Segments remain after filtering
+Remain segments ['YI1dXSw17Y8_107', 'YI1dXSw17Y8_110', 'YI1dXSw17Y8_213', 'YI1dXSw17Y8_247', 'h-WGw4BypDY_24', 'h-WGw4BypDY_26', 'h-WGw4BypDY_73', 'h-WGw4BypDY_105', 'h-WGw4BypDY_133', 'h-WGw4BypDY_155', 'h-WGw4BypDY_168', 'h-WGw4BypDY_173', 'h-WGw4BypDY_180', 'h-WGw4BypDY_190', 'h-WGw4BypDY_256', 'h-WGw4BypDY_269', 'h-WGw4BypDY_337', 'h-WGw4BypDY_349']
+Keywords: performance, Arcane, gaming, television, media, relationship
+Captioning Segments for Given Query:   0%|          | 0/18 [00:00<?, ?it/s]Captioning Segments for Given Query:   6%|▌         | 1/18 [00:36<10:27, 36.90s/it]Captioning Segments for Given Query:  11%|█         | 2/18 [01:15<10:05, 37.87s/it]Captioning Segments for Given Query:  17%|█▋        | 3/18 [01:48<08:55, 35.72s/it]Captioning Segments for Given Query:  22%|██▏       | 4/18 [02:32<09:06, 39.06s/it]Captioning Segments for Given Query:  28%|██▊       | 5/18 [03:07<08:08, 37.60s/it]Captioning Segments for Given Query:  33%|███▎      | 6/18 [03:47<07:41, 38.44s/it]Captioning Segments for Given Query:  39%|███▉      | 7/18 [04:15<06:25, 35.01s/it]Captioning Segments for Given Query:  44%|████▍     | 8/18 [05:04<06:35, 39.51s/it]Captioning Segments for Given Query:  50%|█████     | 9/18 [05:51<06:15, 41.72s/it]Captioning Segments for Given Query:  56%|█████▌    | 10/18 [06:23<05:09, 38.63s/it]Captioning Segments for Given Query:  61%|██████    | 11/18 [06:58<04:22, 37.50s/it]Captioning Segments for Given Query:  67%|██████▋   | 12/18 [07:43<03:59, 39.92s/it]Captioning Segments for Given Query:  72%|███████▏  | 13/18 [08:18<03:12, 38.46s/it]Captioning Segments for Given Query:  78%|███████▊  | 14/18 [08:54<02:30, 37.68s/it]Captioning Segments for Given Query:  83%|████████▎ | 15/18 [09:28<01:49, 36.46s/it]Captioning Segments for Given Query:  89%|████████▉ | 16/18 [10:25<01:25, 42.73s/it]Captioning Segments for Given Query:  94%|█████████▍| 17/18 [11:02<00:41, 41.13s/it]Captioning Segments for Given Query: 100%|██████████| 18/18 [11:52<00:00, 43.56s/it]Captioning Segments for Given Query: 100%|██████████| 18/18 [11:52<00:00, 39.57s/it]
+  [查询] 集合15 q10 entity_only: How do the acceptance speeches of develo
+INFO:nano-graphrag:Truncate 20 to 13 chunks
+The acceptance speeches of developers like Nicolas Doucet, also known as 'Astrobot,' that highlight the collaborative nature of game development.
+Retrieved Text Segments {'YI1dXSw17Y8_341', 'YI1dXSw17Y8_340', 'YI1dXSw17Y8_342', 'YI1dXSw17Y8_339', 'YI1dXSw17Y8_343'}
+Output: Acceptance speeches of developers, such as Nicolas Doucet ('Astrobot'), highlighting collaboration in game development.
+Retrieved Visual Segments {'h-WGw4BypDY_376', 'h-WGw4BypDY_153', 'h-WGw4BypDY_157', 'h-WGw4BypDY_168'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 9
+  - Entity检索: 5
+  - Visual检索: 4
+  - Causal检索: 0
+
+前5个片段ID示例:
+  1. YI1dXSw17Y8_339
+  2. YI1dXSw17Y8_340
+  3. YI1dXSw17Y8_341
+  4. YI1dXSw17Y8_342
+  5. YI1dXSw17Y8_343
+
+📊 video_segments._data 结构:
+  可用视频数量: 2
+  示例视频: YI1dXSw17Y8
+  该视频的片段索引数量: 381
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 9
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments4 Video Segments remain after filtering
+Remain segments ['YI1dXSw17Y8_339', 'YI1dXSw17Y8_343', 'h-WGw4BypDY_157', 'h-WGw4BypDY_376']
+Keywords: acceptance speeches, developers, Nicolas Doucet, Astrobot, collaborative nature, game development
+Captioning Segments for Given Query:   0%|          | 0/4 [00:00<?, ?it/s]Captioning Segments for Given Query:  25%|██▌       | 1/4 [00:52<02:38, 52.83s/it]Captioning Segments for Given Query:  50%|█████     | 2/4 [01:29<01:27, 43.54s/it]Captioning Segments for Given Query:  75%|███████▌  | 3/4 [02:06<00:40, 40.20s/it]Captioning Segments for Given Query: 100%|██████████| 4/4 [02:36<00:00, 36.50s/it]Captioning Segments for Given Query: 100%|██████████| 4/4 [02:36<00:00, 39.23s/it]
+  [查询] 集合15 q10 causal_only: How do the acceptance speeches of develo
+INFO:nano-graphrag:Truncate 20 to 13 chunks
+INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The acceptance speeches of developers such as Nicolas Doucet ('Astrobot') and their emphasis on collaboration illustrate the cooperative nature of game development.
+INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
+INFO:nano-graphrag:[Causal Retrieval] 55 events after 2-hop bidirectional walk (from 20 seeds)
+INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 55 → 45 nodes (tau_dup=0.85)
+INFO:nano-graphrag:[Causal Retrieval] Retrieved 16 segments from 45 deduplicated events
+INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 45 events, 15907 chars
+Retrieved Causal Segments {'YI1dXSw17Y8_29', 'h-WGw4BypDY_243', 'h-WGw4BypDY_362', 'YI1dXSw17Y8_15', 'h-WGw4BypDY_44', 'YI1dXSw17Y8_135', 'YI1dXSw17Y8_161', 'YI1dXSw17Y8_292', 'h-WGw4BypDY_404', 'YI1dXSw17Y8_318', 'YI1dXSw17Y8_75', 'YI1dXSw17Y8_131', 'YI1dXSw17Y8_256', 'YI1dXSw17Y8_81', 'h-WGw4BypDY_157', 'YI1dXSw17Y8_16'}
+
+Retrieved Text Segments set()
+Output: Acceptance speeches of developers, such as Nicolas Doucet ('Astrobot'), highlighting collaboration in game development.
+Retrieved Visual Segments {'h-WGw4BypDY_376', 'h-WGw4BypDY_153', 'h-WGw4BypDY_157', 'h-WGw4BypDY_168'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 19
+  - Entity检索: 0
+  - Visual检索: 4
+  - Causal检索: 16
+
+前5个片段ID示例:
+  1. YI1dXSw17Y8_15
+  2. YI1dXSw17Y8_16
+  3. YI1dXSw17Y8_29
+  4. YI1dXSw17Y8_75
+  5. YI1dXSw17Y8_81
+
+📊 video_segments._data 结构:
+  可用视频数量: 2
+  示例视频: YI1dXSw17Y8
+  该视频的片段索引数量: 381
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 19
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments⠙ Checked 11 segments⠹ Checked 12 segments⠸ Checked 13 segments⠼ Checked 14 segments⠴ Checked 15 segments⠦ Checked 16 segments⠧ Checked 17 segments⠇ Checked 18 segments⠏ Checked 19 segments13 Video Segments remain after filtering
+Remain segments ['YI1dXSw17Y8_15', 'YI1dXSw17Y8_29', 'YI1dXSw17Y8_81', 'YI1dXSw17Y8_131', 'YI1dXSw17Y8_135', 'YI1dXSw17Y8_256', 'YI1dXSw17Y8_292', 'YI1dXSw17Y8_318', 'h-WGw4BypDY_44', 'h-WGw4BypDY_157', 'h-WGw4BypDY_243', 'h-WGw4BypDY_376', 'h-WGw4BypDY_404']
+Keywords: acceptance speeches, developers, Nicolas Doucet, Astrobot, collaborative nature, game development
+Captioning Segments for Given Query:   0%|          | 0/13 [00:00<?, ?it/s]Captioning Segments for Given Query:   8%|▊         | 1/13 [00:31<06:23, 31.92s/it]Captioning Segments for Given Query:  15%|█▌        | 2/13 [01:15<07:04, 38.57s/it]Captioning Segments for Given Query:  23%|██▎       | 3/13 [01:52<06:21, 38.19s/it]Captioning Segments for Given Query:  31%|███       | 4/13 [02:34<05:57, 39.67s/it]Captioning Segments for Given Query:  38%|███▊      | 5/13 [03:11<05:09, 38.63s/it]Captioning Segments for Given Query:  46%|████▌     | 6/13 [03:45<04:19, 37.12s/it]Captioning Segments for Given Query:  54%|█████▍    | 7/13 [04:29<03:56, 39.37s/it]Captioning Segments for Given Query:  62%|██████▏   | 8/13 [05:15<03:26, 41.27s/it]Captioning Segments for Given Query:  69%|██████▉   | 9/13 [05:46<02:32, 38.10s/it]Captioning Segments for Given Query:  77%|███████▋  | 10/13 [06:28<01:57, 39.27s/it]Captioning Segments for Given Query:  85%|████████▍ | 11/13 [07:06<01:17, 38.92s/it]Captioning Segments for Given Query:  92%|█████████▏| 12/13 [07:50<00:40, 40.50s/it]Captioning Segments for Given Query: 100%|██████████| 13/13 [08:33<00:00, 41.32s/it]Captioning Segments for Given Query: 100%|██████████| 13/13 [08:33<00:00, 39.51s/it]
+  [查询] 集合15 q11 entity_only: Judging from the trailers and announceme
+INFO:nano-graphrag:Truncate 20 to 12 chunks
+Upcoming games that are likely to generate significant discussion or anticipation among players, judging from the trailers and announcements.
+Retrieved Text Segments {'YI1dXSw17Y8_341', 'YI1dXSw17Y8_340', 'YI1dXSw17Y8_342', 'YI1dXSw17Y8_339', 'YI1dXSw17Y8_343'}
+Upcoming games likely to generate significant discussion or anticipation among players based on trailers and announcements.
+Retrieved Visual Segments {'YI1dXSw17Y8_68', 'YI1dXSw17Y8_106', 'YI1dXSw17Y8_138', 'YI1dXSw17Y8_105'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 9
+  - Entity检索: 5
+  - Visual检索: 4
+  - Causal检索: 0
+
+前5个片段ID示例:
+  1. YI1dXSw17Y8_68
+  2. YI1dXSw17Y8_105
+  3. YI1dXSw17Y8_106
+  4. YI1dXSw17Y8_138
+  5. YI1dXSw17Y8_339
+
+📊 video_segments._data 结构:
+  可用视频数量: 2
+  示例视频: YI1dXSw17Y8
+  该视频的片段索引数量: 381
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 9
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments9 Video Segments remain after filtering
+Remain segments ['YI1dXSw17Y8_68', 'YI1dXSw17Y8_105', 'YI1dXSw17Y8_106', 'YI1dXSw17Y8_138', 'YI1dXSw17Y8_339', 'YI1dXSw17Y8_340', 'YI1dXSw17Y8_341', 'YI1dXSw17Y8_342', 'YI1dXSw17Y8_343']
+Keywords: upcoming games, trailers, announcements, discussion, anticipation, players
+Captioning Segments for Given Query:   0%|          | 0/9 [00:00<?, ?it/s]Captioning Segments for Given Query:  11%|█         | 1/9 [00:44<05:54, 44.37s/it]Captioning Segments for Given Query:  22%|██▏       | 2/9 [01:27<05:06, 43.82s/it]Captioning Segments for Given Query:  33%|███▎      | 3/9 [02:09<04:16, 42.74s/it]Captioning Segments for Given Query:  44%|████▍     | 4/9 [02:53<03:35, 43.18s/it]Captioning Segments for Given Query:  56%|█████▌    | 5/9 [03:37<02:54, 43.56s/it]Captioning Segments for Given Query:  67%|██████▋   | 6/9 [04:21<02:11, 43.71s/it]Captioning Segments for Given Query:  78%|███████▊  | 7/9 [04:59<01:23, 41.78s/it]Captioning Segments for Given Query:  89%|████████▉ | 8/9 [05:27<00:37, 37.54s/it]Captioning Segments for Given Query: 100%|██████████| 9/9 [06:01<00:00, 36.39s/it]Captioning Segments for Given Query: 100%|██████████| 9/9 [06:01<00:00, 40.16s/it]
+  [查询] 集合15 q11 causal_only: Judging from the trailers and announceme
+INFO:nano-graphrag:Truncate 20 to 12 chunks
+INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The trailers and announcements that are likely to cause significant discussion or anticipation among players for upcoming games.
+INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
+INFO:nano-graphrag:[Causal Retrieval] 57 events after 2-hop bidirectional walk (from 20 seeds)
+INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 57 → 54 nodes (tau_dup=0.85)
+INFO:nano-graphrag:[Causal Retrieval] Retrieved 18 segments from 54 deduplicated events
+INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 54 events, 18600 chars
+Retrieved Causal Segments {'h-WGw4BypDY_289', 'h-WGw4BypDY_144', 'h-WGw4BypDY_244', 'h-WGw4BypDY_26', 'YI1dXSw17Y8_97', 'h-WGw4BypDY_344', 'YI1dXSw17Y8_372', 'h-WGw4BypDY_226', 'h-WGw4BypDY_127', 'h-WGw4BypDY_132', 'YI1dXSw17Y8_157', 'h-WGw4BypDY_37', 'YI1dXSw17Y8_87', 'h-WGw4BypDY_386', 'YI1dXSw17Y8_118', 'h-WGw4BypDY_101', 'YI1dXSw17Y8_98', 'h-WGw4BypDY_104'}
+
+Retrieved Text Segments set()
+Upcoming games likely to generate significant discussion or anticipation among players based on trailers and announcements.
+Retrieved Visual Segments {'YI1dXSw17Y8_68', 'YI1dXSw17Y8_106', 'YI1dXSw17Y8_138', 'YI1dXSw17Y8_105'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 22
+  - Entity检索: 0
+  - Visual检索: 4
+  - Causal检索: 18
+
+前5个片段ID示例:
+  1. YI1dXSw17Y8_68
+  2. YI1dXSw17Y8_87
+  3. YI1dXSw17Y8_97
+  4. YI1dXSw17Y8_98
+  5. YI1dXSw17Y8_105
+
+📊 video_segments._data 结构:
+  可用视频数量: 2
+  示例视频: YI1dXSw17Y8
+  该视频的片段索引数量: 381
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 22
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments⠙ Checked 11 segments⠹ Checked 12 segments⠸ Checked 13 segments⠼ Checked 14 segments⠴ Checked 15 segments⠦ Checked 16 segments⠧ Checked 17 segments⠇ Checked 18 segments⠏ Checked 19 segments⠋ Checked 20 segments⠙ Checked 21 segments⠹ Checked 22 segments22 Video Segments remain after filtering
+Remain segments ['YI1dXSw17Y8_68', 'YI1dXSw17Y8_87', 'YI1dXSw17Y8_97', 'YI1dXSw17Y8_98', 'YI1dXSw17Y8_105', 'YI1dXSw17Y8_106', 'YI1dXSw17Y8_118', 'YI1dXSw17Y8_138', 'YI1dXSw17Y8_157', 'YI1dXSw17Y8_372', 'h-WGw4BypDY_26', 'h-WGw4BypDY_37', 'h-WGw4BypDY_101', 'h-WGw4BypDY_104', 'h-WGw4BypDY_127', 'h-WGw4BypDY_132', 'h-WGw4BypDY_144', 'h-WGw4BypDY_226', 'h-WGw4BypDY_244', 'h-WGw4BypDY_289', 'h-WGw4BypDY_344', 'h-WGw4BypDY_386']
+Keywords: upcoming games, trailers, announcements, discussion, anticipation, players
+Captioning Segments for Given Query:   0%|          | 0/22 [00:00<?, ?it/s]Captioning Segments for Given Query:   5%|▍         | 1/22 [00:41<14:32, 41.56s/it]Captioning Segments for Given Query:   9%|▉         | 2/22 [01:17<12:48, 38.41s/it]Captioning Segments for Given Query:  14%|█▎        | 3/22 [01:53<11:45, 37.15s/it]Captioning Segments for Given Query:  18%|█▊        | 4/22 [02:33<11:27, 38.22s/it]Captioning Segments for Given Query:  23%|██▎       | 5/22 [03:14<11:06, 39.21s/it]Captioning Segments for Given Query:  27%|██▋       | 6/22 [03:54<10:32, 39.51s/it]Captioning Segments for Given Query:  32%|███▏      | 7/22 [04:35<10:00, 40.03s/it]Captioning Segments for Given Query:  36%|███▋      | 8/22 [05:08<08:49, 37.80s/it]Captioning Segments for Given Query:  41%|████      | 9/22 [05:45<08:09, 37.66s/it]Captioning Segments for Given Query:  45%|████▌     | 10/22 [06:22<07:29, 37.44s/it]Captioning Segments for Given Query:  50%|█████     | 11/22 [06:59<06:48, 37.12s/it]Captioning Segments for Given Query:  55%|█████▍    | 12/22 [07:46<06:43, 40.37s/it]Captioning Segments for Given Query:  59%|█████▉    | 13/22 [08:31<06:15, 41.74s/it]Captioning Segments for Given Query:  64%|██████▎   | 14/22 [09:10<05:26, 40.87s/it]Captioning Segments for Given Query:  68%|██████▊   | 15/22 [09:48<04:40, 40.02s/it]Captioning Segments for Given Query:  73%|███████▎  | 16/22 [10:25<03:53, 38.98s/it]Captioning Segments for Given Query:  77%|███████▋  | 17/22 [11:04<03:15, 39.02s/it]Captioning Segments for Given Query:  82%|████████▏ | 18/22 [11:44<02:37, 39.29s/it]Captioning Segments for Given Query:  86%|████████▋ | 19/22 [12:24<01:58, 39.47s/it]Captioning Segments for Given Query:  91%|█████████ | 20/22 [12:56<01:14, 37.18s/it]Captioning Segments for Given Query:  95%|█████████▌| 21/22 [13:29<00:36, 36.18s/it]Captioning Segments for Given Query: 100%|██████████| 22/22 [14:10<00:00, 37.62s/it]Captioning Segments for Given Query: 100%|██████████| 22/22 [14:10<00:00, 38.68s/it]
+  [查询] 集合15 q12 entity_only: Based on the comments made by developers
+INFO:nano-graphrag:Truncate 20 to 12 chunks
+How do accessibility features factor into the design philosophy of modern games based on comments made by developers?
+Retrieved Text Segments {'YI1dXSw17Y8_341', 'YI1dXSw17Y8_340', 'YI1dXSw17Y8_342', 'YI1dXSw17Y8_339', 'YI1dXSw17Y8_343'}
+The output for the given question does not fit the pattern of generating a declarative sentence to describe a video segment, as the question asks for an analysis based on developer comments regarding game design philosophy and accessibility features. However, sticking strictly to the format requested:
+
+Output:
+Developers discussing accessibility features in modern game design.
+Retrieved Visual Segments {'YI1dXSw17Y8_367', 'YI1dXSw17Y8_369', 'YI1dXSw17Y8_368', 'YI1dXSw17Y8_354'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 9
+  - Entity检索: 5
+  - Visual检索: 4
+  - Causal检索: 0
+
+前5个片段ID示例:
+  1. YI1dXSw17Y8_339
+  2. YI1dXSw17Y8_340
+  3. YI1dXSw17Y8_341
+  4. YI1dXSw17Y8_342
+  5. YI1dXSw17Y8_343
+
+📊 video_segments._data 结构:
+  可用视频数量: 2
+  示例视频: YI1dXSw17Y8
+  该视频的片段索引数量: 381
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 9
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments0 Video Segments remain after filtering
+Since no segments remain after filtering, we utilized all the retrieved segments.
+Remain segments ['YI1dXSw17Y8_339', 'YI1dXSw17Y8_340', 'YI1dXSw17Y8_341', 'YI1dXSw17Y8_342', 'YI1dXSw17Y8_343', 'YI1dXSw17Y8_354', 'YI1dXSw17Y8_367', 'YI1dXSw17Y8_368', 'YI1dXSw17Y8_369']
+Keywords: accessibility features, design philosophy, modern games, comments, developers
+Captioning Segments for Given Query:   0%|          | 0/9 [00:00<?, ?it/s]Captioning Segments for Given Query:  11%|█         | 1/9 [00:38<05:08, 38.53s/it]Captioning Segments for Given Query:  22%|██▏       | 2/9 [01:28<05:17, 45.31s/it]Captioning Segments for Given Query:  33%|███▎      | 3/9 [02:11<04:24, 44.09s/it]Captioning Segments for Given Query:  44%|████▍     | 4/9 [02:48<03:27, 41.58s/it]Captioning Segments for Given Query:  56%|█████▌    | 5/9 [03:35<02:54, 43.53s/it]Captioning Segments for Given Query:  67%|██████▋   | 6/9 [04:06<01:56, 38.96s/it]Captioning Segments for Given Query:  78%|███████▊  | 7/9 [04:57<01:26, 43.14s/it]Captioning Segments for Given Query:  89%|████████▉ | 8/9 [05:25<00:38, 38.13s/it]Captioning Segments for Given Query: 100%|██████████| 9/9 [06:02<00:00, 37.76s/it]Captioning Segments for Given Query: 100%|██████████| 9/9 [06:02<00:00, 40.24s/it]
+  [查询] 集合15 q12 causal_only: Based on the comments made by developers
+INFO:nano-graphrag:Truncate 20 to 12 chunks
+INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The influence of accessibility features on the design philosophy of modern games as indicated by developers' comments.
+INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
+INFO:nano-graphrag:[Causal Retrieval] 41 events after 2-hop bidirectional walk (from 20 seeds)
+INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 41 → 36 nodes (tau_dup=0.85)
+INFO:nano-graphrag:[Causal Retrieval] Retrieved 17 segments from 36 deduplicated events
+INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 36 events, 10839 chars
+Retrieved Causal Segments {'YI1dXSw17Y8_361', 'h-WGw4BypDY_88', 'YI1dXSw17Y8_372', 'h-WGw4BypDY_385', 'YI1dXSw17Y8_357', 'h-WGw4BypDY_44', 'h-WGw4BypDY_128', 'h-WGw4BypDY_378', 'h-WGw4BypDY_56', 'h-WGw4BypDY_319', 'YI1dXSw17Y8_124', 'h-WGw4BypDY_349', 'YI1dXSw17Y8_368', 'YI1dXSw17Y8_159', 'YI1dXSw17Y8_58', 'YI1dXSw17Y8_191', 'YI1dXSw17Y8_16'}
+
+Retrieved Text Segments set()
+The output for the given question does not fit the pattern of generating a declarative sentence to serve as a query for retrieving video segments. Instead, it seems to be asking for an analysis or summary based on developer comments regarding game accessibility features. However, if we were to adapt this to the original task of creating a video segment retrieval query, it might look something like this:
+
+Output:
+Video segments where developers discuss accessibility features in modern game design.
+Retrieved Visual Segments {'YI1dXSw17Y8_177', 'YI1dXSw17Y8_203', 'YI1dXSw17Y8_215', 'YI1dXSw17Y8_118'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 21
+  - Entity检索: 0
+  - Visual检索: 4
+  - Causal检索: 17
+
+前5个片段ID示例:
+  1. YI1dXSw17Y8_16
+  2. YI1dXSw17Y8_58
+  3. YI1dXSw17Y8_118
+  4. YI1dXSw17Y8_124
+  5. YI1dXSw17Y8_159
+
+📊 video_segments._data 结构:
+  可用视频数量: 2
+  示例视频: YI1dXSw17Y8
+  该视频的片段索引数量: 381
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 21
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments⠙ Checked 11 segments⠹ Checked 12 segments⠸ Checked 13 segments⠼ Checked 14 segments⠴ Checked 15 segments⠦ Checked 16 segments⠧ Checked 17 segments⠇ Checked 18 segments⠏ Checked 19 segments⠋ Checked 20 segments⠙ Checked 21 segments4 Video Segments remain after filtering
+Remain segments ['YI1dXSw17Y8_58', 'YI1dXSw17Y8_191', 'YI1dXSw17Y8_361', 'h-WGw4BypDY_44']
+Keywords: accessibility features, design philosophy, modern games, comments, developers
+Captioning Segments for Given Query:   0%|          | 0/4 [00:00<?, ?it/s]Captioning Segments for Given Query:  25%|██▌       | 1/4 [00:39<01:57, 39.30s/it]Captioning Segments for Given Query:  50%|█████     | 2/4 [01:19<01:19, 39.78s/it]Captioning Segments for Given Query:  75%|███████▌  | 3/4 [01:51<00:36, 36.49s/it]Captioning Segments for Given Query: 100%|██████████| 4/4 [02:23<00:00, 34.55s/it]Captioning Segments for Given Query: 100%|██████████| 4/4 [02:23<00:00, 35.90s/it]
+  [查询] 集合15 q13 entity_only: Does the success of games like 'Batro' s
+INFO:nano-graphrag:Truncate 20 to 12 chunks
+Does the success of games like 'Batro' indicate the changing role and influence of indie game developers in the gaming industry?
+Retrieved Text Segments {'h-WGw4BypDY_151', 'YI1dXSw17Y8_158', 'YI1dXSw17Y8_159', 'h-WGw4BypDY_150', 'YI1dXSw17Y8_160'}
+Output:
+The impact of successful indie games like 'Batro' on the evolving role of indie game developers in the gaming industry. 
+
+Note: Since the original instruction asks for a declarative sentence to serve as a query for retrieving relevant video segments, and the provided question doesn't seem to fit a typical video segment retrieval context (it's more of a discussion/query about the gaming industry), I've adjusted the output to reflect a scenario where a video discussing these aspects might exist. However, if strictly adhering to the format of previous examples, this question might not have a direct equivalent since it's more analytical than descriptive of a scene.
+Retrieved Visual Segments {'YI1dXSw17Y8_177', 'YI1dXSw17Y8_203', 'YI1dXSw17Y8_215', 'YI1dXSw17Y8_118'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 9
+  - Entity检索: 5
+  - Visual检索: 4
+  - Causal检索: 0
+
+前5个片段ID示例:
+  1. YI1dXSw17Y8_118
+  2. YI1dXSw17Y8_158
+  3. YI1dXSw17Y8_159
+  4. YI1dXSw17Y8_160
+  5. YI1dXSw17Y8_177
+
+📊 video_segments._data 结构:
+  可用视频数量: 2
+  示例视频: YI1dXSw17Y8
+  该视频的片段索引数量: 381
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 9
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments5 Video Segments remain after filtering
+Remain segments ['YI1dXSw17Y8_158', 'YI1dXSw17Y8_159', 'YI1dXSw17Y8_215', 'h-WGw4BypDY_150', 'h-WGw4BypDY_151']
+Keywords: success, games, Batro, light, evolving, role, impact, indie game developers, gaming industry
+Captioning Segments for Given Query:   0%|          | 0/5 [00:00<?, ?it/s]Captioning Segments for Given Query:  20%|██        | 1/5 [00:43<02:53, 43.26s/it]Captioning Segments for Given Query:  40%|████      | 2/5 [01:21<02:01, 40.38s/it]Captioning Segments for Given Query:  60%|██████    | 3/5 [02:05<01:23, 41.94s/it]Captioning Segments for Given Query:  80%|████████  | 4/5 [02:51<00:43, 43.38s/it]Captioning Segments for Given Query: 100%|██████████| 5/5 [03:39<00:00, 45.38s/it]Captioning Segments for Given Query: 100%|██████████| 5/5 [03:39<00:00, 43.99s/it]
+  [查询] 集合15 q13 causal_only: Does the success of games like 'Batro' s
+INFO:nano-graphrag:Truncate 20 to 12 chunks
+INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The success of games like 'Batro' and their influence on the evolving role and impact of indie game developers within the gaming industry.
+INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
+INFO:nano-graphrag:[Causal Retrieval] 47 events after 2-hop bidirectional walk (from 20 seeds)
+INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 47 → 41 nodes (tau_dup=0.85)
+INFO:nano-graphrag:[Causal Retrieval] Retrieved 13 segments from 41 deduplicated events
+INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 41 events, 14513 chars
+Retrieved Causal Segments {'YI1dXSw17Y8_367', 'h-WGw4BypDY_243', 'YI1dXSw17Y8_16', 'YI1dXSw17Y8_15', 'h-WGw4BypDY_240', 'h-WGw4BypDY_150', 'YI1dXSw17Y8_161', 'YI1dXSw17Y8_131', 'h-WGw4BypDY_158', 'YI1dXSw17Y8_159', 'h-WGw4BypDY_157', 'h-WGw4BypDY_61', 'YI1dXSw17Y8_81'}
+
+Retrieved Text Segments set()
+Output:
+The impact of successful indie games like 'Batro' on the gaming industry and the role of indie game developers.
+Retrieved Visual Segments {'YI1dXSw17Y8_361', 'h-WGw4BypDY_31', 'YI1dXSw17Y8_360', 'YI1dXSw17Y8_158'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 17
+  - Entity检索: 0
+  - Visual检索: 4
+  - Causal检索: 13
+
+前5个片段ID示例:
+  1. YI1dXSw17Y8_15
+  2. YI1dXSw17Y8_16
+  3. YI1dXSw17Y8_81
+  4. YI1dXSw17Y8_131
+  5. YI1dXSw17Y8_158
+
+📊 video_segments._data 结构:
+  可用视频数量: 2
+  示例视频: YI1dXSw17Y8
+  该视频的片段索引数量: 381
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 17
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments⠙ Checked 11 segments⠹ Checked 12 segments⠸ Checked 13 segments⠼ Checked 14 segments⠴ Checked 15 segments⠦ Checked 16 segments⠧ Checked 17 segments14 Video Segments remain after filtering
+Remain segments ['YI1dXSw17Y8_15', 'YI1dXSw17Y8_16', 'YI1dXSw17Y8_81', 'YI1dXSw17Y8_131', 'YI1dXSw17Y8_158', 'YI1dXSw17Y8_159', 'YI1dXSw17Y8_161', 'YI1dXSw17Y8_361', 'YI1dXSw17Y8_367', 'h-WGw4BypDY_61', 'h-WGw4BypDY_157', 'h-WGw4BypDY_158', 'h-WGw4BypDY_240', 'h-WGw4BypDY_243']
+Keywords: success, games, Batro, light, evolving, role, impact, indie game developers, gaming industry
+Captioning Segments for Given Query:   0%|          | 0/14 [00:00<?, ?it/s]Captioning Segments for Given Query:   7%|▋         | 1/14 [00:33<07:11, 33.20s/it]Captioning Segments for Given Query:  14%|█▍        | 2/14 [01:08<06:53, 34.46s/it]Captioning Segments for Given Query:  21%|██▏       | 3/14 [01:36<05:44, 31.28s/it]Captioning Segments for Given Query:  29%|██▊       | 4/14 [02:11<05:27, 32.75s/it]Captioning Segments for Given Query:  36%|███▌      | 5/14 [03:05<06:05, 40.57s/it]Captioning Segments for Given Query:  43%|████▎     | 6/14 [03:42<05:14, 39.28s/it]Captioning Segments for Given Query:  50%|█████     | 7/14 [04:14<04:19, 37.07s/it]Captioning Segments for Given Query:  57%|█████▋    | 8/14 [04:49<03:38, 36.33s/it]Captioning Segments for Given Query:  64%|██████▍   | 9/14 [05:30<03:09, 37.81s/it]Captioning Segments for Given Query:  71%|███████▏  | 10/14 [06:14<02:38, 39.67s/it]Captioning Segments for Given Query:  79%|███████▊  | 11/14 [06:52<01:57, 39.15s/it]Captioning Segments for Given Query:  86%|████████▌ | 12/14 [07:29<01:17, 38.56s/it]Captioning Segments for Given Query:  93%|█████████▎| 13/14 [08:12<00:39, 39.94s/it]Captioning Segments for Given Query: 100%|██████████| 14/14 [08:55<00:00, 40.69s/it]Captioning Segments for Given Query: 100%|██████████| 14/14 [08:55<00:00, 38.23s/it]
+  [查询] 集合15 q14 entity_only: Given the emphasis on online connectivit
+INFO:nano-graphrag:Truncate 20 to 12 chunks
+The role of community in shaping the gaming landscape, given the emphasis on online connectivity and multiplayer experiences.
+Retrieved Text Segments {'YI1dXSw17Y8_88', 'h-WGw4BypDY_138', 'YI1dXSw17Y8_87', 'h-WGw4BypDY_137'}
+The output for the given question should focus on identifying video content related to the role of community in shaping the gaming landscape, especially in the context of online connectivity and multiplayer experiences. However, since the original examples were phrased to request visual content from scenes within a video or movie, and the provided question doesn't specify a particular scene or visual element, we can adjust it to fit the pattern while acknowledging the nature of the question might not directly translate into a typical scene query.
+
+Given the format and the need to adhere strictly to the example pattern, let's rephrase the question into a more scene-like context, even though it might stretch the typical usage:
+
+Output:
+A segment discussing how community impacts the gaming experience in online and multiplayer settings.
+Retrieved Visual Segments {'YI1dXSw17Y8_177', 'YI1dXSw17Y8_203', 'YI1dXSw17Y8_215', 'YI1dXSw17Y8_118'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 8
+  - Entity检索: 4
+  - Visual检索: 4
+  - Causal检索: 0
+
+前5个片段ID示例:
+  1. YI1dXSw17Y8_87
+  2. YI1dXSw17Y8_88
+  3. YI1dXSw17Y8_118
+  4. YI1dXSw17Y8_177
+  5. YI1dXSw17Y8_203
+
+📊 video_segments._data 结构:
+  可用视频数量: 2
+  示例视频: YI1dXSw17Y8
+  该视频的片段索引数量: 381
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 8
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments6 Video Segments remain after filtering
+Remain segments ['YI1dXSw17Y8_88', 'YI1dXSw17Y8_118', 'YI1dXSw17Y8_177', 'YI1dXSw17Y8_203', 'h-WGw4BypDY_137', 'h-WGw4BypDY_138']
+Keywords: online connectivity, multiplayer, community, gaming landscape, shaping
+Captioning Segments for Given Query:   0%|          | 0/6 [00:00<?, ?it/s]Captioning Segments for Given Query:  17%|█▋        | 1/6 [00:56<04:43, 56.64s/it]Captioning Segments for Given Query:  33%|███▎      | 2/6 [01:35<03:04, 46.17s/it]Captioning Segments for Given Query:  50%|█████     | 3/6 [02:12<02:06, 42.11s/it]Captioning Segments for Given Query:  67%|██████▋   | 4/6 [02:50<01:20, 40.31s/it]Captioning Segments for Given Query:  83%|████████▎ | 5/6 [03:31<00:40, 40.76s/it]Captioning Segments for Given Query: 100%|██████████| 6/6 [04:17<00:00, 42.51s/it]Captioning Segments for Given Query: 100%|██████████| 6/6 [04:17<00:00, 42.96s/it]
+  [查询] 集合15 q14 causal_only: Given the emphasis on online connectivit
+INFO:nano-graphrag:Truncate 20 to 12 chunks
+INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The emphasis on online connectivity and multiplayer experiences and their impact on the role of community in shaping the gaming landscape.
+INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
+INFO:nano-graphrag:[Causal Retrieval] 58 events after 2-hop bidirectional walk (from 20 seeds)
+INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 58 → 54 nodes (tau_dup=0.85)
+INFO:nano-graphrag:[Causal Retrieval] Retrieved 18 segments from 54 deduplicated events
+INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 54 events, 20405 chars
+Retrieved Causal Segments {'YI1dXSw17Y8_367', 'h-WGw4BypDY_385', 'YI1dXSw17Y8_15', 'h-WGw4BypDY_173', 'h-WGw4BypDY_128', 'YI1dXSw17Y8_357', 'h-WGw4BypDY_412', 'h-WGw4BypDY_8', 'h-WGw4BypDY_183', 'h-WGw4BypDY_319', 'h-WGw4BypDY_349', 'YI1dXSw17Y8_131', 'h-WGw4BypDY_130', 'YI1dXSw17Y8_248', 'YI1dXSw17Y8_191', 'h-WGw4BypDY_321', 'h-WGw4BypDY_61', 'h-WGw4BypDY_145'}
+
+Retrieved Text Segments set()
+The output for the given question does not fit the pattern of generating a sentence to retrieve relevant video segments, since the question is about understanding the role of community in the gaming landscape rather than asking for a visual scene from a video. However, if we were to adapt this to fit the requested format, it might look something like:
+
+Output:
+A segment showing how community interaction shapes the gaming experience.
+
+This sentence aims to capture a video clip that could illustrate the impact of community on the gaming landscape, though it's somewhat abstract and would require a more specific context or example for precise retrieval.
+Retrieved Visual Segments {'YI1dXSw17Y8_177', 'YI1dXSw17Y8_203', 'YI1dXSw17Y8_215', 'YI1dXSw17Y8_118'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 22
+  - Entity检索: 0
+  - Visual检索: 4
+  - Causal检索: 18
+
+前5个片段ID示例:
+  1. YI1dXSw17Y8_15
+  2. YI1dXSw17Y8_118
+  3. YI1dXSw17Y8_131
+  4. YI1dXSw17Y8_177
+  5. YI1dXSw17Y8_191
+
+📊 video_segments._data 结构:
+  可用视频数量: 2
+  示例视频: YI1dXSw17Y8
+  该视频的片段索引数量: 381
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 22
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments⠙ Checked 11 segments⠹ Checked 12 segments⠸ Checked 13 segments⠼ Checked 14 segments⠴ Checked 15 segments⠦ Checked 16 segments⠧ Checked 17 segments⠇ Checked 18 segments⠏ Checked 19 segments⠋ Checked 20 segments⠙ Checked 21 segments⠹ Checked 22 segments19 Video Segments remain after filtering
+Remain segments ['YI1dXSw17Y8_15', 'YI1dXSw17Y8_118', 'YI1dXSw17Y8_131', 'YI1dXSw17Y8_177', 'YI1dXSw17Y8_191', 'YI1dXSw17Y8_248', 'YI1dXSw17Y8_357', 'YI1dXSw17Y8_367', 'h-WGw4BypDY_8', 'h-WGw4BypDY_61', 'h-WGw4BypDY_128', 'h-WGw4BypDY_130', 'h-WGw4BypDY_173', 'h-WGw4BypDY_183', 'h-WGw4BypDY_319', 'h-WGw4BypDY_321', 'h-WGw4BypDY_349', 'h-WGw4BypDY_385', 'h-WGw4BypDY_412']
+Keywords: online connectivity, multiplayer, community, gaming landscape, shaping
+Captioning Segments for Given Query:   0%|          | 0/19 [00:00<?, ?it/s]Captioning Segments for Given Query:   5%|▌         | 1/19 [00:33<09:59, 33.33s/it]Captioning Segments for Given Query:  11%|█         | 2/19 [01:16<11:09, 39.40s/it]Captioning Segments for Given Query:  16%|█▌        | 3/19 [02:05<11:33, 43.37s/it]Captioning Segments for Given Query:  21%|██        | 4/19 [02:44<10:25, 41.73s/it]Captioning Segments for Given Query:  26%|██▋       | 5/19 [03:28<09:54, 42.47s/it]Captioning Segments for Given Query:  32%|███▏      | 6/19 [04:10<09:12, 42.53s/it]Captioning Segments for Given Query:  37%|███▋      | 7/19 [04:36<07:25, 37.14s/it]Captioning Segments for Given Query:  42%|████▏     | 8/19 [05:13<06:46, 36.91s/it]Captioning Segments for Given Query:  47%|████▋     | 9/19 [05:54<06:21, 38.16s/it]Captioning Segments for Given Query:  53%|█████▎    | 10/19 [06:30<05:38, 37.58s/it]Captioning Segments for Given Query:  58%|█████▊    | 11/19 [07:13<05:15, 39.43s/it]Captioning Segments for Given Query:  63%|██████▎   | 12/19 [07:53<04:36, 39.46s/it]Captioning Segments for Given Query:  68%|██████▊   | 13/19 [08:42<04:13, 42.24s/it]Captioning Segments for Given Query:  74%|███████▎  | 14/19 [09:31<03:41, 44.27s/it]Captioning Segments for Given Query:  79%|███████▉  | 15/19 [10:21<03:03, 45.99s/it]Captioning Segments for Given Query:  84%|████████▍ | 16/19 [11:15<02:25, 48.54s/it]Captioning Segments for Given Query:  89%|████████▉ | 17/19 [11:52<01:30, 45.20s/it]Captioning Segments for Given Query:  95%|█████████▍| 18/19 [12:36<00:44, 44.79s/it]Captioning Segments for Given Query: 100%|██████████| 19/19 [13:10<00:00, 41.40s/it]Captioning Segments for Given Query: 100%|██████████| 19/19 [13:10<00:00, 41.60s/it]
+  [查询] 集合15 q15 entity_only: How do the announcements of mobile adapt
+INFO:nano-graphrag:Truncate 20 to 12 chunks
+How do the announcements of mobile adaptations of popular franchises such as 'Monster Hunter' reflect changes in gaming platforms and accessibility?
+Retrieved Text Segments {'YI1dXSw17Y8_208', 'YI1dXSw17Y8_207', 'h-WGw4BypDY_301', 'h-WGw4BypDY_302', 'YI1dXSw17Y8_206', 'h-WGw4BypDY_300'}
+Output:
+Announcements of mobile adaptations of popular gaming franchises like 'Monster Hunter' in video content.
+Retrieved Visual Segments {'h-WGw4BypDY_144', 'h-WGw4BypDY_31', 'YI1dXSw17Y8_206', 'YI1dXSw17Y8_137'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 9
+  - Entity检索: 6
+  - Visual检索: 4
+  - Causal检索: 0
+
+前5个片段ID示例:
+  1. YI1dXSw17Y8_137
+  2. YI1dXSw17Y8_206
+  3. YI1dXSw17Y8_207
+  4. YI1dXSw17Y8_208
+  5. h-WGw4BypDY_31
+
+📊 video_segments._data 结构:
+  可用视频数量: 2
+  示例视频: YI1dXSw17Y8
+  该视频的片段索引数量: 381
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 9
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments5 Video Segments remain after filtering
+Remain segments ['YI1dXSw17Y8_137', 'YI1dXSw17Y8_206', 'YI1dXSw17Y8_208', 'h-WGw4BypDY_31', 'h-WGw4BypDY_300']
+Keywords: announcements, mobile adaptations, popular franchises, Monster Hunter, changing platforms, accessibility, gaming
+Captioning Segments for Given Query:   0%|          | 0/5 [00:00<?, ?it/s]Captioning Segments for Given Query:  20%|██        | 1/5 [00:48<03:12, 48.15s/it]Captioning Segments for Given Query:  40%|████      | 2/5 [01:28<02:10, 43.56s/it]Captioning Segments for Given Query:  60%|██████    | 3/5 [02:11<01:27, 43.53s/it]Captioning Segments for Given Query:  80%|████████  | 4/5 [03:05<00:47, 47.51s/it]Captioning Segments for Given Query: 100%|██████████| 5/5 [04:01<00:00, 50.47s/it]Captioning Segments for Given Query: 100%|██████████| 5/5 [04:01<00:00, 48.27s/it]
+  [查询] 集合15 q15 causal_only: How do the announcements of mobile adapt
+INFO:nano-graphrag:Truncate 20 to 12 chunks
+INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The announcements of mobile adaptations for popular franchises like 'Monster Hunter' reflect the shift towards more accessible gaming platforms.
+INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
+INFO:nano-graphrag:[Causal Retrieval] 48 events after 2-hop bidirectional walk (from 20 seeds)
+INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 48 → 44 nodes (tau_dup=0.85)
+INFO:nano-graphrag:[Causal Retrieval] Retrieved 14 segments from 44 deduplicated events
+INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 44 events, 15966 chars
+Retrieved Causal Segments {'YI1dXSw17Y8_204', 'h-WGw4BypDY_289', 'YI1dXSw17Y8_205', 'YI1dXSw17Y8_97', 'YI1dXSw17Y8_266', 'YI1dXSw17Y8_209', 'h-WGw4BypDY_108', 'h-WGw4BypDY_29', 'YI1dXSw17Y8_188', 'h-WGw4BypDY_327', 'h-WGw4BypDY_37', 'h-WGw4BypDY_182', 'h-WGw4BypDY_350', 'h-WGw4BypDY_328'}
+
+Retrieved Text Segments set()
+Output:
+Announcements of mobile adaptations of popular gaming franchises like 'Monster Hunter' in video content.
+Retrieved Visual Segments {'h-WGw4BypDY_144', 'h-WGw4BypDY_31', 'YI1dXSw17Y8_206', 'YI1dXSw17Y8_137'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 18
+  - Entity检索: 0
+  - Visual检索: 4
+  - Causal检索: 14
+
+前5个片段ID示例:
+  1. YI1dXSw17Y8_97
+  2. YI1dXSw17Y8_137
+  3. YI1dXSw17Y8_188
+  4. YI1dXSw17Y8_204
+  5. YI1dXSw17Y8_205
+
+📊 video_segments._data 结构:
+  可用视频数量: 2
+  示例视频: YI1dXSw17Y8
+  该视频的片段索引数量: 381
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 18
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments⠙ Checked 11 segments⠹ Checked 12 segments⠸ Checked 13 segments⠼ Checked 14 segments⠴ Checked 15 segments⠦ Checked 16 segments⠧ Checked 17 segments⠇ Checked 18 segments6 Video Segments remain after filtering
+Remain segments ['YI1dXSw17Y8_97', 'YI1dXSw17Y8_188', 'YI1dXSw17Y8_204', 'YI1dXSw17Y8_205', 'YI1dXSw17Y8_206', 'h-WGw4BypDY_327']
+Keywords: announcements, mobile adaptations, popular franchises, Monster Hunter, changing platforms, accessibility, gaming
+Captioning Segments for Given Query:   0%|          | 0/6 [00:00<?, ?it/s]Captioning Segments for Given Query:  17%|█▋        | 1/6 [00:38<03:12, 38.48s/it]Captioning Segments for Given Query:  33%|███▎      | 2/6 [01:23<02:49, 42.40s/it]Captioning Segments for Given Query:  50%|█████     | 3/6 [01:58<01:56, 38.86s/it]Captioning Segments for Given Query:  67%|██████▋   | 4/6 [02:28<01:11, 35.50s/it]Captioning Segments for Given Query:  83%|████████▎ | 5/6 [03:05<00:35, 35.85s/it]Captioning Segments for Given Query: 100%|██████████| 6/6 [03:35<00:00, 33.85s/it]Captioning Segments for Given Query: 100%|██████████| 6/6 [03:35<00:00, 35.85s/it]
+  [查询] 集合15 q16 entity_only: Considering the presence of figures like
+INFO:nano-graphrag:Truncate 20 to 12 chunks
+How does the presence of figures like Snoop Dogg and Christopher Tin at the Game Awards highlight the intersection of gaming with music and other artistic disciplines?
+Retrieved Text Segments {'h-WGw4BypDY_178', 'h-WGw4BypDY_179', 'h-WGw4BypDY_28', 'h-WGw4BypDY_27'}
+A segment from The Game Awards highlighting the intersection of gaming with music and featuring artists like Snoop Dogg and Christopher Tin.
+Retrieved Visual Segments {'YI1dXSw17Y8_236', 'h-WGw4BypDY_281', 'YI1dXSw17Y8_241', 'YI1dXSw17Y8_242'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 8
+  - Entity检索: 4
+  - Visual检索: 4
+  - Causal检索: 0
+
+前5个片段ID示例:
+  1. YI1dXSw17Y8_236
+  2. YI1dXSw17Y8_241
+  3. YI1dXSw17Y8_242
+  4. h-WGw4BypDY_27
+  5. h-WGw4BypDY_28
+
+📊 video_segments._data 结构:
+  可用视频数量: 2
+  示例视频: YI1dXSw17Y8
+  该视频的片段索引数量: 381
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 8
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments5 Video Segments remain after filtering
+Remain segments ['YI1dXSw17Y8_236', 'YI1dXSw17Y8_241', 'YI1dXSw17Y8_242', 'h-WGw4BypDY_179', 'h-WGw4BypDY_281']
+Keywords: Game Awards, Snoop Dogg, Christopher Tin, gaming, music, artistic disciplines, intersection
+Captioning Segments for Given Query:   0%|          | 0/5 [00:00<?, ?it/s]Captioning Segments for Given Query:  20%|██        | 1/5 [00:31<02:05, 31.31s/it]Captioning Segments for Given Query:  40%|████      | 2/5 [01:01<01:32, 30.77s/it]Captioning Segments for Given Query:  60%|██████    | 3/5 [01:39<01:08, 34.08s/it]Captioning Segments for Given Query:  80%|████████  | 4/5 [02:22<00:37, 37.48s/it]Captioning Segments for Given Query: 100%|██████████| 5/5 [02:54<00:00, 35.38s/it]Captioning Segments for Given Query: 100%|██████████| 5/5 [02:54<00:00, 34.82s/it]
+  [查询] 集合15 q16 causal_only: Considering the presence of figures like
+INFO:nano-graphrag:Truncate 20 to 12 chunks
+INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The presence of figures like Snoop Dogg and Christopher Tin at the Game Awards and their impact on highlighting the intersection of gaming with music and other artistic disciplines.
+INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
+INFO:nano-graphrag:[Causal Retrieval] 45 events after 2-hop bidirectional walk (from 20 seeds)
+INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 45 → 43 nodes (tau_dup=0.85)
+INFO:nano-graphrag:[Causal Retrieval] Retrieved 18 segments from 43 deduplicated events
+INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 43 events, 14005 chars
+Retrieved Causal Segments {'YI1dXSw17Y8_252', 'h-WGw4BypDY_187', 'h-WGw4BypDY_62', 'YI1dXSw17Y8_15', 'h-WGw4BypDY_168', 'YI1dXSw17Y8_227', 'h-WGw4BypDY_78', 'h-WGw4BypDY_108', 'YI1dXSw17Y8_148', 'YI1dXSw17Y8_12', 'h-WGw4BypDY_123', 'h-WGw4BypDY_206', 'h-WGw4BypDY_288', 'YI1dXSw17Y8_225', 'YI1dXSw17Y8_107', 'h-WGw4BypDY_122', 'h-WGw4BypDY_328', 'h-WGw4BypDY_61'}
+
+Retrieved Text Segments set()
+A segment from The Game Awards featuring Snoop Dogg and Christopher Tin highlighting the intersection of gaming with music and other artistic disciplines.
+Retrieved Visual Segments {'YI1dXSw17Y8_236', 'h-WGw4BypDY_281', 'YI1dXSw17Y8_241', 'YI1dXSw17Y8_242'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 22
+  - Entity检索: 0
+  - Visual检索: 4
+  - Causal检索: 18
+
+前5个片段ID示例:
+  1. YI1dXSw17Y8_12
+  2. YI1dXSw17Y8_15
+  3. YI1dXSw17Y8_107
+  4. YI1dXSw17Y8_148
+  5. YI1dXSw17Y8_225
+
+📊 video_segments._data 结构:
+  可用视频数量: 2
+  示例视频: YI1dXSw17Y8
+  该视频的片段索引数量: 381
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 22
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments⠙ Checked 11 segments⠹ Checked 12 segments⠸ Checked 13 segments⠼ Checked 14 segments⠴ Checked 15 segments⠦ Checked 16 segments⠧ Checked 17 segments⠇ Checked 18 segments⠏ Checked 19 segments⠋ Checked 20 segments⠙ Checked 21 segments⠹ Checked 22 segments14 Video Segments remain after filtering
+Remain segments ['YI1dXSw17Y8_12', 'YI1dXSw17Y8_15', 'YI1dXSw17Y8_107', 'YI1dXSw17Y8_148', 'YI1dXSw17Y8_236', 'YI1dXSw17Y8_241', 'YI1dXSw17Y8_252', 'h-WGw4BypDY_122', 'h-WGw4BypDY_123', 'h-WGw4BypDY_168', 'h-WGw4BypDY_187', 'h-WGw4BypDY_281', 'h-WGw4BypDY_288', 'h-WGw4BypDY_328']
+Keywords: Game Awards, Snoop Dogg, Christopher Tin, gaming, music, artistic disciplines, intersection
+Captioning Segments for Given Query:   0%|          | 0/14 [00:00<?, ?it/s]Captioning Segments for Given Query:   7%|▋         | 1/14 [00:33<07:21, 33.96s/it]Captioning Segments for Given Query:  14%|█▍        | 2/14 [01:07<06:44, 33.69s/it]Captioning Segments for Given Query:  21%|██▏       | 3/14 [01:47<06:43, 36.68s/it]Captioning Segments for Given Query:  29%|██▊       | 4/14 [02:21<05:53, 35.35s/it]Captioning Segments for Given Query:  36%|███▌      | 5/14 [02:53<05:09, 34.44s/it]Captioning Segments for Given Query:  43%|████▎     | 6/14 [03:33<04:51, 36.39s/it]Captioning Segments for Given Query:  50%|█████     | 7/14 [04:12<04:19, 37.11s/it]Captioning Segments for Given Query:  57%|█████▋    | 8/14 [04:49<03:42, 37.14s/it]Captioning Segments for Given Query:  64%|██████▍   | 9/14 [05:30<03:11, 38.39s/it]Captioning Segments for Given Query:  71%|███████▏  | 10/14 [06:11<02:35, 38.91s/it]Captioning Segments for Given Query:  79%|███████▊  | 11/14 [06:48<01:55, 38.59s/it]Captioning Segments for Given Query:  86%|████████▌ | 12/14 [07:26<01:16, 38.19s/it]Captioning Segments for Given Query:  93%|█████████▎| 13/14 [08:06<00:38, 38.84s/it]Captioning Segments for Given Query: 100%|██████████| 14/14 [08:54<00:00, 41.71s/it]Captioning Segments for Given Query: 100%|██████████| 14/14 [08:54<00:00, 38.20s/it]
+  [查询] 集合15 q17 entity_only: What major trends defined the 2024 Game 
+INFO:nano-graphrag:Truncate 20 to 12 chunks
+The major trends that defined the 2024 Game Awards.
+Retrieved Text Segments {'YI1dXSw17Y8_341', 'YI1dXSw17Y8_340', 'YI1dXSw17Y8_339', 'h-WGw4BypDY_179', 'h-WGw4BypDY_178'}
+The 2024 Game Awards featured major trends in the industry.
+Retrieved Visual Segments {'YI1dXSw17Y8_98', 'YI1dXSw17Y8_351', 'h-WGw4BypDY_426', 'YI1dXSw17Y8_97'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 9
+  - Entity检索: 5
+  - Visual检索: 4
+  - Causal检索: 0
+
+前5个片段ID示例:
+  1. YI1dXSw17Y8_97
+  2. YI1dXSw17Y8_98
+  3. YI1dXSw17Y8_339
+  4. YI1dXSw17Y8_340
+  5. YI1dXSw17Y8_341
+
+📊 video_segments._data 结构:
+  可用视频数量: 2
+  示例视频: YI1dXSw17Y8
+  该视频的片段索引数量: 381
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 9
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments7 Video Segments remain after filtering
+Remain segments ['YI1dXSw17Y8_97', 'YI1dXSw17Y8_98', 'YI1dXSw17Y8_339', 'YI1dXSw17Y8_340', 'YI1dXSw17Y8_341', 'YI1dXSw17Y8_351', 'h-WGw4BypDY_179']
+Keywords: major trends, 2024 Game Awards
+Captioning Segments for Given Query:   0%|          | 0/7 [00:00<?, ?it/s]Captioning Segments for Given Query:  14%|█▍        | 1/7 [00:34<03:26, 34.42s/it]Captioning Segments for Given Query:  29%|██▊       | 2/7 [01:16<03:14, 38.87s/it]Captioning Segments for Given Query:  43%|████▎     | 3/7 [01:55<02:35, 38.95s/it]Captioning Segments for Given Query:  57%|█████▋    | 4/7 [02:34<01:57, 39.13s/it]Captioning Segments for Given Query:  71%|███████▏  | 5/7 [03:10<01:16, 38.01s/it]Captioning Segments for Given Query:  86%|████████▌ | 6/7 [03:45<00:36, 36.85s/it]Captioning Segments for Given Query: 100%|██████████| 7/7 [04:23<00:00, 37.30s/it]Captioning Segments for Given Query: 100%|██████████| 7/7 [04:23<00:00, 37.67s/it]
+  [查询] 集合15 q17 causal_only: What major trends defined the 2024 Game 
+INFO:nano-graphrag:Truncate 20 to 12 chunks
+INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The major trends that defined the outcomes and highlights at the 2024 Game Awards.
+INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
+INFO:nano-graphrag:[Causal Retrieval] 31 events after 2-hop bidirectional walk (from 20 seeds)
+INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 31 → 26 nodes (tau_dup=0.85)
+INFO:nano-graphrag:[Causal Retrieval] Retrieved 16 segments from 26 deduplicated events
+INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 26 events, 7690 chars
+Retrieved Causal Segments {'h-WGw4BypDY_12', 'h-WGw4BypDY_177', 'YI1dXSw17Y8_193', 'h-WGw4BypDY_26', 'YI1dXSw17Y8_351', 'YI1dXSw17Y8_364', 'YI1dXSw17Y8_348', 'YI1dXSw17Y8_157', 'h-WGw4BypDY_328', 'YI1dXSw17Y8_350', 'YI1dXSw17Y8_378', 'h-WGw4BypDY_350', 'h-WGw4BypDY_101', 'h-WGw4BypDY_102', 'YI1dXSw17Y8_265', 'YI1dXSw17Y8_72'}
+
+Retrieved Text Segments set()
+The 2024 Game Awards featuring major trends in the industry.
+Retrieved Visual Segments {'YI1dXSw17Y8_98', 'h-WGw4BypDY_426', 'YI1dXSw17Y8_351', 'YI1dXSw17Y8_97'}
+
+================================================================================
+🔍 FILTER 阶段诊断
+================================================================================
+检索到的片段总数: 19
+  - Entity检索: 0
+  - Visual检索: 4
+  - Causal检索: 16
+
+前5个片段ID示例:
+  1. YI1dXSw17Y8_72
+  2. YI1dXSw17Y8_97
+  3. YI1dXSw17Y8_98
+  4. YI1dXSw17Y8_157
+  5. YI1dXSw17Y8_193
+
+📊 video_segments._data 结构:
+  可用视频数量: 2
+  示例视频: YI1dXSw17Y8
+  该视频的片段索引数量: 381
+  前5个索引: ['0', '1', '2', '3', '4']
+  索引类型: <class 'str'>
+
+🔧 解析测试:
+  ✓ 成功解析: 19
+  ✗ 解析失败: 0
+================================================================================
+
+⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments⠙ Checked 11 segments⠹ Checked 12 segments⠸ Checked 13 segments⠼ Checked 14 segments⠴ Checked 15 segments⠦ Checked 16 segments⠧ Checked 17 segments⠇ Checked 18 segments⠏ Checked 19 segments16 Video Segments remain after filtering
+Remain segments ['YI1dXSw17Y8_72', 'YI1dXSw17Y8_97', 'YI1dXSw17Y8_98', 'YI1dXSw17Y8_157', 'YI1dXSw17Y8_193', 'YI1dXSw17Y8_265', 'YI1dXSw17Y8_348', 'YI1dXSw17Y8_351', 'YI1dXSw17Y8_364', 'YI1dXSw17Y8_378', 'h-WGw4BypDY_12', 'h-WGw4BypDY_26', 'h-WGw4BypDY_101', 'h-WGw4BypDY_102', 'h-WGw4BypDY_177', 'h-WGw4BypDY_328']
+Keywords: major trends, 2024 Game Awards
+Captioning Segments for Given Query:   0%|          | 0/16 [00:00<?, ?it/s]Captioning Segments for Given Query:   6%|▋         | 1/16 [00:38<09:38, 38.59s/it]Captioning Segments for Given Query:  12%|█▎        | 2/16 [01:17<08:59, 38.55s/it]Captioning Segments for Given Query:  19%|█▉        | 3/16 [02:01<08:53, 41.04s/it]Captioning Segments for Given Query:  25%|██▌       | 4/16 [02:38<07:55, 39.65s/it]Captioning Segments for Given Query:  31%|███▏      | 5/16 [03:08<06:35, 35.99s/it]Captioning Segments for Given Query:  38%|███▊      | 6/16 [03:52<06:27, 38.79s/it]Captioning Segments for Given Query:  44%|████▍     | 7/16 [04:21<05:20, 35.59s/it]Captioning Segments for Given Query:  50%|█████     | 8/16 [04:56<04:43, 35.50s/it]Captioning Segments for Given Query:  56%|█████▋    | 9/16 [05:39<04:25, 37.94s/it]Captioning Segments for Given Query:  62%|██████▎   | 10/16 [06:13<03:39, 36.50s/it]Captioning Segments for Given Query:  69%|██████▉   | 11/16 [06:53<03:08, 37.73s/it]Captioning Segments for Given Query:  75%|███████▌  | 12/16 [07:29<02:28, 37.21s/it]Captioning Segments for Given Query:  81%|████████▏ | 13/16 [08:06<01:50, 36.94s/it]Captioning Segments for Given Query:  88%|████████▊ | 14/16 [08:37<01:10, 35.22s/it]Captioning Segments for Given Query:  94%|█████████▍| 15/16 [09:14<00:35, 35.67s/it]Captioning Segments for Given Query: 100%|██████████| 16/16 [09:53<00:00, 36.86s/it]Captioning Segments for Given Query: 100%|██████████| 16/16 [09:53<00:00, 37.11s/it]
+
+=== 批处理完成 ===

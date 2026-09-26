@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../../../.."
+		},
+		{
+			"path": "../../../../01/01-intent-classify-github"
+		},
+		{
+			"path": "../../.."
+		}
+	],
+	"settings": {}
+}

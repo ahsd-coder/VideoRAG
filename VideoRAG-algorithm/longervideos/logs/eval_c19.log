@@ -1,0 +1,68 @@
+评判器: vLLM /home/gjw/models/Selene-1-Mini-Llama-3.1-8B @ http://127.0.0.1:8002/v1
+temperature=0.7, runs=5, 并发=100
+
+=== 集合 19: jeff-bezos (34题) ===
+  q0: causal (21s) 票:e1/c9
+  q1: causal (20s) 票:e3/c7
+  q2: causal (20s) 票:e0/c10
+  q3: causal (21s) 票:e0/c10
+  q4: causal (19s) 票:e0/c10
+  q5: entity (19s) 票:e10/c0
+  q6: entity (22s) 票:e7/c3
+  q7: entity (19s) 票:e10/c0
+  q8: entity (20s) 票:e7/c3
+  q9: entity (22s) 票:e8/c2
+  q10: entity (22s) 票:e10/c0
+  q11: entity (23s) 票:e8/c2
+  q12: causal (20s) 票:e0/c10
+  q13: entity (20s) 票:e10/c0
+  q14: entity (19s) 票:e6/c4
+  q15: 无多数 (21s) 票:e5/c5 → 剔除
+  q16: causal (22s) 票:e0/c10
+  q17: entity (22s) 票:e7/c3
+  q18: entity (18s) 票:e6/c4
+  q19: causal (19s) 票:e0/c10
+  q20: 无多数 (21s) 票:e5/c5 → 剔除
+  q21: causal (17s) 票:e0/c10
+  q22: causal (18s) 票:e0/c10
+  q23: causal (19s) 票:e0/c10
+  q24: causal (22s) 票:e1/c9
+  q25: causal (19s) 票:e0/c10
+  q26: causal (18s) 票:e0/c10
+  q27: causal (19s) 票:e0/c10
+  q28: entity (22s) 票:e10/c0
+  q29: causal (19s) 票:e0/c10
+  q30: entity (21s) 票:e9/c1
+  q31: entity (23s) 票:e10/c0
+  q32: entity (19s) 票:e10/c0
+  q33: causal (19s) 票:e0/c10
+
+# EC-RAG(causal) vs 实体图(entity) · 正反双序 + 5-run多数票 (异步并发)
+裁判: /home/gjw/models/Selene-1-Mini-Llama-3.1-8B (temperature=0.7, 并发=100)
+题目: 32/34 有效 (跳过0, 无多数剔除2)
+
+## 各维度胜率 (causal胜 / entity胜 / 有效题数)
+| 维度 | causal | entity | causal胜率 | 有效题数 |
+|---|---|---|---|---|
+| Comprehensiveness | 17 | 14 | 54% | 31 |
+| Empowerment | 17 | 13 | 56% | 30 |
+| Trustworthiness | 17 | 12 | 58% | 29 |
+| Depth | 18 | 12 | 60% | 30 |
+| Density | 17 | 13 | 56% | 30 |
+| Overall Winner | 17 | 15 | 53% | 32 |
+
+### 集合 19
+| 维度 | causal | entity | causal胜率 | 有效题数 |
+|---|---|---|---|---|
+| Comprehensiveness | 17 | 14 | 54% | 31 |
+| Empowerment | 17 | 13 | 56% | 30 |
+| Trustworthiness | 17 | 12 | 58% | 29 |
+| Depth | 18 | 12 | 60% | 30 |
+| Density | 17 | 13 | 56% | 30 |
+| Overall Winner | 17 | 15 | 53% | 32 |
+
+---
+总计 320 次评判调用，32 题有效，2 题无明确多数被剔除
+
+详细: /home/gjw/VideoRAG-main/VideoRAG-algorithm/longervideos/eval_results_v3.json
+汇总: /home/gjw/VideoRAG-main/VideoRAG-algorithm/longervideos/eval_summary_v3.md

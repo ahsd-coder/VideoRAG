@@ -1,0 +1,51 @@
+评判器: vLLM /home/gjw/models/Selene-1-Mini-Llama-3.1-8B @ http://127.0.0.1:8002/v1
+temperature=0.7, runs=5, 并发=100
+
+=== 集合 1: nature-scenes (17题) ===
+  q0: 无多数 (21s) 票:e5/c5 → 剔除
+  q1: entity (21s) 票:e8/c2
+  q2: entity (21s) 票:e8/c2
+  q3: 无多数 (19s) 票:e5/c5 → 剔除
+  q4: entity (20s) 票:e7/c3
+  q5: causal (20s) 票:e0/c10
+  q6: entity (19s) 票:e6/c4
+  q7: entity (19s) 票:e10/c0
+  q8: entity (20s) 票:e10/c0
+  q9: causal (20s) 票:e0/c10
+  q10: causal (19s) 票:e0/c10
+  q11: entity (19s) 票:e10/c0
+  q12: entity (20s) 票:e8/c2
+  q13: causal (18s) 票:e0/c10
+  q14: entity (19s) 票:e10/c0
+  q15: causal (19s) 票:e0/c10
+  q16: entity (19s) 票:e6/c4
+
+# EC-RAG(causal) vs 实体图(entity) · 正反双序 + 5-run多数票 (异步并发)
+裁判: /home/gjw/models/Selene-1-Mini-Llama-3.1-8B (temperature=0.7, 并发=100)
+题目: 15/17 有效 (跳过0, 无多数剔除2)
+
+## 各维度胜率 (causal胜 / entity胜 / 有效题数)
+| 维度 | causal | entity | causal胜率 | 有效题数 |
+|---|---|---|---|---|
+| Comprehensiveness | 5 | 10 | 33% | 15 |
+| Empowerment | 5 | 9 | 35% | 14 |
+| Trustworthiness | 6 | 8 | 42% | 14 |
+| Depth | 5 | 10 | 33% | 15 |
+| Density | 6 | 7 | 46% | 13 |
+| Overall Winner | 5 | 10 | 33% | 15 |
+
+### 集合 1
+| 维度 | causal | entity | causal胜率 | 有效题数 |
+|---|---|---|---|---|
+| Comprehensiveness | 5 | 10 | 33% | 15 |
+| Empowerment | 5 | 9 | 35% | 14 |
+| Trustworthiness | 6 | 8 | 42% | 14 |
+| Depth | 5 | 10 | 33% | 15 |
+| Density | 6 | 7 | 46% | 13 |
+| Overall Winner | 5 | 10 | 33% | 15 |
+
+---
+总计 150 次评判调用，15 题有效，2 题无明确多数被剔除
+
+详细: /home/gjw/VideoRAG-main/VideoRAG-algorithm/longervideos/eval_results_v3.json
+汇总: /home/gjw/VideoRAG-main/VideoRAG-algorithm/longervideos/eval_summary_v3.md

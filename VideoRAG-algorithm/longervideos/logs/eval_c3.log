@@ -1,0 +1,57 @@
+评判器: vLLM /home/gjw/models/Selene-1-Mini-Llama-3.1-8B @ http://127.0.0.1:8002/v1
+temperature=0.7, runs=5, 并发=100
+
+=== 集合 3: black-myth-wukong (23题) ===
+  q0: entity (21s) 票:e10/c0
+  q1: entity (21s) 票:e9/c1
+  q2: causal (20s) 票:e1/c9
+  q3: causal (20s) 票:e4/c6
+  q4: causal (21s) 票:e4/c6
+  q5: 无多数 (19s) 票:e5/c5 → 剔除
+  q6: entity (20s) 票:e7/c3
+  q7: entity (19s) 票:e10/c0
+  q8: entity (21s) 票:e10/c0
+  q9: entity (123s) 票:e10/c0
+  q10: entity (19s) 票:e10/c0
+  q11: entity (20s) 票:e8/c2
+  q12: causal (19s) 票:e4/c6
+  q13: 无多数 (20s) 票:e5/c5 → 剔除
+  q14: causal (20s) 票:e1/c9
+  q15: causal (20s) 票:e0/c10
+  q16: 无多数 (18s) 票:e5/c5 → 剔除
+  q17: causal (120s) 票:e0/c10
+  q18: causal (19s) 票:e0/c10
+  q19: entity (19s) 票:e10/c0
+  q20: 无多数 (120s) 票:e5/c5 → 剔除
+  q21: causal (18s) 票:e0/c10
+  q22: entity (18s) 票:e10/c0
+
+# EC-RAG(causal) vs 实体图(entity) · 正反双序 + 5-run多数票 (异步并发)
+裁判: /home/gjw/models/Selene-1-Mini-Llama-3.1-8B (temperature=0.7, 并发=100)
+题目: 19/23 有效 (跳过0, 无多数剔除4)
+
+## 各维度胜率 (causal胜 / entity胜 / 有效题数)
+| 维度 | causal | entity | causal胜率 | 有效题数 |
+|---|---|---|---|---|
+| Comprehensiveness | 8 | 10 | 44% | 18 |
+| Empowerment | 9 | 10 | 47% | 19 |
+| Trustworthiness | 10 | 9 | 52% | 19 |
+| Depth | 8 | 10 | 44% | 18 |
+| Density | 8 | 9 | 47% | 17 |
+| Overall Winner | 9 | 10 | 47% | 19 |
+
+### 集合 3
+| 维度 | causal | entity | causal胜率 | 有效题数 |
+|---|---|---|---|---|
+| Comprehensiveness | 8 | 10 | 44% | 18 |
+| Empowerment | 9 | 10 | 47% | 19 |
+| Trustworthiness | 10 | 9 | 52% | 19 |
+| Depth | 8 | 10 | 44% | 18 |
+| Density | 8 | 9 | 47% | 17 |
+| Overall Winner | 9 | 10 | 47% | 19 |
+
+---
+总计 190 次评判调用，19 题有效，4 题无明确多数被剔除
+
+详细: /home/gjw/VideoRAG-main/VideoRAG-algorithm/longervideos/eval_results_v3.json
+汇总: /home/gjw/VideoRAG-main/VideoRAG-algorithm/longervideos/eval_summary_v3.md

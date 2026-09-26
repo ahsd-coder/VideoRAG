@@ -1,0 +1,56 @@
+评判器: vLLM /home/gjw/models/Selene-1-Mini-Llama-3.1-8B @ http://127.0.0.1:8002/v1
+temperature=0.7, runs=5, 并发=100
+
+=== 集合 7: daubechies-art-and-mathematics-lecture (21题) ===
+  q0: causal (36s) 票:e0/c10
+  q1: entity (32s) 票:e9/c1
+  q2: entity (31s) 票:e10/c0
+  q3: 无多数 (31s) 票:e5/c5 → 剔除
+  q4: causal (33s) 票:e0/c10
+  q5: causal (143s) 票:e0/c10
+  q6: entity (32s) 票:e6/c4
+  q7: causal (35s) 票:e0/c10
+  q8: causal (32s) 票:e0/c10
+  q9: causal (31s) 票:e0/c10
+  q10: entity (31s) 票:e10/c0
+  q11: causal (145s) 票:e0/c10
+  q12: causal (29s) 票:e0/c10
+  q13: entity (30s) 票:e7/c3
+  q14: entity (34s) 票:e10/c0
+  q15: causal (33s) 票:e0/c10
+  q16: entity (32s) 票:e6/c4
+  q17: 无多数 (31s) 票:e5/c5 → 剔除
+  q18: entity (32s) 票:e10/c0
+  q19: entity (28s) 票:e8/c2
+  q20: entity (32s) 票:e8/c2
+
+# EC-RAG(causal) vs 实体图(entity) · 正反双序 + 5-run多数票 (异步并发)
+裁判: /home/gjw/models/Selene-1-Mini-Llama-3.1-8B (temperature=0.7, 并发=100)
+题目: 19/21 有效 (跳过0, 无多数剔除2)
+
+## 各维度胜率 (causal胜 / entity胜 / 有效题数)
+| 维度 | causal | entity | causal胜率 | 有效题数 |
+|---|---|---|---|---|
+| Comprehensiveness | 9 | 10 | 47% | 19 |
+| Empowerment | 9 | 9 | 50% | 18 |
+| Trustworthiness | 11 | 8 | 57% | 19 |
+| Depth | 9 | 10 | 47% | 19 |
+| Density | 11 | 7 | 61% | 18 |
+| Overall Winner | 9 | 10 | 47% | 19 |
+
+### 集合 7
+| 维度 | causal | entity | causal胜率 | 有效题数 |
+|---|---|---|---|---|
+| Comprehensiveness | 9 | 10 | 47% | 19 |
+| Empowerment | 9 | 9 | 50% | 18 |
+| Trustworthiness | 11 | 8 | 57% | 19 |
+| Depth | 9 | 10 | 47% | 19 |
+| Density | 11 | 7 | 61% | 18 |
+| Overall Winner | 9 | 10 | 47% | 19 |
+
+---
+总计 190 次评判调用，19 题有效，2 题无明确多数被剔除
+
+详细: /home/gjw/VideoRAG-main/VideoRAG-algorithm/longervideos/eval_results_v3.json
+汇总: /home/gjw/VideoRAG-main/VideoRAG-algorithm/longervideos/eval_summary_v3.md
+  
