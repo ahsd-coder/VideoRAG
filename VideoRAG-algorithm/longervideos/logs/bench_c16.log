@@ -1,2236 +1,0 @@
-nohup: ignoring input
-推理后端: vLLM (LLM:8000 + Embed:8001), 主进程GPU: 1,2
-=== 批处理集合: ['16'] ===
-
-============================================================
-集合 16: ahp-superdecision
-============================================================
-[索引] 集合 16: 11 个视频 → /home/gjw/VideoRAG-main/VideoRAG-algorithm/longervideos/ecrag-workdir/16
-INFO:nano-graphrag:Load KV video_path with 11 data
-INFO:nano-graphrag:Load KV video_segments with 11 data
-INFO:nano-graphrag:Load KV text_chunks with 99 data
-INFO:nano-graphrag:Load KV llm_response_cache with 0 data
-INFO:nano-graphrag:Loaded graph from /home/gjw/VideoRAG-main/VideoRAG-algorithm/longervideos/ecrag-workdir/16/graph_chunk_entity_relation.graphml with 643 nodes, 1039 edges
-INFO:nano-graphrag:Loaded graph from /home/gjw/VideoRAG-main/VideoRAG-algorithm/longervideos/ecrag-workdir/16/graph_event_causal.graphml with 1410 nodes, 689 edges
-INFO:nano-vectordb:Load (636, 2560) data
-INFO:nano-vectordb:Init {'embedding_dim': 2560, 'metric': 'cosine', 'storage_file': '/home/gjw/VideoRAG-main/VideoRAG-algorithm/longervideos/ecrag-workdir/16/vdb_entities.json'} 636 data
-INFO:nano-vectordb:Load (99, 2560) data
-INFO:nano-vectordb:Init {'embedding_dim': 2560, 'metric': 'cosine', 'storage_file': '/home/gjw/VideoRAG-main/VideoRAG-algorithm/longervideos/ecrag-workdir/16/vdb_chunks.json'} 99 data
-INFO:nano-vectordb:Load (293, 1024) data
-INFO:nano-vectordb:Init {'embedding_dim': 1024, 'metric': 'cosine', 'storage_file': '/home/gjw/VideoRAG-main/VideoRAG-algorithm/longervideos/ecrag-workdir/16/vdb_video_segment_feature.json'} 293 data
-INFO:nano-vectordb:Load (1410, 2560) data
-INFO:nano-vectordb:Init {'embedding_dim': 2560, 'metric': 'cosine', 'storage_file': '/home/gjw/VideoRAG-main/VideoRAG-algorithm/longervideos/ecrag-workdir/16/vdb_event_causal_vdb.json'} 1410 data
-INFO:nano-graphrag:Find the video named 1ZqR-wGKHGQ.mp4 in storage and skip it.
-INFO:nano-graphrag:Find the video named AUJeIG3Gjis.mp4 in storage and skip it.
-INFO:nano-graphrag:Find the video named HuXhtV6Yi-k.mp4 in storage and skip it.
-INFO:nano-graphrag:Find the video named HwkyhIiG8V0.mp4 in storage and skip it.
-INFO:nano-graphrag:Find the video named JLs5iQrkVng.mp4 in storage and skip it.
-INFO:nano-graphrag:Find the video named Msaer6b6QU8.mp4 in storage and skip it.
-INFO:nano-graphrag:Find the video named SbCmu7SeXCQ.mp4 in storage and skip it.
-INFO:nano-graphrag:Find the video named W_ijgMs7wNg.mp4 in storage and skip it.
-INFO:nano-graphrag:Find the video named cstrfin0bYo.mp4 in storage and skip it.
-INFO:nano-graphrag:Find the video named hjRxht__2wI.mp4 in storage and skip it.
-INFO:nano-graphrag:Find the video named v7UDNvciQ38.mp4 in storage and skip it.
-WARNING:nano-graphrag:All chunks are already in the storage
-INFO:nano-graphrag:Writing graph with 643 nodes, 1039 edges
-INFO:nano-graphrag:Writing graph with 1410 nodes, 689 edges
-INFO:nano-graphrag:Load KV video_path with 11 data
-INFO:nano-graphrag:Load KV video_segments with 11 data
-INFO:nano-graphrag:Load KV text_chunks with 99 data
-INFO:nano-graphrag:Load KV llm_response_cache with 0 data
-INFO:nano-graphrag:Loaded graph from /home/gjw/VideoRAG-main/VideoRAG-algorithm/longervideos/ecrag-workdir/16/graph_chunk_entity_relation.graphml with 643 nodes, 1039 edges
-INFO:nano-graphrag:Loaded graph from /home/gjw/VideoRAG-main/VideoRAG-algorithm/longervideos/ecrag-workdir/16/graph_event_causal.graphml with 1410 nodes, 689 edges
-INFO:nano-vectordb:Load (636, 2560) data
-INFO:nano-vectordb:Init {'embedding_dim': 2560, 'metric': 'cosine', 'storage_file': '/home/gjw/VideoRAG-main/VideoRAG-algorithm/longervideos/ecrag-workdir/16/vdb_entities.json'} 636 data
-INFO:nano-vectordb:Load (99, 2560) data
-INFO:nano-vectordb:Init {'embedding_dim': 2560, 'metric': 'cosine', 'storage_file': '/home/gjw/VideoRAG-main/VideoRAG-algorithm/longervideos/ecrag-workdir/16/vdb_chunks.json'} 99 data
-INFO:nano-vectordb:Load (293, 1024) data
-INFO:nano-vectordb:Init {'embedding_dim': 1024, 'metric': 'cosine', 'storage_file': '/home/gjw/VideoRAG-main/VideoRAG-algorithm/longervideos/ecrag-workdir/16/vdb_video_segment_feature.json'} 293 data
-INFO:nano-vectordb:Load (1410, 2560) data
-INFO:nano-vectordb:Init {'embedding_dim': 2560, 'metric': 'cosine', 'storage_file': '/home/gjw/VideoRAG-main/VideoRAG-algorithm/longervideos/ecrag-workdir/16/vdb_event_causal_vdb.json'} 1410 data
-INFO:transformers_modules.MiniCPM-V-2_6-int4.configuration_minicpm:vision_config is None, using default vision config
-Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:02<00:02,  2.14s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:03<00:00,  1.53s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:03<00:00,  1.62s/it]
-Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
-  [查询] 集合16 q0 entity_only: What are the benefits of using a ratings
-INFO:nano-graphrag:Truncate 20 to 11 chunks
-INFO:nano-graphrag:[ImageBind] Loading model for query (first time only)
-The benefits of using a ratings model over pairwise comparisons in the Analytic Hierarchy Process (AHP) and the scenarios in which it is particularly useful.
-Retrieved Text Segments {'cstrfin0bYo_0', 'JLs5iQrkVng_33', 'cstrfin0bYo_1', 'cstrfin0bYo_3', 'cstrfin0bYo_2'}
-The output doesn't fit the pattern requested in the goal, which is to generate a declarative sentence to serve as a query for retrieving relevant video segments. The question provided is related to analytical hierarchy process (AHP) methodology and does not contain scene-related information that would be suitable for generating a video segment query.
-
-However, following the instruction strictly, if we were to adapt this into a hypothetical video context related to a documentary or educational video about decision-making models:
-
-Output:
-A segment explaining the benefits of using a ratings model over pairwise comparisons in AHP and scenarios where it is particularly useful.
-Retrieved Visual Segments {'1ZqR-wGKHGQ_6', 'cstrfin0bYo_6', '1ZqR-wGKHGQ_4', 'cstrfin0bYo_7'}
-
-================================================================================
-🔍 FILTER 阶段诊断
-================================================================================
-检索到的片段总数: 9
-  - Entity检索: 5
-  - Visual检索: 4
-  - Causal检索: 0
-
-前5个片段ID示例:
-  1. 1ZqR-wGKHGQ_4
-  2. 1ZqR-wGKHGQ_6
-  3. JLs5iQrkVng_33
-  4. cstrfin0bYo_0
-  5. cstrfin0bYo_1
-
-📊 video_segments._data 结构:
-  可用视频数量: 11
-  示例视频: 1ZqR-wGKHGQ
-  该视频的片段索引数量: 38
-  前5个索引: ['0', '1', '2', '3', '4']
-  索引类型: <class 'str'>
-
-🔧 解析测试:
-  ✓ 成功解析: 9
-  ✗ 解析失败: 0
-================================================================================
-
-⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments1 Video Segments remain after filtering
-Remain segments ['JLs5iQrkVng_33']
-Keywords: benefits, ratings model, pairwise comparisons, AHP, useful
-Captioning Segments for Given Query:   0%|          | 0/1 [00:00<?, ?it/s]Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
-Captioning Segments for Given Query: 100%|██████████| 1/1 [00:28<00:00, 28.75s/it]Captioning Segments for Given Query: 100%|██████████| 1/1 [00:28<00:00, 28.75s/it]
-  [查询] 集合16 q0 causal_only: What are the benefits of using a ratings
-INFO:nano-graphrag:Truncate 20 to 11 chunks
-INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The adoption of a ratings model over pairwise comparisons in AHP and the subsequent benefits it provides, particularly in certain scenarios.
-INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
-INFO:nano-graphrag:[Causal Retrieval] 50 events after 2-hop bidirectional walk (from 20 seeds)
-INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 50 → 42 nodes (tau_dup=0.85)
-INFO:nano-graphrag:[Causal Retrieval] Retrieved 17 segments from 42 deduplicated events
-INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 42 events, 14159 chars
-Retrieved Causal Segments {'W_ijgMs7wNg_18', '1ZqR-wGKHGQ_11', 'W_ijgMs7wNg_16', 'hjRxht__2wI_21', 'hjRxht__2wI_27', 'AUJeIG3Gjis_5', '1ZqR-wGKHGQ_14', '1ZqR-wGKHGQ_21', 'SbCmu7SeXCQ_4', 'Msaer6b6QU8_24', 'HuXhtV6Yi-k_11', '1ZqR-wGKHGQ_12', 'Msaer6b6QU8_13', 'cstrfin0bYo_3', '1ZqR-wGKHGQ_19', 'AUJeIG3Gjis_4', '1ZqR-wGKHGQ_32'}
-
-Retrieved Text Segments set()
-The output for the given question does not fit the pattern described in the goal since the question is related to a theoretical concept in decision-making models rather than a scene from a video. However, if we were to follow the instruction strictly and assume there's a hypothetical video explaining these concepts, the output could be:
-
-Output:
-A segment explaining the benefits of using a ratings model over pairwise comparisons in AHP and when it is particularly useful.
-Retrieved Visual Segments {'1ZqR-wGKHGQ_6', 'cstrfin0bYo_6', '1ZqR-wGKHGQ_4', 'cstrfin0bYo_7'}
-
-================================================================================
-🔍 FILTER 阶段诊断
-================================================================================
-检索到的片段总数: 21
-  - Entity检索: 0
-  - Visual检索: 4
-  - Causal检索: 17
-
-前5个片段ID示例:
-  1. 1ZqR-wGKHGQ_4
-  2. 1ZqR-wGKHGQ_6
-  3. 1ZqR-wGKHGQ_11
-  4. 1ZqR-wGKHGQ_12
-  5. 1ZqR-wGKHGQ_14
-
-📊 video_segments._data 结构:
-  可用视频数量: 11
-  示例视频: 1ZqR-wGKHGQ
-  该视频的片段索引数量: 38
-  前5个索引: ['0', '1', '2', '3', '4']
-  索引类型: <class 'str'>
-
-🔧 解析测试:
-  ✓ 成功解析: 21
-  ✗ 解析失败: 0
-================================================================================
-
-⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments⠙ Checked 11 segments⠹ Checked 12 segments⠸ Checked 13 segments⠼ Checked 14 segments⠴ Checked 15 segments⠦ Checked 16 segments⠧ Checked 17 segments⠇ Checked 18 segments⠏ Checked 19 segments⠋ Checked 20 segments⠙ Checked 21 segments7 Video Segments remain after filtering
-Remain segments ['1ZqR-wGKHGQ_11', '1ZqR-wGKHGQ_14', 'AUJeIG3Gjis_5', 'Msaer6b6QU8_13', 'W_ijgMs7wNg_16', 'W_ijgMs7wNg_18', 'hjRxht__2wI_27']
-Keywords: benefits, ratings model, pairwise comparisons, AHP, useful
-Captioning Segments for Given Query:   0%|          | 0/7 [00:00<?, ?it/s]Captioning Segments for Given Query:  14%|█▍        | 1/7 [00:31<03:10, 31.76s/it]Captioning Segments for Given Query:  29%|██▊       | 2/7 [00:55<02:14, 26.88s/it]Captioning Segments for Given Query:  43%|████▎     | 3/7 [01:24<01:51, 27.98s/it]Captioning Segments for Given Query:  57%|█████▋    | 4/7 [01:50<01:21, 27.33s/it]Captioning Segments for Given Query:  71%|███████▏  | 5/7 [02:21<00:56, 28.44s/it]Captioning Segments for Given Query:  86%|████████▌ | 6/7 [02:58<00:31, 31.56s/it]Captioning Segments for Given Query: 100%|██████████| 7/7 [03:26<00:00, 30.30s/it]Captioning Segments for Given Query: 100%|██████████| 7/7 [03:26<00:00, 29.51s/it]
-  [查询] 集合16 q1 entity_only: How can an AHP model be converted into a
-INFO:nano-graphrag:Truncate 20 to 13 chunks
-How can an AHP model be converted into an ANP model in Super Decisions, and what additional judgments are required for this conversion?
-Retrieved Text Segments {'JLs5iQrkVng_5', 'JLs5iQrkVng_6', 'JLs5iQrkVng_33', 'JLs5iQrkVng_4', 'JLs5iQrkVng_3'}
-The question provided seems to deviate from the context of generating a query for video segment retrieval based on scene-related information. Instead, it asks about a technical process related to decision-making models in a software tool called Super Decisions. Since the goal is to formulate a query for video content, this question doesn't fit the established pattern and thus cannot be directly transformed into a video query format.
-
-However, sticking strictly to the given instruction and format, if we were to imagine a scenario where a video explains the conversion process between AHP and ANP models using Super Decisions, an appropriate output could be:
-
-Output:
-A video explaining the conversion process from an AHP model to an ANP model in Super Decisions.
-Retrieved Visual Segments {'1ZqR-wGKHGQ_6', 'cstrfin0bYo_6', '1ZqR-wGKHGQ_4', 'cstrfin0bYo_7'}
-
-================================================================================
-🔍 FILTER 阶段诊断
-================================================================================
-检索到的片段总数: 9
-  - Entity检索: 5
-  - Visual检索: 4
-  - Causal检索: 0
-
-前5个片段ID示例:
-  1. 1ZqR-wGKHGQ_4
-  2. 1ZqR-wGKHGQ_6
-  3. JLs5iQrkVng_3
-  4. JLs5iQrkVng_4
-  5. JLs5iQrkVng_5
-
-📊 video_segments._data 结构:
-  可用视频数量: 11
-  示例视频: 1ZqR-wGKHGQ
-  该视频的片段索引数量: 38
-  前5个索引: ['0', '1', '2', '3', '4']
-  索引类型: <class 'str'>
-
-🔧 解析测试:
-  ✓ 成功解析: 9
-  ✗ 解析失败: 0
-================================================================================
-
-⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments1 Video Segments remain after filtering
-Remain segments ['cstrfin0bYo_6']
-Keywords: AHP, ANP, Super Decisions, judgments, conversion
-Captioning Segments for Given Query:   0%|          | 0/1 [00:00<?, ?it/s]Captioning Segments for Given Query: 100%|██████████| 1/1 [00:34<00:00, 34.65s/it]Captioning Segments for Given Query: 100%|██████████| 1/1 [00:34<00:00, 34.65s/it]
-  [查询] 集合16 q1 causal_only: How can an AHP model be converted into a
-INFO:nano-graphrag:Truncate 20 to 13 chunks
-INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The conversion process of an AHP model into an ANP model in Super Decisions and the additional judgments required for this transformation.
-INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
-INFO:nano-graphrag:[Causal Retrieval] 51 events after 2-hop bidirectional walk (from 20 seeds)
-INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 51 → 45 nodes (tau_dup=0.85)
-INFO:nano-graphrag:[Causal Retrieval] Retrieved 18 segments from 45 deduplicated events
-INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 45 events, 15552 chars
-Retrieved Causal Segments {'SbCmu7SeXCQ_13', 'W_ijgMs7wNg_16', 'hjRxht__2wI_27', 'cstrfin0bYo_42', 'cstrfin0bYo_61', 'Msaer6b6QU8_0', 'AUJeIG3Gjis_5', '1ZqR-wGKHGQ_14', 'SbCmu7SeXCQ_4', 'HwkyhIiG8V0_9', 'HuXhtV6Yi-k_11', 'Msaer6b6QU8_24', 'SbCmu7SeXCQ_6', 'Msaer6b6QU8_13', 'cstrfin0bYo_3', 'SbCmu7SeXCQ_0', 'AUJeIG3Gjis_4', 'JLs5iQrkVng_5'}
-
-Retrieved Text Segments set()
-The output for the given question does not fit the pattern of generating a query for retrieving relevant video segments since the question pertains to a methodological process in decision-making models rather than a scene from a video. However, sticking strictly to the format requested and attempting to reframe the question into a video context would not make logical sense. Therefore, I'll provide a response more aligned with the instruction's original intent but will also note the mismatch:
-
-For a video context query based on the structure provided, it would not apply directly to the question about AHP and ANP models. If we were to hypothetically create a video segment query related to a scenario involving experts explaining such models, it could look something like this:
-
-Output:
-Experts explain the conversion process from an AHP model to an ANP model in a software demonstration.
-Retrieved Visual Segments {'1ZqR-wGKHGQ_6', 'cstrfin0bYo_6', '1ZqR-wGKHGQ_4', 'cstrfin0bYo_7'}
-
-================================================================================
-🔍 FILTER 阶段诊断
-================================================================================
-检索到的片段总数: 22
-  - Entity检索: 0
-  - Visual检索: 4
-  - Causal检索: 18
-
-前5个片段ID示例:
-  1. 1ZqR-wGKHGQ_4
-  2. 1ZqR-wGKHGQ_6
-  3. 1ZqR-wGKHGQ_14
-  4. AUJeIG3Gjis_4
-  5. AUJeIG3Gjis_5
-
-📊 video_segments._data 结构:
-  可用视频数量: 11
-  示例视频: 1ZqR-wGKHGQ
-  该视频的片段索引数量: 38
-  前5个索引: ['0', '1', '2', '3', '4']
-  索引类型: <class 'str'>
-
-🔧 解析测试:
-  ✓ 成功解析: 22
-  ✗ 解析失败: 0
-================================================================================
-
-⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments⠙ Checked 11 segments⠹ Checked 12 segments⠸ Checked 13 segments⠼ Checked 14 segments⠴ Checked 15 segments⠦ Checked 16 segments⠧ Checked 17 segments⠇ Checked 18 segments⠏ Checked 19 segments⠋ Checked 20 segments⠙ Checked 21 segments⠹ Checked 22 segments10 Video Segments remain after filtering
-Remain segments ['HwkyhIiG8V0_9', 'JLs5iQrkVng_5', 'Msaer6b6QU8_13', 'Msaer6b6QU8_24', 'SbCmu7SeXCQ_0', 'SbCmu7SeXCQ_13', 'W_ijgMs7wNg_16', 'cstrfin0bYo_6', 'cstrfin0bYo_42', 'cstrfin0bYo_61']
-Keywords: AHP, ANP, Super Decisions, judgments, conversion
-Captioning Segments for Given Query:   0%|          | 0/10 [00:00<?, ?it/s]Captioning Segments for Given Query:  10%|█         | 1/10 [00:36<05:27, 36.34s/it]Captioning Segments for Given Query:  20%|██        | 2/10 [01:04<04:11, 31.44s/it]Captioning Segments for Given Query:  30%|███       | 3/10 [01:33<03:33, 30.55s/it]Captioning Segments for Given Query:  40%|████      | 4/10 [01:52<02:35, 25.90s/it]Captioning Segments for Given Query:  50%|█████     | 5/10 [02:26<02:23, 28.75s/it]Captioning Segments for Given Query:  60%|██████    | 6/10 [02:52<01:51, 27.82s/it]Captioning Segments for Given Query:  70%|███████   | 7/10 [03:22<01:25, 28.46s/it]Captioning Segments for Given Query:  80%|████████  | 8/10 [03:53<00:58, 29.34s/it]Captioning Segments for Given Query:  90%|█████████ | 9/10 [04:31<00:32, 32.22s/it]Captioning Segments for Given Query: 100%|██████████| 10/10 [05:05<00:00, 32.52s/it]Captioning Segments for Given Query: 100%|██████████| 10/10 [05:05<00:00, 30.52s/it]
-  [查询] 集合16 q2 entity_only: How can the results of AHP analysis be v
-INFO:nano-graphrag:Truncate 20 to 13 chunks
-How can the results of AHP analysis be visualized in Super Decisions, including the priorities of alternatives and criteria?
-Retrieved Text Segments {'JLs5iQrkVng_5', 'JLs5iQrkVng_6', 'JLs5iQrkVng_33', 'JLs5iQrkVng_4', 'JLs5iQrkVng_3'}
-Output: Visualizing the results of AHP analysis in Super Decisions, including the priorities of alternatives and criteria.
-Retrieved Visual Segments {'HuXhtV6Yi-k_11', 'AUJeIG3Gjis_24', 'AUJeIG3Gjis_0', 'HuXhtV6Yi-k_10'}
-
-================================================================================
-🔍 FILTER 阶段诊断
-================================================================================
-检索到的片段总数: 9
-  - Entity检索: 5
-  - Visual检索: 4
-  - Causal检索: 0
-
-前5个片段ID示例:
-  1. AUJeIG3Gjis_0
-  2. AUJeIG3Gjis_24
-  3. HuXhtV6Yi-k_10
-  4. HuXhtV6Yi-k_11
-  5. JLs5iQrkVng_3
-
-📊 video_segments._data 结构:
-  可用视频数量: 11
-  示例视频: 1ZqR-wGKHGQ
-  该视频的片段索引数量: 38
-  前5个索引: ['0', '1', '2', '3', '4']
-  索引类型: <class 'str'>
-
-🔧 解析测试:
-  ✓ 成功解析: 9
-  ✗ 解析失败: 0
-================================================================================
-
-⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments7 Video Segments remain after filtering
-Remain segments ['AUJeIG3Gjis_24', 'HuXhtV6Yi-k_10', 'HuXhtV6Yi-k_11', 'JLs5iQrkVng_3', 'JLs5iQrkVng_5', 'JLs5iQrkVng_6', 'JLs5iQrkVng_33']
-Keywords: AHP, analysis, visualization, Super Decisions, priorities, alternatives, criteria
-Captioning Segments for Given Query:   0%|          | 0/7 [00:00<?, ?it/s]Captioning Segments for Given Query:  14%|█▍        | 1/7 [00:17<01:47, 17.95s/it]Captioning Segments for Given Query:  29%|██▊       | 2/7 [00:40<01:43, 20.66s/it]Captioning Segments for Given Query:  43%|████▎     | 3/7 [01:01<01:24, 21.01s/it]Captioning Segments for Given Query:  57%|█████▋    | 4/7 [01:27<01:08, 22.77s/it]Captioning Segments for Given Query:  71%|███████▏  | 5/7 [01:43<00:41, 20.53s/it]Captioning Segments for Given Query:  86%|████████▌ | 6/7 [02:09<00:22, 22.25s/it]Captioning Segments for Given Query: 100%|██████████| 7/7 [02:37<00:00, 24.24s/it]Captioning Segments for Given Query: 100%|██████████| 7/7 [02:37<00:00, 22.55s/it]
-  [查询] 集合16 q2 causal_only: How can the results of AHP analysis be v
-INFO:nano-graphrag:Truncate 20 to 13 chunks
-INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The process of visualizing the results of an AHP (Analytic Hierarchy Process) analysis in Super Decisions, including the display of priorities for both alternatives and criteria.
-INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
-INFO:nano-graphrag:[Causal Retrieval] 53 events after 2-hop bidirectional walk (from 20 seeds)
-INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 53 → 46 nodes (tau_dup=0.85)
-INFO:nano-graphrag:[Causal Retrieval] Retrieved 17 segments from 46 deduplicated events
-INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 46 events, 17153 chars
-Retrieved Causal Segments {'W_ijgMs7wNg_18', 'AUJeIG3Gjis_3', 'JLs5iQrkVng_17', 'Msaer6b6QU8_0', 'JLs5iQrkVng_13', '1ZqR-wGKHGQ_14', 'Msaer6b6QU8_23', 'Msaer6b6QU8_24', 'JLs5iQrkVng_29', 'HuXhtV6Yi-k_11', 'Msaer6b6QU8_22', 'Msaer6b6QU8_10', 'JLs5iQrkVng_22', 'HwkyhIiG8V0_3', 'HwkyhIiG8V0_10', 'AUJeIG3Gjis_8', 'AUJeIG3Gjis_4'}
-
-Retrieved Text Segments set()
-Output:
-Visualizing the results of AHP analysis, including the priorities of alternatives and criteria, in Super Decisions.
-Retrieved Visual Segments {'HuXhtV6Yi-k_11', 'AUJeIG3Gjis_24', 'AUJeIG3Gjis_0', 'HuXhtV6Yi-k_10'}
-
-================================================================================
-🔍 FILTER 阶段诊断
-================================================================================
-检索到的片段总数: 20
-  - Entity检索: 0
-  - Visual检索: 4
-  - Causal检索: 17
-
-前5个片段ID示例:
-  1. 1ZqR-wGKHGQ_14
-  2. AUJeIG3Gjis_0
-  3. AUJeIG3Gjis_3
-  4. AUJeIG3Gjis_4
-  5. AUJeIG3Gjis_8
-
-📊 video_segments._data 结构:
-  可用视频数量: 11
-  示例视频: 1ZqR-wGKHGQ
-  该视频的片段索引数量: 38
-  前5个索引: ['0', '1', '2', '3', '4']
-  索引类型: <class 'str'>
-
-🔧 解析测试:
-  ✓ 成功解析: 20
-  ✗ 解析失败: 0
-================================================================================
-
-⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments⠙ Checked 11 segments⠹ Checked 12 segments⠸ Checked 13 segments⠼ Checked 14 segments⠴ Checked 15 segments⠦ Checked 16 segments⠧ Checked 17 segments⠇ Checked 18 segments⠏ Checked 19 segments⠋ Checked 20 segments18 Video Segments remain after filtering
-Remain segments ['1ZqR-wGKHGQ_14', 'AUJeIG3Gjis_3', 'AUJeIG3Gjis_4', 'AUJeIG3Gjis_8', 'AUJeIG3Gjis_24', 'HuXhtV6Yi-k_10', 'HuXhtV6Yi-k_11', 'HwkyhIiG8V0_3', 'HwkyhIiG8V0_10', 'JLs5iQrkVng_13', 'JLs5iQrkVng_17', 'JLs5iQrkVng_22', 'JLs5iQrkVng_29', 'Msaer6b6QU8_10', 'Msaer6b6QU8_22', 'Msaer6b6QU8_23', 'Msaer6b6QU8_24', 'W_ijgMs7wNg_18']
-Keywords: AHP, analysis, visualization, Super Decisions, priorities, alternatives, criteria
-Captioning Segments for Given Query:   0%|          | 0/18 [00:00<?, ?it/s]Captioning Segments for Given Query:   6%|▌         | 1/18 [00:27<07:47, 27.53s/it]Captioning Segments for Given Query:  11%|█         | 2/18 [01:02<08:30, 31.89s/it]Captioning Segments for Given Query:  17%|█▋        | 3/18 [01:25<06:57, 27.82s/it]Captioning Segments for Given Query:  22%|██▏       | 4/18 [01:49<06:09, 26.43s/it]Captioning Segments for Given Query:  28%|██▊       | 5/18 [02:07<05:01, 23.18s/it]Captioning Segments for Given Query:  33%|███▎      | 6/18 [02:32<04:45, 23.81s/it]Captioning Segments for Given Query:  39%|███▉      | 7/18 [03:01<04:40, 25.48s/it]Captioning Segments for Given Query:  44%|████▍     | 8/18 [03:33<04:35, 27.57s/it]Captioning Segments for Given Query:  50%|█████     | 9/18 [04:03<04:15, 28.35s/it]Captioning Segments for Given Query:  56%|█████▌    | 10/18 [04:22<03:24, 25.51s/it]Captioning Segments for Given Query:  61%|██████    | 11/18 [04:52<03:09, 27.07s/it]Captioning Segments for Given Query:  67%|██████▋   | 12/18 [05:18<02:39, 26.55s/it]Captioning Segments for Given Query:  72%|███████▏  | 13/18 [05:44<02:11, 26.37s/it]Captioning Segments for Given Query:  78%|███████▊  | 14/18 [06:09<01:44, 26.10s/it]Captioning Segments for Given Query:  83%|████████▎ | 15/18 [06:27<01:10, 23.44s/it]Captioning Segments for Given Query:  89%|████████▉ | 16/18 [07:04<00:55, 27.79s/it]Captioning Segments for Given Query:  94%|█████████▍| 17/18 [07:26<00:25, 25.82s/it]Captioning Segments for Given Query: 100%|██████████| 18/18 [07:57<00:00, 27.37s/it]Captioning Segments for Given Query: 100%|██████████| 18/18 [07:57<00:00, 26.51s/it]
-  [查询] 集合16 q3 entity_only: How is the unweighted supermatrix used i
-INFO:nano-graphrag:Truncate 20 to 13 chunks
-How is the unweighted supermatrix used in AHP, and how is it generated in Super Decisions?
-Retrieved Text Segments {'SbCmu7SeXCQ_2', 'JLs5iQrkVng_33', 'SbCmu7SeXCQ_3'}
-The output for the given question should focus on the video content related to the demonstration or explanation of the use of an unweighted supermatrix in AHP (Analytic Hierarchy Process) and its generation in Super Decisions software. Since the original question doesn't fit the typical pattern of querying for visual scenes or actions within a video, we can still formulate a query that would be relevant for educational content or a tutorial video.
-
-Output:
-A video segment explaining how the unweighted supermatrix is used in AHP and demonstrating its generation in Super Decisions software.
-Retrieved Visual Segments {'1ZqR-wGKHGQ_6', 'cstrfin0bYo_6', '1ZqR-wGKHGQ_4', 'cstrfin0bYo_7'}
-
-================================================================================
-🔍 FILTER 阶段诊断
-================================================================================
-检索到的片段总数: 7
-  - Entity检索: 3
-  - Visual检索: 4
-  - Causal检索: 0
-
-前5个片段ID示例:
-  1. 1ZqR-wGKHGQ_4
-  2. 1ZqR-wGKHGQ_6
-  3. JLs5iQrkVng_33
-  4. SbCmu7SeXCQ_2
-  5. SbCmu7SeXCQ_3
-
-📊 video_segments._data 结构:
-  可用视频数量: 11
-  示例视频: 1ZqR-wGKHGQ
-  该视频的片段索引数量: 38
-  前5个索引: ['0', '1', '2', '3', '4']
-  索引类型: <class 'str'>
-
-🔧 解析测试:
-  ✓ 成功解析: 7
-  ✗ 解析失败: 0
-================================================================================
-
-⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments3 Video Segments remain after filtering
-Remain segments ['1ZqR-wGKHGQ_4', 'JLs5iQrkVng_33', 'cstrfin0bYo_7']
-Keywords: unweighted supermatrix, AHP, Super Decisions, generated
-Captioning Segments for Given Query:   0%|          | 0/3 [00:00<?, ?it/s]Captioning Segments for Given Query:  33%|███▎      | 1/3 [00:30<01:00, 30.06s/it]Captioning Segments for Given Query:  67%|██████▋   | 2/3 [01:07<00:34, 34.12s/it]Captioning Segments for Given Query: 100%|██████████| 3/3 [01:26<00:00, 27.26s/it]Captioning Segments for Given Query: 100%|██████████| 3/3 [01:26<00:00, 28.71s/it]
-  [查询] 集合16 q3 causal_only: How is the unweighted supermatrix used i
-INFO:nano-graphrag:Truncate 20 to 13 chunks
-INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The generation of the unweighted supermatrix in Super Decisions and its utilization in the Analytic Hierarchy Process (AHP).
-INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
-INFO:nano-graphrag:[Causal Retrieval] 49 events after 2-hop bidirectional walk (from 20 seeds)
-INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 49 → 43 nodes (tau_dup=0.85)
-INFO:nano-graphrag:[Causal Retrieval] Retrieved 19 segments from 43 deduplicated events
-INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 43 events, 14773 chars
-Retrieved Causal Segments {'1ZqR-wGKHGQ_11', '1ZqR-wGKHGQ_14', 'HwkyhIiG8V0_9', 'cstrfin0bYo_42', 'cstrfin0bYo_61', 'cstrfin0bYo_44', 'Msaer6b6QU8_24', 'HuXhtV6Yi-k_11', 'Msaer6b6QU8_22', 'SbCmu7SeXCQ_6', 'cstrfin0bYo_3', 'AUJeIG3Gjis_4', 'JLs5iQrkVng_11', '1ZqR-wGKHGQ_12', 'Msaer6b6QU8_13', '1ZqR-wGKHGQ_32', 'W_ijgMs7wNg_16', 'AUJeIG3Gjis_5', 'SbCmu7SeXCQ_4'}
-
-Retrieved Text Segments set()
-The output for the given question does not fit the pattern established by previous examples, as it asks for an explanation rather than describing a scene or visual content. However, sticking strictly to the instruction and aiming to formulate a query for retrieving relevant video segments, this scenario might not directly apply since the question pertains to a process description rather than a visual scene.
-
-Nonetheless, if we were to adapt the format to include any potential visual demonstration or explanation related to the use of an unweighted supermatrix in AHP within Super Decisions software:
-
-Output:
-A video segment demonstrating the generation and usage of an unweighted supermatrix in AHP using Super Decisions software.
-Retrieved Visual Segments {'1ZqR-wGKHGQ_6', 'cstrfin0bYo_6', '1ZqR-wGKHGQ_4', 'cstrfin0bYo_7'}
-
-================================================================================
-🔍 FILTER 阶段诊断
-================================================================================
-检索到的片段总数: 23
-  - Entity检索: 0
-  - Visual检索: 4
-  - Causal检索: 19
-
-前5个片段ID示例:
-  1. 1ZqR-wGKHGQ_4
-  2. 1ZqR-wGKHGQ_6
-  3. 1ZqR-wGKHGQ_11
-  4. 1ZqR-wGKHGQ_12
-  5. 1ZqR-wGKHGQ_14
-
-📊 video_segments._data 结构:
-  可用视频数量: 11
-  示例视频: 1ZqR-wGKHGQ
-  该视频的片段索引数量: 38
-  前5个索引: ['0', '1', '2', '3', '4']
-  索引类型: <class 'str'>
-
-🔧 解析测试:
-  ✓ 成功解析: 23
-  ✗ 解析失败: 0
-================================================================================
-
-⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments⠙ Checked 11 segments⠹ Checked 12 segments⠸ Checked 13 segments⠼ Checked 14 segments⠴ Checked 15 segments⠦ Checked 16 segments⠧ Checked 17 segments⠇ Checked 18 segments⠏ Checked 19 segments⠋ Checked 20 segments⠙ Checked 21 segments⠹ Checked 22 segments⠸ Checked 23 segments17 Video Segments remain after filtering
-Remain segments ['1ZqR-wGKHGQ_11', '1ZqR-wGKHGQ_12', 'AUJeIG3Gjis_4', 'AUJeIG3Gjis_5', 'HwkyhIiG8V0_9', 'JLs5iQrkVng_11', 'Msaer6b6QU8_13', 'Msaer6b6QU8_22', 'SbCmu7SeXCQ_4', 'SbCmu7SeXCQ_6', 'W_ijgMs7wNg_16', 'cstrfin0bYo_3', 'cstrfin0bYo_6', 'cstrfin0bYo_7', 'cstrfin0bYo_42', 'cstrfin0bYo_44', 'cstrfin0bYo_61']
-Keywords: unweighted supermatrix, AHP, Super Decisions, generated
-Captioning Segments for Given Query:   0%|          | 0/17 [00:00<?, ?it/s]Captioning Segments for Given Query:   6%|▌         | 1/17 [00:26<07:00, 26.25s/it]Captioning Segments for Given Query:  12%|█▏        | 2/17 [01:00<07:39, 30.67s/it]Captioning Segments for Given Query:  18%|█▊        | 3/17 [01:28<06:56, 29.78s/it]Captioning Segments for Given Query:  24%|██▎       | 4/17 [01:55<06:10, 28.51s/it]Captioning Segments for Given Query:  29%|██▉       | 5/17 [02:15<05:05, 25.43s/it]Captioning Segments for Given Query:  35%|███▌      | 6/17 [02:45<04:57, 27.08s/it]Captioning Segments for Given Query:  41%|████      | 7/17 [03:02<03:58, 23.86s/it]Captioning Segments for Given Query:  47%|████▋     | 8/17 [03:20<03:15, 21.76s/it]Captioning Segments for Given Query:  53%|█████▎    | 9/17 [03:49<03:12, 24.05s/it]Captioning Segments for Given Query:  59%|█████▉    | 10/17 [04:24<03:12, 27.48s/it]Captioning Segments for Given Query:  65%|██████▍   | 11/17 [04:44<02:31, 25.18s/it]Captioning Segments for Given Query:  71%|███████   | 12/17 [05:14<02:13, 26.70s/it]Captioning Segments for Given Query:  76%|███████▋  | 13/17 [05:46<01:53, 28.38s/it]Captioning Segments for Given Query:  82%|████████▏ | 14/17 [06:20<01:30, 30.12s/it]Captioning Segments for Given Query:  88%|████████▊ | 15/17 [07:01<01:06, 33.23s/it]Captioning Segments for Given Query:  94%|█████████▍| 16/17 [07:34<00:33, 33.13s/it]Captioning Segments for Given Query: 100%|██████████| 17/17 [08:05<00:00, 32.72s/it]Captioning Segments for Given Query: 100%|██████████| 17/17 [08:05<00:00, 28.58s/it]
-  [查询] 集合16 q4 entity_only: How can the global priorities of alterna
-INFO:nano-graphrag:Truncate 20 to 12 chunks
-How can the global priorities of alternatives be calculated in AHP using Super Decisions?
-Retrieved Text Segments {'JLs5iQrkVng_5', 'JLs5iQrkVng_6', 'JLs5iQrkVng_33', 'JLs5iQrkVng_4', 'JLs5iQrkVng_3'}
-The output for the given question does not fit the pattern of previous examples since it pertains to a methodological inquiry rather than a scene description from a video. However, adhering strictly to the instruction and format provided, we should aim to describe a video segment that could theoretically depict the calculation process. 
-
-Given the context, a more fitting query would relate to a video segment showing someone performing calculations or explaining the Analytic Hierarchy Process (AHP) using Super Decisions software. 
-
-Here's an appropriate output following the instruction's guidelines:
-
-Output:
-A video segment showing the process of calculating global priorities of alternatives in AHP using Super Decisions software.
-Retrieved Visual Segments {'1ZqR-wGKHGQ_6', 'cstrfin0bYo_6', '1ZqR-wGKHGQ_4', 'cstrfin0bYo_7'}
-
-================================================================================
-🔍 FILTER 阶段诊断
-================================================================================
-检索到的片段总数: 9
-  - Entity检索: 5
-  - Visual检索: 4
-  - Causal检索: 0
-
-前5个片段ID示例:
-  1. 1ZqR-wGKHGQ_4
-  2. 1ZqR-wGKHGQ_6
-  3. JLs5iQrkVng_3
-  4. JLs5iQrkVng_4
-  5. JLs5iQrkVng_5
-
-📊 video_segments._data 结构:
-  可用视频数量: 11
-  示例视频: 1ZqR-wGKHGQ
-  该视频的片段索引数量: 38
-  前5个索引: ['0', '1', '2', '3', '4']
-  索引类型: <class 'str'>
-
-🔧 解析测试:
-  ✓ 成功解析: 9
-  ✗ 解析失败: 0
-================================================================================
-
-⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments5 Video Segments remain after filtering
-Remain segments ['JLs5iQrkVng_4', 'JLs5iQrkVng_5', 'JLs5iQrkVng_33', 'cstrfin0bYo_6', 'cstrfin0bYo_7']
-Keywords: global priorities, alternatives, AHP, Super Decisions
-Captioning Segments for Given Query:   0%|          | 0/5 [00:00<?, ?it/s]Captioning Segments for Given Query:  20%|██        | 1/5 [00:28<01:53, 28.42s/it]Captioning Segments for Given Query:  40%|████      | 2/5 [00:50<01:13, 24.42s/it]Captioning Segments for Given Query:  60%|██████    | 3/5 [01:24<00:57, 28.86s/it]Captioning Segments for Given Query:  80%|████████  | 4/5 [01:49<00:27, 27.44s/it]Captioning Segments for Given Query: 100%|██████████| 5/5 [02:19<00:00, 28.41s/it]Captioning Segments for Given Query: 100%|██████████| 5/5 [02:19<00:00, 27.92s/it]
-  [查询] 集合16 q4 causal_only: How can the global priorities of alterna
-INFO:nano-graphrag:Truncate 20 to 12 chunks
-INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The process of calculating global priorities for alternatives in AHP using Super Decisions and the resulting outcomes.
-INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
-INFO:nano-graphrag:[Causal Retrieval] 45 events after 2-hop bidirectional walk (from 20 seeds)
-INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 45 → 41 nodes (tau_dup=0.85)
-INFO:nano-graphrag:[Causal Retrieval] Retrieved 18 segments from 41 deduplicated events
-INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 41 events, 13764 chars
-Retrieved Causal Segments {'W_ijgMs7wNg_18', 'Msaer6b6QU8_10', 'W_ijgMs7wNg_16', 'cstrfin0bYo_61', 'AUJeIG3Gjis_5', '1ZqR-wGKHGQ_14', 'cstrfin0bYo_44', 'Msaer6b6QU8_24', 'HuXhtV6Yi-k_11', 'Msaer6b6QU8_22', 'SbCmu7SeXCQ_6', 'Msaer6b6QU8_13', 'Msaer6b6QU8_21', 'hjRxht__2wI_34', 'SbCmu7SeXCQ_4', 'HwkyhIiG8V0_10', 'AUJeIG3Gjis_4', 'JLs5iQrkVng_5'}
-
-Retrieved Text Segments set()
-The output for the given question should focus on the video content related to the process or demonstration of calculating global priorities using AHP (Analytic Hierarchy Process) with Super Decisions software. However, since the question pertains to a methodological process rather than a visual scene, we might adjust the approach to focus on a tutorial or instructional video segment:
-
-Output:
-A video segment demonstrating how to calculate global priorities in AHP using Super Decisions.
-Retrieved Visual Segments {'1ZqR-wGKHGQ_6', 'cstrfin0bYo_6', '1ZqR-wGKHGQ_4', 'cstrfin0bYo_7'}
-
-================================================================================
-🔍 FILTER 阶段诊断
-================================================================================
-检索到的片段总数: 22
-  - Entity检索: 0
-  - Visual检索: 4
-  - Causal检索: 18
-
-前5个片段ID示例:
-  1. 1ZqR-wGKHGQ_4
-  2. 1ZqR-wGKHGQ_6
-  3. 1ZqR-wGKHGQ_14
-  4. AUJeIG3Gjis_4
-  5. AUJeIG3Gjis_5
-
-📊 video_segments._data 结构:
-  可用视频数量: 11
-  示例视频: 1ZqR-wGKHGQ
-  该视频的片段索引数量: 38
-  前5个索引: ['0', '1', '2', '3', '4']
-  索引类型: <class 'str'>
-
-🔧 解析测试:
-  ✓ 成功解析: 22
-  ✗ 解析失败: 0
-================================================================================
-
-⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments⠙ Checked 11 segments⠹ Checked 12 segments⠸ Checked 13 segments⠼ Checked 14 segments⠴ Checked 15 segments⠦ Checked 16 segments⠧ Checked 17 segments⠇ Checked 18 segments⠏ Checked 19 segments⠋ Checked 20 segments⠙ Checked 21 segments⠹ Checked 22 segments20 Video Segments remain after filtering
-Remain segments ['1ZqR-wGKHGQ_14', 'AUJeIG3Gjis_4', 'AUJeIG3Gjis_5', 'HuXhtV6Yi-k_11', 'HwkyhIiG8V0_10', 'JLs5iQrkVng_5', 'Msaer6b6QU8_10', 'Msaer6b6QU8_13', 'Msaer6b6QU8_21', 'Msaer6b6QU8_22', 'Msaer6b6QU8_24', 'SbCmu7SeXCQ_4', 'SbCmu7SeXCQ_6', 'W_ijgMs7wNg_16', 'W_ijgMs7wNg_18', 'cstrfin0bYo_6', 'cstrfin0bYo_7', 'cstrfin0bYo_44', 'cstrfin0bYo_61', 'hjRxht__2wI_34']
-Keywords: global priorities, alternatives, AHP, Super Decisions
-Captioning Segments for Given Query:   0%|          | 0/20 [00:00<?, ?it/s]Captioning Segments for Given Query:   5%|▌         | 1/20 [00:24<07:52, 24.86s/it]Captioning Segments for Given Query:  10%|█         | 2/20 [00:53<08:12, 27.35s/it]Captioning Segments for Given Query:  15%|█▌        | 3/20 [01:28<08:38, 30.50s/it]Captioning Segments for Given Query:  20%|██        | 4/20 [01:55<07:47, 29.24s/it]Captioning Segments for Given Query:  25%|██▌       | 5/20 [02:23<07:13, 28.87s/it]Captioning Segments for Given Query:  30%|███       | 6/20 [02:51<06:41, 28.67s/it]Captioning Segments for Given Query:  35%|███▌      | 7/20 [03:19<06:08, 28.34s/it]Captioning Segments for Given Query:  40%|████      | 8/20 [03:55<06:08, 30.69s/it]Captioning Segments for Given Query:  45%|████▌     | 9/20 [04:17<05:08, 28.03s/it]Captioning Segments for Given Query:  50%|█████     | 10/20 [04:45<04:40, 28.00s/it]Captioning Segments for Given Query:  55%|█████▌    | 11/20 [05:10<04:02, 26.99s/it]Captioning Segments for Given Query:  60%|██████    | 12/20 [05:35<03:31, 26.48s/it]Captioning Segments for Given Query:  65%|██████▌   | 13/20 [06:04<03:11, 27.31s/it]Captioning Segments for Given Query:  70%|███████   | 14/20 [06:36<02:52, 28.71s/it]Captioning Segments for Given Query:  75%|███████▌  | 15/20 [07:11<02:32, 30.54s/it]Captioning Segments for Given Query:  80%|████████  | 16/20 [07:43<02:03, 30.85s/it]Captioning Segments for Given Query:  85%|████████▌ | 17/20 [08:11<01:30, 30.18s/it]Captioning Segments for Given Query:  90%|█████████ | 18/20 [08:51<01:06, 33.07s/it]Captioning Segments for Given Query:  95%|█████████▌| 19/20 [09:22<00:32, 32.40s/it]Captioning Segments for Given Query: 100%|██████████| 20/20 [09:53<00:00, 32.19s/it]Captioning Segments for Given Query: 100%|██████████| 20/20 [09:53<00:00, 29.70s/it]
-  [查询] 集合16 q5 entity_only: How can the inconsistency ratio be impro
-INFO:nano-graphrag:Truncate 20 to 11 chunks
-How can the inconsistency ratio be improved in Super Decisions software?
-Retrieved Text Segments {'JLs5iQrkVng_6', 'Msaer6b6QU8_23', 'JLs5iQrkVng_3', 'Msaer6b6QU8_24', 'Msaer6b6QU8_22', 'JLs5iQrkVng_4', 'Msaer6b6QU8_21', 'JLs5iQrkVng_5'}
-It seems there might be a bit of confusion here. The previous examples were about generating queries related to scenes in movies or videos, but the last question is asking about improving the inconsistency ratio in Super Decisions software, which is not related to video content. However, if we follow the instruction strictly and try to adapt it to the format given:
-
-For the software context, we might rephrase it to fit the pattern of querying for video segments, but since it's not a video-related question, a more appropriate response would be:
-
-Output:
-How to improve the inconsistency ratio in the demonstration video of Super Decisions software.
-
-This output assumes there is a video demonstrating how to use Super Decisions software, and the question is seeking a segment of the video that addresses improving the inconsistency ratio. If no such video exists or if the question should be treated differently, please clarify!
-Retrieved Visual Segments {'1ZqR-wGKHGQ_6', 'cstrfin0bYo_6', '1ZqR-wGKHGQ_4', 'cstrfin0bYo_7'}
-
-================================================================================
-🔍 FILTER 阶段诊断
-================================================================================
-检索到的片段总数: 12
-  - Entity检索: 8
-  - Visual检索: 4
-  - Causal检索: 0
-
-前5个片段ID示例:
-  1. 1ZqR-wGKHGQ_4
-  2. 1ZqR-wGKHGQ_6
-  3. JLs5iQrkVng_3
-  4. JLs5iQrkVng_4
-  5. JLs5iQrkVng_5
-
-📊 video_segments._data 结构:
-  可用视频数量: 11
-  示例视频: 1ZqR-wGKHGQ
-  该视频的片段索引数量: 38
-  前5个索引: ['0', '1', '2', '3', '4']
-  索引类型: <class 'str'>
-
-🔧 解析测试:
-  ✓ 成功解析: 12
-  ✗ 解析失败: 0
-================================================================================
-
-⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments⠙ Checked 11 segments⠹ Checked 12 segments10 Video Segments remain after filtering
-Remain segments ['1ZqR-wGKHGQ_4', 'JLs5iQrkVng_3', 'JLs5iQrkVng_4', 'JLs5iQrkVng_5', 'JLs5iQrkVng_6', 'Msaer6b6QU8_21', 'Msaer6b6QU8_22', 'Msaer6b6QU8_23', 'Msaer6b6QU8_24', 'cstrfin0bYo_6']
-Keywords: inconsistency ratio, improve, Super Decisions, software
-Captioning Segments for Given Query:   0%|          | 0/10 [00:00<?, ?it/s]Captioning Segments for Given Query:  10%|█         | 1/10 [00:31<04:47, 31.97s/it]Captioning Segments for Given Query:  20%|██        | 2/10 [00:49<03:05, 23.24s/it]Captioning Segments for Given Query:  30%|███       | 3/10 [01:14<02:49, 24.16s/it]Captioning Segments for Given Query:  40%|████      | 4/10 [01:42<02:34, 25.70s/it]Captioning Segments for Given Query:  50%|█████     | 5/10 [02:08<02:09, 25.82s/it]Captioning Segments for Given Query:  60%|██████    | 6/10 [02:34<01:43, 25.86s/it]Captioning Segments for Given Query:  70%|███████   | 7/10 [02:59<01:16, 25.56s/it]Captioning Segments for Given Query:  80%|████████  | 8/10 [03:25<00:51, 25.66s/it]Captioning Segments for Given Query:  90%|█████████ | 9/10 [03:47<00:24, 24.67s/it]Captioning Segments for Given Query: 100%|██████████| 10/10 [04:08<00:00, 23.60s/it]Captioning Segments for Given Query: 100%|██████████| 10/10 [04:08<00:00, 24.89s/it]
-  [查询] 集合16 q5 causal_only: How can the inconsistency ratio be impro
-INFO:nano-graphrag:Truncate 20 to 11 chunks
-INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The factors affecting the inconsistency ratio and their impact on improving it within the Super Decisions software.
-INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
-INFO:nano-graphrag:[Causal Retrieval] 48 events after 2-hop bidirectional walk (from 20 seeds)
-INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 48 → 42 nodes (tau_dup=0.85)
-INFO:nano-graphrag:[Causal Retrieval] Retrieved 16 segments from 42 deduplicated events
-INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 42 events, 14054 chars
-Retrieved Causal Segments {'W_ijgMs7wNg_16', 'cstrfin0bYo_61', 'AUJeIG3Gjis_5', '1ZqR-wGKHGQ_14', 'cstrfin0bYo_43', 'hjRxht__2wI_26', 'SbCmu7SeXCQ_4', 'HwkyhIiG8V0_9', 'HuXhtV6Yi-k_11', 'Msaer6b6QU8_22', 'SbCmu7SeXCQ_6', 'Msaer6b6QU8_13', 'Msaer6b6QU8_24', 'cstrfin0bYo_3', 'SbCmu7SeXCQ_8', 'AUJeIG3Gjis_4'}
-
-Retrieved Text Segments set()
-It seems like the provided question is not related to a scene from a video or movie, but rather a technical question about improving the inconsistency ratio in Super Decisions software. Given the structure and context of your previous examples, if we were to fit this into a similar format, it might look something like:
-
-Output:
-A segment demonstrating how to improve the inconsistency ratio in Super Decisions software.
-
-However, since your prompt specifically asks for generating queries for retrieving relevant video segments based on scene-related information, the given question doesn't fit the criteria. If you have a scene-related question regarding video content, please provide it so I can assist accordingly.
-Retrieved Visual Segments {'1ZqR-wGKHGQ_6', 'cstrfin0bYo_6', '1ZqR-wGKHGQ_4', 'cstrfin0bYo_7'}
-
-================================================================================
-🔍 FILTER 阶段诊断
-================================================================================
-检索到的片段总数: 20
-  - Entity检索: 0
-  - Visual检索: 4
-  - Causal检索: 16
-
-前5个片段ID示例:
-  1. 1ZqR-wGKHGQ_4
-  2. 1ZqR-wGKHGQ_6
-  3. 1ZqR-wGKHGQ_14
-  4. AUJeIG3Gjis_4
-  5. AUJeIG3Gjis_5
-
-📊 video_segments._data 结构:
-  可用视频数量: 11
-  示例视频: 1ZqR-wGKHGQ
-  该视频的片段索引数量: 38
-  前5个索引: ['0', '1', '2', '3', '4']
-  索引类型: <class 'str'>
-
-🔧 解析测试:
-  ✓ 成功解析: 20
-  ✗ 解析失败: 0
-================================================================================
-
-⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments⠙ Checked 11 segments⠹ Checked 12 segments⠸ Checked 13 segments⠼ Checked 14 segments⠴ Checked 15 segments⠦ Checked 16 segments⠧ Checked 17 segments⠇ Checked 18 segments⠏ Checked 19 segments⠋ Checked 20 segments12 Video Segments remain after filtering
-Remain segments ['1ZqR-wGKHGQ_6', 'AUJeIG3Gjis_5', 'HwkyhIiG8V0_9', 'Msaer6b6QU8_13', 'Msaer6b6QU8_22', 'SbCmu7SeXCQ_4', 'SbCmu7SeXCQ_8', 'W_ijgMs7wNg_16', 'cstrfin0bYo_6', 'cstrfin0bYo_43', 'cstrfin0bYo_61', 'hjRxht__2wI_26']
-Keywords: inconsistency ratio, improve, Super Decisions, software
-Captioning Segments for Given Query:   0%|          | 0/12 [00:00<?, ?it/s]Captioning Segments for Given Query:   8%|▊         | 1/12 [00:28<05:10, 28.21s/it]Captioning Segments for Given Query:  17%|█▋        | 2/12 [00:59<05:03, 30.32s/it]Captioning Segments for Given Query:  25%|██▌       | 3/12 [01:24<04:09, 27.70s/it]Captioning Segments for Given Query:  33%|███▎      | 4/12 [01:45<03:19, 24.96s/it]Captioning Segments for Given Query:  42%|████▏     | 5/12 [02:02<02:34, 22.13s/it]Captioning Segments for Given Query:  50%|█████     | 6/12 [02:30<02:24, 24.16s/it]Captioning Segments for Given Query:  58%|█████▊    | 7/12 [03:04<02:17, 27.48s/it]Captioning Segments for Given Query:  67%|██████▋   | 8/12 [03:36<01:55, 28.94s/it]Captioning Segments for Given Query:  75%|███████▌  | 9/12 [04:08<01:29, 29.86s/it]Captioning Segments for Given Query:  83%|████████▎ | 10/12 [04:43<01:02, 31.44s/it]Captioning Segments for Given Query:  92%|█████████▏| 11/12 [05:16<00:31, 31.89s/it]Captioning Segments for Given Query: 100%|██████████| 12/12 [05:42<00:00, 29.90s/it]Captioning Segments for Given Query: 100%|██████████| 12/12 [05:42<00:00, 28.51s/it]
-  [查询] 集合16 q6 entity_only: How can sub-criteria be incorporated int
-INFO:nano-graphrag:Truncate 20 to 12 chunks
-How can sub-criteria be incorporated into the AHP hierarchy using Super Decisions software?
-Retrieved Text Segments {'Msaer6b6QU8_24', 'Msaer6b6QU8_22', 'JLs5iQrkVng_33', 'Msaer6b6QU8_23', 'Msaer6b6QU8_21'}
-Output:
-Demonstrate how sub-criteria are added to the AHP hierarchy using Super Decisions software.
-Retrieved Visual Segments {'cstrfin0bYo_0', 'AUJeIG3Gjis_24', 'SbCmu7SeXCQ_0', '1ZqR-wGKHGQ_0'}
-
-================================================================================
-🔍 FILTER 阶段诊断
-================================================================================
-检索到的片段总数: 9
-  - Entity检索: 5
-  - Visual检索: 4
-  - Causal检索: 0
-
-前5个片段ID示例:
-  1. 1ZqR-wGKHGQ_0
-  2. AUJeIG3Gjis_24
-  3. JLs5iQrkVng_33
-  4. Msaer6b6QU8_21
-  5. Msaer6b6QU8_22
-
-📊 video_segments._data 结构:
-  可用视频数量: 11
-  示例视频: 1ZqR-wGKHGQ
-  该视频的片段索引数量: 38
-  前5个索引: ['0', '1', '2', '3', '4']
-  索引类型: <class 'str'>
-
-🔧 解析测试:
-  ✓ 成功解析: 9
-  ✗ 解析失败: 0
-================================================================================
-
-⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments7 Video Segments remain after filtering
-Remain segments ['1ZqR-wGKHGQ_0', 'AUJeIG3Gjis_24', 'Msaer6b6QU8_21', 'Msaer6b6QU8_22', 'Msaer6b6QU8_23', 'Msaer6b6QU8_24', 'cstrfin0bYo_0']
-Keywords: sub-criteria, AHP hierarchy, Super Decisions software
-Captioning Segments for Given Query:   0%|          | 0/7 [00:00<?, ?it/s]Captioning Segments for Given Query:  14%|█▍        | 1/7 [00:28<02:52, 28.72s/it]Captioning Segments for Given Query:  29%|██▊       | 2/7 [00:58<02:27, 29.43s/it]Captioning Segments for Given Query:  43%|████▎     | 3/7 [01:20<01:44, 26.17s/it]Captioning Segments for Given Query:  57%|█████▋    | 4/7 [01:38<01:07, 22.64s/it]Captioning Segments for Given Query:  71%|███████▏  | 5/7 [02:05<00:48, 24.37s/it]Captioning Segments for Given Query:  86%|████████▌ | 6/7 [02:25<00:22, 22.82s/it]Captioning Segments for Given Query: 100%|██████████| 7/7 [02:49<00:00, 23.31s/it]Captioning Segments for Given Query: 100%|██████████| 7/7 [02:49<00:00, 24.25s/it]
-  [查询] 集合16 q6 causal_only: How can sub-criteria be incorporated int
-INFO:nano-graphrag:Truncate 20 to 12 chunks
-INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The process of incorporating sub-criteria into the AHP hierarchy and the steps involved when using Super Decisions software.
-INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
-INFO:nano-graphrag:[Causal Retrieval] 51 events after 2-hop bidirectional walk (from 20 seeds)
-INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 51 → 44 nodes (tau_dup=0.85)
-INFO:nano-graphrag:[Causal Retrieval] Retrieved 16 segments from 44 deduplicated events
-INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 44 events, 15634 chars
-Retrieved Causal Segments {'cstrfin0bYo_22', 'AUJeIG3Gjis_3', 'Msaer6b6QU8_0', 'AUJeIG3Gjis_5', '1ZqR-wGKHGQ_14', 'cstrfin0bYo_44', 'cstrfin0bYo_15', 'Msaer6b6QU8_24', 'HuXhtV6Yi-k_11', 'Msaer6b6QU8_22', 'SbCmu7SeXCQ_6', 'cstrfin0bYo_13', 'SbCmu7SeXCQ_4', 'cstrfin0bYo_24', 'cstrfin0bYo_9', 'AUJeIG3Gjis_4'}
-
-Retrieved Text Segments set()
-The output for the given question does not fit the pattern of generating a sentence to query video segments since the question is about a methodological process rather than a scene from a video or movie. However, adhering strictly to the format requested and attempting to frame it in a way that could relate to a video tutorial or instructional content, the output could be:
-
-Output:
-A demonstration of how sub-criteria are incorporated into the AHP hierarchy using Super Decisions software.
-Retrieved Visual Segments {'1ZqR-wGKHGQ_6', 'cstrfin0bYo_6', '1ZqR-wGKHGQ_4', 'cstrfin0bYo_7'}
-
-================================================================================
-🔍 FILTER 阶段诊断
-================================================================================
-检索到的片段总数: 20
-  - Entity检索: 0
-  - Visual检索: 4
-  - Causal检索: 16
-
-前5个片段ID示例:
-  1. 1ZqR-wGKHGQ_4
-  2. 1ZqR-wGKHGQ_6
-  3. 1ZqR-wGKHGQ_14
-  4. AUJeIG3Gjis_3
-  5. AUJeIG3Gjis_4
-
-📊 video_segments._data 结构:
-  可用视频数量: 11
-  示例视频: 1ZqR-wGKHGQ
-  该视频的片段索引数量: 38
-  前5个索引: ['0', '1', '2', '3', '4']
-  索引类型: <class 'str'>
-
-🔧 解析测试:
-  ✓ 成功解析: 20
-  ✗ 解析失败: 0
-================================================================================
-
-⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments⠙ Checked 11 segments⠹ Checked 12 segments⠸ Checked 13 segments⠼ Checked 14 segments⠴ Checked 15 segments⠦ Checked 16 segments⠧ Checked 17 segments⠇ Checked 18 segments⠏ Checked 19 segments⠋ Checked 20 segments18 Video Segments remain after filtering
-Remain segments ['1ZqR-wGKHGQ_4', '1ZqR-wGKHGQ_14', 'AUJeIG3Gjis_3', 'AUJeIG3Gjis_4', 'AUJeIG3Gjis_5', 'Msaer6b6QU8_0', 'Msaer6b6QU8_22', 'Msaer6b6QU8_24', 'SbCmu7SeXCQ_4', 'SbCmu7SeXCQ_6', 'cstrfin0bYo_6', 'cstrfin0bYo_7', 'cstrfin0bYo_9', 'cstrfin0bYo_13', 'cstrfin0bYo_15', 'cstrfin0bYo_22', 'cstrfin0bYo_24', 'cstrfin0bYo_44']
-Keywords: sub-criteria, AHP hierarchy, Super Decisions, software
-Captioning Segments for Given Query:   0%|          | 0/18 [00:00<?, ?it/s]Captioning Segments for Given Query:   6%|▌         | 1/18 [00:15<04:28, 15.80s/it]Captioning Segments for Given Query:  11%|█         | 2/18 [00:46<06:35, 24.72s/it]Captioning Segments for Given Query:  17%|█▋        | 3/18 [01:20<07:10, 28.67s/it]Captioning Segments for Given Query:  22%|██▏       | 4/18 [01:42<06:04, 26.06s/it]Captioning Segments for Given Query:  28%|██▊       | 5/18 [02:01<05:06, 23.61s/it]Captioning Segments for Given Query:  33%|███▎      | 6/18 [02:36<05:29, 27.49s/it]Captioning Segments for Given Query:  39%|███▉      | 7/18 [03:01<04:54, 26.77s/it]Captioning Segments for Given Query:  44%|████▍     | 8/18 [03:32<04:39, 27.99s/it]Captioning Segments for Given Query:  50%|█████     | 9/18 [03:59<04:09, 27.67s/it]Captioning Segments for Given Query:  56%|█████▌    | 10/18 [04:25<03:36, 27.11s/it]Captioning Segments for Given Query:  61%|██████    | 11/18 [04:52<03:09, 27.05s/it]Captioning Segments for Given Query:  67%|██████▋   | 12/18 [05:18<02:40, 26.73s/it]Captioning Segments for Given Query:  72%|███████▏  | 13/18 [05:46<02:15, 27.20s/it]Captioning Segments for Given Query:  78%|███████▊  | 14/18 [06:17<01:54, 28.52s/it]Captioning Segments for Given Query:  83%|████████▎ | 15/18 [06:46<01:25, 28.48s/it]Captioning Segments for Given Query:  89%|████████▉ | 16/18 [07:16<00:58, 29.02s/it]Captioning Segments for Given Query:  94%|█████████▍| 17/18 [07:51<00:30, 30.81s/it]Captioning Segments for Given Query: 100%|██████████| 18/18 [08:23<00:00, 31.11s/it]Captioning Segments for Given Query: 100%|██████████| 18/18 [08:23<00:00, 27.97s/it]
-  [查询] 集合16 q7 entity_only: Why is absolute measurement preferred ov
-INFO:nano-graphrag:Truncate 20 to 11 chunks
-Why is absolute measurement preferred over relative measurement when dealing with a large number of alternatives in AHP?
-Retrieved Text Segments {'cstrfin0bYo_0', 'JLs5iQrkVng_33', 'cstrfin0bYo_1', 'cstrfin0bYo_3', 'cstrfin0bYo_2'}
-It seems there might be some confusion in the given instruction and example format. The examples provided are related to generating queries for video content based on scene descriptions. However, the real data question you've provided is about a concept in decision-making methods, specifically Analytic Hierarchy Process (AHP), which doesn't fit the pattern of the previous examples.
-
-If we follow the pattern strictly from your examples, focusing on generating a query for a video segment, the given question doesn't align with that context. However, if we interpret your request as asking for a declarative statement about the preference for absolute measurement in AHP scenarios involving numerous alternatives, it would look more like an explanation rather than a video query. 
-
-For clarity, here's how one might rephrase the question into a form that could be used as a query for educational video content:
-
-Output:
-In the context of AHP, the preference for absolute measurement over relative measurement when handling a large number of alternatives is discussed.
-Retrieved Visual Segments {'1ZqR-wGKHGQ_6', 'cstrfin0bYo_6', '1ZqR-wGKHGQ_4', 'cstrfin0bYo_7'}
-
-================================================================================
-🔍 FILTER 阶段诊断
-================================================================================
-检索到的片段总数: 9
-  - Entity检索: 5
-  - Visual检索: 4
-  - Causal检索: 0
-
-前5个片段ID示例:
-  1. 1ZqR-wGKHGQ_4
-  2. 1ZqR-wGKHGQ_6
-  3. JLs5iQrkVng_33
-  4. cstrfin0bYo_0
-  5. cstrfin0bYo_1
-
-📊 video_segments._data 结构:
-  可用视频数量: 11
-  示例视频: 1ZqR-wGKHGQ
-  该视频的片段索引数量: 38
-  前5个索引: ['0', '1', '2', '3', '4']
-  索引类型: <class 'str'>
-
-🔧 解析测试:
-  ✓ 成功解析: 9
-  ✗ 解析失败: 0
-================================================================================
-
-⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments3 Video Segments remain after filtering
-Remain segments ['JLs5iQrkVng_33', 'cstrfin0bYo_2', 'cstrfin0bYo_7']
-Keywords: absolute measurement, relative measurement, large number of alternatives, AHP
-Captioning Segments for Given Query:   0%|          | 0/3 [00:00<?, ?it/s]Captioning Segments for Given Query:  33%|███▎      | 1/3 [00:26<00:52, 26.04s/it]Captioning Segments for Given Query:  67%|██████▋   | 2/3 [00:44<00:21, 21.84s/it]Captioning Segments for Given Query: 100%|██████████| 3/3 [01:10<00:00, 23.53s/it]Captioning Segments for Given Query: 100%|██████████| 3/3 [01:10<00:00, 23.49s/it]
-  [查询] 集合16 q7 causal_only: Why is absolute measurement preferred ov
-INFO:nano-graphrag:Truncate 20 to 11 chunks
-INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The preference for absolute measurement over relative measurement and its reasons when dealing with a large number of alternatives in AHP.
-INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
-INFO:nano-graphrag:[Causal Retrieval] 49 events after 2-hop bidirectional walk (from 20 seeds)
-INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 49 → 40 nodes (tau_dup=0.85)
-INFO:nano-graphrag:[Causal Retrieval] Retrieved 17 segments from 40 deduplicated events
-INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 40 events, 14123 chars
-Retrieved Causal Segments {'1ZqR-wGKHGQ_11', 'W_ijgMs7wNg_16', 'hjRxht__2wI_27', 'cstrfin0bYo_53', 'cstrfin0bYo_61', 'JLs5iQrkVng_13', 'AUJeIG3Gjis_5', 'SbCmu7SeXCQ_4', 'HwkyhIiG8V0_9', 'HuXhtV6Yi-k_11', '1ZqR-wGKHGQ_12', 'SbCmu7SeXCQ_6', 'Msaer6b6QU8_13', 'Msaer6b6QU8_24', 'cstrfin0bYo_3', 'cstrfin0bYo_7', 'AUJeIG3Gjis_4'}
-
-Retrieved Text Segments set()
-It seems there might be some confusion in the provided task definition and the example given. The examples provided pertain to generating queries for video content based on scene-related questions, while the real data question is about the Analytic Hierarchy Process (AHP) in decision-making, which doesn't fit the context of querying video scenes.
-
-However, if we strictly follow the instruction format to create a query-like sentence for the given question regarding AHP, it would not align with the previous examples' structure since it's more of a theoretical question rather than one seeking visual content from a video. Nonetheless, I'll provide a response based on the actual question's nature:
-
-Why is absolute measurement preferred over relative measurement in scenarios involving a large number of options within the Analytic Hierarchy Process?
-
-If you're looking for a video-based scenario similar to the examples, could you please provide more context or clarify the type of scene or video content related to this question?
-Retrieved Visual Segments {'1ZqR-wGKHGQ_6', 'cstrfin0bYo_6', '1ZqR-wGKHGQ_4', 'cstrfin0bYo_7'}
-
-================================================================================
-🔍 FILTER 阶段诊断
-================================================================================
-检索到的片段总数: 20
-  - Entity检索: 0
-  - Visual检索: 4
-  - Causal检索: 17
-
-前5个片段ID示例:
-  1. 1ZqR-wGKHGQ_4
-  2. 1ZqR-wGKHGQ_6
-  3. 1ZqR-wGKHGQ_11
-  4. 1ZqR-wGKHGQ_12
-  5. AUJeIG3Gjis_4
-
-📊 video_segments._data 结构:
-  可用视频数量: 11
-  示例视频: 1ZqR-wGKHGQ
-  该视频的片段索引数量: 38
-  前5个索引: ['0', '1', '2', '3', '4']
-  索引类型: <class 'str'>
-
-🔧 解析测试:
-  ✓ 成功解析: 20
-  ✗ 解析失败: 0
-================================================================================
-
-⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments⠙ Checked 11 segments⠹ Checked 12 segments⠸ Checked 13 segments⠼ Checked 14 segments⠴ Checked 15 segments⠦ Checked 16 segments⠧ Checked 17 segments⠇ Checked 18 segments⠏ Checked 19 segments⠋ Checked 20 segments5 Video Segments remain after filtering
-Remain segments ['1ZqR-wGKHGQ_12', 'AUJeIG3Gjis_4', 'AUJeIG3Gjis_5', 'HuXhtV6Yi-k_11', 'cstrfin0bYo_7']
-Keywords: absolute measurement, relative measurement, large number of alternatives, AHP
-Captioning Segments for Given Query:   0%|          | 0/5 [00:00<?, ?it/s]Captioning Segments for Given Query:  20%|██        | 1/5 [00:32<02:08, 32.24s/it]Captioning Segments for Given Query:  40%|████      | 2/5 [00:57<01:24, 28.15s/it]Captioning Segments for Given Query:  60%|██████    | 3/5 [01:30<01:01, 30.52s/it]Captioning Segments for Given Query:  80%|████████  | 4/5 [01:55<00:28, 28.30s/it]Captioning Segments for Given Query: 100%|██████████| 5/5 [02:29<00:00, 30.37s/it]Captioning Segments for Given Query: 100%|██████████| 5/5 [02:29<00:00, 29.96s/it]
-  [查询] 集合16 q8 entity_only: How are ratings and intensities used in 
-INFO:nano-graphrag:Truncate 20 to 11 chunks
-How are ratings and intensities utilized in the absolute measurement process within the Analytic Hierarchy Process (AHP)?
-Retrieved Text Segments {'cstrfin0bYo_0', 'cstrfin0bYo_1', 'cstrfin0bYo_3', 'SbCmu7SeXCQ_0', 'cstrfin0bYo_2', 'SbCmu7SeXCQ_1'}
-It seems there might be a misunderstanding with the given instruction and the provided example. The previous examples were asking for scene-related video segment queries, whereas the last question pertains to a methodological aspect of the Analytic Hierarchy Process (AHP), which is not related to video scenes. 
-
-For the question "How are ratings and intensities used in the absolute measurement process of AHP?", a relevant output would be a declarative statement or query focused on understanding the application of ratings and intensities within the context of AHP. However, since this doesn't fit the initial pattern of generating video segment queries, here's how we could frame it more appropriately:
-
-Output:
-Explanation of how ratings and intensities are utilized in the absolute measurement process within the Analytic Hierarchy Process (AHP).
-Retrieved Visual Segments {'1ZqR-wGKHGQ_6', 'cstrfin0bYo_6', '1ZqR-wGKHGQ_4', 'cstrfin0bYo_7'}
-
-================================================================================
-🔍 FILTER 阶段诊断
-================================================================================
-检索到的片段总数: 10
-  - Entity检索: 6
-  - Visual检索: 4
-  - Causal检索: 0
-
-前5个片段ID示例:
-  1. 1ZqR-wGKHGQ_4
-  2. 1ZqR-wGKHGQ_6
-  3. SbCmu7SeXCQ_0
-  4. SbCmu7SeXCQ_1
-  5. cstrfin0bYo_0
-
-📊 video_segments._data 结构:
-  可用视频数量: 11
-  示例视频: 1ZqR-wGKHGQ
-  该视频的片段索引数量: 38
-  前5个索引: ['0', '1', '2', '3', '4']
-  索引类型: <class 'str'>
-
-🔧 解析测试:
-  ✓ 成功解析: 10
-  ✗ 解析失败: 0
-================================================================================
-
-⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments2 Video Segments remain after filtering
-Remain segments ['1ZqR-wGKHGQ_4', 'SbCmu7SeXCQ_1']
-Keywords: ratings, intensities, absolute measurement, AHP
-Captioning Segments for Given Query:   0%|          | 0/2 [00:00<?, ?it/s]Captioning Segments for Given Query:  50%|█████     | 1/2 [00:27<00:27, 27.95s/it]Captioning Segments for Given Query: 100%|██████████| 2/2 [00:55<00:00, 27.72s/it]Captioning Segments for Given Query: 100%|██████████| 2/2 [00:55<00:00, 27.75s/it]
-  [查询] 集合16 q8 causal_only: How are ratings and intensities used in 
-INFO:nano-graphrag:Truncate 20 to 11 chunks
-INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The use of ratings and intensities in the process of performing absolute measurements within the Analytic Hierarchy Process (AHP).
-INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
-INFO:nano-graphrag:[Causal Retrieval] 46 events after 2-hop bidirectional walk (from 20 seeds)
-INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 46 → 41 nodes (tau_dup=0.85)
-INFO:nano-graphrag:[Causal Retrieval] Retrieved 17 segments from 41 deduplicated events
-INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 41 events, 14001 chars
-Retrieved Causal Segments {'1ZqR-wGKHGQ_11', 'W_ijgMs7wNg_16', 'hjRxht__2wI_27', 'JLs5iQrkVng_13', 'AUJeIG3Gjis_5', '1ZqR-wGKHGQ_14', 'cstrfin0bYo_44', 'SbCmu7SeXCQ_4', 'Msaer6b6QU8_24', 'HuXhtV6Yi-k_11', '1ZqR-wGKHGQ_12', 'SbCmu7SeXCQ_6', 'Msaer6b6QU8_13', 'cstrfin0bYo_3', '1ZqR-wGKHGQ_19', 'AUJeIG3Gjis_4', '1ZqR-wGKHGQ_32'}
-
-Retrieved Text Segments set()
-It seems like the provided question is more suited towards a textual explanation or a diagram rather than a video segment retrieval query. However, if we are to frame it within the context of generating a declarative sentence for a video segment retrieval query, we might consider a scenario where these concepts are visually explained or demonstrated. 
-
-For example, if there was a video tutorial on the Analytic Hierarchy Process (AHP), a relevant output could be:
-
-A video explaining how ratings and intensities are used in the absolute measurement process of AHP.
-Retrieved Visual Segments {'1ZqR-wGKHGQ_6', 'cstrfin0bYo_6', '1ZqR-wGKHGQ_4', 'cstrfin0bYo_7'}
-
-================================================================================
-🔍 FILTER 阶段诊断
-================================================================================
-检索到的片段总数: 21
-  - Entity检索: 0
-  - Visual检索: 4
-  - Causal检索: 17
-
-前5个片段ID示例:
-  1. 1ZqR-wGKHGQ_4
-  2. 1ZqR-wGKHGQ_6
-  3. 1ZqR-wGKHGQ_11
-  4. 1ZqR-wGKHGQ_12
-  5. 1ZqR-wGKHGQ_14
-
-📊 video_segments._data 结构:
-  可用视频数量: 11
-  示例视频: 1ZqR-wGKHGQ
-  该视频的片段索引数量: 38
-  前5个索引: ['0', '1', '2', '3', '4']
-  索引类型: <class 'str'>
-
-🔧 解析测试:
-  ✓ 成功解析: 21
-  ✗ 解析失败: 0
-================================================================================
-
-⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments⠙ Checked 11 segments⠹ Checked 12 segments⠸ Checked 13 segments⠼ Checked 14 segments⠴ Checked 15 segments⠦ Checked 16 segments⠧ Checked 17 segments⠇ Checked 18 segments⠏ Checked 19 segments⠋ Checked 20 segments⠙ Checked 21 segments16 Video Segments remain after filtering
-Remain segments ['1ZqR-wGKHGQ_11', '1ZqR-wGKHGQ_12', '1ZqR-wGKHGQ_14', '1ZqR-wGKHGQ_19', '1ZqR-wGKHGQ_32', 'AUJeIG3Gjis_4', 'AUJeIG3Gjis_5', 'HuXhtV6Yi-k_11', 'JLs5iQrkVng_13', 'Msaer6b6QU8_13', 'Msaer6b6QU8_24', 'SbCmu7SeXCQ_4', 'W_ijgMs7wNg_16', 'cstrfin0bYo_7', 'cstrfin0bYo_44', 'hjRxht__2wI_27']
-Keywords: ratings, intensities, absolute measurement, AHP
-Captioning Segments for Given Query:   0%|          | 0/16 [00:00<?, ?it/s]Captioning Segments for Given Query:   6%|▋         | 1/16 [00:26<06:42, 26.81s/it]Captioning Segments for Given Query:  12%|█▎        | 2/16 [01:02<07:28, 32.05s/it]Captioning Segments for Given Query:  19%|█▉        | 3/16 [01:33<06:52, 31.73s/it]Captioning Segments for Given Query:  25%|██▌       | 4/16 [01:51<05:11, 25.98s/it]Captioning Segments for Given Query:  31%|███▏      | 5/16 [02:19<04:54, 26.77s/it]Captioning Segments for Given Query:  38%|███▊      | 6/16 [02:49<04:40, 28.00s/it]Captioning Segments for Given Query:  44%|████▍     | 7/16 [03:23<04:30, 30.05s/it]Captioning Segments for Given Query:  50%|█████     | 8/16 [03:43<03:35, 26.88s/it]Captioning Segments for Given Query:  56%|█████▋    | 9/16 [04:12<03:11, 27.35s/it]Captioning Segments for Given Query:  62%|██████▎   | 10/16 [04:36<02:38, 26.47s/it]Captioning Segments for Given Query:  69%|██████▉   | 11/16 [04:59<02:06, 25.28s/it]Captioning Segments for Given Query:  75%|███████▌  | 12/16 [05:25<01:41, 25.43s/it]Captioning Segments for Given Query:  81%|████████▏ | 13/16 [06:02<01:26, 28.94s/it]Captioning Segments for Given Query:  88%|████████▊ | 14/16 [06:35<01:00, 30.36s/it]Captioning Segments for Given Query:  94%|█████████▍| 15/16 [07:09<00:31, 31.44s/it]Captioning Segments for Given Query: 100%|██████████| 16/16 [07:36<00:00, 29.95s/it]Captioning Segments for Given Query: 100%|██████████| 16/16 [07:36<00:00, 28.52s/it]
-  [查询] 集合16 q9 entity_only: In SuperDecisions software, what steps a
-INFO:nano-graphrag:Truncate 20 to 13 chunks
-The steps involved in performing sensitivity analysis for an AHP model in SuperDecisions software.
-Retrieved Text Segments {'JLs5iQrkVng_5', 'JLs5iQrkVng_6', 'JLs5iQrkVng_33', 'JLs5iQrkVng_4', 'JLs5iQrkVng_3'}
-Output:
-Steps involved in performing sensitivity analysis for an AHP model in SuperDecisions software. 
-
-Note: Since the original examples focused on generating sentences related to scenes from movies, the response for the "real data" question was adjusted to fit the pattern while also being somewhat contextually appropriate. However, the given question pertains more to a procedural description rather than a scene retrieval query. A more accurate transformation might involve specifying the need for visual or demonstrative content related to the process if such content exists, but based on the given format, the output aims to match the structure provided in the examples.
-Retrieved Visual Segments {'1ZqR-wGKHGQ_6', 'cstrfin0bYo_6', '1ZqR-wGKHGQ_4', 'cstrfin0bYo_7'}
-
-================================================================================
-🔍 FILTER 阶段诊断
-================================================================================
-检索到的片段总数: 9
-  - Entity检索: 5
-  - Visual检索: 4
-  - Causal检索: 0
-
-前5个片段ID示例:
-  1. 1ZqR-wGKHGQ_4
-  2. 1ZqR-wGKHGQ_6
-  3. JLs5iQrkVng_3
-  4. JLs5iQrkVng_4
-  5. JLs5iQrkVng_5
-
-📊 video_segments._data 结构:
-  可用视频数量: 11
-  示例视频: 1ZqR-wGKHGQ
-  该视频的片段索引数量: 38
-  前5个索引: ['0', '1', '2', '3', '4']
-  索引类型: <class 'str'>
-
-🔧 解析测试:
-  ✓ 成功解析: 9
-  ✗ 解析失败: 0
-================================================================================
-
-⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments2 Video Segments remain after filtering
-Remain segments ['JLs5iQrkVng_3', 'JLs5iQrkVng_33']
-Keywords: SuperDecisions, software, sensitivity analysis, AHP model, steps
-Captioning Segments for Given Query:   0%|          | 0/2 [00:00<?, ?it/s]Captioning Segments for Given Query:  50%|█████     | 1/2 [00:28<00:28, 28.44s/it]Captioning Segments for Given Query: 100%|██████████| 2/2 [00:57<00:00, 29.06s/it]Captioning Segments for Given Query: 100%|██████████| 2/2 [00:57<00:00, 28.96s/it]
-  [查询] 集合16 q9 causal_only: In SuperDecisions software, what steps a
-INFO:nano-graphrag:Truncate 20 to 13 chunks
-INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The steps involved in conducting sensitivity analysis for an AHP model in SuperDecisions software and their impact on the analysis outcomes.
-INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
-INFO:nano-graphrag:[Causal Retrieval] 43 events after 2-hop bidirectional walk (from 20 seeds)
-INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 43 → 40 nodes (tau_dup=0.85)
-INFO:nano-graphrag:[Causal Retrieval] Retrieved 17 segments from 40 deduplicated events
-INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 40 events, 13876 chars
-Retrieved Causal Segments {'cstrfin0bYo_61', 'AUJeIG3Gjis_2', 'Msaer6b6QU8_0', 'AUJeIG3Gjis_5', '1ZqR-wGKHGQ_14', 'cstrfin0bYo_43', 'HuXhtV6Yi-k_10', 'Msaer6b6QU8_5', 'HuXhtV6Yi-k_0', 'Msaer6b6QU8_24', 'Msaer6b6QU8_22', 'Msaer6b6QU8_13', 'JLs5iQrkVng_22', 'HuXhtV6Yi-k_1', 'Msaer6b6QU8_21', 'HuXhtV6Yi-k_6', 'AUJeIG3Gjis_4'}
-
-Retrieved Text Segments set()
-Output:
-Steps involved in performing sensitivity analysis for an AHP model in SuperDecisions software. 
-
-Note: Since the original examples were focused on generating sentences related to scenes from videos, and the given question pertains to software functionality, the output has been adjusted to fit a similar format while acknowledging the difference in context. However, for a video retrieval query, this question might not have a direct visual representation unless there's a tutorial video demonstrating the process.
-Retrieved Visual Segments {'1ZqR-wGKHGQ_6', 'cstrfin0bYo_6', '1ZqR-wGKHGQ_4', 'cstrfin0bYo_7'}
-
-================================================================================
-🔍 FILTER 阶段诊断
-================================================================================
-检索到的片段总数: 21
-  - Entity检索: 0
-  - Visual检索: 4
-  - Causal检索: 17
-
-前5个片段ID示例:
-  1. 1ZqR-wGKHGQ_4
-  2. 1ZqR-wGKHGQ_6
-  3. 1ZqR-wGKHGQ_14
-  4. AUJeIG3Gjis_2
-  5. AUJeIG3Gjis_4
-
-📊 video_segments._data 结构:
-  可用视频数量: 11
-  示例视频: 1ZqR-wGKHGQ
-  该视频的片段索引数量: 38
-  前5个索引: ['0', '1', '2', '3', '4']
-  索引类型: <class 'str'>
-
-🔧 解析测试:
-  ✓ 成功解析: 21
-  ✗ 解析失败: 0
-================================================================================
-
-⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments⠙ Checked 11 segments⠹ Checked 12 segments⠸ Checked 13 segments⠼ Checked 14 segments⠴ Checked 15 segments⠦ Checked 16 segments⠧ Checked 17 segments⠇ Checked 18 segments⠏ Checked 19 segments⠋ Checked 20 segments⠙ Checked 21 segments9 Video Segments remain after filtering
-Remain segments ['AUJeIG3Gjis_4', 'HuXhtV6Yi-k_0', 'HuXhtV6Yi-k_1', 'HuXhtV6Yi-k_6', 'HuXhtV6Yi-k_10', 'Msaer6b6QU8_5', 'cstrfin0bYo_7', 'cstrfin0bYo_43', 'cstrfin0bYo_61']
-Keywords: SuperDecisions, software, sensitivity analysis, AHP model, steps
-Captioning Segments for Given Query:   0%|          | 0/9 [00:00<?, ?it/s]Captioning Segments for Given Query:  11%|█         | 1/9 [00:29<03:55, 29.45s/it]Captioning Segments for Given Query:  22%|██▏       | 2/9 [00:54<03:07, 26.78s/it]Captioning Segments for Given Query:  33%|███▎      | 3/9 [01:23<02:46, 27.68s/it]Captioning Segments for Given Query:  44%|████▍     | 4/9 [01:51<02:19, 27.86s/it]Captioning Segments for Given Query:  56%|█████▌    | 5/9 [02:18<01:50, 27.75s/it]Captioning Segments for Given Query:  67%|██████▋   | 6/9 [02:47<01:24, 28.10s/it]Captioning Segments for Given Query:  78%|███████▊  | 7/9 [03:18<00:57, 29.00s/it]Captioning Segments for Given Query:  89%|████████▉ | 8/9 [03:59<00:32, 32.90s/it]Captioning Segments for Given Query: 100%|██████████| 9/9 [04:27<00:00, 31.46s/it]Captioning Segments for Given Query: 100%|██████████| 9/9 [04:27<00:00, 29.77s/it]
-  [查询] 集合16 q10 entity_only: Describe the two phases involved in impl
-INFO:nano-graphrag:Truncate 20 to 11 chunks
-The two phases involved in implementing absolute measurement in SuperDecisions software.
-Retrieved Text Segments {'JLs5iQrkVng_33', 'HuXhtV6Yi-k_4', 'HuXhtV6Yi-k_5'}
-The output for the given question does not fit the pattern of generating a sentence to query for video segments since the question pertains to a process description rather than a scene from a video. However, adhering strictly to the instruction format and assuming a creative context where "implementing absolute measurement" could be visualized as a video scenario:
-
-Output:
-A video segment showing the two phases involved in implementing absolute measurement in SuperDecisions software.
-Retrieved Visual Segments {'1ZqR-wGKHGQ_6', 'cstrfin0bYo_6', '1ZqR-wGKHGQ_4', 'cstrfin0bYo_7'}
-
-================================================================================
-🔍 FILTER 阶段诊断
-================================================================================
-检索到的片段总数: 7
-  - Entity检索: 3
-  - Visual检索: 4
-  - Causal检索: 0
-
-前5个片段ID示例:
-  1. 1ZqR-wGKHGQ_4
-  2. 1ZqR-wGKHGQ_6
-  3. HuXhtV6Yi-k_4
-  4. HuXhtV6Yi-k_5
-  5. JLs5iQrkVng_33
-
-📊 video_segments._data 结构:
-  可用视频数量: 11
-  示例视频: 1ZqR-wGKHGQ
-  该视频的片段索引数量: 38
-  前5个索引: ['0', '1', '2', '3', '4']
-  索引类型: <class 'str'>
-
-🔧 解析测试:
-  ✓ 成功解析: 7
-  ✗ 解析失败: 0
-================================================================================
-
-⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments3 Video Segments remain after filtering
-Remain segments ['HuXhtV6Yi-k_5', 'JLs5iQrkVng_33', 'cstrfin0bYo_6']
-Keywords: absolute measurement, SuperDecisions software, phases, implement
-Captioning Segments for Given Query:   0%|          | 0/3 [00:00<?, ?it/s]Captioning Segments for Given Query:  33%|███▎      | 1/3 [00:26<00:52, 26.04s/it]Captioning Segments for Given Query:  67%|██████▋   | 2/3 [00:55<00:27, 27.88s/it]Captioning Segments for Given Query: 100%|██████████| 3/3 [01:25<00:00, 28.79s/it]Captioning Segments for Given Query: 100%|██████████| 3/3 [01:25<00:00, 28.36s/it]
-  [查询] 集合16 q10 causal_only: Describe the two phases involved in impl
-INFO:nano-graphrag:Truncate 20 to 11 chunks
-INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The implementation of absolute measurement in SuperDecisions software and the subsequent phases involved in this process.
-INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
-INFO:nano-graphrag:[Causal Retrieval] 36 events after 2-hop bidirectional walk (from 20 seeds)
-INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 36 → 34 nodes (tau_dup=0.85)
-INFO:nano-graphrag:[Causal Retrieval] Retrieved 16 segments from 34 deduplicated events
-INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 34 events, 11129 chars
-Retrieved Causal Segments {'Msaer6b6QU8_20', 'AUJeIG3Gjis_2', '1ZqR-wGKHGQ_3', 'AUJeIG3Gjis_5', 'JLs5iQrkVng_13', '1ZqR-wGKHGQ_14', 'cstrfin0bYo_43', 'Msaer6b6QU8_5', 'Msaer6b6QU8_24', 'HuXhtV6Yi-k_11', 'Msaer6b6QU8_22', 'Msaer6b6QU8_21', 'JLs5iQrkVng_31', 'JLs5iQrkVng_22', 'SbCmu7SeXCQ_8', 'AUJeIG3Gjis_4'}
-
-Retrieved Text Segments set()
-The output for the given question should focus on the video content related to the implementation phases of absolute measurement in SuperDecisions software, but since the question is more about a process description rather than a scene from a video, it might not fit perfectly into the format requested. However, adhering strictly to the instruction and assuming there are video tutorials or demonstrations available:
-
-Output:
-Video segments demonstrating the two phases involved in implementing absolute measurement in SuperDecisions software.
-Retrieved Visual Segments {'1ZqR-wGKHGQ_6', 'cstrfin0bYo_6', '1ZqR-wGKHGQ_4', 'cstrfin0bYo_7'}
-
-================================================================================
-🔍 FILTER 阶段诊断
-================================================================================
-检索到的片段总数: 20
-  - Entity检索: 0
-  - Visual检索: 4
-  - Causal检索: 16
-
-前5个片段ID示例:
-  1. 1ZqR-wGKHGQ_3
-  2. 1ZqR-wGKHGQ_4
-  3. 1ZqR-wGKHGQ_6
-  4. 1ZqR-wGKHGQ_14
-  5. AUJeIG3Gjis_2
-
-📊 video_segments._data 结构:
-  可用视频数量: 11
-  示例视频: 1ZqR-wGKHGQ
-  该视频的片段索引数量: 38
-  前5个索引: ['0', '1', '2', '3', '4']
-  索引类型: <class 'str'>
-
-🔧 解析测试:
-  ✓ 成功解析: 20
-  ✗ 解析失败: 0
-================================================================================
-
-⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments⠙ Checked 11 segments⠹ Checked 12 segments⠸ Checked 13 segments⠼ Checked 14 segments⠴ Checked 15 segments⠦ Checked 16 segments⠧ Checked 17 segments⠇ Checked 18 segments⠏ Checked 19 segments⠋ Checked 20 segments17 Video Segments remain after filtering
-Remain segments ['1ZqR-wGKHGQ_3', '1ZqR-wGKHGQ_6', '1ZqR-wGKHGQ_14', 'AUJeIG3Gjis_2', 'AUJeIG3Gjis_4', 'AUJeIG3Gjis_5', 'HuXhtV6Yi-k_11', 'JLs5iQrkVng_22', 'JLs5iQrkVng_31', 'Msaer6b6QU8_5', 'Msaer6b6QU8_20', 'Msaer6b6QU8_21', 'Msaer6b6QU8_22', 'Msaer6b6QU8_24', 'SbCmu7SeXCQ_8', 'cstrfin0bYo_6', 'cstrfin0bYo_43']
-Keywords: absolute measurement, SuperDecisions software, phases, implement
-Captioning Segments for Given Query:   0%|          | 0/17 [00:00<?, ?it/s]Captioning Segments for Given Query:   6%|▌         | 1/17 [00:26<06:59, 26.24s/it]Captioning Segments for Given Query:  12%|█▏        | 2/17 [00:54<06:52, 27.49s/it]Captioning Segments for Given Query:  18%|█▊        | 3/17 [01:23<06:36, 28.35s/it]Captioning Segments for Given Query:  24%|██▎       | 4/17 [01:43<05:24, 25.00s/it]Captioning Segments for Given Query:  29%|██▉       | 5/17 [02:06<04:49, 24.11s/it]Captioning Segments for Given Query:  35%|███▌      | 6/17 [02:32<04:33, 24.86s/it]Captioning Segments for Given Query:  41%|████      | 7/17 [02:56<04:05, 24.56s/it]Captioning Segments for Given Query:  47%|████▋     | 8/17 [03:19<03:36, 24.11s/it]Captioning Segments for Given Query:  53%|█████▎    | 9/17 [03:45<03:16, 24.51s/it]Captioning Segments for Given Query:  59%|█████▉    | 10/17 [04:09<02:51, 24.52s/it]Captioning Segments for Given Query:  65%|██████▍   | 11/17 [04:39<02:37, 26.22s/it]Captioning Segments for Given Query:  71%|███████   | 12/17 [04:55<01:54, 22.88s/it]Captioning Segments for Given Query:  76%|███████▋  | 13/17 [05:14<01:27, 21.77s/it]Captioning Segments for Given Query:  82%|████████▏ | 14/17 [05:33<01:03, 21.13s/it]Captioning Segments for Given Query:  88%|████████▊ | 15/17 [05:59<00:44, 22.36s/it]Captioning Segments for Given Query:  94%|█████████▍| 16/17 [06:21<00:22, 22.38s/it]Captioning Segments for Given Query: 100%|██████████| 17/17 [06:58<00:00, 26.79s/it]Captioning Segments for Given Query: 100%|██████████| 17/17 [06:58<00:00, 24.62s/it]
-  [查询] 集合16 q11 entity_only: What are the advantages of using the rat
-INFO:nano-graphrag:Truncate 20 to 11 chunks
-The advantages of using the ratings mode in SuperDecisions software for absolute measurement.
-Retrieved Text Segments {'Msaer6b6QU8_1', 'JLs5iQrkVng_8', 'JLs5iQrkVng_9', 'JLs5iQrkVng_7', 'Msaer6b6QU8_0'}
-The output for the given question should focus on the context of video retrieval related to visual content, but since the question is about the advantages of using the ratings mode in SuperDecisions software and does not fit the typical pattern of seeking a visual scene from a video, we need to adjust our approach. However, sticking strictly to the format requested:
-
-Output:
-A segment showing the advantages of using the ratings mode in SuperDecisions software for absolute measurement.
-
-This response assumes that there could be a video tutorial or demonstration showcasing the benefits of the ratings mode within the software.
-Retrieved Visual Segments {'1ZqR-wGKHGQ_6', 'cstrfin0bYo_6', '1ZqR-wGKHGQ_4', 'cstrfin0bYo_7'}
-
-================================================================================
-🔍 FILTER 阶段诊断
-================================================================================
-检索到的片段总数: 9
-  - Entity检索: 5
-  - Visual检索: 4
-  - Causal检索: 0
-
-前5个片段ID示例:
-  1. 1ZqR-wGKHGQ_4
-  2. 1ZqR-wGKHGQ_6
-  3. JLs5iQrkVng_7
-  4. JLs5iQrkVng_8
-  5. JLs5iQrkVng_9
-
-📊 video_segments._data 结构:
-  可用视频数量: 11
-  示例视频: 1ZqR-wGKHGQ
-  该视频的片段索引数量: 38
-  前5个索引: ['0', '1', '2', '3', '4']
-  索引类型: <class 'str'>
-
-🔧 解析测试:
-  ✓ 成功解析: 9
-  ✗ 解析失败: 0
-================================================================================
-
-⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments5 Video Segments remain after filtering
-Remain segments ['1ZqR-wGKHGQ_4', 'JLs5iQrkVng_9', 'Msaer6b6QU8_0', 'Msaer6b6QU8_1', 'cstrfin0bYo_7']
-Keywords: advantages, ratings mode, SuperDecisions software, absolute measurement
-Captioning Segments for Given Query:   0%|          | 0/5 [00:00<?, ?it/s]Captioning Segments for Given Query:  20%|██        | 1/5 [00:28<01:52, 28.04s/it]Captioning Segments for Given Query:  40%|████      | 2/5 [00:49<01:12, 24.05s/it]Captioning Segments for Given Query:  60%|██████    | 3/5 [01:16<00:51, 25.67s/it]Captioning Segments for Given Query:  80%|████████  | 4/5 [01:39<00:24, 24.35s/it]Captioning Segments for Given Query: 100%|██████████| 5/5 [02:15<00:00, 28.70s/it]Captioning Segments for Given Query: 100%|██████████| 5/5 [02:15<00:00, 27.12s/it]
-  [查询] 集合16 q11 causal_only: What are the advantages of using the rat
-INFO:nano-graphrag:Truncate 20 to 11 chunks
-INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The use of the ratings mode in SuperDecisions software and its advantages for achieving absolute measurement.
-INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
-INFO:nano-graphrag:[Causal Retrieval] 45 events after 2-hop bidirectional walk (from 20 seeds)
-INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 45 → 41 nodes (tau_dup=0.85)
-INFO:nano-graphrag:[Causal Retrieval] Retrieved 16 segments from 41 deduplicated events
-INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 41 events, 13723 chars
-Retrieved Causal Segments {'W_ijgMs7wNg_16', 'Msaer6b6QU8_20', 'JLs5iQrkVng_17', 'cstrfin0bYo_61', 'Msaer6b6QU8_3', 'AUJeIG3Gjis_5', '1ZqR-wGKHGQ_14', 'cstrfin0bYo_43', 'Msaer6b6QU8_24', 'HuXhtV6Yi-k_11', 'Msaer6b6QU8_22', 'SbCmu7SeXCQ_6', 'Msaer6b6QU8_13', 'JLs5iQrkVng_22', 'AUJeIG3Gjis_4', '1ZqR-wGKHGQ_32'}
-
-Retrieved Text Segments set()
-The output for the given question does not fit the pattern of previous examples since it pertains to a software feature rather than a visual scene from a video or movie. However, following the instruction format strictly and aiming to generate a query that could be used to retrieve relevant video segments (if there were any video tutorials or demonstrations about SuperDecisions software), we can phrase it as:
-
-Output:
-A segment demonstrating the advantages of using the ratings mode in SuperDecisions software for absolute measurement.
-Retrieved Visual Segments {'1ZqR-wGKHGQ_6', 'cstrfin0bYo_6', '1ZqR-wGKHGQ_4', 'cstrfin0bYo_7'}
-
-================================================================================
-🔍 FILTER 阶段诊断
-================================================================================
-检索到的片段总数: 20
-  - Entity检索: 0
-  - Visual检索: 4
-  - Causal检索: 16
-
-前5个片段ID示例:
-  1. 1ZqR-wGKHGQ_4
-  2. 1ZqR-wGKHGQ_6
-  3. 1ZqR-wGKHGQ_14
-  4. 1ZqR-wGKHGQ_32
-  5. AUJeIG3Gjis_4
-
-📊 video_segments._data 结构:
-  可用视频数量: 11
-  示例视频: 1ZqR-wGKHGQ
-  该视频的片段索引数量: 38
-  前5个索引: ['0', '1', '2', '3', '4']
-  索引类型: <class 'str'>
-
-🔧 解析测试:
-  ✓ 成功解析: 20
-  ✗ 解析失败: 0
-================================================================================
-
-⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments⠙ Checked 11 segments⠹ Checked 12 segments⠸ Checked 13 segments⠼ Checked 14 segments⠴ Checked 15 segments⠦ Checked 16 segments⠧ Checked 17 segments⠇ Checked 18 segments⠏ Checked 19 segments⠋ Checked 20 segments14 Video Segments remain after filtering
-Remain segments ['1ZqR-wGKHGQ_14', '1ZqR-wGKHGQ_32', 'AUJeIG3Gjis_5', 'HuXhtV6Yi-k_11', 'JLs5iQrkVng_17', 'Msaer6b6QU8_3', 'Msaer6b6QU8_13', 'Msaer6b6QU8_20', 'Msaer6b6QU8_22', 'Msaer6b6QU8_24', 'SbCmu7SeXCQ_6', 'W_ijgMs7wNg_16', 'cstrfin0bYo_43', 'cstrfin0bYo_61']
-Keywords: advantages, ratings mode, SuperDecisions software, absolute measurement
-Captioning Segments for Given Query:   0%|          | 0/14 [00:00<?, ?it/s]Captioning Segments for Given Query:   7%|▋         | 1/14 [00:34<07:25, 34.29s/it]Captioning Segments for Given Query:  14%|█▍        | 2/14 [00:53<05:05, 25.48s/it]Captioning Segments for Given Query:  21%|██▏       | 3/14 [01:23<05:01, 27.38s/it]Captioning Segments for Given Query:  29%|██▊       | 4/14 [01:51<04:38, 27.84s/it]Captioning Segments for Given Query:  36%|███▌      | 5/14 [02:19<04:09, 27.70s/it]Captioning Segments for Given Query:  43%|████▎     | 6/14 [02:51<03:52, 29.12s/it]Captioning Segments for Given Query:  50%|█████     | 7/14 [03:22<03:28, 29.73s/it]Captioning Segments for Given Query:  57%|█████▋    | 8/14 [03:49<02:53, 28.84s/it]Captioning Segments for Given Query:  64%|██████▍   | 9/14 [04:08<02:09, 25.94s/it]Captioning Segments for Given Query:  71%|███████▏  | 10/14 [04:33<01:42, 25.53s/it]Captioning Segments for Given Query:  79%|███████▊  | 11/14 [05:02<01:20, 26.80s/it]Captioning Segments for Given Query:  86%|████████▌ | 12/14 [05:27<00:52, 26.08s/it]Captioning Segments for Given Query:  93%|█████████▎| 13/14 [06:01<00:28, 28.47s/it]Captioning Segments for Given Query: 100%|██████████| 14/14 [06:28<00:00, 28.03s/it]Captioning Segments for Given Query: 100%|██████████| 14/14 [06:28<00:00, 27.74s/it]
-  [查询] 集合16 q12 entity_only: Explain the process of creating an AHP h
-INFO:nano-graphrag:Truncate 20 to 12 chunks
-The process of creating an AHP hierarchy in SuperDecisions software, including defining the goal, criteria, and alternatives.
-Retrieved Text Segments {'JLs5iQrkVng_5', 'JLs5iQrkVng_6', 'JLs5iQrkVng_33', 'JLs5iQrkVng_4', 'JLs5iQrkVng_3'}
-The output for the given question would not fit the pattern described in the initial instruction since it pertains to explaining a process rather than describing a scene from a video. However, adhering strictly to the format requested for generating a query for video retrieval, this scenario doesn't align well with the provided examples. 
-
-If we were to attempt to fit it into the structure provided, it might look something like:
-
-Output:
-A video segment demonstrating the process of creating an AHP hierarchy in SuperDecisions software.
-
-However, please note that this example deviates significantly from the original context of querying about scenes in movies or visual media. The request appears to be more suited for instructional content or a tutorial video rather than a typical scene description found in films or other visual media.
-Retrieved Visual Segments {'1ZqR-wGKHGQ_6', 'cstrfin0bYo_6', '1ZqR-wGKHGQ_4', 'cstrfin0bYo_7'}
-
-================================================================================
-🔍 FILTER 阶段诊断
-================================================================================
-检索到的片段总数: 9
-  - Entity检索: 5
-  - Visual检索: 4
-  - Causal检索: 0
-
-前5个片段ID示例:
-  1. 1ZqR-wGKHGQ_4
-  2. 1ZqR-wGKHGQ_6
-  3. JLs5iQrkVng_3
-  4. JLs5iQrkVng_4
-  5. JLs5iQrkVng_5
-
-📊 video_segments._data 结构:
-  可用视频数量: 11
-  示例视频: 1ZqR-wGKHGQ
-  该视频的片段索引数量: 38
-  前5个索引: ['0', '1', '2', '3', '4']
-  索引类型: <class 'str'>
-
-🔧 解析测试:
-  ✓ 成功解析: 9
-  ✗ 解析失败: 0
-================================================================================
-
-⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments8 Video Segments remain after filtering
-Remain segments ['1ZqR-wGKHGQ_6', 'JLs5iQrkVng_3', 'JLs5iQrkVng_4', 'JLs5iQrkVng_5', 'JLs5iQrkVng_6', 'JLs5iQrkVng_33', 'cstrfin0bYo_6', 'cstrfin0bYo_7']
-Keywords: AHP, hierarchy, SuperDecisions, software, goal, criteria, alternatives
-Captioning Segments for Given Query:   0%|          | 0/8 [00:00<?, ?it/s]Captioning Segments for Given Query:  12%|█▎        | 1/8 [00:21<02:27, 21.06s/it]Captioning Segments for Given Query:  25%|██▌       | 2/8 [00:46<02:20, 23.48s/it]Captioning Segments for Given Query:  38%|███▊      | 3/8 [01:03<01:42, 20.58s/it]Captioning Segments for Given Query:  50%|█████     | 4/8 [01:30<01:33, 23.33s/it]Captioning Segments for Given Query:  62%|██████▎   | 5/8 [01:55<01:11, 23.78s/it]Captioning Segments for Given Query:  75%|███████▌  | 6/8 [02:20<00:48, 24.09s/it]Captioning Segments for Given Query:  88%|████████▊ | 7/8 [02:47<00:25, 25.20s/it]Captioning Segments for Given Query: 100%|██████████| 8/8 [03:09<00:00, 24.19s/it]Captioning Segments for Given Query: 100%|██████████| 8/8 [03:09<00:00, 23.71s/it]
-  [查询] 集合16 q12 causal_only: Explain the process of creating an AHP h
-INFO:nano-graphrag:Truncate 20 to 12 chunks
-INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The process of creating an AHP hierarchy in SuperDecisions software, which includes defining the goal, criteria, and alternatives, and the subsequent steps involved in each phase.
-INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
-INFO:nano-graphrag:[Causal Retrieval] 48 events after 2-hop bidirectional walk (from 20 seeds)
-INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 48 → 44 nodes (tau_dup=0.85)
-INFO:nano-graphrag:[Causal Retrieval] Retrieved 16 segments from 44 deduplicated events
-INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 44 events, 16091 chars
-Retrieved Causal Segments {'JLs5iQrkVng_33', 'AUJeIG3Gjis_3', 'JLs5iQrkVng_13', '1ZqR-wGKHGQ_14', 'JLs5iQrkVng_0', 'Msaer6b6QU8_12', 'Msaer6b6QU8_5', 'Msaer6b6QU8_24', 'JLs5iQrkVng_29', 'HuXhtV6Yi-k_11', 'Msaer6b6QU8_22', 'JLs5iQrkVng_31', 'JLs5iQrkVng_22', 'HwkyhIiG8V0_3', 'AUJeIG3Gjis_8', 'AUJeIG3Gjis_4'}
-
-Retrieved Text Segments set()
-The output for the given question does not fit the pattern of generating a sentence to query for a video segment, since the question pertains to explaining a process rather than describing a visual scene from a video. However, if we were to adapt it to the format requested, it might look something like this:
-
-Output:
-A video segment demonstrating the process of creating an AHP hierarchy in SuperDecisions software.
-Retrieved Visual Segments {'1ZqR-wGKHGQ_6', 'cstrfin0bYo_6', '1ZqR-wGKHGQ_4', 'cstrfin0bYo_7'}
-
-================================================================================
-🔍 FILTER 阶段诊断
-================================================================================
-检索到的片段总数: 20
-  - Entity检索: 0
-  - Visual检索: 4
-  - Causal检索: 16
-
-前5个片段ID示例:
-  1. 1ZqR-wGKHGQ_4
-  2. 1ZqR-wGKHGQ_6
-  3. 1ZqR-wGKHGQ_14
-  4. AUJeIG3Gjis_3
-  5. AUJeIG3Gjis_4
-
-📊 video_segments._data 结构:
-  可用视频数量: 11
-  示例视频: 1ZqR-wGKHGQ
-  该视频的片段索引数量: 38
-  前5个索引: ['0', '1', '2', '3', '4']
-  索引类型: <class 'str'>
-
-🔧 解析测试:
-  ✓ 成功解析: 20
-  ✗ 解析失败: 0
-================================================================================
-
-⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments⠙ Checked 11 segments⠹ Checked 12 segments⠸ Checked 13 segments⠼ Checked 14 segments⠴ Checked 15 segments⠦ Checked 16 segments⠧ Checked 17 segments⠇ Checked 18 segments⠏ Checked 19 segments⠋ Checked 20 segments19 Video Segments remain after filtering
-Remain segments ['1ZqR-wGKHGQ_4', '1ZqR-wGKHGQ_6', '1ZqR-wGKHGQ_14', 'AUJeIG3Gjis_3', 'AUJeIG3Gjis_4', 'AUJeIG3Gjis_8', 'HwkyhIiG8V0_3', 'JLs5iQrkVng_0', 'JLs5iQrkVng_13', 'JLs5iQrkVng_22', 'JLs5iQrkVng_29', 'JLs5iQrkVng_31', 'JLs5iQrkVng_33', 'Msaer6b6QU8_5', 'Msaer6b6QU8_12', 'Msaer6b6QU8_22', 'Msaer6b6QU8_24', 'cstrfin0bYo_6', 'cstrfin0bYo_7']
-Keywords: AHP, hierarchy, SuperDecisions, software, goal, criteria, alternatives
-Captioning Segments for Given Query:   0%|          | 0/19 [00:00<?, ?it/s]Captioning Segments for Given Query:   5%|▌         | 1/19 [00:16<04:48, 16.00s/it]Captioning Segments for Given Query:  11%|█         | 2/19 [00:35<05:02, 17.80s/it]Captioning Segments for Given Query:  16%|█▌        | 3/19 [01:02<05:54, 22.15s/it]Captioning Segments for Given Query:  21%|██        | 4/19 [01:24<05:32, 22.18s/it]Captioning Segments for Given Query:  26%|██▋       | 5/19 [01:53<05:42, 24.46s/it]Captioning Segments for Given Query:  32%|███▏      | 6/19 [02:18<05:23, 24.92s/it]Captioning Segments for Given Query:  37%|███▋      | 7/19 [02:43<04:58, 24.85s/it]Captioning Segments for Given Query:  42%|████▏     | 8/19 [03:16<05:00, 27.31s/it]Captioning Segments for Given Query:  47%|████▋     | 9/19 [03:45<04:38, 27.85s/it]Captioning Segments for Given Query:  53%|█████▎    | 10/19 [04:13<04:13, 28.12s/it]Captioning Segments for Given Query:  58%|█████▊    | 11/19 [04:42<03:45, 28.19s/it]Captioning Segments for Given Query:  63%|██████▎   | 12/19 [05:13<03:24, 29.15s/it]Captioning Segments for Given Query:  68%|██████▊   | 13/19 [05:38<02:47, 27.88s/it]Captioning Segments for Given Query:  74%|███████▎  | 14/19 [05:58<02:06, 25.40s/it]Captioning Segments for Given Query:  79%|███████▉  | 15/19 [06:23<01:41, 25.36s/it]Captioning Segments for Given Query:  84%|████████▍ | 16/19 [06:50<01:17, 25.91s/it]Captioning Segments for Given Query:  89%|████████▉ | 17/19 [07:21<00:54, 27.31s/it]Captioning Segments for Given Query:  95%|█████████▍| 18/19 [07:55<00:29, 29.34s/it]Captioning Segments for Given Query: 100%|██████████| 19/19 [08:15<00:00, 26.65s/it]Captioning Segments for Given Query: 100%|██████████| 19/19 [08:15<00:00, 26.09s/it]
-  [查询] 集合16 q13 entity_only: How to establish connections between dif
-INFO:nano-graphrag:Truncate 20 to 12 chunks
-How to establish connections between different elements in an AHP hierarchy within SuperDecisions?
-Retrieved Text Segments {'JLs5iQrkVng_21', 'JLs5iQrkVng_22', 'JLs5iQrkVng_33', 'JLs5iQrkVng_20'}
-The output for the given question does not fit the pattern of generating a declarative sentence to serve as a query for retrieving relevant video segments. Instead, it seems to be asking for instructions on how to perform a task within a software tool called SuperDecisions related to Analytic Hierarchy Process (AHP).
-
-However, following the instruction strictly and trying to formulate a relevant video retrieval query based on the provided format:
-
-Output:
-Establishing connections between different elements in an AHP hierarchy within SuperDecisions.
-Retrieved Visual Segments {'1ZqR-wGKHGQ_6', 'cstrfin0bYo_6', '1ZqR-wGKHGQ_4', 'cstrfin0bYo_7'}
-
-================================================================================
-🔍 FILTER 阶段诊断
-================================================================================
-检索到的片段总数: 8
-  - Entity检索: 4
-  - Visual检索: 4
-  - Causal检索: 0
-
-前5个片段ID示例:
-  1. 1ZqR-wGKHGQ_4
-  2. 1ZqR-wGKHGQ_6
-  3. JLs5iQrkVng_20
-  4. JLs5iQrkVng_21
-  5. JLs5iQrkVng_22
-
-📊 video_segments._data 结构:
-  可用视频数量: 11
-  示例视频: 1ZqR-wGKHGQ
-  该视频的片段索引数量: 38
-  前5个索引: ['0', '1', '2', '3', '4']
-  索引类型: <class 'str'>
-
-🔧 解析测试:
-  ✓ 成功解析: 8
-  ✗ 解析失败: 0
-================================================================================
-
-⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments6 Video Segments remain after filtering
-Remain segments ['JLs5iQrkVng_20', 'JLs5iQrkVng_21', 'JLs5iQrkVng_22', 'JLs5iQrkVng_33', 'cstrfin0bYo_6', 'cstrfin0bYo_7']
-Keywords: AHP, hierarchy, SuperDecisions, connections, elements
-Captioning Segments for Given Query:   0%|          | 0/6 [00:00<?, ?it/s]Captioning Segments for Given Query:  17%|█▋        | 1/6 [00:22<01:50, 22.10s/it]Captioning Segments for Given Query:  33%|███▎      | 2/6 [00:49<01:40, 25.13s/it]Captioning Segments for Given Query:  50%|█████     | 3/6 [01:07<01:06, 22.13s/it]Captioning Segments for Given Query:  67%|██████▋   | 4/6 [01:26<00:41, 20.86s/it]Captioning Segments for Given Query:  83%|████████▎ | 5/6 [02:06<00:27, 27.53s/it]Captioning Segments for Given Query: 100%|██████████| 6/6 [02:28<00:00, 25.91s/it]Captioning Segments for Given Query: 100%|██████████| 6/6 [02:28<00:00, 24.82s/it]
-  [查询] 集合16 q13 causal_only: How to establish connections between dif
-INFO:nano-graphrag:Truncate 20 to 12 chunks
-INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The process of establishing connections between different elements in an AHP (Analytic Hierarchy Process) hierarchy within SuperDecisions and its steps.
-INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
-INFO:nano-graphrag:[Causal Retrieval] 50 events after 2-hop bidirectional walk (from 20 seeds)
-INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 50 → 44 nodes (tau_dup=0.85)
-INFO:nano-graphrag:[Causal Retrieval] Retrieved 17 segments from 44 deduplicated events
-INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 44 events, 15524 chars
-Retrieved Causal Segments {'cstrfin0bYo_40', 'JLs5iQrkVng_33', 'AUJeIG3Gjis_3', 'Msaer6b6QU8_0', 'AUJeIG3Gjis_5', 'JLs5iQrkVng_0', 'JLs5iQrkVng_13', '1ZqR-wGKHGQ_14', 'JLs5iQrkVng_22', 'Msaer6b6QU8_24', 'HuXhtV6Yi-k_11', 'Msaer6b6QU8_22', 'SbCmu7SeXCQ_3', 'hjRxht__2wI_19', 'Msaer6b6QU8_21', 'AUJeIG3Gjis_4', 'JLs5iQrkVng_5'}
-
-Retrieved Text Segments set()
-The question provided seems to be more related to a process or software instruction rather than a query for retrieving video segments based on scene-related information. However, sticking to the format and guidelines given:
-
-Since the original request is about generating a declarative sentence to retrieve video segments and the given question does not describe a video scene but rather asks about a process in software, we can still attempt to frame it in a way that might be relevant if there were instructional videos available on the topic:
-
-Output:
-Instructions for establishing connections between different elements in an AHP hierarchy within SuperDecisions are demonstrated in the video.
-Retrieved Visual Segments {'1ZqR-wGKHGQ_6', 'cstrfin0bYo_6', '1ZqR-wGKHGQ_4', 'cstrfin0bYo_7'}
-
-================================================================================
-🔍 FILTER 阶段诊断
-================================================================================
-检索到的片段总数: 21
-  - Entity检索: 0
-  - Visual检索: 4
-  - Causal检索: 17
-
-前5个片段ID示例:
-  1. 1ZqR-wGKHGQ_4
-  2. 1ZqR-wGKHGQ_6
-  3. 1ZqR-wGKHGQ_14
-  4. AUJeIG3Gjis_3
-  5. AUJeIG3Gjis_4
-
-📊 video_segments._data 结构:
-  可用视频数量: 11
-  示例视频: 1ZqR-wGKHGQ
-  该视频的片段索引数量: 38
-  前5个索引: ['0', '1', '2', '3', '4']
-  索引类型: <class 'str'>
-
-🔧 解析测试:
-  ✓ 成功解析: 21
-  ✗ 解析失败: 0
-================================================================================
-
-⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments⠙ Checked 11 segments⠹ Checked 12 segments⠸ Checked 13 segments⠼ Checked 14 segments⠴ Checked 15 segments⠦ Checked 16 segments⠧ Checked 17 segments⠇ Checked 18 segments⠏ Checked 19 segments⠋ Checked 20 segments⠙ Checked 21 segments19 Video Segments remain after filtering
-Remain segments ['1ZqR-wGKHGQ_14', 'AUJeIG3Gjis_3', 'AUJeIG3Gjis_4', 'AUJeIG3Gjis_5', 'HuXhtV6Yi-k_11', 'JLs5iQrkVng_0', 'JLs5iQrkVng_5', 'JLs5iQrkVng_13', 'JLs5iQrkVng_22', 'JLs5iQrkVng_33', 'Msaer6b6QU8_0', 'Msaer6b6QU8_21', 'Msaer6b6QU8_22', 'Msaer6b6QU8_24', 'SbCmu7SeXCQ_3', 'cstrfin0bYo_6', 'cstrfin0bYo_7', 'cstrfin0bYo_40', 'hjRxht__2wI_19']
-Keywords: AHP, hierarchy, SuperDecisions, connections, elements
-Captioning Segments for Given Query:   0%|          | 0/19 [00:00<?, ?it/s]Captioning Segments for Given Query:   5%|▌         | 1/19 [00:32<09:45, 32.53s/it]Captioning Segments for Given Query:  11%|█         | 2/19 [01:01<08:40, 30.63s/it]Captioning Segments for Given Query:  16%|█▌        | 3/19 [01:29<07:47, 29.20s/it]Captioning Segments for Given Query:  21%|██        | 4/19 [01:55<07:01, 28.11s/it]Captioning Segments for Given Query:  26%|██▋       | 5/19 [02:27<06:49, 29.24s/it]Captioning Segments for Given Query:  32%|███▏      | 6/19 [03:01<06:43, 31.00s/it]Captioning Segments for Given Query:  37%|███▋      | 7/19 [03:20<05:23, 26.98s/it]Captioning Segments for Given Query:  42%|████▏     | 8/19 [03:41<04:37, 25.24s/it]Captioning Segments for Given Query:  47%|████▋     | 9/19 [04:09<04:20, 26.05s/it]Captioning Segments for Given Query:  53%|█████▎    | 10/19 [04:42<04:12, 28.08s/it]Captioning Segments for Given Query:  58%|█████▊    | 11/19 [05:17<04:02, 30.27s/it]Captioning Segments for Given Query:  63%|██████▎   | 12/19 [05:37<03:10, 27.24s/it]Captioning Segments for Given Query:  68%|██████▊   | 13/19 [05:56<02:27, 24.64s/it]Captioning Segments for Given Query:  74%|███████▎  | 14/19 [06:16<01:57, 23.43s/it]Captioning Segments for Given Query:  79%|███████▉  | 15/19 [06:42<01:36, 24.09s/it]Captioning Segments for Given Query:  84%|████████▍ | 16/19 [07:19<01:24, 28.06s/it]Captioning Segments for Given Query:  89%|████████▉ | 17/19 [07:47<00:55, 27.87s/it]Captioning Segments for Given Query:  95%|█████████▍| 18/19 [08:32<00:32, 32.97s/it]Captioning Segments for Given Query: 100%|██████████| 19/19 [09:01<00:00, 31.94s/it]Captioning Segments for Given Query: 100%|██████████| 19/19 [09:01<00:00, 28.51s/it]
-  [查询] 集合16 q14 entity_only: What are pairwise comparisons in AHP, an
-INFO:nano-graphrag:Truncate 20 to 12 chunks
-What are pairwise comparisons in AHP and how are they conducted in SuperDecisions software?
-Retrieved Text Segments {'JLs5iQrkVng_6', 'Msaer6b6QU8_23', 'JLs5iQrkVng_3', 'Msaer6b6QU8_24', 'Msaer6b6QU8_22', 'JLs5iQrkVng_4', 'Msaer6b6QU8_21', 'JLs5iQrkVng_5'}
-The question provided does not pertain to generating a query for retrieving video segments but rather asks for an explanation of a concept within a specific decision-making methodology and software tool. However, adhering strictly to the format requested in your instruction, we can still formulate a query-like statement, though it would be somewhat abstract without a video context:
-
-Output:
-A demonstration of conducting pairwise comparisons in AHP using SuperDecisions software.
-Retrieved Visual Segments {'1ZqR-wGKHGQ_6', 'cstrfin0bYo_6', '1ZqR-wGKHGQ_4', 'cstrfin0bYo_7'}
-
-================================================================================
-🔍 FILTER 阶段诊断
-================================================================================
-检索到的片段总数: 12
-  - Entity检索: 8
-  - Visual检索: 4
-  - Causal检索: 0
-
-前5个片段ID示例:
-  1. 1ZqR-wGKHGQ_4
-  2. 1ZqR-wGKHGQ_6
-  3. JLs5iQrkVng_3
-  4. JLs5iQrkVng_4
-  5. JLs5iQrkVng_5
-
-📊 video_segments._data 结构:
-  可用视频数量: 11
-  示例视频: 1ZqR-wGKHGQ
-  该视频的片段索引数量: 38
-  前5个索引: ['0', '1', '2', '3', '4']
-  索引类型: <class 'str'>
-
-🔧 解析测试:
-  ✓ 成功解析: 12
-  ✗ 解析失败: 0
-================================================================================
-
-⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments⠙ Checked 11 segments⠹ Checked 12 segments7 Video Segments remain after filtering
-Remain segments ['JLs5iQrkVng_3', 'Msaer6b6QU8_21', 'Msaer6b6QU8_22', 'Msaer6b6QU8_23', 'Msaer6b6QU8_24', 'cstrfin0bYo_6', 'cstrfin0bYo_7']
-Keywords: pairwise comparisons, AHP, conducted, SuperDecisions software
-Captioning Segments for Given Query:   0%|          | 0/7 [00:00<?, ?it/s]Captioning Segments for Given Query:  14%|█▍        | 1/7 [00:24<02:24, 24.10s/it]Captioning Segments for Given Query:  29%|██▊       | 2/7 [00:38<01:31, 18.36s/it]Captioning Segments for Given Query:  43%|████▎     | 3/7 [00:58<01:16, 19.03s/it]Captioning Segments for Given Query:  57%|█████▋    | 4/7 [01:23<01:04, 21.34s/it]Captioning Segments for Given Query:  71%|███████▏  | 5/7 [01:55<00:50, 25.39s/it]Captioning Segments for Given Query:  86%|████████▌ | 6/7 [02:24<00:26, 26.67s/it]Captioning Segments for Given Query: 100%|██████████| 7/7 [02:52<00:00, 26.87s/it]Captioning Segments for Given Query: 100%|██████████| 7/7 [02:52<00:00, 24.59s/it]
-  [查询] 集合16 q14 causal_only: What are pairwise comparisons in AHP, an
-INFO:nano-graphrag:Truncate 20 to 12 chunks
-INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The process of conducting pairwise comparisons in Analytic Hierarchy Process (AHP) and the specific methods used for this in the SuperDecisions software.
-INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
-INFO:nano-graphrag:[Causal Retrieval] 44 events after 2-hop bidirectional walk (from 20 seeds)
-INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 44 → 35 nodes (tau_dup=0.85)
-INFO:nano-graphrag:[Causal Retrieval] Retrieved 15 segments from 35 deduplicated events
-INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 35 events, 11396 chars
-Retrieved Causal Segments {'1ZqR-wGKHGQ_11', 'hjRxht__2wI_21', 'hjRxht__2wI_27', 'JLs5iQrkVng_13', 'AUJeIG3Gjis_5', '1ZqR-wGKHGQ_14', 'HwkyhIiG8V0_9', 'Msaer6b6QU8_24', 'HuXhtV6Yi-k_11', '1ZqR-wGKHGQ_12', 'Msaer6b6QU8_22', 'Msaer6b6QU8_13', 'SbCmu7SeXCQ_4', 'JLs5iQrkVng_22', 'AUJeIG3Gjis_4'}
-
-Retrieved Text Segments set()
-The question provided seems to be asking about a concept related to decision-making methodologies rather than seeking a video segment description. However, following the instruction strictly to generate a declarative sentence for querying relevant video segments:
-
-Output:
-A segment explaining pairwise comparisons in AHP using SuperDecisions software.
-Retrieved Visual Segments {'HuXhtV6Yi-k_11', 'cstrfin0bYo_0', 'AUJeIG3Gjis_24', '1ZqR-wGKHGQ_0'}
-
-================================================================================
-🔍 FILTER 阶段诊断
-================================================================================
-检索到的片段总数: 18
-  - Entity检索: 0
-  - Visual检索: 4
-  - Causal检索: 15
-
-前5个片段ID示例:
-  1. 1ZqR-wGKHGQ_0
-  2. 1ZqR-wGKHGQ_11
-  3. 1ZqR-wGKHGQ_12
-  4. 1ZqR-wGKHGQ_14
-  5. AUJeIG3Gjis_4
-
-📊 video_segments._data 结构:
-  可用视频数量: 11
-  示例视频: 1ZqR-wGKHGQ
-  该视频的片段索引数量: 38
-  前5个索引: ['0', '1', '2', '3', '4']
-  索引类型: <class 'str'>
-
-🔧 解析测试:
-  ✓ 成功解析: 18
-  ✗ 解析失败: 0
-================================================================================
-
-⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments⠙ Checked 11 segments⠹ Checked 12 segments⠸ Checked 13 segments⠼ Checked 14 segments⠴ Checked 15 segments⠦ Checked 16 segments⠧ Checked 17 segments⠇ Checked 18 segments15 Video Segments remain after filtering
-Remain segments ['1ZqR-wGKHGQ_11', '1ZqR-wGKHGQ_12', '1ZqR-wGKHGQ_14', 'AUJeIG3Gjis_4', 'AUJeIG3Gjis_5', 'AUJeIG3Gjis_24', 'HwkyhIiG8V0_9', 'JLs5iQrkVng_13', 'JLs5iQrkVng_22', 'Msaer6b6QU8_13', 'Msaer6b6QU8_22', 'Msaer6b6QU8_24', 'SbCmu7SeXCQ_4', 'hjRxht__2wI_21', 'hjRxht__2wI_27']
-Keywords: pairwise comparisons, AHP, conducted, SuperDecisions software
-Captioning Segments for Given Query:   0%|          | 0/15 [00:00<?, ?it/s]Captioning Segments for Given Query:   7%|▋         | 1/15 [00:18<04:23, 18.84s/it]Captioning Segments for Given Query:  13%|█▎        | 2/15 [00:55<06:24, 29.55s/it]Captioning Segments for Given Query:  20%|██        | 3/15 [01:18<05:14, 26.17s/it]Captioning Segments for Given Query:  27%|██▋       | 4/15 [01:42<04:39, 25.41s/it]Captioning Segments for Given Query:  33%|███▎      | 5/15 [01:59<03:46, 22.63s/it]Captioning Segments for Given Query:  40%|████      | 6/15 [02:26<03:34, 23.88s/it]Captioning Segments for Given Query:  47%|████▋     | 7/15 [02:48<03:06, 23.26s/it]Captioning Segments for Given Query:  53%|█████▎    | 8/15 [03:14<02:48, 24.08s/it]Captioning Segments for Given Query:  60%|██████    | 9/15 [03:41<02:30, 25.04s/it]Captioning Segments for Given Query:  67%|██████▋   | 10/15 [04:02<01:58, 23.72s/it]Captioning Segments for Given Query:  73%|███████▎  | 11/15 [04:22<01:30, 22.65s/it]Captioning Segments for Given Query:  80%|████████  | 12/15 [04:43<01:06, 22.20s/it]Captioning Segments for Given Query:  87%|████████▋ | 13/15 [05:09<00:46, 23.26s/it]Captioning Segments for Given Query:  93%|█████████▎| 14/15 [05:33<00:23, 23.71s/it]Captioning Segments for Given Query: 100%|██████████| 15/15 [06:03<00:00, 25.51s/it]Captioning Segments for Given Query: 100%|██████████| 15/15 [06:03<00:00, 24.24s/it]
-  [查询] 集合16 q15 entity_only: What is the significance of the consiste
-INFO:nano-graphrag:Truncate 20 to 11 chunks
-The significance of the consistency ratio (CR) in Analytic Hierarchy Process (AHP) and how it is addressed in SuperDecisions.
-Retrieved Text Segments {'cstrfin0bYo_0', 'JLs5iQrkVng_33', 'cstrfin0bYo_1', 'cstrfin0bYo_3', 'cstrfin0bYo_2'}
-The given question does not pertain to a video scene but rather to a technical inquiry about the significance of the consistency ratio (CR) in Analytic Hierarchy Process (AHP) and its handling in software called SuperDecisions. Since the task is to generate a query for retrieving relevant video segments based on scene-related information, there isn't a suitable output for this question as per the provided format and guidelines.
-
-However, if we were to adapt the format to fit the context of a video explaining or demonstrating AHP and SuperDecisions, a possible output could be:
-
-Output:
-A segment in the video explaining the significance of the consistency ratio (CR) in AHP and how it is addressed in SuperDecisions.
-Retrieved Visual Segments {'1ZqR-wGKHGQ_6', 'cstrfin0bYo_6', '1ZqR-wGKHGQ_4', 'cstrfin0bYo_7'}
-
-================================================================================
-🔍 FILTER 阶段诊断
-================================================================================
-检索到的片段总数: 9
-  - Entity检索: 5
-  - Visual检索: 4
-  - Causal检索: 0
-
-前5个片段ID示例:
-  1. 1ZqR-wGKHGQ_4
-  2. 1ZqR-wGKHGQ_6
-  3. JLs5iQrkVng_33
-  4. cstrfin0bYo_0
-  5. cstrfin0bYo_1
-
-📊 video_segments._data 结构:
-  可用视频数量: 11
-  示例视频: 1ZqR-wGKHGQ
-  该视频的片段索引数量: 38
-  前5个索引: ['0', '1', '2', '3', '4']
-  索引类型: <class 'str'>
-
-🔧 解析测试:
-  ✓ 成功解析: 9
-  ✗ 解析失败: 0
-================================================================================
-
-⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments3 Video Segments remain after filtering
-Remain segments ['JLs5iQrkVng_33', 'cstrfin0bYo_1', 'cstrfin0bYo_2']
-Keywords: significance, consistency ratio, CR, AHP, SuperDecisions
-Captioning Segments for Given Query:   0%|          | 0/3 [00:00<?, ?it/s]Captioning Segments for Given Query:  33%|███▎      | 1/3 [00:30<01:01, 30.87s/it]Captioning Segments for Given Query:  67%|██████▋   | 2/3 [00:49<00:23, 23.44s/it]Captioning Segments for Given Query: 100%|██████████| 3/3 [01:17<00:00, 25.49s/it]Captioning Segments for Given Query: 100%|██████████| 3/3 [01:17<00:00, 25.68s/it]
-  [查询] 集合16 q15 causal_only: What is the significance of the consiste
-INFO:nano-graphrag:Truncate 20 to 11 chunks
-INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The impact of the consistency ratio (CR) in Analytic Hierarchy Process (AHP) and the methods used to address it within SuperDecisions.
-INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
-INFO:nano-graphrag:[Causal Retrieval] 45 events after 2-hop bidirectional walk (from 20 seeds)
-INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 45 → 41 nodes (tau_dup=0.85)
-INFO:nano-graphrag:[Causal Retrieval] Retrieved 17 segments from 41 deduplicated events
-INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 41 events, 13784 chars
-Retrieved Causal Segments {'W_ijgMs7wNg_16', 'cstrfin0bYo_61', 'AUJeIG3Gjis_5', '1ZqR-wGKHGQ_14', 'hjRxht__2wI_26', 'cstrfin0bYo_44', 'SbCmu7SeXCQ_4', 'Msaer6b6QU8_24', 'HuXhtV6Yi-k_11', 'Msaer6b6QU8_22', 'SbCmu7SeXCQ_6', 'Msaer6b6QU8_13', '1ZqR-wGKHGQ_13', 'cstrfin0bYo_3', 'SbCmu7SeXCQ_8', 'cstrfin0bYo_9', 'AUJeIG3Gjis_4'}
-
-Retrieved Text Segments set()
-The given question does not pertain to a scene from a video but rather a technical inquiry about the consistency ratio (CR) in Analytic Hierarchy Process (AHP) and its treatment in software called SuperDecisions. Since the task is to generate a declarative sentence to serve as a query for retrieving relevant video segments, this question cannot be directly translated into such a query without additional context regarding any video content that might explain or demonstrate the concept.
-
-However, if we assume there exists a video explaining these concepts, an appropriate output could be:
-
-Output:
-A segment explaining the significance of the consistency ratio (CR) in AHP and how it is handled in SuperDecisions.
-Retrieved Visual Segments {'1ZqR-wGKHGQ_6', 'cstrfin0bYo_6', '1ZqR-wGKHGQ_4', 'cstrfin0bYo_7'}
-
-================================================================================
-🔍 FILTER 阶段诊断
-================================================================================
-检索到的片段总数: 21
-  - Entity检索: 0
-  - Visual检索: 4
-  - Causal检索: 17
-
-前5个片段ID示例:
-  1. 1ZqR-wGKHGQ_4
-  2. 1ZqR-wGKHGQ_6
-  3. 1ZqR-wGKHGQ_13
-  4. 1ZqR-wGKHGQ_14
-  5. AUJeIG3Gjis_4
-
-📊 video_segments._data 结构:
-  可用视频数量: 11
-  示例视频: 1ZqR-wGKHGQ
-  该视频的片段索引数量: 38
-  前5个索引: ['0', '1', '2', '3', '4']
-  索引类型: <class 'str'>
-
-🔧 解析测试:
-  ✓ 成功解析: 21
-  ✗ 解析失败: 0
-================================================================================
-
-⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments⠙ Checked 11 segments⠹ Checked 12 segments⠸ Checked 13 segments⠼ Checked 14 segments⠴ Checked 15 segments⠦ Checked 16 segments⠧ Checked 17 segments⠇ Checked 18 segments⠏ Checked 19 segments⠋ Checked 20 segments⠙ Checked 21 segments11 Video Segments remain after filtering
-Remain segments ['1ZqR-wGKHGQ_13', 'AUJeIG3Gjis_4', 'AUJeIG3Gjis_5', 'Msaer6b6QU8_13', 'Msaer6b6QU8_22', 'SbCmu7SeXCQ_8', 'W_ijgMs7wNg_16', 'cstrfin0bYo_6', 'cstrfin0bYo_44', 'cstrfin0bYo_61', 'hjRxht__2wI_26']
-Keywords: significance, consistency ratio, CR, AHP, SuperDecisions
-Captioning Segments for Given Query:   0%|          | 0/11 [00:00<?, ?it/s]Captioning Segments for Given Query:   9%|▉         | 1/11 [00:38<06:26, 38.65s/it]Captioning Segments for Given Query:  18%|█▊        | 2/11 [00:55<03:52, 25.80s/it]Captioning Segments for Given Query:  27%|██▋       | 3/11 [01:17<03:12, 24.10s/it]Captioning Segments for Given Query:  36%|███▋      | 4/11 [01:46<03:02, 26.11s/it]Captioning Segments for Given Query:  45%|████▌     | 5/11 [02:07<02:25, 24.17s/it]Captioning Segments for Given Query:  55%|█████▍    | 6/11 [02:38<02:13, 26.66s/it]Captioning Segments for Given Query:  64%|██████▎   | 7/11 [03:12<01:55, 28.92s/it]Captioning Segments for Given Query:  73%|███████▎  | 8/11 [03:45<01:30, 30.16s/it]Captioning Segments for Given Query:  82%|████████▏ | 9/11 [04:17<01:01, 30.84s/it]Captioning Segments for Given Query:  91%|█████████ | 10/11 [04:48<00:30, 30.73s/it]Captioning Segments for Given Query: 100%|██████████| 11/11 [05:10<00:00, 28.08s/it]Captioning Segments for Given Query: 100%|██████████| 11/11 [05:10<00:00, 28.20s/it]
-  [查询] 集合16 q16 entity_only: Explain the process of synthesizing an A
-INFO:nano-graphrag:Truncate 20 to 12 chunks
-The process of synthesizing an Analytic Hierarchy Process (AHP) model in SuperDecisions to obtain global priorities for alternatives.
-Retrieved Text Segments {'cstrfin0bYo_0', 'JLs5iQrkVng_33', 'cstrfin0bYo_1', 'cstrfin0bYo_3', 'cstrfin0bYo_2'}
-Output:
-The process of synthesizing an Analytic Hierarchy Process (AHP) model in SuperDecisions to obtain global priorities for alternatives.
-Retrieved Visual Segments {'HuXhtV6Yi-k_11', 'cstrfin0bYo_0', 'AUJeIG3Gjis_24', '1ZqR-wGKHGQ_0'}
-
-================================================================================
-🔍 FILTER 阶段诊断
-================================================================================
-检索到的片段总数: 8
-  - Entity检索: 5
-  - Visual检索: 4
-  - Causal检索: 0
-
-前5个片段ID示例:
-  1. 1ZqR-wGKHGQ_0
-  2. AUJeIG3Gjis_24
-  3. HuXhtV6Yi-k_11
-  4. JLs5iQrkVng_33
-  5. cstrfin0bYo_0
-
-📊 video_segments._data 结构:
-  可用视频数量: 11
-  示例视频: 1ZqR-wGKHGQ
-  该视频的片段索引数量: 38
-  前5个索引: ['0', '1', '2', '3', '4']
-  索引类型: <class 'str'>
-
-🔧 解析测试:
-  ✓ 成功解析: 8
-  ✗ 解析失败: 0
-================================================================================
-
-⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments6 Video Segments remain after filtering
-Remain segments ['1ZqR-wGKHGQ_0', 'AUJeIG3Gjis_24', 'HuXhtV6Yi-k_11', 'JLs5iQrkVng_33', 'cstrfin0bYo_0', 'cstrfin0bYo_1']
-Keywords: AHP, model, synthesizing, SuperDecisions, global priorities, alternatives
-Captioning Segments for Given Query:   0%|          | 0/6 [00:00<?, ?it/s]Captioning Segments for Given Query:  17%|█▋        | 1/6 [00:23<01:56, 23.28s/it]Captioning Segments for Given Query:  33%|███▎      | 2/6 [00:48<01:37, 24.27s/it]Captioning Segments for Given Query:  50%|█████     | 3/6 [01:08<01:07, 22.45s/it]Captioning Segments for Given Query:  67%|██████▋   | 4/6 [01:33<00:46, 23.44s/it]Captioning Segments for Given Query:  83%|████████▎ | 5/6 [01:58<00:24, 24.16s/it]Captioning Segments for Given Query: 100%|██████████| 6/6 [02:20<00:00, 23.24s/it]Captioning Segments for Given Query: 100%|██████████| 6/6 [02:20<00:00, 23.40s/it]
-  [查询] 集合16 q16 causal_only: Explain the process of synthesizing an A
-INFO:nano-graphrag:Truncate 20 to 12 chunks
-INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The process of synthesizing an AHP (Analytic Hierarchy Process) model in SuperDecisions and the resulting global priorities obtained for the alternatives.
-INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
-INFO:nano-graphrag:[Causal Retrieval] 46 events after 2-hop bidirectional walk (from 20 seeds)
-INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 46 → 42 nodes (tau_dup=0.85)
-INFO:nano-graphrag:[Causal Retrieval] Retrieved 17 segments from 42 deduplicated events
-INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 42 events, 14436 chars
-Retrieved Causal Segments {'AUJeIG3Gjis_2', 'Msaer6b6QU8_3', 'JLs5iQrkVng_0', 'Msaer6b6QU8_0', 'AUJeIG3Gjis_5', '1ZqR-wGKHGQ_14', 'Msaer6b6QU8_23', 'Msaer6b6QU8_24', 'HuXhtV6Yi-k_11', 'Msaer6b6QU8_22', 'SbCmu7SeXCQ_6', 'Msaer6b6QU8_21', 'JLs5iQrkVng_30', 'JLs5iQrkVng_22', 'HwkyhIiG8V0_10', 'cstrfin0bYo_9', 'AUJeIG3Gjis_4'}
-
-Retrieved Text Segments set()
-The process of synthesizing an AHP model in SuperDecisions to obtain global priorities for alternatives. 
-
-Note: Since the original context doesn't involve a video scene but rather a technical process explanation, the generated output is more of a description query rather than a video segment retrieval query. If the task strictly requires a video segment retrieval query, this scenario might not fit the given format perfectly due to its non-scene-based nature.
-Retrieved Visual Segments {'1ZqR-wGKHGQ_6', 'cstrfin0bYo_6', '1ZqR-wGKHGQ_4', 'cstrfin0bYo_7'}
-
-================================================================================
-🔍 FILTER 阶段诊断
-================================================================================
-检索到的片段总数: 21
-  - Entity检索: 0
-  - Visual检索: 4
-  - Causal检索: 17
-
-前5个片段ID示例:
-  1. 1ZqR-wGKHGQ_4
-  2. 1ZqR-wGKHGQ_6
-  3. 1ZqR-wGKHGQ_14
-  4. AUJeIG3Gjis_2
-  5. AUJeIG3Gjis_4
-
-📊 video_segments._data 结构:
-  可用视频数量: 11
-  示例视频: 1ZqR-wGKHGQ
-  该视频的片段索引数量: 38
-  前5个索引: ['0', '1', '2', '3', '4']
-  索引类型: <class 'str'>
-
-🔧 解析测试:
-  ✓ 成功解析: 21
-  ✗ 解析失败: 0
-================================================================================
-
-⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments⠙ Checked 11 segments⠹ Checked 12 segments⠸ Checked 13 segments⠼ Checked 14 segments⠴ Checked 15 segments⠦ Checked 16 segments⠧ Checked 17 segments⠇ Checked 18 segments⠏ Checked 19 segments⠋ Checked 20 segments⠙ Checked 21 segments19 Video Segments remain after filtering
-Remain segments ['1ZqR-wGKHGQ_14', 'AUJeIG3Gjis_2', 'AUJeIG3Gjis_4', 'AUJeIG3Gjis_5', 'HuXhtV6Yi-k_11', 'HwkyhIiG8V0_10', 'JLs5iQrkVng_0', 'JLs5iQrkVng_22', 'JLs5iQrkVng_30', 'Msaer6b6QU8_0', 'Msaer6b6QU8_3', 'Msaer6b6QU8_21', 'Msaer6b6QU8_22', 'Msaer6b6QU8_23', 'Msaer6b6QU8_24', 'SbCmu7SeXCQ_6', 'cstrfin0bYo_6', 'cstrfin0bYo_7', 'cstrfin0bYo_9']
-Keywords: AHP, model, synthesizing, SuperDecisions, global priorities, alternatives
-Captioning Segments for Given Query:   0%|          | 0/19 [00:00<?, ?it/s]Captioning Segments for Given Query:   5%|▌         | 1/19 [00:26<08:05, 26.95s/it]Captioning Segments for Given Query:  11%|█         | 2/19 [00:51<07:16, 25.65s/it]Captioning Segments for Given Query:  16%|█▌        | 3/19 [01:21<07:23, 27.71s/it]Captioning Segments for Given Query:  21%|██        | 4/19 [01:50<07:00, 28.02s/it]Captioning Segments for Given Query:  26%|██▋       | 5/19 [02:09<05:46, 24.75s/it]Captioning Segments for Given Query:  32%|███▏      | 6/19 [02:42<05:57, 27.50s/it]Captioning Segments for Given Query:  37%|███▋      | 7/19 [03:16<05:58, 29.89s/it]Captioning Segments for Given Query:  42%|████▏     | 8/19 [03:51<05:44, 31.33s/it]Captioning Segments for Given Query:  47%|████▋     | 9/19 [04:20<05:04, 30.50s/it]Captioning Segments for Given Query:  53%|█████▎    | 10/19 [04:50<04:33, 30.44s/it]Captioning Segments for Given Query:  58%|█████▊    | 11/19 [05:18<03:57, 29.69s/it]Captioning Segments for Given Query:  63%|██████▎   | 12/19 [05:40<03:11, 27.40s/it]Captioning Segments for Given Query:  68%|██████▊   | 13/19 [06:10<02:49, 28.22s/it]Captioning Segments for Given Query:  74%|███████▎  | 14/19 [06:33<02:13, 26.64s/it]Captioning Segments for Given Query:  79%|███████▉  | 15/19 [06:58<01:44, 26.12s/it]Captioning Segments for Given Query:  84%|████████▍ | 16/19 [07:23<01:17, 25.76s/it]Captioning Segments for Given Query:  89%|████████▉ | 17/19 [07:58<00:57, 28.58s/it]Captioning Segments for Given Query:  95%|█████████▍| 18/19 [08:29<00:29, 29.22s/it]Captioning Segments for Given Query: 100%|██████████| 19/19 [08:58<00:00, 29.12s/it]Captioning Segments for Given Query: 100%|██████████| 19/19 [08:58<00:00, 28.32s/it]
-  [查询] 集合16 q17 entity_only: What are the considerations and benefits
-INFO:nano-graphrag:Truncate 20 to 11 chunks
-The considerations and benefits of using a ratings model in SuperDecisions compared to a pairwise comparison approach.
-Retrieved Text Segments {'HwkyhIiG8V0_9', 'Msaer6b6QU8_1', 'Msaer6b6QU8_0', 'HwkyhIiG8V0_8'}
-The output for the given question should focus on the context of comparing a ratings model with a pairwise comparison approach in SuperDecisions, rather than generating a sentence related to a video segment. However, based on the format requested, here's how we could frame it:
-
-Output:
-Considerations and benefits of using a ratings model in SuperDecisions compared to a pairwise comparison approach.
-Retrieved Visual Segments {'Msaer6b6QU8_24', 'AUJeIG3Gjis_5', 'Msaer6b6QU8_0', '1ZqR-wGKHGQ_0'}
-
-================================================================================
-🔍 FILTER 阶段诊断
-================================================================================
-检索到的片段总数: 7
-  - Entity检索: 4
-  - Visual检索: 4
-  - Causal检索: 0
-
-前5个片段ID示例:
-  1. 1ZqR-wGKHGQ_0
-  2. AUJeIG3Gjis_5
-  3. HwkyhIiG8V0_8
-  4. HwkyhIiG8V0_9
-  5. Msaer6b6QU8_0
-
-📊 video_segments._data 结构:
-  可用视频数量: 11
-  示例视频: 1ZqR-wGKHGQ
-  该视频的片段索引数量: 38
-  前5个索引: ['0', '1', '2', '3', '4']
-  索引类型: <class 'str'>
-
-🔧 解析测试:
-  ✓ 成功解析: 7
-  ✗ 解析失败: 0
-================================================================================
-
-⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments7 Video Segments remain after filtering
-Remain segments ['1ZqR-wGKHGQ_0', 'AUJeIG3Gjis_5', 'HwkyhIiG8V0_8', 'HwkyhIiG8V0_9', 'Msaer6b6QU8_0', 'Msaer6b6QU8_1', 'Msaer6b6QU8_24']
-Keywords: considerations, benefits, ratings model, SuperDecisions, pairwise comparison approach
-Captioning Segments for Given Query:   0%|          | 0/7 [00:00<?, ?it/s]Captioning Segments for Given Query:  14%|█▍        | 1/7 [00:28<02:50, 28.49s/it]Captioning Segments for Given Query:  29%|██▊       | 2/7 [00:52<02:09, 25.88s/it]Captioning Segments for Given Query:  43%|████▎     | 3/7 [01:21<01:48, 27.20s/it]Captioning Segments for Given Query:  57%|█████▋    | 4/7 [01:40<01:12, 24.13s/it]Captioning Segments for Given Query:  71%|███████▏  | 5/7 [02:08<00:51, 25.62s/it]Captioning Segments for Given Query:  86%|████████▌ | 6/7 [02:37<00:26, 26.68s/it]Captioning Segments for Given Query: 100%|██████████| 7/7 [03:01<00:00, 25.79s/it]Captioning Segments for Given Query: 100%|██████████| 7/7 [03:01<00:00, 25.96s/it]
-  [查询] 集合16 q17 causal_only: What are the considerations and benefits
-INFO:nano-graphrag:Truncate 20 to 11 chunks
-INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The considerations and benefits that arise when using a ratings model in SuperDecisions as opposed to employing a pairwise comparison approach.
-INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
-INFO:nano-graphrag:[Causal Retrieval] 47 events after 2-hop bidirectional walk (from 20 seeds)
-INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 47 → 38 nodes (tau_dup=0.85)
-INFO:nano-graphrag:[Causal Retrieval] Retrieved 15 segments from 38 deduplicated events
-INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 38 events, 12641 chars
-Retrieved Causal Segments {'hjRxht__2wI_21', 'W_ijgMs7wNg_16', 'hjRxht__2wI_27', 'JLs5iQrkVng_17', 'Msaer6b6QU8_3', 'AUJeIG3Gjis_5', '1ZqR-wGKHGQ_14', '1ZqR-wGKHGQ_21', 'HwkyhIiG8V0_9', 'Msaer6b6QU8_24', 'HuXhtV6Yi-k_11', 'Msaer6b6QU8_13', 'SbCmu7SeXCQ_4', 'AUJeIG3Gjis_4', '1ZqR-wGKHGQ_32'}
-
-Retrieved Text Segments set()
-The output for the given question does not fit the pattern of generating a declarative sentence to serve as a query for retrieving video segments, as the question pertains to technical and analytical aspects of decision-making software rather than visual content in a video. However, sticking strictly to the format requested for video segment queries, we might attempt to rephrase it into a video context, but since the original request is about software considerations, a more appropriate response would be:
-
-Considerations and benefits of using a ratings model in SuperDecisions versus a pairwise comparison method.
-
-For adherence to the original instruction's format, if we were to fabricate a scenario involving video content that loosely relates to decision-making models or processes being demonstrated visually, an example could be:
-
-In a video tutorial, how is the process of using a ratings model in SuperDecisions compared to a pairwise comparison approach illustrated?
-Retrieved Visual Segments {'1ZqR-wGKHGQ_6', 'cstrfin0bYo_6', '1ZqR-wGKHGQ_4', 'cstrfin0bYo_7'}
-
-================================================================================
-🔍 FILTER 阶段诊断
-================================================================================
-检索到的片段总数: 19
-  - Entity检索: 0
-  - Visual检索: 4
-  - Causal检索: 15
-
-前5个片段ID示例:
-  1. 1ZqR-wGKHGQ_4
-  2. 1ZqR-wGKHGQ_6
-  3. 1ZqR-wGKHGQ_14
-  4. 1ZqR-wGKHGQ_21
-  5. 1ZqR-wGKHGQ_32
-
-📊 video_segments._data 结构:
-  可用视频数量: 11
-  示例视频: 1ZqR-wGKHGQ
-  该视频的片段索引数量: 38
-  前5个索引: ['0', '1', '2', '3', '4']
-  索引类型: <class 'str'>
-
-🔧 解析测试:
-  ✓ 成功解析: 19
-  ✗ 解析失败: 0
-================================================================================
-
-⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments⠙ Checked 11 segments⠹ Checked 12 segments⠸ Checked 13 segments⠼ Checked 14 segments⠴ Checked 15 segments⠦ Checked 16 segments⠧ Checked 17 segments⠇ Checked 18 segments⠏ Checked 19 segments14 Video Segments remain after filtering
-Remain segments ['1ZqR-wGKHGQ_6', '1ZqR-wGKHGQ_14', '1ZqR-wGKHGQ_21', '1ZqR-wGKHGQ_32', 'AUJeIG3Gjis_5', 'HuXhtV6Yi-k_11', 'HwkyhIiG8V0_9', 'JLs5iQrkVng_17', 'Msaer6b6QU8_3', 'Msaer6b6QU8_24', 'SbCmu7SeXCQ_4', 'W_ijgMs7wNg_16', 'cstrfin0bYo_7', 'hjRxht__2wI_21']
-Keywords: considerations, benefits, ratings model, SuperDecisions, pairwise comparison
-Captioning Segments for Given Query:   0%|          | 0/14 [00:00<?, ?it/s]Captioning Segments for Given Query:   7%|▋         | 1/14 [00:29<06:17, 29.06s/it]Captioning Segments for Given Query:  14%|█▍        | 2/14 [01:10<07:18, 36.53s/it]Captioning Segments for Given Query:  21%|██▏       | 3/14 [01:43<06:21, 34.72s/it]Captioning Segments for Given Query:  29%|██▊       | 4/14 [02:11<05:22, 32.22s/it]Captioning Segments for Given Query:  36%|███▌      | 5/14 [02:35<04:22, 29.20s/it]Captioning Segments for Given Query:  43%|████▎     | 6/14 [03:02<03:48, 28.52s/it]Captioning Segments for Given Query:  50%|█████     | 7/14 [03:25<03:05, 26.55s/it]Captioning Segments for Given Query:  57%|█████▋    | 8/14 [03:44<02:25, 24.23s/it]Captioning Segments for Given Query:  64%|██████▍   | 9/14 [04:14<02:10, 26.13s/it]Captioning Segments for Given Query:  71%|███████▏  | 10/14 [04:41<01:45, 26.31s/it]Captioning Segments for Given Query:  79%|███████▊  | 11/14 [05:06<01:17, 25.78s/it]Captioning Segments for Given Query:  86%|████████▌ | 12/14 [05:36<00:54, 27.18s/it]Captioning Segments for Given Query:  93%|█████████▎| 13/14 [06:01<00:26, 26.58s/it]Captioning Segments for Given Query: 100%|██████████| 14/14 [06:27<00:00, 26.36s/it]Captioning Segments for Given Query: 100%|██████████| 14/14 [06:27<00:00, 27.69s/it]
-  [查询] 集合16 q18 entity_only: How to define and utilize rating scales 
-INFO:nano-graphrag:Truncate 20 to 11 chunks
-How to define and utilize rating scales in SuperDecisions when implementing a ratings model?
-Retrieved Text Segments {'Msaer6b6QU8_1', 'JLs5iQrkVng_8', 'JLs5iQrkVng_9', 'JLs5iQrkVng_7', 'Msaer6b6QU8_0'}
-It seems like the provided question is not related to video content or scenes, but rather a technical inquiry about using rating scales in SuperDecisions software. Since the goal is to generate a query for retrieving relevant video segments based on scene-related information, this question doesn't fit the given format.
-
-If we were to adapt it into a scene-related context, it might look something like:
-
-Question: In a tutorial video, how is the process of defining and utilizing rating scales in SuperDecisions demonstrated?
-
-Output:
-A tutorial video segment demonstrating the process of defining and utilizing rating scales in SuperDecisions.
-Retrieved Visual Segments {'1ZqR-wGKHGQ_6', 'cstrfin0bYo_6', '1ZqR-wGKHGQ_4', 'cstrfin0bYo_7'}
-
-================================================================================
-🔍 FILTER 阶段诊断
-================================================================================
-检索到的片段总数: 9
-  - Entity检索: 5
-  - Visual检索: 4
-  - Causal检索: 0
-
-前5个片段ID示例:
-  1. 1ZqR-wGKHGQ_4
-  2. 1ZqR-wGKHGQ_6
-  3. JLs5iQrkVng_7
-  4. JLs5iQrkVng_8
-  5. JLs5iQrkVng_9
-
-📊 video_segments._data 结构:
-  可用视频数量: 11
-  示例视频: 1ZqR-wGKHGQ
-  该视频的片段索引数量: 38
-  前5个索引: ['0', '1', '2', '3', '4']
-  索引类型: <class 'str'>
-
-🔧 解析测试:
-  ✓ 成功解析: 9
-  ✗ 解析失败: 0
-================================================================================
-
-⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments5 Video Segments remain after filtering
-Remain segments ['JLs5iQrkVng_9', 'Msaer6b6QU8_0', 'Msaer6b6QU8_1', 'cstrfin0bYo_6', 'cstrfin0bYo_7']
-Keywords: define, rating scales, SuperDecisions, implementing, ratings model
-Captioning Segments for Given Query:   0%|          | 0/5 [00:00<?, ?it/s]Captioning Segments for Given Query:  20%|██        | 1/5 [00:19<01:18, 19.72s/it]Captioning Segments for Given Query:  40%|████      | 2/5 [00:45<01:09, 23.21s/it]Captioning Segments for Given Query:  60%|██████    | 3/5 [01:14<00:51, 25.95s/it]Captioning Segments for Given Query:  80%|████████  | 4/5 [01:40<00:26, 26.07s/it]Captioning Segments for Given Query: 100%|██████████| 5/5 [02:10<00:00, 27.47s/it]Captioning Segments for Given Query: 100%|██████████| 5/5 [02:10<00:00, 26.16s/it]
-  [查询] 集合16 q18 causal_only: How to define and utilize rating scales 
-INFO:nano-graphrag:Truncate 20 to 11 chunks
-INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The process of defining and utilizing rating scales in SuperDecisions for the implementation of a ratings model and its subsequent effects. 
-
-However, to better fit the criteria of emphasizing causal relationships and event sequences, let's refine this further:
-
-The act of defining rating scales in SuperDecisions leads to their utilization in implementing a ratings model, resulting in specific outcomes for the project or analysis.
-INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
-INFO:nano-graphrag:[Causal Retrieval] 43 events after 2-hop bidirectional walk (from 20 seeds)
-INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 43 → 37 nodes (tau_dup=0.85)
-INFO:nano-graphrag:[Causal Retrieval] Retrieved 15 segments from 37 deduplicated events
-INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 37 events, 13054 chars
-Retrieved Causal Segments {'W_ijgMs7wNg_18', '1ZqR-wGKHGQ_37', 'W_ijgMs7wNg_17', 'Msaer6b6QU8_20', 'AUJeIG3Gjis_7', '1ZqR-wGKHGQ_14', 'Msaer6b6QU8_12', 'Msaer6b6QU8_24', 'JLs5iQrkVng_29', 'Msaer6b6QU8_6', 'Msaer6b6QU8_14', 'JLs5iQrkVng_1', 'hjRxht__2wI_32', 'AUJeIG3Gjis_4', 'JLs5iQrkVng_5'}
-
-Retrieved Text Segments set()
-It seems like the given question is not related to retrieving a video segment but rather asking about a technical process in software called SuperDecisions. However, sticking strictly to the format requested and focusing on generating a declarative sentence for video retrieval based on the provided examples, the question doesn't fit into a typical video content retrieval scenario. If we were to adapt it into a video context, it would be more appropriate to have a question that describes a visual scene or action in a video.
-
-Since the original request is to generate a video retrieval query, and the provided question does not align with that context, here's how one might approach formulating a similar kind of query if the question were about a video:
-
-If the question was something like "How is a rating scale used in a tutorial video about SuperDecisions?", the output could be:
-
-A tutorial video demonstrating the use of rating scales in SuperDecisions.
-
-However, this is a stretch from the original non-video related question. For the exact question provided, it's not suitable to generate a video retrieval query.
-Retrieved Visual Segments {'1ZqR-wGKHGQ_6', 'cstrfin0bYo_6', '1ZqR-wGKHGQ_4', 'cstrfin0bYo_7'}
-
-================================================================================
-🔍 FILTER 阶段诊断
-================================================================================
-检索到的片段总数: 19
-  - Entity检索: 0
-  - Visual检索: 4
-  - Causal检索: 15
-
-前5个片段ID示例:
-  1. 1ZqR-wGKHGQ_4
-  2. 1ZqR-wGKHGQ_6
-  3. 1ZqR-wGKHGQ_14
-  4. 1ZqR-wGKHGQ_37
-  5. AUJeIG3Gjis_4
-
-📊 video_segments._data 结构:
-  可用视频数量: 11
-  示例视频: 1ZqR-wGKHGQ
-  该视频的片段索引数量: 38
-  前5个索引: ['0', '1', '2', '3', '4']
-  索引类型: <class 'str'>
-
-🔧 解析测试:
-  ✓ 成功解析: 19
-  ✗ 解析失败: 0
-================================================================================
-
-⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments⠙ Checked 11 segments⠹ Checked 12 segments⠸ Checked 13 segments⠼ Checked 14 segments⠴ Checked 15 segments⠦ Checked 16 segments⠧ Checked 17 segments⠇ Checked 18 segments⠏ Checked 19 segments16 Video Segments remain after filtering
-Remain segments ['1ZqR-wGKHGQ_14', '1ZqR-wGKHGQ_37', 'AUJeIG3Gjis_4', 'AUJeIG3Gjis_7', 'JLs5iQrkVng_1', 'JLs5iQrkVng_29', 'Msaer6b6QU8_6', 'Msaer6b6QU8_12', 'Msaer6b6QU8_14', 'Msaer6b6QU8_20', 'Msaer6b6QU8_24', 'W_ijgMs7wNg_17', 'W_ijgMs7wNg_18', 'cstrfin0bYo_6', 'cstrfin0bYo_7', 'hjRxht__2wI_32']
-Keywords: define, rating scales, SuperDecisions, implementing, ratings model
-Captioning Segments for Given Query:   0%|          | 0/16 [00:00<?, ?it/s]Captioning Segments for Given Query:   6%|▋         | 1/16 [00:22<05:39, 22.66s/it]Captioning Segments for Given Query:  12%|█▎        | 2/16 [00:45<05:16, 22.63s/it]Captioning Segments for Given Query:  19%|█▉        | 3/16 [01:08<04:58, 22.99s/it]Captioning Segments for Given Query:  25%|██▌       | 4/16 [01:38<05:07, 25.65s/it]Captioning Segments for Given Query:  31%|███▏      | 5/16 [02:00<04:27, 24.31s/it]Captioning Segments for Given Query:  38%|███▊      | 6/16 [02:16<03:36, 21.69s/it]Captioning Segments for Given Query:  44%|████▍     | 7/16 [02:31<02:53, 19.30s/it]Captioning Segments for Given Query:  50%|█████     | 8/16 [03:00<02:58, 22.34s/it]Captioning Segments for Given Query:  56%|█████▋    | 9/16 [03:29<02:51, 24.43s/it]Captioning Segments for Given Query:  62%|██████▎   | 10/16 [03:55<02:29, 24.97s/it]Captioning Segments for Given Query:  69%|██████▉   | 11/16 [04:15<01:56, 23.34s/it]Captioning Segments for Given Query:  75%|███████▌  | 12/16 [04:39<01:35, 23.76s/it]Captioning Segments for Given Query:  81%|████████▏ | 13/16 [05:01<01:09, 23.20s/it]Captioning Segments for Given Query:  88%|████████▊ | 14/16 [05:32<00:51, 25.61s/it]Captioning Segments for Given Query:  94%|█████████▍| 15/16 [05:59<00:25, 25.79s/it]Captioning Segments for Given Query: 100%|██████████| 16/16 [06:30<00:00, 27.58s/it]Captioning Segments for Given Query: 100%|██████████| 16/16 [06:30<00:00, 24.42s/it]
-  [查询] 集合16 q19 entity_only: What are the different visualization opt
-INFO:nano-graphrag:Truncate 20 to 13 chunks
-The different visualization options available in SuperDecisions for displaying sensitivity analysis results.
-Retrieved Text Segments {'JLs5iQrkVng_6', 'Msaer6b6QU8_23', 'JLs5iQrkVng_3', 'Msaer6b6QU8_24', 'Msaer6b6QU8_22', 'JLs5iQrkVng_4', 'Msaer6b6QU8_21', 'JLs5iQrkVng_5'}
-Output:
-Different visualization options available in SuperDecisions for displaying sensitivity analysis results.
-Retrieved Visual Segments {'HuXhtV6Yi-k_1', 'HuXhtV6Yi-k_6', 'HuXhtV6Yi-k_10', 'HuXhtV6Yi-k_7'}
-
-================================================================================
-🔍 FILTER 阶段诊断
-================================================================================
-检索到的片段总数: 12
-  - Entity检索: 8
-  - Visual检索: 4
-  - Causal检索: 0
-
-前5个片段ID示例:
-  1. HuXhtV6Yi-k_1
-  2. HuXhtV6Yi-k_6
-  3. HuXhtV6Yi-k_7
-  4. HuXhtV6Yi-k_10
-  5. JLs5iQrkVng_3
-
-📊 video_segments._data 结构:
-  可用视频数量: 11
-  示例视频: 1ZqR-wGKHGQ
-  该视频的片段索引数量: 38
-  前5个索引: ['0', '1', '2', '3', '4']
-  索引类型: <class 'str'>
-
-🔧 解析测试:
-  ✓ 成功解析: 12
-  ✗ 解析失败: 0
-================================================================================
-
-⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments⠙ Checked 11 segments⠹ Checked 12 segments5 Video Segments remain after filtering
-Remain segments ['HuXhtV6Yi-k_1', 'HuXhtV6Yi-k_6', 'HuXhtV6Yi-k_7', 'HuXhtV6Yi-k_10', 'JLs5iQrkVng_3']
-Keywords: visualization options, SuperDecisions, sensitivity analysis results
-Captioning Segments for Given Query:   0%|          | 0/5 [00:00<?, ?it/s]Captioning Segments for Given Query:  20%|██        | 1/5 [00:29<01:58, 29.60s/it]Captioning Segments for Given Query:  40%|████      | 2/5 [00:57<01:25, 28.64s/it]Captioning Segments for Given Query:  60%|██████    | 3/5 [01:19<00:50, 25.46s/it]Captioning Segments for Given Query:  80%|████████  | 4/5 [01:45<00:25, 25.71s/it]Captioning Segments for Given Query: 100%|██████████| 5/5 [02:06<00:00, 24.23s/it]Captioning Segments for Given Query: 100%|██████████| 5/5 [02:06<00:00, 25.39s/it]
-  [查询] 集合16 q19 causal_only: What are the different visualization opt
-INFO:nano-graphrag:Truncate 20 to 13 chunks
-INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The availability of different visualization options in SuperDecisions and their role in displaying sensitivity analysis results.
-INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
-INFO:nano-graphrag:[Causal Retrieval] 35 events after 2-hop bidirectional walk (from 20 seeds)
-INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 35 → 33 nodes (tau_dup=0.85)
-INFO:nano-graphrag:[Causal Retrieval] Retrieved 17 segments from 33 deduplicated events
-INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 33 events, 11091 chars
-Retrieved Causal Segments {'cstrfin0bYo_62', 'hjRxht__2wI_21', 'HwkyhIiG8V0_2', 'cstrfin0bYo_42', 'cstrfin0bYo_61', 'AUJeIG3Gjis_5', 'cstrfin0bYo_43', 'HuXhtV6Yi-k_10', 'HuXhtV6Yi-k_0', 'v7UDNvciQ38_9', '1ZqR-wGKHGQ_12', 'Msaer6b6QU8_22', 'Msaer6b6QU8_24', 'JLs5iQrkVng_31', 'HuXhtV6Yi-k_1', 'HuXhtV6Yi-k_6', 'W_ijgMs7wNg_20'}
-
-Retrieved Text Segments set()
-Output:
-Different visualization options available in SuperDecisions for displaying sensitivity analysis results.
-Retrieved Visual Segments {'HuXhtV6Yi-k_1', 'HuXhtV6Yi-k_6', 'HuXhtV6Yi-k_10', 'HuXhtV6Yi-k_7'}
-
-================================================================================
-🔍 FILTER 阶段诊断
-================================================================================
-检索到的片段总数: 18
-  - Entity检索: 0
-  - Visual检索: 4
-  - Causal检索: 17
-
-前5个片段ID示例:
-  1. 1ZqR-wGKHGQ_12
-  2. AUJeIG3Gjis_5
-  3. HuXhtV6Yi-k_0
-  4. HuXhtV6Yi-k_1
-  5. HuXhtV6Yi-k_6
-
-📊 video_segments._data 结构:
-  可用视频数量: 11
-  示例视频: 1ZqR-wGKHGQ
-  该视频的片段索引数量: 38
-  前5个索引: ['0', '1', '2', '3', '4']
-  索引类型: <class 'str'>
-
-🔧 解析测试:
-  ✓ 成功解析: 18
-  ✗ 解析失败: 0
-================================================================================
-
-⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments⠙ Checked 11 segments⠹ Checked 12 segments⠸ Checked 13 segments⠼ Checked 14 segments⠴ Checked 15 segments⠦ Checked 16 segments⠧ Checked 17 segments⠇ Checked 18 segments11 Video Segments remain after filtering
-Remain segments ['AUJeIG3Gjis_5', 'HuXhtV6Yi-k_1', 'HuXhtV6Yi-k_6', 'HuXhtV6Yi-k_7', 'HuXhtV6Yi-k_10', 'JLs5iQrkVng_31', 'W_ijgMs7wNg_20', 'cstrfin0bYo_42', 'cstrfin0bYo_43', 'cstrfin0bYo_61', 'v7UDNvciQ38_9']
-Keywords: visualization options, SuperDecisions, sensitivity analysis results
-Captioning Segments for Given Query:   0%|          | 0/11 [00:00<?, ?it/s]Captioning Segments for Given Query:   9%|▉         | 1/11 [00:25<04:17, 25.77s/it]Captioning Segments for Given Query:  18%|█▊        | 2/11 [00:47<03:30, 23.42s/it]Captioning Segments for Given Query:  27%|██▋       | 3/11 [01:12<03:12, 24.08s/it]Captioning Segments for Given Query:  36%|███▋      | 4/11 [01:49<03:23, 29.02s/it]Captioning Segments for Given Query:  45%|████▌     | 5/11 [02:16<02:49, 28.29s/it]Captioning Segments for Given Query:  55%|█████▍    | 6/11 [02:39<02:12, 26.60s/it]Captioning Segments for Given Query:  64%|██████▎   | 7/11 [03:11<01:54, 28.51s/it]Captioning Segments for Given Query:  73%|███████▎  | 8/11 [03:46<01:31, 30.36s/it]Captioning Segments for Given Query:  82%|████████▏ | 9/11 [04:17<01:01, 30.73s/it]Captioning Segments for Given Query:  91%|█████████ | 10/11 [04:44<00:29, 29.64s/it]Captioning Segments for Given Query: 100%|██████████| 11/11 [05:18<00:00, 30.92s/it]Captioning Segments for Given Query: 100%|██████████| 11/11 [05:18<00:00, 28.97s/it]
-  [查询] 集合16 q20 entity_only: Describe the steps involved in connectin
-INFO:nano-graphrag:Truncate 20 to 12 chunks
-The steps involved in connecting criteria and sub-criteria to alternatives in SuperDecisions, ensuring proper linkage in the hierarchy.
-Retrieved Text Segments {'JLs5iQrkVng_9', 'JLs5iQrkVng_33', 'JLs5iQrkVng_7', 'JLs5iQrkVng_8'}
-The output for the given question does not fit the pattern of generating a sentence to retrieve relevant video segments since the question pertains to a process description rather than a visual scene from a video. However, sticking strictly to the format provided and assuming a hypothetical video tutorial on the topic:
-
-Output:
-Steps involved in connecting criteria and sub-criteria to alternatives in SuperDecisions within a tutorial video.
-Retrieved Visual Segments {'1ZqR-wGKHGQ_6', 'cstrfin0bYo_6', '1ZqR-wGKHGQ_4', 'cstrfin0bYo_7'}
-
-================================================================================
-🔍 FILTER 阶段诊断
-================================================================================
-检索到的片段总数: 8
-  - Entity检索: 4
-  - Visual检索: 4
-  - Causal检索: 0
-
-前5个片段ID示例:
-  1. 1ZqR-wGKHGQ_4
-  2. 1ZqR-wGKHGQ_6
-  3. JLs5iQrkVng_7
-  4. JLs5iQrkVng_8
-  5. JLs5iQrkVng_9
-
-📊 video_segments._data 结构:
-  可用视频数量: 11
-  示例视频: 1ZqR-wGKHGQ
-  该视频的片段索引数量: 38
-  前5个索引: ['0', '1', '2', '3', '4']
-  索引类型: <class 'str'>
-
-🔧 解析测试:
-  ✓ 成功解析: 8
-  ✗ 解析失败: 0
-================================================================================
-
-⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments7 Video Segments remain after filtering
-Remain segments ['1ZqR-wGKHGQ_6', 'JLs5iQrkVng_7', 'JLs5iQrkVng_8', 'JLs5iQrkVng_9', 'JLs5iQrkVng_33', 'cstrfin0bYo_6', 'cstrfin0bYo_7']
-Keywords: steps, connecting, criteria, sub-criteria, alternatives, SuperDecisions, hierarchy, linkage
-Captioning Segments for Given Query:   0%|          | 0/7 [00:00<?, ?it/s]Captioning Segments for Given Query:  14%|█▍        | 1/7 [00:27<02:46, 27.77s/it]Captioning Segments for Given Query:  29%|██▊       | 2/7 [00:47<01:54, 22.87s/it]Captioning Segments for Given Query:  43%|████▎     | 3/7 [01:11<01:34, 23.74s/it]Captioning Segments for Given Query:  57%|█████▋    | 4/7 [01:35<01:11, 23.67s/it]Captioning Segments for Given Query:  71%|███████▏  | 5/7 [02:09<00:54, 27.24s/it]Captioning Segments for Given Query:  86%|████████▌ | 6/7 [02:27<00:24, 24.28s/it]Captioning Segments for Given Query: 100%|██████████| 7/7 [02:53<00:00, 24.73s/it]Captioning Segments for Given Query: 100%|██████████| 7/7 [02:53<00:00, 24.76s/it]
-  [查询] 集合16 q20 causal_only: Describe the steps involved in connectin
-INFO:nano-graphrag:Truncate 20 to 12 chunks
-INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The process of connecting criteria and sub-criteria to alternatives in SuperDecisions and the resulting establishment of proper hierarchical linkage.
-INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
-INFO:nano-graphrag:[Causal Retrieval] 47 events after 2-hop bidirectional walk (from 20 seeds)
-INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 47 → 42 nodes (tau_dup=0.85)
-INFO:nano-graphrag:[Causal Retrieval] Retrieved 17 segments from 42 deduplicated events
-INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 42 events, 14709 chars
-Retrieved Causal Segments {'Msaer6b6QU8_1', 'W_ijgMs7wNg_16', 'AUJeIG3Gjis_3', 'AUJeIG3Gjis_5', '1ZqR-wGKHGQ_14', 'cstrfin0bYo_15', 'Msaer6b6QU8_24', 'HuXhtV6Yi-k_11', 'Msaer6b6QU8_22', 'cstrfin0bYo_3', 'SbCmu7SeXCQ_6', 'Msaer6b6QU8_13', 'SbCmu7SeXCQ_4', 'cstrfin0bYo_24', 'cstrfin0bYo_9', 'AUJeIG3Gjis_4', 'JLs5iQrkVng_5'}
-
-Retrieved Text Segments set()
-The output for the given question does not fit the pattern of generating a declarative sentence to query for a video segment, since the question pertains to a process description rather than a scene or visual content from a video. However, if we were to adapt it into a format that could hypothetically relate to a video tutorial or demonstration, it might look something like this:
-
-Output:
-A video segment demonstrating the steps to connect criteria and sub-criteria to alternatives in SuperDecisions software.
-Retrieved Visual Segments {'1ZqR-wGKHGQ_6', 'cstrfin0bYo_6', '1ZqR-wGKHGQ_4', 'cstrfin0bYo_7'}
-
-================================================================================
-🔍 FILTER 阶段诊断
-================================================================================
-检索到的片段总数: 21
-  - Entity检索: 0
-  - Visual检索: 4
-  - Causal检索: 17
-
-前5个片段ID示例:
-  1. 1ZqR-wGKHGQ_4
-  2. 1ZqR-wGKHGQ_6
-  3. 1ZqR-wGKHGQ_14
-  4. AUJeIG3Gjis_3
-  5. AUJeIG3Gjis_4
-
-📊 video_segments._data 结构:
-  可用视频数量: 11
-  示例视频: 1ZqR-wGKHGQ
-  该视频的片段索引数量: 38
-  前5个索引: ['0', '1', '2', '3', '4']
-  索引类型: <class 'str'>
-
-🔧 解析测试:
-  ✓ 成功解析: 21
-  ✗ 解析失败: 0
-================================================================================
-
-⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments⠙ Checked 11 segments⠹ Checked 12 segments⠸ Checked 13 segments⠼ Checked 14 segments⠴ Checked 15 segments⠦ Checked 16 segments⠧ Checked 17 segments⠇ Checked 18 segments⠏ Checked 19 segments⠋ Checked 20 segments⠙ Checked 21 segments18 Video Segments remain after filtering
-Remain segments ['1ZqR-wGKHGQ_14', 'AUJeIG3Gjis_3', 'AUJeIG3Gjis_4', 'AUJeIG3Gjis_5', 'JLs5iQrkVng_5', 'Msaer6b6QU8_1', 'Msaer6b6QU8_13', 'Msaer6b6QU8_22', 'Msaer6b6QU8_24', 'SbCmu7SeXCQ_4', 'SbCmu7SeXCQ_6', 'W_ijgMs7wNg_16', 'cstrfin0bYo_3', 'cstrfin0bYo_6', 'cstrfin0bYo_7', 'cstrfin0bYo_9', 'cstrfin0bYo_15', 'cstrfin0bYo_24']
-Keywords: steps, connecting, criteria, sub-criteria, alternatives, SuperDecisions, hierarchy, linkage
-Captioning Segments for Given Query:   0%|          | 0/18 [00:00<?, ?it/s]Captioning Segments for Given Query:   6%|▌         | 1/18 [00:35<09:57, 35.12s/it]Captioning Segments for Given Query:  11%|█         | 2/18 [00:54<06:53, 25.87s/it]Captioning Segments for Given Query:  17%|█▋        | 3/18 [01:18<06:12, 24.87s/it]Captioning Segments for Given Query:  22%|██▏       | 4/18 [01:37<05:17, 22.69s/it]Captioning Segments for Given Query:  28%|██▊       | 5/18 [02:07<05:31, 25.46s/it]Captioning Segments for Given Query:  33%|███▎      | 6/18 [02:36<05:18, 26.52s/it]Captioning Segments for Given Query:  39%|███▉      | 7/18 [03:04<04:58, 27.17s/it]Captioning Segments for Given Query:  44%|████▍     | 8/18 [03:31<04:28, 26.90s/it]Captioning Segments for Given Query:  50%|█████     | 9/18 [03:51<03:41, 24.65s/it]Captioning Segments for Given Query:  56%|█████▌    | 10/18 [04:15<03:16, 24.59s/it]Captioning Segments for Given Query:  61%|██████    | 11/18 [04:39<02:51, 24.44s/it]Captioning Segments for Given Query:  67%|██████▋   | 12/18 [05:08<02:35, 25.84s/it]Captioning Segments for Given Query:  72%|███████▏  | 13/18 [05:39<02:16, 27.24s/it]Captioning Segments for Given Query:  78%|███████▊  | 14/18 [06:04<01:46, 26.63s/it]Captioning Segments for Given Query:  83%|████████▎ | 15/18 [06:37<01:25, 28.51s/it]Captioning Segments for Given Query:  89%|████████▉ | 16/18 [07:02<00:54, 27.46s/it]Captioning Segments for Given Query:  94%|█████████▍| 17/18 [07:26<00:26, 26.52s/it]Captioning Segments for Given Query: 100%|██████████| 18/18 [07:59<00:00, 28.35s/it]Captioning Segments for Given Query: 100%|██████████| 18/18 [07:59<00:00, 26.62s/it]
-  [查询] 集合16 q21 entity_only: How can the 'inconsistency report' featu
-INFO:nano-graphrag:Truncate 20 to 12 chunks
-How can the 'inconsistency report' feature in SuperDecisions be used to identify and rectify inconsistencies in pairwise comparison judgments?
-Retrieved Text Segments {'JLs5iQrkVng_6', 'Msaer6b6QU8_23', 'JLs5iQrkVng_3', 'Msaer6b6QU8_24', 'Msaer6b6QU8_22', 'JLs5iQrkVng_4', 'Msaer6b6QU8_21', 'JLs5iQrkVng_5'}
-The output for the given question should focus on visual content related to the use of a feature in software, which isn't directly translatable into a typical video scene description without additional context about how such a process might be visually represented. However, sticking strictly to the format requested and assuming there could be a tutorial or demonstration video showing this process:
-
-Output:
-A video segment demonstrating how to use the 'inconsistency report' feature in SuperDecisions to identify and correct inconsistencies in pairwise comparison judgments.
-Retrieved Visual Segments {'1ZqR-wGKHGQ_6', 'cstrfin0bYo_6', '1ZqR-wGKHGQ_4', 'cstrfin0bYo_7'}
-
-================================================================================
-🔍 FILTER 阶段诊断
-================================================================================
-检索到的片段总数: 12
-  - Entity检索: 8
-  - Visual检索: 4
-  - Causal检索: 0
-
-前5个片段ID示例:
-  1. 1ZqR-wGKHGQ_4
-  2. 1ZqR-wGKHGQ_6
-  3. JLs5iQrkVng_3
-  4. JLs5iQrkVng_4
-  5. JLs5iQrkVng_5
-
-📊 video_segments._data 结构:
-  可用视频数量: 11
-  示例视频: 1ZqR-wGKHGQ
-  该视频的片段索引数量: 38
-  前5个索引: ['0', '1', '2', '3', '4']
-  索引类型: <class 'str'>
-
-🔧 解析测试:
-  ✓ 成功解析: 12
-  ✗ 解析失败: 0
-================================================================================
-
-⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments⠙ Checked 11 segments⠹ Checked 12 segments0 Video Segments remain after filtering
-Since no segments remain after filtering, we utilized all the retrieved segments.
-Remain segments ['1ZqR-wGKHGQ_4', '1ZqR-wGKHGQ_6', 'JLs5iQrkVng_3', 'JLs5iQrkVng_4', 'JLs5iQrkVng_5', 'JLs5iQrkVng_6', 'Msaer6b6QU8_21', 'Msaer6b6QU8_22', 'Msaer6b6QU8_23', 'Msaer6b6QU8_24', 'cstrfin0bYo_6', 'cstrfin0bYo_7']
-Keywords: inconsistency report, SuperDecisions, identify, rectify, inconsistencies, pairwise comparison judgments
-Captioning Segments for Given Query:   0%|          | 0/12 [00:00<?, ?it/s]Captioning Segments for Given Query:   8%|▊         | 1/12 [00:25<04:37, 25.21s/it]Captioning Segments for Given Query:  17%|█▋        | 2/12 [00:46<03:48, 22.82s/it]Captioning Segments for Given Query:  25%|██▌       | 3/12 [01:07<03:16, 21.87s/it]Captioning Segments for Given Query:  33%|███▎      | 4/12 [01:30<02:59, 22.45s/it]Captioning Segments for Given Query:  42%|████▏     | 5/12 [01:48<02:26, 20.91s/it]Captioning Segments for Given Query:  50%|█████     | 6/12 [02:17<02:20, 23.48s/it]Captioning Segments for Given Query:  58%|█████▊    | 7/12 [02:37<01:52, 22.50s/it]Captioning Segments for Given Query:  67%|██████▋   | 8/12 [02:52<01:19, 20.00s/it]Captioning Segments for Given Query:  75%|███████▌  | 9/12 [03:18<01:05, 21.95s/it]Captioning Segments for Given Query:  83%|████████▎ | 10/12 [03:43<00:45, 22.79s/it]Captioning Segments for Given Query:  92%|█████████▏| 11/12 [04:13<00:25, 25.08s/it]Captioning Segments for Given Query: 100%|██████████| 12/12 [04:38<00:00, 25.18s/it]Captioning Segments for Given Query: 100%|██████████| 12/12 [04:38<00:00, 23.23s/it]
-  [查询] 集合16 q21 causal_only: How can the 'inconsistency report' featu
-INFO:nano-graphrag:Truncate 20 to 12 chunks
-INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The use of the 'inconsistency report' feature in SuperDecisions and its role in identifying and rectifying inconsistencies in pairwise comparison judgments.
-INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
-INFO:nano-graphrag:[Causal Retrieval] 44 events after 2-hop bidirectional walk (from 20 seeds)
-INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 44 → 38 nodes (tau_dup=0.85)
-INFO:nano-graphrag:[Causal Retrieval] Retrieved 18 segments from 38 deduplicated events
-INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 38 events, 13037 chars
-Retrieved Causal Segments {'1ZqR-wGKHGQ_11', 'W_ijgMs7wNg_16', 'hjRxht__2wI_27', 'cstrfin0bYo_42', 'cstrfin0bYo_61', 'Msaer6b6QU8_3', 'AUJeIG3Gjis_5', 'cstrfin0bYo_43', 'SbCmu7SeXCQ_4', 'HwkyhIiG8V0_9', 'HuXhtV6Yi-k_11', '1ZqR-wGKHGQ_12', 'SbCmu7SeXCQ_6', 'Msaer6b6QU8_13', 'Msaer6b6QU8_24', 'cstrfin0bYo_3', 'SbCmu7SeXCQ_8', 'AUJeIG3Gjis_4'}
-
-Retrieved Text Segments set()
-The output for the given question does not fit the pattern of generating a sentence to retrieve relevant video segments since the question pertains to a software feature rather than a visual scene in a video. However, following the instruction strictly for video retrieval context, this scenario doesn't align well with the previous examples. If we were to attempt a similar format:
-
-Output:
-A segment demonstrating the use of the 'inconsistency report' feature in SuperDecisions.
-
-But considering the actual request is about a software explanation rather than a video scene description, a more fitting response would be a direct explanation or guidance on how to use the 'inconsistency report' feature, which is outside the scope of the provided instruction.
-Retrieved Visual Segments {'1ZqR-wGKHGQ_6', 'cstrfin0bYo_6', '1ZqR-wGKHGQ_4', 'cstrfin0bYo_7'}
-
-================================================================================
-🔍 FILTER 阶段诊断
-================================================================================
-检索到的片段总数: 22
-  - Entity检索: 0
-  - Visual检索: 4
-  - Causal检索: 18
-
-前5个片段ID示例:
-  1. 1ZqR-wGKHGQ_4
-  2. 1ZqR-wGKHGQ_6
-  3. 1ZqR-wGKHGQ_11
-  4. 1ZqR-wGKHGQ_12
-  5. AUJeIG3Gjis_4
-
-📊 video_segments._data 结构:
-  可用视频数量: 11
-  示例视频: 1ZqR-wGKHGQ
-  该视频的片段索引数量: 38
-  前5个索引: ['0', '1', '2', '3', '4']
-  索引类型: <class 'str'>
-
-🔧 解析测试:
-  ✓ 成功解析: 22
-  ✗ 解析失败: 0
-================================================================================
-
-⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments⠙ Checked 11 segments⠹ Checked 12 segments⠸ Checked 13 segments⠼ Checked 14 segments⠴ Checked 15 segments⠦ Checked 16 segments⠧ Checked 17 segments⠇ Checked 18 segments⠏ Checked 19 segments⠋ Checked 20 segments⠙ Checked 21 segments⠹ Checked 22 segments8 Video Segments remain after filtering
-Remain segments ['1ZqR-wGKHGQ_12', 'AUJeIG3Gjis_5', 'Msaer6b6QU8_3', 'SbCmu7SeXCQ_8', 'W_ijgMs7wNg_16', 'cstrfin0bYo_42', 'cstrfin0bYo_43', 'cstrfin0bYo_61']
-Keywords: inconsistency report, SuperDecisions, identify, rectify, inconsistencies, pairwise comparison judgments
-Captioning Segments for Given Query:   0%|          | 0/8 [00:00<?, ?it/s]Captioning Segments for Given Query:  12%|█▎        | 1/8 [00:31<03:41, 31.64s/it]Captioning Segments for Given Query:  25%|██▌       | 2/8 [00:54<02:39, 26.54s/it]Captioning Segments for Given Query:  38%|███▊      | 3/8 [01:23<02:18, 27.61s/it]Captioning Segments for Given Query:  50%|█████     | 4/8 [01:50<01:50, 27.54s/it]Captioning Segments for Given Query:  62%|██████▎   | 5/8 [02:21<01:25, 28.51s/it]Captioning Segments for Given Query:  75%|███████▌  | 6/8 [02:51<00:58, 29.23s/it]Captioning Segments for Given Query:  88%|████████▊ | 7/8 [03:20<00:29, 29.01s/it]Captioning Segments for Given Query: 100%|██████████| 8/8 [03:57<00:00, 31.60s/it]Captioning Segments for Given Query: 100%|██████████| 8/8 [03:57<00:00, 29.68s/it]
-  [查询] 集合16 q22 entity_only: How does the process of synthesizing a m
-INFO:nano-graphrag:Truncate 20 to 11 chunks
-How does the process of synthesizing a model with sub-criteria differ from synthesizing a model without sub-criteria in SuperDecisions?
-Retrieved Text Segments {'Msaer6b6QU8_24', 'Msaer6b6QU8_22', 'JLs5iQrkVng_33', 'Msaer6b6QU8_23', 'Msaer6b6QU8_21'}
-Output:
-The process of synthesizing a model with sub-criteria versus without sub-criteria in SuperDecisions.
-Retrieved Visual Segments {'cstrfin0bYo_3', 'JLs5iQrkVng_33', 'Msaer6b6QU8_0', 'cstrfin0bYo_2'}
-
-================================================================================
-🔍 FILTER 阶段诊断
-================================================================================
-检索到的片段总数: 8
-  - Entity检索: 5
-  - Visual检索: 4
-  - Causal检索: 0
-
-前5个片段ID示例:
-  1. JLs5iQrkVng_33
-  2. Msaer6b6QU8_0
-  3. Msaer6b6QU8_21
-  4. Msaer6b6QU8_22
-  5. Msaer6b6QU8_23
-
-📊 video_segments._data 结构:
-  可用视频数量: 11
-  示例视频: 1ZqR-wGKHGQ
-  该视频的片段索引数量: 38
-  前5个索引: ['0', '1', '2', '3', '4']
-  索引类型: <class 'str'>
-
-🔧 解析测试:
-  ✓ 成功解析: 8
-  ✗ 解析失败: 0
-================================================================================
-
-⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments7 Video Segments remain after filtering
-Remain segments ['JLs5iQrkVng_33', 'Msaer6b6QU8_0', 'Msaer6b6QU8_21', 'Msaer6b6QU8_22', 'Msaer6b6QU8_23', 'Msaer6b6QU8_24', 'cstrfin0bYo_2']
-Keywords: process, synthesizing, model, sub-criteria, differ, SuperDecisions
-Captioning Segments for Given Query:   0%|          | 0/7 [00:00<?, ?it/s]Captioning Segments for Given Query:  14%|█▍        | 1/7 [00:25<02:34, 25.68s/it]Captioning Segments for Given Query:  29%|██▊       | 2/7 [00:53<02:15, 27.11s/it]Captioning Segments for Given Query:  43%|████▎     | 3/7 [01:26<01:59, 29.81s/it]Captioning Segments for Given Query:  57%|█████▋    | 4/7 [01:52<01:24, 28.25s/it]Captioning Segments for Given Query:  71%|███████▏  | 5/7 [02:17<00:54, 27.09s/it]Captioning Segments for Given Query:  86%|████████▌ | 6/7 [02:37<00:24, 24.47s/it]Captioning Segments for Given Query: 100%|██████████| 7/7 [03:06<00:00, 26.03s/it]Captioning Segments for Given Query: 100%|██████████| 7/7 [03:06<00:00, 26.62s/it]
-  [查询] 集合16 q22 causal_only: How does the process of synthesizing a m
-INFO:nano-graphrag:Truncate 20 to 11 chunks
-INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The process of synthesizing a model with sub-criteria in SuperDecisions and its differences compared to synthesizing a model without sub-criteria.
-INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
-INFO:nano-graphrag:[Causal Retrieval] 41 events after 2-hop bidirectional walk (from 20 seeds)
-INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 41 → 35 nodes (tau_dup=0.85)
-INFO:nano-graphrag:[Causal Retrieval] Retrieved 16 segments from 35 deduplicated events
-INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 35 events, 11942 chars
-Retrieved Causal Segments {'cstrfin0bYo_62', 'cstrfin0bYo_22', 'hjRxht__2wI_33', 'AUJeIG3Gjis_3', 'Msaer6b6QU8_3', 'AUJeIG3Gjis_5', 'cstrfin0bYo_44', 'cstrfin0bYo_15', 'SbCmu7SeXCQ_4', 'Msaer6b6QU8_24', 'HuXhtV6Yi-k_11', 'SbCmu7SeXCQ_6', 'cstrfin0bYo_3', 'cstrfin0bYo_24', 'HwkyhIiG8V0_5', 'cstrfin0bYo_9'}
-
-Retrieved Text Segments set()
-Output:
-The process of synthesizing a model with sub-criteria versus without sub-criteria in SuperDecisions.
-Retrieved Visual Segments {'cstrfin0bYo_3', 'JLs5iQrkVng_33', 'Msaer6b6QU8_0', 'cstrfin0bYo_2'}
-
-================================================================================
-🔍 FILTER 阶段诊断
-================================================================================
-检索到的片段总数: 19
-  - Entity检索: 0
-  - Visual检索: 4
-  - Causal检索: 16
-
-前5个片段ID示例:
-  1. AUJeIG3Gjis_3
-  2. AUJeIG3Gjis_5
-  3. HuXhtV6Yi-k_11
-  4. HwkyhIiG8V0_5
-  5. JLs5iQrkVng_33
-
-📊 video_segments._data 结构:
-  可用视频数量: 11
-  示例视频: 1ZqR-wGKHGQ
-  该视频的片段索引数量: 38
-  前5个索引: ['0', '1', '2', '3', '4']
-  索引类型: <class 'str'>
-
-🔧 解析测试:
-  ✓ 成功解析: 19
-  ✗ 解析失败: 0
-================================================================================
-
-⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments⠙ Checked 11 segments⠹ Checked 12 segments⠸ Checked 13 segments⠼ Checked 14 segments⠴ Checked 15 segments⠦ Checked 16 segments⠧ Checked 17 segments⠇ Checked 18 segments⠏ Checked 19 segments18 Video Segments remain after filtering
-Remain segments ['AUJeIG3Gjis_3', 'AUJeIG3Gjis_5', 'HuXhtV6Yi-k_11', 'HwkyhIiG8V0_5', 'JLs5iQrkVng_33', 'Msaer6b6QU8_3', 'Msaer6b6QU8_24', 'SbCmu7SeXCQ_4', 'SbCmu7SeXCQ_6', 'cstrfin0bYo_2', 'cstrfin0bYo_3', 'cstrfin0bYo_9', 'cstrfin0bYo_15', 'cstrfin0bYo_22', 'cstrfin0bYo_24', 'cstrfin0bYo_44', 'cstrfin0bYo_62', 'hjRxht__2wI_33']
-Keywords: process, synthesizing, model, sub-criteria, differ, SuperDecisions
-Captioning Segments for Given Query:   0%|          | 0/18 [00:00<?, ?it/s]Captioning Segments for Given Query:   6%|▌         | 1/18 [00:23<06:44, 23.77s/it]Captioning Segments for Given Query:  11%|█         | 2/18 [00:57<07:55, 29.69s/it]Captioning Segments for Given Query:  17%|█▋        | 3/18 [01:17<06:15, 25.01s/it]Captioning Segments for Given Query:  22%|██▏       | 4/18 [01:45<06:07, 26.23s/it]Captioning Segments for Given Query:  28%|██▊       | 5/18 [02:09<05:33, 25.66s/it]Captioning Segments for Given Query:  33%|███▎      | 6/18 [02:36<05:10, 25.86s/it]Captioning Segments for Given Query:  39%|███▉      | 7/18 [02:54<04:18, 23.53s/it]Captioning Segments for Given Query:  44%|████▍     | 8/18 [03:16<03:49, 22.96s/it]Captioning Segments for Given Query:  50%|█████     | 9/18 [03:37<03:21, 22.39s/it]Captioning Segments for Given Query:  56%|█████▌    | 10/18 [04:04<03:08, 23.62s/it]Captioning Segments for Given Query:  61%|██████    | 11/18 [04:27<02:45, 23.69s/it]Captioning Segments for Given Query:  67%|██████▋   | 12/18 [04:56<02:30, 25.05s/it]Captioning Segments for Given Query:  72%|███████▏  | 13/18 [05:19<02:02, 24.44s/it]Captioning Segments for Given Query:  78%|███████▊  | 14/18 [05:48<01:43, 25.98s/it]Captioning Segments for Given Query:  83%|████████▎ | 15/18 [06:27<01:29, 29.98s/it]Captioning Segments for Given Query:  89%|████████▉ | 16/18 [06:59<01:00, 30.39s/it]Captioning Segments for Given Query:  94%|█████████▍| 17/18 [07:28<00:29, 29.92s/it]Captioning Segments for Given Query: 100%|██████████| 18/18 [07:58<00:00, 29.98s/it]Captioning Segments for Given Query: 100%|██████████| 18/18 [07:58<00:00, 26.56s/it]
-  [查询] 集合16 q23 entity_only: When converting an AHP model to an ANP m
-INFO:nano-graphrag:Truncate 20 to 14 chunks
-When converting an AHP model to an ANP model, what new connections need to be added, and how do these connections reflect the concept of interdependence?
-Retrieved Text Segments {'JLs5iQrkVng_5', 'JLs5iQrkVng_6', 'JLs5iQrkVng_33', 'JLs5iQrkVng_4', 'JLs5iQrkVng_3'}
-The output for the given question should focus on the context of video content related to the conversion process between AHP and ANP models, which isn't directly applicable to typical video scenes. However, adhering strictly to the instruction format and assuming we're looking for a video segment that could visually demonstrate this concept:
-
-Output:
-A video segment demonstrating the addition of new connections when converting from an AHP model to an ANP model.
-Retrieved Visual Segments {'1ZqR-wGKHGQ_6', 'cstrfin0bYo_6', '1ZqR-wGKHGQ_4', 'cstrfin0bYo_7'}
-
-================================================================================
-🔍 FILTER 阶段诊断
-================================================================================
-检索到的片段总数: 9
-  - Entity检索: 5
-  - Visual检索: 4
-  - Causal检索: 0
-
-前5个片段ID示例:
-  1. 1ZqR-wGKHGQ_4
-  2. 1ZqR-wGKHGQ_6
-  3. JLs5iQrkVng_3
-  4. JLs5iQrkVng_4
-  5. JLs5iQrkVng_5
-
-📊 video_segments._data 结构:
-  可用视频数量: 11
-  示例视频: 1ZqR-wGKHGQ
-  该视频的片段索引数量: 38
-  前5个索引: ['0', '1', '2', '3', '4']
-  索引类型: <class 'str'>
-
-🔧 解析测试:
-  ✓ 成功解析: 9
-  ✗ 解析失败: 0
-================================================================================
-
-⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments4 Video Segments remain after filtering
-Remain segments ['1ZqR-wGKHGQ_4', 'JLs5iQrkVng_3', 'JLs5iQrkVng_33', 'cstrfin0bYo_7']
-Keywords: AHP model, ANP model, new connections, interdependence
-Captioning Segments for Given Query:   0%|          | 0/4 [00:00<?, ?it/s]Captioning Segments for Given Query:  25%|██▌       | 1/4 [00:28<01:24, 28.07s/it]Captioning Segments for Given Query:  50%|█████     | 2/4 [00:52<00:52, 26.17s/it]Captioning Segments for Given Query:  75%|███████▌  | 3/4 [01:22<00:27, 27.67s/it]Captioning Segments for Given Query: 100%|██████████| 4/4 [01:50<00:00, 28.01s/it]Captioning Segments for Given Query: 100%|██████████| 4/4 [01:50<00:00, 27.73s/it]
-  [查询] 集合16 q23 causal_only: When converting an AHP model to an ANP m
-INFO:nano-graphrag:Truncate 20 to 14 chunks
-INFO:nano-graphrag:[Causal Retrieval] Rewritten query: The conversion of an AHP model to an ANP model and the new connections that need to be established to reflect the concept of interdependence.
-INFO:nano-graphrag:[Causal Retrieval] Seed events: 20
-INFO:nano-graphrag:[Causal Retrieval] 50 events after 2-hop bidirectional walk (from 20 seeds)
-INFO:nano-graphrag:[Causal Retrieval] Semantic dedup: 50 → 45 nodes (tau_dup=0.85)
-INFO:nano-graphrag:[Causal Retrieval] Retrieved 17 segments from 45 deduplicated events
-INFO:nano-graphrag:[Causal Retrieval] Serialised causal chain: 45 events, 15525 chars
-Retrieved Causal Segments {'Msaer6b6QU8_1', 'cstrfin0bYo_40', 'SbCmu7SeXCQ_13', 'W_ijgMs7wNg_16', 'cstrfin0bYo_61', 'AUJeIG3Gjis_5', '1ZqR-wGKHGQ_14', 'SbCmu7SeXCQ_2', 'HuXhtV6Yi-k_10', 'SbCmu7SeXCQ_4', 'Msaer6b6QU8_24', '1ZqR-wGKHGQ_12', 'Msaer6b6QU8_13', 'SbCmu7SeXCQ_3', 'cstrfin0bYo_3', 'AUJeIG3Gjis_4', 'JLs5iQrkVng_5'}
-
-Retrieved Text Segments set()
-The output for the given question does not fit the pattern of generating a query for retrieving relevant video segments, as the question pertains to a theoretical comparison between AHP and ANP models rather than describing a scene from a video. However, following the instruction's format strictly and aiming to create a declarative sentence for querying video content, we can rephrase the question into a scene description context if we were to imagine a video explaining this conversion process:
-
-Output:
-A video segment demonstrating the addition of new connections when converting an AHP model to an ANP model to illustrate interdependence.
-Retrieved Visual Segments {'1ZqR-wGKHGQ_6', 'cstrfin0bYo_6', '1ZqR-wGKHGQ_4', 'cstrfin0bYo_7'}
-
-================================================================================
-🔍 FILTER 阶段诊断
-================================================================================
-检索到的片段总数: 21
-  - Entity检索: 0
-  - Visual检索: 4
-  - Causal检索: 17
-
-前5个片段ID示例:
-  1. 1ZqR-wGKHGQ_4
-  2. 1ZqR-wGKHGQ_6
-  3. 1ZqR-wGKHGQ_12
-  4. 1ZqR-wGKHGQ_14
-  5. AUJeIG3Gjis_4
-
-📊 video_segments._data 结构:
-  可用视频数量: 11
-  示例视频: 1ZqR-wGKHGQ
-  该视频的片段索引数量: 38
-  前5个索引: ['0', '1', '2', '3', '4']
-  索引类型: <class 'str'>
-
-🔧 解析测试:
-  ✓ 成功解析: 21
-  ✗ 解析失败: 0
-================================================================================
-
-⠙ Checked 1 segments⠹ Checked 2 segments⠸ Checked 3 segments⠼ Checked 4 segments⠴ Checked 5 segments⠦ Checked 6 segments⠧ Checked 7 segments⠇ Checked 8 segments⠏ Checked 9 segments⠋ Checked 10 segments⠙ Checked 11 segments⠹ Checked 12 segments⠸ Checked 13 segments⠼ Checked 14 segments⠴ Checked 15 segments⠦ Checked 16 segments⠧ Checked 17 segments⠇ Checked 18 segments⠏ Checked 19 segments⠋ Checked 20 segments⠙ Checked 21 segments9 Video Segments remain after filtering
-Remain segments ['AUJeIG3Gjis_4', 'AUJeIG3Gjis_5', 'Msaer6b6QU8_1', 'SbCmu7SeXCQ_2', 'SbCmu7SeXCQ_3', 'W_ijgMs7wNg_16', 'cstrfin0bYo_6', 'cstrfin0bYo_40', 'cstrfin0bYo_61']
-Keywords: AHP model, ANP model, new connections, interdependence
-Captioning Segments for Given Query:   0%|          | 0/9 [00:00<?, ?it/s]Captioning Segments for Given Query:  11%|█         | 1/9 [00:27<03:37, 27.19s/it]Captioning Segments for Given Query:  22%|██▏       | 2/9 [00:46<02:39, 22.74s/it]Captioning Segments for Given Query:  33%|███▎      | 3/9 [01:15<02:31, 25.33s/it]Captioning Segments for Given Query:  44%|████▍     | 4/9 [01:41<02:09, 25.83s/it]Captioning Segments for Given Query:  56%|█████▌    | 5/9 [02:14<01:53, 28.32s/it]Captioning Segments for Given Query:  67%|██████▋   | 6/9 [02:54<01:37, 32.35s/it]Captioning Segments for Given Query:  78%|███████▊  | 7/9 [03:29<01:06, 33.25s/it]Captioning Segments for Given Query:  89%|████████▉ | 8/9 [03:58<00:31, 31.67s/it]Captioning Segments for Given Query: 100%|██████████| 9/9 [04:35<00:00, 33.46s/it]Captioning Segments for Given Query: 100%|██████████| 9/9 [04:35<00:00, 30.61s/it]
-
-=== 批处理完成 ===
