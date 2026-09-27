@@ -164,6 +164,33 @@ We created the LongerVideos benchmark to evaluate long-context video understandi
 
 For detailed evaluation instructions and reproduction scripts, see [VideoRAG-algorithm/reproduce](VideoRAG-algorithm/reproduce).
 
+### EC-RAG: Event-Causal Knowledge Graph Evaluation
+
+We conducted a controlled experiment comparing **event-causal KG** (SES nodes + TEMPORAL_NEXT edges) vs **entity-relation KG** on 6 collections (134 questions) from the LongerVideos benchmark, using LLM-as-judge with 5-run majority voting to eliminate position bias.
+
+| Collection | Content | Questions | Causal Wins | Entity Wins | Causal Win Rate |
+|---|---|---|---|---|---|
+| 0 | Fights in Animal Kingdom | 10/11 | 5 | 5 | **50%** |
+| 1 | Nature Scenes | 15/17 | 5 | 10 | **33%** |
+| 2 | Climate Week at Columbia | 22/26 | 8 | 14 | **36%** |
+| 3 | Black Myth: Wukong | 19/23 | 8 | 11 | **42%** |
+| 4 | RAG Lecture | 32/38 | 25 | 7 | **78%** |
+| 5 | AI Agent Lecture | 36/45 | 15 | 21 | **41%** |
+| **Total** | | **134/160** | **66** | **68** | **49%** |
+
+**Key Findings:**
+
+| Domain | Collections | Causal Win Rate | Trend |
+|---|---|---|---|
+| 🌿 Visual / Descriptive | 0–1 | 40% | Entity graph preferred |
+| 🎮 Technical / Gaming | 2–3 | 39% | Entity graph preferred |
+| 🎓 RAG Lecture | 4 | **78%** | Causal graph dominant |
+| 🤖 AI Agent Lecture | 5 | 41% | Entity graph preferred |
+
+**Conclusion:** EC-RAG's event-causal graph is **not a silver bullet** — it excels on content requiring causal/temporal reasoning (RAG lecture, 78%) but entity-relation graphs are more effective for descriptive and visually-oriented content. Notably, two academic lectures produced opposite results: RAG lecture (78% causal) vs AI Agent lecture (41% causal), demonstrating that **content nature** (whether it contains event-causal chains), not just content type, determines EC-RAG's effectiveness. See full analysis at `VideoRAG-algorithm/longervideos/对比总结.md`.
+
+> **Evaluation Methodology:** Selene-1-Mini-8B judge with 5-run majority voting (temperature=0.7), original+reversed order per question (10 votes total), strict majority required (>50%); ties excluded. See `VideoRAG-algorithm/longervideos/eval_summary_v3.md` for full per-dimension breakdown.
+
 ## 📖 Citation
 
 If you find Vimo or VideoRAG helpful in your research, please cite our paper:
