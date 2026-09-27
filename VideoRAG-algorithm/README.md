@@ -4,114 +4,114 @@
 
 <img src='VideoRAG_cover.png' />
 
- This is the PyTorch implementation for VideoRAG proposed in this paper:
+这是论文中提出的 VideoRAG 的 PyTorch 实现：
 
-> **VideoRAG: Retrieval-Augmented Generation with Extreme Long-Context Videos**
+> **VideoRAG: 超长上下文视频的检索增强生成**
 > Xubin Ren*, Lingrui Xu*, Long Xia, Shuaiqiang Wang, Dawei Yin, Chao Huang†
 
-\* denotes equal contribution.
-† denotes corresponding author
+\* 表示同等贡献。
+† 表示通讯作者
 
- In this paper, we proposed a retrieval-augmented generation framework specifically designed for processing and understanding **extremely long-context videos**.
+在这篇论文中，我们提出了一个专门用于处理和理解**超长上下文视频**的检索增强生成框架。
 
-## 📋 Table of Contents
+## 📋 目录
 
-- [⚡ VideoRAG Framework](#-videorag-framework)
-- [🛠️ Installation](#️-installation)
-- [🚀 Quick Start](#-quick-start)
-- [🧪 Experiments](#-experiments)
-- [🦙 Ollama Support](#-ollama-support)
-- [📖 Citation](#-citation)
-- [🙏 Acknowledgement](#-acknowledgement)
+- [⚡ VideoRAG 框架](#-videorag-框架)
+- [🛠️ 安装](#️-安装)
+- [🚀 快速开始](#-快速开始)
+- [🧪 实验](#-实验)
+- [🦙 Ollama 支持](#-ollama-支持)
+- [📖 引用](#-引用)
+- [🙏 致谢](#-致谢)
 
-## ⚡ VideoRAG Framework
+## ⚡ VideoRAG 框架
 
 <p align="center">
 <img src="VideoRAG.png" alt="VideoRAG" />
 </p>
 
-VideoRAG introduces a novel dual-channel architecture that synergistically combines graph-driven textual knowledge grounding for modeling cross-video semantic relationships with hierarchical multimodal context encoding to preserve spatiotemporal visual patterns, enabling unbounded-length video understanding through dynamically constructed knowledge graphs that maintain semantic coherence across multi-video contexts while optimizing retrieval efficiency via adaptive multimodal fusion mechanisms.
+VideoRAG 引入了一种新颖的双通道架构，协同结合图驱动的文本知识奠基来建模跨视频语义关系，以及分层多模态上下文编码来保留时空视觉模式，通过动态构建的知识图谱实现无界限长度的视频理解，该图谱在多视频上下文中保持语义连贯性，同时通过自适应多模态融合机制优化检索效率。
 
-💻 **Efficient Extreme Long-Context Video Processing**
+💻 **高效的超长上下文视频处理**
 
-- Leveraging a Single NVIDIA RTX 3090 GPU (24G) to comprehend Hundreds of Hours of video content 💪
+- 利用单个 NVIDIA RTX 3090 GPU (24G) 理解数百小时的视频内容 💪
 
-🗃️ **Structured Video Knowledge Indexing**
+🗃️ **结构化视频知识索引**
 
-- Multi-Modal Knowledge Indexing Framework distills hundreds of hours of video into a concise, structured knowledge graph 🗂️
+- 多模态知识索引框架将数百小时的视频提炼成简洁、结构化的知识图谱 🗂️
 
-🔍 **Multi-Modal Retrieval for Comprehensive Responses**
+🔍 **多模态检索实现全面回答**
 
-- Multi-Modal Retrieval Paradigm aligns textual semantics and visual content to identify the most relevant video for comprehensive responses 💬
+- 多模态检索范式对齐文本语义和视觉内容，识别最相关的视频以提供全面回答 💬
 
-📚 **The New Established LongerVideos Benchmark**
+📚 **新建立的 LongerVideos 基准测试**
 
-- The new established LongerVideos Benchmark features over 160 Videos totaling 134+ Hours across lectures, documentaries, and entertainment 🎬
+- 新建立的 LongerVideos 基准测试包含超过 160 个视频，总计 134+ 小时，涵盖讲座、纪录片和娱乐内容 🎬
 
-## 🛠️ Installation
+## 🛠️ 安装
 
-### 📦 Environment Setup
+### 📦 环境设置
 
-To utilize VideoRAG, please first create a conda environment with the following commands:
+要使用 VideoRAG，请首先使用以下命令创建 conda 环境：
 
 ```bash
-# Create and activate conda environment
+# 创建并激活 conda 环境
 conda create --name videorag python=3.11
 conda activate videorag
 ```
 
-### 📚 Core Dependencies
+### 📚 核心依赖
 
-Install the essential packages for VideoRAG:
+安装 VideoRAG 的核心包：
 
 ```bash
-# Core numerical and deep learning libraries
+# 核心数值和深度学习库
 pip install numpy==1.26.4
 pip install torch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2
 pip install accelerate==0.30.1
 pip install bitsandbytes==0.43.1
 
-# Video processing utilities
+# 视频处理工具
 pip install moviepy==1.0.3
 pip install git+https://github.com/facebookresearch/pytorchvideo.git@28fe037d212663c6a24f373b94cc5d478c8c1a1d
 pip install --no-deps git+https://github.com/facebookresearch/ImageBind.git@3fcf5c9039de97f6ff5528ee4a9dce903c5979b3
 
-# Multi-modal and vision libraries
+# 多模态和视觉库
 pip install timm ftfy regex einops fvcore eva-decord==0.6.1 iopath matplotlib types-regex cartopy
 
-# Audio processing and vector databases
+# 音频处理和向量数据库
 pip install ctranslate2==4.4.0 faster_whisper==1.0.3 neo4j hnswlib xxhash nano-vectordb
 
-# Language models and utilities
+# 语言模型和工具
 pip install transformers==4.37.1
 pip install tiktoken openai tenacity
 pip install ollama==0.5.3
 ```
 
-### 📥 Model Checkpoints
+### 📥 模型检查点
 
-Download the necessary checkpoints in **the repository's root folder** for MiniCPM-V, Whisper, and ImageBind:
+在**仓库根目录**下载 MiniCPM-V、Whisper 和 ImageBind 所需的检查点：
 
 ```bash
-# Ensure git-lfs is installed
+# 确保已安装 git-lfs
 git lfs install
 
-# Download MiniCPM-V model
+# 下载 MiniCPM-V 模型
 git lfs clone https://huggingface.co/openbmb/MiniCPM-V-2_6-int4
 
-# Download Whisper model
+# 下载 Whisper 模型
 git lfs clone https://huggingface.co/Systran/faster-distil-whisper-large-v3
 
-# Download ImageBind checkpoint
+# 下载 ImageBind 检查点
 mkdir .checkpoints
 cd .checkpoints
 wget https://dl.fbaipublicfiles.com/imagebind/imagebind_huge.pth
 cd ../
 ```
 
-### 📁 Directory Structure
+### 📁 目录结构
 
-Your final directory structure after downloading all checkpoints should look like this:
+下载所有检查点后，您的最终目录结构应如下所示：
 
 ```shell
 VideoRAG/
@@ -128,14 +128,14 @@ VideoRAG/
 └── VideoRAG.png
 ```
 
-## 🚀 Quick Start
+## 🚀 快速开始
 
-VideoRAG is capable of extracting knowledge from multiple videos and answering queries based on those videos. Now, try VideoRAG with your own videos 🤗.
+VideoRAG 能够从多个视频中提取知识并基于这些视频回答查询。现在，使用您自己的视频尝试 VideoRAG 🤗。
 
 > [!NOTE]
-> Currently, VideoRAG has only been tested in an English environment. To process videos in multiple languages, it is recommended to modify the  ``WhisperModel`` in [asr.py](https://github.com/HKUDS/VideoRAG/blob/main/videorag/_videoutil/asr.py). For more details, please refer to [faster-whisper](https://github.com/systran/faster-whisper).
+> 目前，VideoRAG 仅在英语环境中测试过。要处理多语言视频，建议修改 [asr.py](https://github.com/HKUDS/VideoRAG/blob/main/videorag/_videoutil/asr.py) 中的 ``WhisperModel``。更多详情，请参考 [faster-whisper](https://github.com/systran/faster-whisper)。
 
-**At first**, let the VideoRAG extract and indexing the knowledge from given videos (Only one GPU with 24GB of memory is sufficient, such as the RTX 3090):
+**首先**，让 VideoRAG 从给定的视频中提取和索引知识（只需一个 24GB 内存的 GPU，例如 RTX 3090）：
 
 ```python
 import os
@@ -146,7 +146,7 @@ import multiprocessing
 warnings.filterwarnings("ignore")
 logging.getLogger("httpx").setLevel(logging.WARNING)
 
-# Please enter your openai key
+# 请输入您的 openai key
 os.environ["OPENAI_API_KEY"] = ""
 
 from videorag._llm import openai_4o_mini_config
@@ -156,8 +156,8 @@ from videorag import VideoRAG, QueryParam
 if __name__ == '__main__':
     multiprocessing.set_start_method('spawn')
 
-    # Please enter your video file path in this list; there is no limit on the length.
-    # Here is an example; you can use your own videos instead.
+    # 请在此列表中输入您的视频文件路径；长度不限。
+    # 这是一个示例；您可以使用自己的视频。
     video_paths = [
         'movies/Iron-Man.mp4',
         'movies/Spider-Man.mkv',
@@ -166,7 +166,7 @@ if __name__ == '__main__':
     videorag.insert_video(video_path_list=video_paths)
 ```
 
-**Then**, ask any questions about the videos! Here is an exmaple:
+**然后**，提出关于视频的任何问题！这是一个示例：
 
 ```python
 import os
@@ -177,7 +177,7 @@ import multiprocessing
 warnings.filterwarnings("ignore")
 logging.getLogger("httpx").setLevel(logging.WARNING)
 
-# Please enter your openai key
+# 请输入您的 openai key
 os.environ["OPENAI_API_KEY"] = ""
 
 from videorag._llm import *
@@ -187,9 +187,9 @@ from videorag import VideoRAG, QueryParam
 if __name__ == '__main__':
     multiprocessing.set_start_method('spawn')
 
-    query = 'What is the relationship between Iron Man and Spider-Man? How do they meet, and how does Iron Man help Spider-Man?'
+    query = '钢铁侠和蜘蛛侠之间是什么关系？他们如何相遇，钢铁侠如何帮助蜘蛛侠？'
     param = QueryParam(mode="videorag")
-    # if param.wo_reference = False, VideoRAG will add reference to video clips in the response
+    # 如果 param.wo_reference = False，VideoRAG 将在响应中添加视频片段的引用
     param.wo_reference = True
 
     videorag = videorag = VideoRAG(llm=openai_4o_mini_config, working_dir=f"./videorag-workdir")
@@ -198,45 +198,45 @@ if __name__ == '__main__':
     print(response)
 ```
 
-## 🧪 Experiments
+## 🧪 实验
 
 ### LongerVideos
 
-We constructed the LongerVideos benchmark to evaluate the model's performance in comprehending multiple long-context videos and answering open-ended queries. All the videos are open-access videos on YouTube, and we record the URLs of the collections of videos as well as the corresponding queries in the [JSON](https://github.com/HKUDS/VideoRAG/longervideos/dataset.json) file.
+我们构建了 LongerVideos 基准测试来评估模型在理解多个长上下文视频和回答开放式查询方面的性能。所有视频都是 YouTube 上的开放访问视频，我们在 [JSON](https://github.com/HKUDS/VideoRAG/longervideos/dataset.json) 文件中记录了视频集合的 URL 以及相应的查询。
 
-| Video Type              | #video list | #video | #query | #avg. queries per list | #overall duration |
+| 视频类型              | 视频列表数 | 视频数 | 查询数 | 每个列表平均查询数 | 总时长           |
 | ----------------------- | ----------: | -----: | -----: | ---------------------: | ----------------- |
-| **Lecture**       |          12 |    135 |    376 |                   31.3 | ~ 64.3 hours      |
-| **Documentary**   |           5 |     12 |    114 |                   22.8 | ~ 28.5 hours      |
-| **Entertainment** |           5 |     17 |    112 |                   22.4 | ~ 41.9 hours      |
-| **All**           |          22 |    164 |    602 |                   27.4 | ~ 134.6 hours     |
+| **讲座**       |          12 |    135 |    376 |                   31.3 | ~ 64.3 小时      |
+| **纪录片**   |           5 |     12 |    114 |                   22.8 | ~ 28.5 小时      |
+| **娱乐** |           5 |     17 |    112 |                   22.4 | ~ 41.9 小时      |
+| **全部**           |          22 |    164 |    602 |                   27.4 | ~ 134.6 小时     |
 
-### Process LongerVideos with VideoRAG
+### 使用 VideoRAG 处理 LongerVideos
 
-Here are the commands you can refer to for preparing the videos used in LongerVideos.
+以下是准备 LongerVideos 中使用的视频的命令参考。
 
 ```shell
 cd longervideos
-python prepare_data.py # create collection folders
-sh download.sh # obtain videos
+python prepare_data.py # 创建集合文件夹
+sh download.sh # 获取视频
 ```
 
-Then, you can run the following example command to process and answer queries for LongerVideos with VideoRAG:
+然后，您可以运行以下示例命令来使用 VideoRAG 处理 LongerVideos 并回答查询：
 
 ```shell
-# Please enter your openai_key in line 19 at first
+# 请首先在第 19 行输入您的 openai_key
 python run_benchmark.py --collection 4-rag-lecture --cuda 0
 
-or
+或
 
 python run_benchmark.py --collections 0 --backend vllm
 ```
 
-### Evaluation
+### 评估
 
-We conduct win-rate comparisons as well as quantitative comparisons with RAG-based baselines and long-context video understanding methods separately. **NaiveRAG, GraphRAG and LightRAG** are implemented using the `nano-graphrag` library, which is consistent with our VideoRAG, ensuring a fair comparison.
+我们分别与基于 RAG 的基线和长上下文视频理解方法进行了胜率比较以及定量比较。**NaiveRAG、GraphRAG 和 LightRAG** 使用 `nano-graphrag` 库实现，与我们的 VideoRAG 一致，确保公平比较。
 
-In this part, we directly provided the **answers from all the methods** (including VideoRAG) as well as the evaluation codes for experiment reproduction. Please utilize the following commands to download the answers:
+在这一部分，我们直接提供了**所有方法的答案**（包括 VideoRAG）以及用于实验复现的评估代码。请使用以下命令下载答案：
 
 ```shell
 cd reproduce
@@ -244,51 +244,51 @@ wget https://archive.org/download/videorag/all_answers.zip
 unzip all_answers
 ```
 
-#### Win-Rate Comparison
+#### 胜率比较
 
-We conduct the win-rate comparison with RAG-based baselines. To reproduce the results, please follow these steps:
+我们与基于 RAG 的基线进行胜率比较。要重现结果，请按照以下步骤操作：
 
 ```shell
 cd reproduce/winrate_comparison
 
-# First Step: Upload the batch request to OpenAI (remember to enter your key in the file, same for the following steps).
+# 第一步：将批量请求上传到 OpenAI（记得在文件中输入您的密钥，以下步骤相同）。
 python batch_winrate_eval_upload.py
 
-# Second Step: Download the results. Please enter the batch ID and then the output file ID in the file. Generally, you need to run this twice: first to obtain the output file ID, and then to download it.
+# 第二步：下载结果。请在文件中输入批次 ID，然后输入输出文件 ID。通常，您需要运行两次：首先获取输出文件 ID，然后下载它。
 python batch_winrate_eval_download.py
 
-# Third Step: Parsing the results. Please the output file ID in the file.
+# 第三步：解析结果。请在文件中输入输出文件 ID。
 python batch_winrate_eval_parse.py
 
-# Fourth Step: Calculate the results. Please enter the parsed result file name in the file.
+# 第四步：计算结果。请在文件中输入解析结果文件名。
 python batch_winrate_eval_calculate.py
 
 ```
 
-#### Quantitative Comparison
+#### 定量比较
 
-We conduct a quantitative comparison, which extends the win-rate comparison by assigning a 5-point score to long-context video understanding methods. We use the answers from NaiveRAG as the baseline response for scoring each query. To reproduce the results, please follow these steps:
+我们进行定量比较，通过为长上下文视频理解方法分配 5 分制评分来扩展胜率比较。我们使用 NaiveRAG 的答案作为每个查询评分的基线响应。要重现结果，请按照以下步骤操作：
 
 ```shell
 cd reproduce/quantitative_comparison
 
-# First Step: Upload the batch request to OpenAI (remember to enter your key in the file, same for the following steps).
+# 第一步：将批量请求上传到 OpenAI（记得在文件中输入您的密钥，以下步骤相同）。
 python batch_quant_eval_upload.py
 
-# Second Step: Download the results. Please enter the batch ID and then the output file ID in the file. Generally, you need to run this twice: first to obtain the output file ID, and then to download it.
+# 第二步：下载结果。请在文件中输入批次 ID，然后输入输出文件 ID。通常，您需要运行两次：首先获取输出文件 ID，然后下载它。
 python batch_quant_eval_download.py
 
-# Third Step: Parsing the results. Please the output file ID in the file.
+# 第三步：解析结果。请在文件中输入输出文件 ID。
 python batch_quant_eval_parse.py
 
-# Fourth Step: Calculate the results. Please enter the parsed result file name in the file.
+# 第四步：计算结果。请在文件中输入解析结果文件名。
 python batch_quant_eval_calculate.py
 ```
 
-## 🦙 Ollama Support
+## 🦙 Ollama 支持
 
-This project also supports ollama.  To use, edit the ollama_config in [_llm.py](https://github.com/HKUDS/VideoRAG/blob/main/videorag/_llm.py).
-Adjust the paramters of the models being used
+本项目也支持 ollama。要使用，请编辑 [_llm.py](https://github.com/HKUDS/VideoRAG/blob/main/videorag/_llm.py) 中的 ollama_config。
+调整正在使用的模型参数
 
 ```
 ollama_config = LLMConfig(
@@ -300,7 +300,7 @@ ollama_config = LLMConfig(
     embedding_func_max_async = 1,
     query_better_than_threshold = 0.2,
     best_model_func_raw = ollama_complete ,
-    best_model_name = "gemma2:latest", # need to be a solid instruct model
+    best_model_name = "gemma2:latest", # 需要是一个可靠的指令模型
     best_model_max_token_size = 32768,
     best_model_max_async  = 1,
     cheap_model_func_raw = ollama_mini_complete,
@@ -310,16 +310,16 @@ ollama_config = LLMConfig(
 )
 ```
 
-And specify the config when creating your VideoRag instance
+并在创建 VideoRag 实例时指定配置
 
 ### Jupyter Notebook
 
-To  test the solution on a single video, just load the notebook in the [notebook folder](VideoRAG/nodebooks) and
-update the paramters to fit your situation.
+要在单个视频上测试解决方案，只需加载 [notebook 文件夹](VideoRAG/nodebooks) 中的笔记本并
+更新参数以适合您的情况。
 
-## 📖 Citation
+## 📖 引用
 
-If you find this work is helpful to your research, please consider citing our paper:
+如果您发现这项工作对您的研究有帮助，请考虑引用我们的论文：
 
 ```bibtex
 @article{VideoRAG,
@@ -330,10 +330,10 @@ If you find this work is helpful to your research, please consider citing our pa
 }
 ```
 
-## 🙏 Acknowledgement
+## 🙏 致谢
 
-We extend our heartfelt gratitude to the open-source community and the foundational projects that made VideoRAG possible. Special thanks to the creators and maintainers of [nano-graphrag](https://github.com/gusye1234/nano-graphrag) and [LightRAG](https://github.com/HKUDS/LightRAG) for their pioneering work in graph-based retrieval systems.
+我们对开源社区和使 VideoRAG 成为可能的基础项目表示衷心感谢。特别感谢 [nano-graphrag](https://github.com/gusye1234/nano-graphrag) 和 [LightRAG](https://github.com/HKUDS/LightRAG) 的创建者和维护者在基于图的检索系统方面的开创性工作。
 
-Our framework builds upon the collective wisdom of these exceptional projects, and we are honored to contribute to the advancement of multimodal AI research. We also acknowledge the broader research community for their continued dedication to pushing the boundaries of video understanding and retrieval-augmented generation.
+我们的框架建立在这些杰出项目的集体智慧之上，我们很荣幸能为多模态 AI 研究的进步做出贡献。我们也感谢更广泛的研究社区继续致力于推动视频理解和检索增强生成的边界。
 
-**🌟 Thank you for your interest in our work! Together, we're shaping the future of intelligent video AI. 🌟**
+**🌟 感谢您对我们工作的关注！让我们一起塑造智能视频 AI 的未来。🌟**
